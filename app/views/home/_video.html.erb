@@ -1,0 +1,25 @@
+<div id="video" class="anchorTarget text-center">
+
+  <h2 class="tk-proxima-nova tk-proxima-nova-bold block-title">
+    Beeleev connects fast growing entrepreneurs worldwide
+  </h2>
+
+  <iframe src="https://dotsub.com/media/1fe69004-b79f-404b-bf57-8f6756f7b8f2/embed/" frameborder="0" AllowFullScreen></iframe>
+
+  <br>
+
+  <a href="#benefits"
+     class="btn btn-orange smoothscroll">
+       DISCOVER OUR OFFER
+  </a>
+
+  <% unless user_signed_in? %>
+    <a href="<%= new_user_registration_path %>"
+       class="btn btn-orange"
+       data-toggle="modal"
+       data-target="#ajaxSmallModal">
+         APPLY NOW
+    </a>
+  <% end %>
+
+</div>

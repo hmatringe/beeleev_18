@@ -1,0 +1,130 @@
+.chiffre {
+  margin-bottom: -5px;
+  padding: 0px;
+  font-size: 28px;
+  font-weight: 400;
+  color: $bleu;
+}
+
+
+p.definition-chiffre {
+  text-transform: uppercase;
+  color: $bleu;
+  letter-spacing: 1px;
+  font-size: 12px;
+  margin-bottom: 0px;
+  margin-top: 0;
+}
+
+
+
+
+p.definition-chiffre-lien {
+  text-decoration: underline;
+  letter-spacing: 1px;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: none;
+    color: $orange;
+  }
+}
+
+
+
+.villes {
+  color: $orange; //#bbb;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+
+.container-fluid.cdm {
+  background-image: url('<%= Cloudinary::Utils.cloudinary_url "homepage/carte-du-monde", fetch_format: "auto" %>');
+  background-repeat: no-repeat;
+  background-position: center 30px;
+  height: 246px;
+  margin-top: -20px;
+}
+
+@media (min-width: $screen-sm-min) {
+  .container-fluid.cdm {
+    height: 440px;
+  }
+}
+
+
+
+//----------------------- bouton apply -------------------------------------
+
+.lien-apply {
+  // width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+
+
+  a {
+    .apply-btn {
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 5px;
+      @include gradient-vertical($orange, $rouge);
+      padding: 10px 0;
+      text-align: center;
+      min-height: 40px;
+      font-size: 16px;
+
+      span {
+        color: #fff;
+        text-transform: uppercase;
+      }
+    }
+  }
+  a:hover {
+    .apply-btn {
+      @include gradient-vertical(#f9691a, #d30c19);
+    }
+  }
+}
+
+.lien-apply2 {
+  margin-top: 180px;
+  width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+
+  a {
+    .apply-btn {
+      @include gradient-vertical($orange, $rouge);
+      text-align: center;
+      width: 160px;
+      min-height: 40px;
+      padding-top: 10px;
+      padding-bottom: 0px;
+      border-radius: 5px;
+      p {
+        color: #fff;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  a:hover {
+    .apply-btn {
+      @include gradient-vertical(#f9691a, #d30c19);
+      text-align: center;
+      width: 160px;
+      min-height: 40px;
+      padding-top: 10px;
+      padding-bottom: 0px;
+      @include border-top-radius(5px);
+      @include border-bottom-radius(5px);
+      // border-radius: 5px;
+      p {
+        color: #fff;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

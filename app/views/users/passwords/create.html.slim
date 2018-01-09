@@ -1,0 +1,26 @@
+- content_for :body_class, "textured"
+
+.container style="padding-top: 62px;"
+
+  .row
+    .col-md-offset-4.col-md-4
+
+      - if resource.errors.empty?
+        .panel.panel-info style="margin-top: 100px;"
+          .panel-heading
+            .panel-title Email sent
+          .panel-body
+            span= flash[:notice]
+            br
+            br
+            a.btn.btn-primary href=root_url Back to homepage
+      - else
+        .panel.panel-danger style="margin-top: 100px;"
+          .panel-heading
+            .panel-title Invalid email
+          .panel-body
+            span We could not find a Beeleev account with this email
+            br
+            br
+            a.btn.btn-danger href=url_for(:back) Go back
+

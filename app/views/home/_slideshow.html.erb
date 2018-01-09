@@ -1,0 +1,23 @@
+<ul id="home-slideshow">
+  <% (1..3).each do |i| %>
+    <li>
+      <% url = cloudinary_url "home/slideshow/#{i}",
+      fetch_format: :auto,
+      width: 1750,
+      height: 700,
+      crop: :fill,
+      gravity: :center,
+      quality: 70 %>
+
+      <div id="home-slideshow-item-<%= i %>" class="home-slideshow-item" style="background-image: url(<%= url %>)">
+        <%= cl_image_tag "home/slideshow/arrow",
+        class: "img-responsive home-slideshow-arrow" %>
+
+        <div class="text-center tk-proxima-nova">
+          <%= render "home/slideshow/item_#{i}" %>
+        </div>
+
+      </div>
+    </li>
+  <% end %>
+</ul>

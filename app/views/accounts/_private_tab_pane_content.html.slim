@@ -1,0 +1,139 @@
+.row
+
+  .col-md-4
+    .form-group
+      = f.label :date_of_birth
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-calendar
+        = f.text_field :date_of_birth,
+            value: ldate(f.object.date_of_birth),
+            class: "form-control",
+            data: {provide: "datepicker",
+              date_language: 'en',
+              date_autoclose: true,
+              date_format: "yyyy-mm-dd"}
+
+      span.help-block format : yyyy-mm-dd
+      span.help-block year will not be displayed on your profile page
+
+    .form-group
+      = f.label :email
+      .input-group
+        span.input-group-addon
+          i.fa.fa-at
+        = f.text_field :email, class: "form-control"
+    .form-group
+      = f.label :phone
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-earphone
+        = f.text_field :phone, class: "form-control"
+    .form-group
+      = f.label :cellphone
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-phone
+        = f.text_field :cellphone, class: "form-control"
+    .form-group
+      = f.label :skype_account
+      .input-group
+        span.input-group-addon
+          i.fa.fa-skype
+        = f.text_field :skype_account, class: "form-control"
+
+  .col-md-4
+    .form-group
+      = f.label :expertises
+      = f.select :expertises,
+          User::EXPERTISES, {}, multiple: true, class: "form-control"
+    .form-group
+      = f.label :spoken_languages
+      = f.select :spoken_languages,
+          User::LANGUAGES, {}, multiple: true, class: "form-control"
+    .form-group
+      = f.label :entrepreneur_clubs
+      = f.text_field :entrepreneur_clubs, class: "form-control"
+
+    .form-group
+      label Investment activity ?
+      br
+      .radio-inline
+        = f.radio_button :investment_activity, true
+        | Yes
+      .radio-inline
+        = f.radio_button :investment_activity, false
+        | No
+    .form-group
+      = f.label :year_of_creation
+      = f.select :year_of_creation, (1920..Date.today.year).to_a.reverse,
+        {prompt: "Select Year of creation"}, class: "form-control"
+
+  .col-md-4
+    .form-group
+      = f.label :business_model
+      = f.select :business_model,
+          ["B2C", "B2B", "B2B2C", "B2B & B2C", "C2C", 'B2G'],
+          {prompt: "Select Business model"}, class: 'form-control'
+
+    .form-group
+      label International activity ?
+      br
+      .radio-inline
+        = f.radio_button :international_activity, true
+        | Yes
+      .radio-inline
+        = f.radio_button :international_activity, false
+        | No
+
+    .form-group
+      = f.label :international_activity_countries
+      = f.country_select(:international_activity_countries,
+          [],
+          {prompt: "Select International actvity countries"},
+          multiple: true,
+          class: "form-control")
+
+    .form-group
+      = f.label :turnover
+      = f.select :turnover, ["0 to $100K",
+            "$100K to $500K",
+            "$500K to $1.000K",
+            "$1.000K to $3.000K",
+            "$3.000K to $5.000K",
+            "$5.000K to $10.000K",
+            "More than $10.000K",
+            "More than $20.000K",
+            "More than $50.000K",
+            "More than $150.000K"],
+            {prompt: "Select Turnover"},
+            class: 'form-control'
+    .form-group
+      = f.label :staff_volume
+      = f.select :staff_volume, ["myself only",
+            "2-10",
+            "11-50",
+            "51-200",
+            "201-500",
+            "501-1000",
+            "1001-5000",
+            "5001-10000",
+            "+10001"], {prompt: "Select Staff volume"}, class: 'form-control'
+
+    .form-group
+      label Hiring objectives ?
+      br
+      .radio-inline
+        = f.radio_button :hiring_objectives, true
+        | Yes
+      .radio-inline
+        = f.radio_button :hiring_objectives, false
+        | No
+
+    .form-group
+      = f.label :investment_levels
+      = f.select :investment_levels,
+                 ["Seed", "Serie A", "Serie B", "Serie C", "IPO", "None", "Other"],
+                 {prompt: "Select Investment level"},
+                 multiple: true, class: 'form-control'
+        

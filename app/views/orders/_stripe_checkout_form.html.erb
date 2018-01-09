@@ -1,0 +1,5 @@
+<%= form_for Order.new product: product, currency: currency do |f| %>
+  <%= f.hidden_field :product_id %>
+  <%= f.hidden_field :currency %>
+  <%= stripe_checkout_button(product.title, money, current_user.email) %>
+<% end %>

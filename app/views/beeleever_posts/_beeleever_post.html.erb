@@ -1,0 +1,57 @@
+<div class="beeleever-post clearfix" id="beeleever-post-<%= beeleever_post.id %>">
+
+  <div class="beeleever-post-avatar pull-left">
+    <%= cl_image_tag beeleever_post.author.avatar_url width: 80, crop: :fill %>
+  </div>
+
+  <div class="panel-and-comments">
+    <div class="panel panel-info">
+
+      <div class="panel-heading">
+        <%= link_to beeleever_post.author.name, beeleever_post.author %>
+      </div>
+
+      <div class="panel-body">
+        <%= simple_format(auto_link(beeleever_post.body)).html_safe %>
+
+        <% if beeleever_post.illustration? %>
+          <%= cl_image_tag beeleever_post.illustration.url %>
+        <% end %>
+
+        <% if beeleever_post.embedded_video_tag? %>
+          <%= raw beeleever_post.embedded_video_tag %>
+        <% end %>
+      </div>
+
+      <div class="panel-footer">
+        <% if can? :create, Comment %>
+          <a href="#" class="start-comment">Comment</a>
+          <br>
+        <% end %>
+
+
+        <div class="comments">
+          <%= render partial: beeleever_post.comments.sort_by(&:created_at).reverse %>
+        </div>
+
+        <% if can? :create, Comment %>
+          <%= form_for Comment.new(beeleever_post: beeleever_post), remote: true do |f| %>
+            <div class="form-group">
+              <%= f.text_area :body, class: 'form-control', placeholder: 'Add a comment' %>
+              <%= f.hidden_field :beeleever_post_id %>
+            </div>
+
+            <div class="form-group">
+              <%= f.submit 'Comment', class: 'btn btn-info', disabled: true %>
+              <i class="comment-saving-spinner" class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+            </div>
+
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

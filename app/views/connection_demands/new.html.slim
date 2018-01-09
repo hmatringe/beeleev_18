@@ -1,0 +1,26 @@
+= form_for @resource do |f|
+
+  .modal-header
+    button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+    h4.modal-title
+      | New #{@resource.class.model_name.human} to&nbsp;
+      span= @resource.user2_name
+
+  .modal-body
+    = f.hidden_field :user2_id
+
+    p
+      i
+        |
+
+          Please explain in a detailed way your activity, your needs and/or
+          ambitions, and why you think this connection can be beneficial. Your
+          request will carefully be reviewed by our team and then forwarded to
+          your fellow Beeleever.
+
+    .form-group
+      = f.text_area :description, class: "form-control", rows: 5, required: true
+
+  .modal-footer
+    button.btn.btn-default type="button" data-dismiss="modal" Cancel
+    = f.submit "Send #{@resource.class.model_name.human}", class: "btn btn-primary"

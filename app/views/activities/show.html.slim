@@ -1,0 +1,68 @@
+.container
+  h1.text-center Activity
+  br
+
+  #activity
+
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            span.glyphicon.glyphicon-circle-arrow-right
+            =< "Connections waiting for your reponse"
+          .panel-body
+            - @pending_connections.each do |resource|
+              .pending-connection
+                = connection_row resource
+
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            span.glyphicon.glyphicon-circle-arrow-right
+            =< "Connections history"
+          .panel-body
+            - @connections_history.each do |resource|
+              .pending-connection
+                = connection_row resource
+
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            span.glyphicon.glyphicon-pencil
+            =< "#{ConnectionRequest.model_name.human(count: 2)} (Smart Connector)"
+          table.table
+            tr
+              th Subject
+              th Last update
+              th Description
+              th
+            - @connection_requests.each do |cr|
+              tr.connection-request
+                td= cr.subject
+                td= l cr.updated_at, format: :long
+                td= simple_format cr.description
+                td
+                  .pull-right
+                    = link_to "Edit",
+                      edit_connection_request_path(cr),
+                      class: "btn btn-info btn-xs",
+                      data: {toggle: "modal", target: "#ajaxModal"}
+
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading Connection credits
+          table.table
+            tr
+              th Expires on
+              th Connection created with this credit
+              th Credit created on
+              th Usable?
+            - @connection_credits.each do |cc|
+              tr.connection-request
+                td= connection_credit_expires_on cc
+                td= connection_credit_details cc
+                td= ldate cc.created_at, format: :default
+                td= cc.usable? ? "Yes" : "No"

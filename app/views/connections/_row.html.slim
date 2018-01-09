@@ -1,0 +1,15 @@
+.row
+  .col-md-3
+    = connection_link_to_user resource
+  .col-md-2
+    = ldate resource.created_at, format: "%d/%m/%Y"
+  .col-md-2
+    = connection_display_type resource
+  .col-md-2
+    = connection_display_profil resource
+  .col-md-3
+    .pull-right
+      - if resource.history?
+        = connection_link_to_feedback resource
+        | &nbsp;
+      = connection_link_to_see resource

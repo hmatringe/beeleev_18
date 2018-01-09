@@ -1,0 +1,45 @@
+coffee:
+  $ ->
+    $('#connection_request_business_sectors').select2();
+
+= form_for @cr do |f|
+
+  .modal-header
+    button type="button" class="close" data-dismiss="modal" aria-hidden="true" &times;
+    h4#connectionRequest.modal-title= title
+
+  .modal-body
+
+    p
+      i
+        |
+
+          Please explain your issues, needs and/or wishes below as thoroughly
+          and precisely as possible so we can help you find suitable business
+          contacts. After careful consideration of your request, we will send
+          you a selection of suggested connections which you can either accept
+          or decline.
+
+    .form-group
+      = f.label :subject
+      = f.text_field :subject, class: "form-control", required: true
+
+    .form-group
+      = f.label :countries
+      = f.text_field :countries, class: "form-control"
+
+    .form-group
+      = f.label :business_sectors
+      = f.select :business_sectors,
+                User::BUSINESS_SECTORS,
+                {},
+                class: "form-control",
+                multiple: true
+
+    .form-group
+      = f.label :description
+      = f.text_area :description, class: "form-control", rows: 5
+
+  .modal-footer
+    button type="button" class="btn btn-default" data-dismiss="modal" Cancel
+    = f.submit submit_label, class: "btn btn-primary"

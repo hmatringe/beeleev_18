@@ -1,0 +1,31 @@
+<main>
+  <div class="ta-center">
+    <h1 class="fw-700 red adp--header">WELCOME!</h1>
+    <h2 class="fw-700 adp--sub-header">EXCLUSIVE OFFER - PARIS AÉROPORT</h2>
+
+    <p class="adp--intro">
+      Beeleev is an Entrepreneurs Only Community allowing you to find all  the Partners of your International Expansion Projects online
+    </p>
+  </div>
+
+  <h3 class="fw-700 red adp--how">HOW DOES IT WORK?</h3>
+
+  <ul class="adp__list">
+    <li>Apply to join using the form below</li>
+  	<li>Explore the Community and connect freely with Peers</li>
+  	<li>
+      Looking for a Partner or Expert abroad? Send us your detailed request through the Smart Connector and 
+      <span class="fw-900">benefit from a 25% discount</span>
+      with the Promotional Code :
+    </li>
+  </ul>
+
+  <div class="ta-center">
+    <div class="adp__code">ADP2017</div>
+
+    <div class="adp__logos">
+      <img src=<%= Cloudinary::Utils.cloudinary_url 'blue-logo', fetch_format: :auto, quality: 80, height: 60, crop: :fill %> alt="logo Beeleev" height="30">
+      <img src=<%= Cloudinary::Utils.cloudinary_url 'logo-adp', fetch_format: :auto, quality: 80, height: 200, crop: :fill %> alt="logo ADP" height='100'>
+    </div>
+  </div>
+</main>

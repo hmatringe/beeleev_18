@@ -1,0 +1,144 @@
+<div id="smart-connector" class="anchorTarget text-center tk-proxima-nova">
+
+  <div class="bloc">
+    <div class="ligne-centre">
+      <div class="contenant-titre">
+        <h3>Smart connector</h3>
+      </div>
+    </div>
+    <br>
+  </div>
+
+
+  <h2 class="tk-proxima-nova tk-proxima-nova-bold block-title">
+    Smart Connector, the ultimate tailor-made service allowing you to fully exploit
+    <br>
+    Beeleev’s network potential and grow your business.
+  </h2>
+
+  <div class="gray-bg">
+    <div class="title tk-proxima-nova tk-proxima-nova-bold">
+
+      HERE'S HOW IT WORKS
+    </div>
+
+    <br>
+
+    <p>
+      Just send us your connection requests
+      &amp; Beeleev will take care of everything, suggesting matching contacts.
+    </p>
+
+    <% if controller.is_a? HomeController %>
+      <% if user_signed_in? %>
+        <a href="<%= shop_path %>"
+           class="btn btn-orange">
+             LOG IN TO YOUR BEELEEVER SPACE
+        </a>
+      <% else %>
+        <a href="<%= new_user_session_path %>"
+           data-toggle="modal"
+           data-target="#ajaxSmallModal"
+           class="btn btn-orange">
+             LOG IN TO YOUR BEELEEVER SPACE
+        </a>
+      <% end %>
+    <% end %>
+
+    <br>
+    <br>
+
+    <div class="row" id="main-row">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-2">
+            <%= cl_image_tag "smart-connector/pencil",
+            fetch_format: :auto,
+            width: 141,
+            height: 145,
+            crop: :pad,
+            gravity: :south,
+            quality: 80 %>
+
+            <div class="step-wrapper">
+              <div class="step-title">
+                STEP 1
+              </div>
+
+              <p class="step-desc">
+                Register as a Beeleever
+                <br>
+                and use the Smart Connector
+                <br>
+                to obtain a personalized connection.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <%= cl_image_tag "smart-connector/gears",
+            fetch_format: :auto,
+            width: 141,
+            height: 145,
+            crop: :pad,
+            gravity: :south,
+            quality: 80 %>
+
+            <div class="step-wrapper">
+              <div class="step-title">
+                STEP 2
+              </div>
+
+              <p class="step-desc">
+                Activate your
+                <br>
+                selected package
+                <br>
+                and let our team
+                <br>
+                process your request.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-10">
+            <%= cl_image_tag "smart-connector/thumb",
+            fetch_format: :auto,
+            width: 141,
+            height: 145,
+            crop: :pad,
+            gravity: :south,
+            quality: 80 %>
+
+            <div class="step-wrapper">
+              <div class="step-title">
+                STEP 3
+              </div>
+
+              <p class="step-desc">
+                We come back to you
+                <br>
+                with the best
+                <br>
+                fitting contacts,
+                <br>
+                matching your requirement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,72 @@
+- content_for :javascripts do
+  = render "shared/linkedin"
+
+.modal-header
+  button.close type="button" data-dismiss="modal" aria-hidden="true"
+    == "&times;"
+  h4.modal-title Become a Beeleever
+
+.modal-body
+
+  .text-center
+
+    = link_to user_omniauth_authorize_path(:linkedin), class: "btn btn-primary" do
+      => t("sign_up_with")
+      = image_tag "LinkedIn-Logo-2C.png", size: "83x20"
+
+    hr
+
+    = link_to t('sign_up_with_email'), "", class: "btn btn-info toggle-sign-up-with-email"
+
+    section#sign_up_with_email
+      .row
+        .col-md-12
+          = form_for @user do |f|
+
+            .form-group.has-feedback
+              = f.text_field :first_name, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:first_name),
+                required: true
+              span.glyphicon.glyphicon-user.form-control-feedback
+
+            .form-group
+              = f.text_field :last_name, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:last_name),
+                required: true
+              span.glyphicon.glyphicon-user.form-control-feedback
+
+            .form-group
+              = f.text_field :email, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:email),
+                required: true
+              span.glyphicon.glyphicon-envelope.form-control-feedback
+
+            .form-group
+              = f.text_field :position, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:position),
+                required: true
+              span.glyphicon.glyphicon-home.form-control-feedback
+
+            .form-group
+              = f.text_field :company, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:company),
+                required: true
+              span.glyphicon.glyphicon-home.form-control-feedback
+
+            .form-group
+              = f.text_field :password, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:password),
+                required: true
+              span.glyphicon.glyphicon-lock.form-control-feedback
+
+            .form-group
+              = f.text_field :password_confirmation, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:password_confirmation),
+                required: true
+              span.glyphicon.glyphicon-lock.form-control-feedback
+
+            = f.submit "Sign up", class: "btn btn-info"
+
+.modal-footer
+  | Already a member ?
+  = link_to t("log_in"), "login path", data: {toggle: "modal", target: "#ajaxModal"}

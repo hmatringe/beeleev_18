@@ -1,0 +1,40 @@
+.beeleever-post {
+  margin-bottom: 10px;
+
+  img {
+    max-width: 100%;
+  }
+
+  .panel-and-comments {
+    margin-left: 90px;
+
+    .panel {
+
+      .panel-heading {
+        .panel-title {}
+      }
+    }
+
+    .new_comment {
+      display: none;
+      margin-top: 1em;
+    }
+  }
+
+  .comment-saving-spinner {
+    visibility: hidden;
+  }
+
+  .start-comment {
+    color: $brand-info;
+  }
+
+  .comments {
+    margin-top: 1em;
+
+    .comment-body {
+      margin-left: 40px;
+    }
+  }
+
+}

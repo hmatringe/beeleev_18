@@ -1,0 +1,59 @@
+en:
+  sign_up: "Apply"
+  log_in: "Log in"
+  log_in_with: "Log in with"
+  log_out: "Log out"
+  my_network: "My Network"
+  my_profile: "My profile"
+  save: "Save"
+  profile_updated: "Your profile has been updated"
+  sign_up_with: "Sign up with"
+  sign_up_with_linkedin: "Sign up with LinkedIn®"
+  sign_up_with_email: "Sign up with Email"
+  or: "or"
+  network: "Beeleevers"
+  my_network: "My Network"
+  activity: "Activity"
+  connect: "Connect"
+  activation_pending_message: "You will soon be informed of your Beeleev account activation"
+  pending_connection_demands: "Pending connection demands"
+  pending_connection_propositions: "Pending connection propositions"
+  connection_requests: "Connection requests"
+  send_mail: "Send an email"
+  contact_infos: "Contact informations"
+  become_a_beeleever: "Become a Beeleever"
+
+  activerecord:
+    models:
+      beeleever_post:
+        one: 'Post'
+        other: 'Posts'
+      connection_request:
+        one: 'Customized Request'
+        other: 'Customized Requests'
+      connection_demand:
+        one: 'Connection Request'
+        other: 'Connection Requests'
+      connection_proposition:
+        one: 'Connection Proposition'
+        other: 'Connection Propositions'
+    attributes:
+      user:
+        international_activity_countries: "Targeted Countries for Development"
+        international_activity_countries_overlap: "Targeted Countries for Development"
+        civility: "Title"
+        first_name: "First name"
+        last_name: "Last name"
+        company: "Company"
+        position: "Position"
+        nationalite: "Nationality"
+        password: "Password"
+        password_confirmation: "Confirm Password"
+        created_at: "Application date"
+        new_application_reminder_count: "New application reminder emails sent"
+
+      connection_proposition:
+        admin_user: "Proposed by admin"
+
+      connection_demand:
+        connection_demand_reminders_count: User 2 reminders count

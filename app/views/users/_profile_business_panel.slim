@@ -1,0 +1,86 @@
+/ Business
+- if can? :see_private_profile, @user
+  .panel.panel-info
+    .panel-heading
+      .panel-title Business
+    .panel-body
+
+      .row
+
+        / display the column if at least one value is present
+        - if (@user.expertises.present? || \
+              @user.spoken_languages.present? || \
+              @user.entrepreneur_clubs.present?)
+          .col-sm-4
+            - if @user.expertises.present?
+              p
+                strong= User.human_attribute_name :expertises
+                br
+                span
+                  - if @user.expertises
+                    = @user.expertises.sort.join(', ')
+
+            - if @user.spoken_languages.present?
+              p
+                strong= User.human_attribute_name :spoken_languages
+                br
+                span
+                  - if @user.spoken_languages
+                    = @user.spoken_languages.sort.join(', ')
+
+            - if @user.entrepreneur_clubs.present?
+              p
+                strong= User.human_attribute_name :entrepreneur_clubs
+                br
+                span
+                  = @user.entrepreneur_clubs
+
+        .col-sm-4
+            p
+              strong= User.human_attribute_name :investment_activity
+              br
+              span
+                = @user.investment_activity? ? "Yes" : "No"
+
+            - if @user.business_model.present?
+              p
+                strong= User.human_attribute_name :business_model
+                br
+                span
+                  = @user.business_model
+
+            p
+              strong= User.human_attribute_name :international_activity
+              br
+              span
+                = @user.international_activity? ? "Yes" : "No"
+
+        .col-sm-4
+
+            - if @user.international_activity_countries.present?
+              p
+                strong
+                  = User.human_attribute_name :international_activity_countries
+                br
+                span
+                  = @user.international_activity_countries.sort.join(', ')
+
+            - if @user.turnover.present?
+              p
+                strong= User.human_attribute_name :turnover
+                br
+                span
+                  = @user.turnover
+
+            - if @user.staff_volume.present?
+              p
+                strong= User.human_attribute_name :staff_volume
+                br
+                span
+                  = @user.staff_volume
+
+            p
+              strong= User.human_attribute_name :hiring_objectives
+              br
+              span
+              = @user.hiring_objectives? ? "Yes" : "No"

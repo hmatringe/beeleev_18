@@ -1,0 +1,27 @@
+#my_network.container
+
+  h1.text-center= t("my_network")
+  br
+
+  - if @users.empty?
+    .alert.alert-info.text-center
+      span>
+        |
+
+          For the moment you don’t have any open connections. You can always
+          change that by making a connection request just by clicking
+
+      a{
+        href=new_connection_request_path
+        data-toggle="modal"
+        data-target="#ajaxModal"
+      } here
+  - else
+    = paginate @users
+
+    .row
+      - @users.each do |user|
+        .col-sm-6.col-lg-4
+          = user_panel(user)
+
+    = paginate @users

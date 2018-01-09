@@ -1,0 +1,51 @@
+.container
+  h1.text-center My Account
+  br
+
+  .panel.panel-info
+    .panel-heading
+      .panel-title Shop orders
+
+    .panel-body
+      - if @orders.empty?
+        | You haven't purchased anything yet in the Beeleev shop
+      - else
+        table.table.table-striped
+          tr
+            th Product
+            th Amount
+            th Date
+          - @orders.each do |order|
+            tr
+              td= order.product_title
+              td= number_to_currency order.money.amount,
+                    unit: order.money.currency.code
+              td= ldate order.created_at
+
+  .panel.panel-info
+    .panel-heading
+      .panel-title Connections credits
+
+    .panel-body
+      p
+        table.table.table-striped
+          tr
+            th Expires on
+            th Usable ?
+            th Connection with a Beeleever
+            th External connection
+            th Connection date
+          - @credits.each do |credit|
+            tr
+              td= credit.expires_on.present? ? \
+                    ldate(credit.expires_on, format: :long) : 'Never'
+              td= credit.usable? ? 'Yes' : 'No'
+              td
+                = "We connected you to ".html_safe + link_to(credit.connection.user2_name, credit.connection.user2) \
+                    if credit.connection_id?
+              td= credit.external_comments if credit.external?
+              td= ldate( \
+                    credit.connection_id? ? \
+                      credit.connection.created_at.to_date : \
+                      credit.external_connection_date,
+                    format: :long)

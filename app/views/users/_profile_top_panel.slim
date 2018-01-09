@@ -1,0 +1,113 @@
+/ Top panel
+.panel.panel-default
+  .panel-body
+
+    .row
+      .col-xs-4.col-sm-3
+        = image_tag @user.avatar_url, class: "img-responsive"
+
+      .col-xs-8.col-sm-5
+        p
+          span
+            bold style="font-size: 24px"= @user.name
+          br
+
+          - if @user.position.present? || @user.company.present?
+            span
+              =< "#{@user.position}" if @user.position.present?
+              =< "at #{@user.company}" if @user.company.present?
+            br
+
+          - if @user.business_sectors.present?
+            span
+            = @user.business_sectors.sort.join(', ')
+            br
+
+          -  if @user.city.present?
+            br
+            span.glyphicon.glyphicon-globe
+            span
+              =< "#{@user.city}, #{@user.country}"
+
+          -  if @user.nationalite.present?
+            br
+            span.glyphicon.glyphicon-flag
+            span
+              =< @user.nationalite
+
+          - if @user.date_of_birth.present? && can?(:see_private_profile, @user)
+            br
+            span.glyphicon.glyphicon-calendar>
+            span
+              =< ldate @user.date_of_birth, format: '%B %d'
+
+        - if @user.website.present?
+          = auto_link @user.website, html: {target: '_blank'}
+
+      .col-xs-12.visible-xs
+        br
+
+      .col-sm-4
+        .row
+          - if @user.email.present?
+            .col-xs-6.col-sm-12
+              - if can? :see_private_profile, @user
+                p
+                  i.fa.fa-at>
+                  strong= User.human_attribute_name :email
+                  br
+                  span
+                    = @user.email
+
+          - if @user.phone.present?
+            .col-xs-6.col-sm-12
+              - if can? :see_private_profile, @user
+                p
+                  span.glyphicon.glyphicon-earphone>
+                  strong= User.human_attribute_name :phone
+                  br
+                  span
+                    =< @user.phone
+
+          - if @user.cellphone.present?
+            .col-xs-6.col-sm-12
+              - if can? :see_private_profile, @user
+                p
+                  span.glyphicon.glyphicon-phone>
+                  strong= User.human_attribute_name :cellphone
+                  br
+                  span
+                    = @user.cellphone
+
+          - if @user.skype_account.present?
+            .col-xs-6.col-sm-12
+              - if can? :see_private_profile, @user
+                p
+                  i.fa.fa-skype>
+                  strong= User.human_attribute_name :skype_account
+                  br
+                  span
+                    = @user.skype_account
+
+          - if @user.twitter_account.present?
+            .col-xs-6.col-sm-12
+              p
+                i.fa.fa-twitter>
+                strong= User.human_attribute_name :twitter_account
+                br
+                span
+                  a{
+                    href="https://twitter.com/#{@user.twitter_account}"
+                    target="_blank"
+                  }=@user.twitter_account
+
+  .panel-footer.clearfix
+    .pull-right
+      - unless current_user.connected_user_ids.include?(@user.id)
+        = user_connect_btn(@user)
+      - else
+        = user_mailto_btn(@user)
+
+      - if current_user == @user
+        a.btn.btn-success.btn-xs href=edit_account_path
+          | Edit profile

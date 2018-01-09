@@ -1,0 +1,58 @@
+#network-search
+  = search_form_for @q, url: search_network_path do |f|
+    .panel.panel-info
+
+      .panel-heading
+        .panel-title Search for Beeleevers
+
+      .panel-body
+        .row
+          .col-sm-6
+            = f.select :country_in,
+              @countries,
+                {},
+                class: "form-control",
+                placeholder: "Select Countries",
+                multiple: true
+
+          .col-sm-6
+            = f.select :city_eq,
+              @q.result.pluck(:city).uniq.compact.sort,
+                {prompt: "Select City"},
+                class: "form-control",
+                readonly: @q.city_eq.present?
+
+        .row
+          .col-sm-6
+            = f.select :business_sectors_overlap,
+              @q.result.pluck(:business_sectors).flatten.uniq.compact.sort,
+                {},
+                class: "form-control",
+                placeholder: "Select Business Sectors",
+                multiple: true
+
+          .col-sm-6
+            = f.select :international_activity_countries_overlap,
+              @q.result.pluck(:international_activity_countries).flatten.uniq.compact.sort,
+                {},
+                class: "form-control",
+                placeholder: "Select " + User.human_attribute_name(:international_activity_countries),
+                multiple: true
+
+        .row
+          .col-sm-6
+            = f.search_field :full_name_or_unaccented_full_name_cont,
+              class: "form-control",
+              placeholder: "Name"
+
+          .col-sm-6
+            = f.search_field :company_cont,
+              class: "form-control",
+              placeholder: "Company"
+
+      .panel-footer
+        .row
+          .col-sm-2
+            = link_to "Clear filters", network_path, class: "btn btn-warning btn-block"
+          .col-sm-2
+            = f.submit "Search", class: "btn btn-primary btn-block"

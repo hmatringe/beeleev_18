@@ -1,0 +1,62 @@
+#= require jquery
+#= require jquery_ujs
+#= require turbolinks
+
+#= require html5shiv/dist/html5shiv
+#= require modernizr/modernizr
+#= require bootstrap
+#= require select2/select2.min
+#= require bxslider-4/jquery.bxslider
+#= require jquery.scrollTo/jquery.scrollTo
+#= require cloudinary-jquery/cloudinary-jquery.js
+
+#= require website/homepage
+#= require tag_analytics_cnil
+#= require social_plugins
+
+shouldOpenApplyModal = ->
+  window.location.hash == "#apply"
+
+shouldOpenLoginModal = ->
+  window.location.hash == "#login"
+
+openApplyModal = ->
+  $("#navbar-apply-btn").click(() ->
+    setTimeout(() ->
+      $('.toggle-sign-up-with-email').click()
+    , 1000)
+  )
+  $("#navbar-apply-btn").trigger('click')
+
+openLoginModal = ->
+  $("#navbar-signin-btn").trigger('click')
+
+$(document).on 'ready page:load', ->
+
+  openApplyModal() if shouldOpenApplyModal()
+  openLoginModal() if shouldOpenLoginModal()
+
+  $('[data-toggle="tooltip"]').tooltip()
+
+  $(".modal-ajax").on 'hidden.bs.modal', (e) ->
+    $(@).data 'bs.modal', null
+
+    if href = $(e.target).data('remote')
+      $(e.target).modal
+        remote: href
+      $(e.target).data 'remote', null
+
+  $(document).on 'click', '[data-toggle="reopen-modal"]', ->
+    $('.modal-ajax').data('remote', $(@).attr('href'))
+    $('.modal-ajax').modal('hide')
+    false
+
+  $('#navbar-collapse-body ul.dropdown-menu li').on 'click', ->
+    console.log 'this'
+    $('#navbar-collapse-body').collapse 'hide'
+
+$ ->
+    $(document).on 'click', '.toggle-sign-up-with-email', ->
+      $(@).toggle()
+      $('#sign_up_with_email').toggle()
+      false

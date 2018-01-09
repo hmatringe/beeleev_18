@@ -1,0 +1,2 @@
+var content = "<%= escape_javascript render(@comment) %>";
+$("#beeleever-post-<%= @comment.beeleever_post_id %> .comments").prepend(content);

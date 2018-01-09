@@ -1,0 +1,50 @@
+.item
+  .row style="background-color: #6baa9f;"
+    .col-md-12
+      .row
+        .col-md-6
+          = cl_image_tag "homepage/testimonies/Hurtiger",
+              class: 'img-responsive',
+              fetch_format: 'auto',
+              width: 555,
+              crop: 'scale'
+
+        .col-md-5
+          .discours
+            h4==< "Partnership contact&nbsp;"
+            p
+              |
+
+                "Thanks to Beeleev I have found a partner in Brussels that
+                is going to help me with the development of Senior Compagnie
+                in Belgium."
+
+            p.person Nicolas Hurtiger
+
+            .legende
+              h4 Nicolas Hurtiger
+              p
+                ' CEO &amp; founder at
+                a.company-name href='http://www.senior-compagnie.fr/' target='_blank'
+                  | Senior Compagnie
+                | , based in Paris, France
+            .connection
+              h4 Connected with Arnaud de Mérode
+              p
+                |
+
+                  CEO of <span class="company-name">Senior Shop</span>, based in
+                  Brussels, Belgium
+
+            = cl_image_tag "homepage/testimonies/arnaud-de-merode",
+                fetch_format: 'auto',
+                width: 68,
+                crop: 'scale',
+                radius: 'max'
+                
+            span
+              = cl_image_tag "homepage/testimonies/carte-hurtiger",
+                  fetch_format: 'auto',
+                  width: 168,
+                  crop: 'scale'
+        .col-md-1

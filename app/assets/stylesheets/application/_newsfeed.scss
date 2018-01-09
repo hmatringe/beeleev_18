@@ -1,0 +1,29 @@
+.newsfeed {
+  #new_beeleever_post {
+    margin-top: 1em;
+    display: none;
+  }
+
+  #beeleever-posts {
+    margin-top: 1em;
+  }
+
+  #beeleever-post-saving-spinner {
+    visibility: hidden;
+  }
+
+  .beeleever-post-pagination-spinner-wrapper {
+    margin-bottom: 1.5em;
+
+    #beeleever-post-pagination-spinner {
+      visibility: hidden;
+    }
+  }
+
+
+  .preview {
+    margin-bottom: 1em;
+    display: none;
+    height: 80px
+  }
+}

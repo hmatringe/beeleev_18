@@ -1,0 +1,55 @@
+.item
+  .row.fond-testimonies
+    .col-md-12
+      .row
+        .col-md-6
+          = cl_image_tag "homepage/testimonies/netino",
+              class: 'img-responsive',
+              fetch_format: 'auto',
+              width: 555,
+              crop: 'scale'
+        .col-md-5
+          .discours
+            h4 Business Development
+            p
+              |
+
+                "Thanks to Beeleev we were able to get in touch with Sebastien
+                Dalmas who gave us strategic information regarding the
+                development of our activity in Spain such as knowledge on the
+                market potential and competitors and on the global ecosystem in
+                Spain. Sebastien also shared with us high quality contacts who
+                can be potential customers."
+
+            p.person Jeremie Mani
+
+            .legende
+              h4 Jeremie Mani
+              p
+                ' CEO at
+                a.company-name href='http://netino.fr/' target="_blank"
+                  | Netino
+                |
+                br
+                | Internet and Web services, Paris
+
+            .connection
+              h4 Connected with Sebastien Dalmas
+              p
+                ' Partner at
+                a.company-name href='http://www.edenwaygroup.com/' target='_blank'
+                  | Edenway
+                |, based in Paris, France
+            
+            = cl_image_tag "homepage/testimonies/sebastien-delmas",
+                fetch_format: 'auto',
+                width: 68,
+                crop: 'scale',
+                radius: 'max'
+
+            span
+              = cl_image_tag "homepage/testimonies/carte-paris",
+                  fetch_format: 'auto',
+                  width: 168,
+                  crop: 'scale'
+        .col-md-1

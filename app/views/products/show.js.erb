@@ -1,0 +1,23 @@
+<% if @old_amount %>
+  $("#product-<%= @product.id %> .panel-footer").prepend(
+    "<p class='old-amount'><%= number_to_currency(@old_amount.amount, precision: 2) %></p>"
+  )
+<% else %>
+  $("#product-<%= @product.id %> .old-amount").remove();
+<% end %>
+
+$("#product-<%= @product.id %> .amount")
+  .html("<%= number_to_currency(@product.money.amount, precision: 2) %>");
+
+$("#product-<%= @product.id %> .stripe_checkout_buttons button:first").replaceWith("<%= escape_javascript(render partial='orders/stripe_checkout_form', product: @product, currency: 'usd', money: @product.money) %>");
+$("#product-<%= @product.id %> .stripe_checkout_buttons button:last").replaceWith("<%= escape_javascript(render partial='orders/stripe_checkout_form', product: @product, currency: 'eur', money: @product.euro_money) %>");
+
+$("#product-<%= @product.id %> .input-group-addon i").hide();
+
+<%if @code_is_valid %>
+  $("#product-<%= @product.id %> .input-group-addon")
+    .addClass('glyphicon glyphicon-ok');
+<% else %>
+  $("#product-<%= @product.id %> .input-group-addon")
+    .addClass('glyphicon glyphicon-remove');
+<% end %>

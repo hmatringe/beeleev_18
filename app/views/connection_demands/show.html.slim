@@ -1,0 +1,24 @@
+= form_for @resource do |f|
+  .modal-header
+    button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+    h4.modal-title
+      | Connection Demand from&nbsp;
+      span= @resource.user1_name
+
+  .modal-body
+    = simple_format @resource.description
+
+    .form-group
+      = f.text_area :reject_description,
+          rows: 5,
+          class: "form-control connection-reject-description",
+          placeholder: "Please describe why you reject this connection",
+          style: "display: none;"
+
+  - unless @resource.live?
+    .modal-footer
+      button.btn.btn-danger.connection-reject-link type="submit" name="commit" value="user2_reject"
+        span Reject
+
+      button.btn.btn-primary.connection-accept-link type="submit" name="commit" value="user2_accept"
+        span Accept

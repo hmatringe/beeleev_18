@@ -1,0 +1,51 @@
+
+.bloc{
+  margin: 35px 0 0 0;
+  text-align: center;
+
+  .ligne-centre{
+    height: 1px;
+    width: 100%;
+    background-color: #ddd; //$orange;
+  }
+
+  .contenant-titre{
+    width: 260px;
+    margin: -10px auto 0 auto;
+
+    h3 {
+      text-align: center;
+      background-color: #fff;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}
+
+
+
+//--------------- bloc sans margin top -----------------------
+
+
+.bloc2{
+  margin: 40px 0 0 0;
+  text-align: center;
+
+  .ligne-centre{
+    height: 1px;
+    width: 100%;
+    background-color: #ddd;
+  }
+
+  .contenant-titre{
+    width: 260px;
+    margin: -10px auto 0 auto;
+
+    h3 {
+      text-align: center;
+      background-color: #fff;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}

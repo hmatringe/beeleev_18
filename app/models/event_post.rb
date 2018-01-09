@@ -1,0 +1,3 @@
+class EventPost < Post
+
+end

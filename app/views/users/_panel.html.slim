@@ -1,0 +1,26 @@
+.panel.panel-default
+  .panel-body style="height: 114px; overflow: hidden;"
+    .row
+      .col-xs-3
+        div style="width: 80px; height: 80px;"
+          = link_to user do
+            = image_tag user.avatar.url(:panel)
+
+      .col-xs-5
+        strong
+          = link_to user.name, user
+        br
+        = user.position || "&nbsp;".html_safe
+        br
+        = user.company || "&nbsp;".html_safe
+      .col-xs-4.text-right
+        = user.profil
+        br
+        = user.country
+  .panel-footer.clearfix
+    .pull-right
+      .row
+        .col-sm-12
+          => link_to "Profile", user, class: "btn btn-xs btn-info"
+          => user_connect_btn(user) if actions.include?(:connect)
+          => user_mailto_btn(user) if actions.include?(:mailto)

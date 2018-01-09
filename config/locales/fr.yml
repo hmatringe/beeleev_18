@@ -1,0 +1,40 @@
+fr:
+  sign_up: "Inscription"
+  log_in: "Connexion"
+  log_in_with: "Connexion avec"
+  log_out: "Déconnexion"
+  my_network: "Mon réseau"
+  my_profile: "Mon profil"
+  save: "Enregistrer"
+  profile_updated: "Votre profil a été mis à jour"
+  sign_up_with: "Inscription avec"
+  sign_up_with_linkedin: "Inscription avec LinkedIn"
+  sign_up_with_email: "Inscription avec votre adresse email"
+  or: "ou"
+  network: "Beeleevers"
+  my_network: "Mon Réseau"
+  activity: "Activité"
+  connect: "Se connecter"
+  activation_pending_message: "Vous serez rapidement informé de l'activation de votre compte Beeleev"
+  pending_connection_demands: "Demandes de connection en attente"
+  pending_connection_propositions: "Propositions de connection en attente"
+  connection_requests: "Connection requests (fr)"
+  send_mail: "Envoyer un email"
+  contact_infos: "Informations de contact"
+  become_a_beeleever: "Devenez un Beeleever"
+
+  activerecord:
+    attributes:
+      user:
+        first_name: "Prénom"
+        last_name: "Nom de famille"
+        company: "Votre entreprise"
+        position: "Poste occupé"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation"
+        remember_me: "Se souvenir de moi"
+
+      connection_request:
+        subject: "Sujet"
+        countries: "Pays ciblés"
+        activity_sector: "Secteur d'activité"

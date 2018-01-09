@@ -1,0 +1,42 @@
+.container
+  h1.text-center Edit Profile
+  br
+
+  - if @user.activation_pending?
+    .alert.alert-warning role="alert"
+        | Hi #{@user.first_name}. Your application is being reviewed by our team.
+        br
+        | You will soon receive an email to inform you of your account activation.
+        br
+        br
+        '
+
+          In the mean time, please fill in as much information as possible <u>in
+          english</u> to prepare your
+
+        a href=user_path(@user) public profile
+
+  = form_for @user, url: account_path do |f|
+    .panel.panel-info
+
+      .panel-heading
+        .panel-title Public Information
+
+      .panel-body
+        = render "public_tab_pane_content", f: f
+
+    .panel.panel-info
+
+      .panel-heading
+        .panel-title
+          |
+          
+            Private Information (for the sole use of Beeleev’s staff - not shared
+            with any third party)
+
+      .panel-body
+        = render "private_tab_pane_content", f: f
+
+    = f.submit "Update profile", class: "btn btn-primary"
+
+  br

@@ -1,0 +1,25 @@
+<div class="home-slideshow-item-title tk-proxima-nova-black">
+  We connect, you grow.
+</div>
+
+<div class="home-slideshow-item-desc tk-proxima-nova-bold hidden-xs">
+  The global platform of entrepreneurs for international growth.
+  <br>
+  Your future awaits here.
+</div>
+
+<br>
+
+<a href="#video"
+   class="smoothscroll btn btn-white">
+   SEE HOW IT WORKS
+</a>
+
+<% unless user_signed_in? %>
+  <a href="<%= new_user_registration_path %>"
+     class="btn btn-white"
+     data-toggle="modal"
+     data-target="#ajaxSmallModal">
+       APPLY NOW
+  </a>
+<% end %>

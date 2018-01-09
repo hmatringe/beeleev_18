@@ -1,0 +1,22 @@
+.fond-beeleevers {
+  background-image: asset-url('homepage/beeleevers/fond-beeleevers6.jpg');
+  background-repeat:no-repeat;
+  background-position: 50% 50%;
+  margin-top: 0px;
+}
+
+
+.degrade-gris {
+  @include gradient-vertical(#d4d4d4, #fff);
+}
+
+
+.fleche-b {
+  text-align: center;
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+

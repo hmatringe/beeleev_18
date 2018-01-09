@@ -1,0 +1,99 @@
+- content_for :javascripts do
+  = render "shared/linkedin"
+
+coffee:
+  $('#user_country').select2
+    minimumInputLength: 3
+
+.modal-header
+  button.close type="button" data-dismiss="modal" aria-hidden="true"
+    == "&times;"
+  h4.modal-title= t("become_a_beeleever")
+
+.modal-body
+
+  = link_to user_omniauth_authorize_path(:linkedin), class: "btn btn-primary btn-block" do
+    => t("sign_up_with")
+    = image_tag "LinkedIn-Logo-2C.png", size: "83x20"
+
+  hr
+
+  span.btn.btn-info.btn-block.toggle-sign-up-with-email
+    = t('sign_up_with_email')
+
+  section#sign_up_with_email
+    .row
+      .col-md-12
+        = form_for resource, as: resource_name, url: user_registration_path(resource) do |f|
+
+          .form-group.has-feedback
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-user
+              = f.text_field :first_name, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:first_name),
+                required: true
+
+          .form-group
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-user
+              = f.text_field :last_name, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:last_name),
+                required: true
+
+          .form-group
+            .input-group
+              span.input-group-addon @
+              = f.email_field :email, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:email),
+                required: true
+
+          .form-group
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-globe
+              = f.country_select :country, [],
+                {prompt: f.object.class.human_attribute_name(:country)},
+                class: "form-control",
+                required: true
+
+          .form-group
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-home
+              = f.text_field :company, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:company),
+                required: true
+
+          .form-group
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-home
+              = f.text_field :position, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:position),
+                required: true
+
+          .form-group
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-lock
+              = f.password_field :password, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:password),
+                required: true
+            span.help-block 6 characters minimum
+
+          .form-group
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-lock
+              = f.password_field :password_confirmation, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:password_confirmation),
+                required: true
+
+          = f.submit "Sign up", class: "btn btn-info btn-block"
+
+.modal-footer
+  .text-left
+    | Already a member ?
+    =< link_to t("log_in"), new_user_session_path, data: {toggle: "reopen-modal"}

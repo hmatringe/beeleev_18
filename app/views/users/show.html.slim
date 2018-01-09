@@ -1,0 +1,4 @@
+.container
+  = render "users/profile_top_panel"
+  = render "users/profile_services_panel" if @user.description.present?
+  = render "users/profile_business_panel"

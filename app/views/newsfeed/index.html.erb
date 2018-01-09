@@ -1,0 +1,63 @@
+<%= cloudinary_js_config %>
+
+<div class="newsfeed">
+  <h1>Newsfeed</h1>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-md-10 col-md-offset-1">
+        <% if can? :create, BeeleeverPost %>
+          <div class="text-center">
+            <button type="button" name="button" class="btn btn-primary" id="show-new-beeleever-post">
+              Share a news with the community
+            </button>
+
+          </div>
+
+          <%= form_for @new_post, remote: true do |f| %>
+            <div class="form-group">
+              <%= f.text_area :body, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <label for="">Share a photo</label>
+              <%= cl_image_upload_tag("beeleever_post[illustration]", :crop => :limit, :width => 1000,
+                          :html => {:class => "image_upload"}) %>
+            </div>
+
+            <div class="preview">
+              <div class="progress">
+                <div class="progress-bar progress-bar-info active" role="progressbar" style="width: 0%">
+                </div>
+              </div>
+              <img src="" height="80" alt="" />
+            </div>
+
+            <% if can? :share, 'Video' %>
+              <div class="form-group">
+                <label for="">Share a video</label>
+                <%= f.text_area :embedded_video_tag, class: 'form-control' %>
+              </div>
+            <% end %>
+
+            <div class="form-group">
+              <%= f.submit 'Post', class: "btn btn-info", disabled: true, id: "" %>
+              <a href="#" id="cancel-new-beeleever-post">cancel</a>
+              &nbsp;
+              <i id="beeleever-post-saving-spinner" class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+            </div>
+          <% end %>
+        <% end %>
+
+        <div id="beeleever-posts">
+          <%= render partial: @posts %>
+        </div>
+
+        <div class="text-center beeleever-post-pagination-spinner-wrapper">
+          <i id="beeleever-post-pagination-spinner" class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

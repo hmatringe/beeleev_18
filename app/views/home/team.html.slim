@@ -1,0 +1,74 @@
+br
+
+.container
+  .row#aboutus
+    .col-md-12
+      .bloc
+        .ligne-centre
+        .contenant-titre
+          h3 Vision Statement
+
+      h2
+        |
+
+          Building a best-in-class collaborative business platform in every
+          country, focused on
+          
+      ul class='text-center' style="list-style-position: inside; color: #999; font-size: 19px;"
+        li assisting SMEs’ CEOs & Founders grow internationally, thus
+        li contributing to richer innovation, and
+        li global GDP growth, while
+        li embracing cultural diversity to enhance best practices
+
+      .bloc
+        .ligne-centre
+        .contenant-titre
+          h3 Mission Statement
+
+      h2
+        |
+
+          Together Beeleevers collaborate through their:
+
+      ul class='text-center' style="list-style-position: inside; color: #999; font-size: 19px;"
+        li common desire to grow internationally
+        li respective understanding of their domestic market
+        li commitment to their peer entrepreneurs - beyond borders.
+
+br
+
+  .row
+    .col-md-2.col-md-offset-5
+      .lien-apply
+        a href="mailto:team@beeleev.com"
+          .apply-btn
+            span Contact us
+
+
+#team
+  .container.team
+    .row.members.hugues
+      .col-sm-4
+        = render "home/team/hugues"
+      .col-sm-4
+        = render "home/team/pascal"
+      .col-sm-4
+        = render "home/team/sabrina"
+
+    .row.members
+      .col-sm-3
+        = render "home/team/hicham"
+      .col-sm-3
+        = render "home/team/rasmus"
+      .col-sm-3
+        = render "home/team/tom"
+      .col-sm-3
+        = render "home/team/arnaud"
+
+    .row.members
+      .col-sm-3
+        = render "home/team/laurent"
+      .col-sm-3
+        = render "home/team/jean_michel"
+      .col-sm-3
+        = render "home/team/wandrille"

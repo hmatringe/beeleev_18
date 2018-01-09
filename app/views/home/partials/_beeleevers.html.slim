@@ -1,0 +1,54 @@
+/ See CSS class .below-navbar-fixed-top-anchor to understand why we need this
+/ empty div
+#beeleevers.below-navbar-fixed-top-anchor
+
+.container
+  .row
+    .col-md-12
+      .bloc
+        .ligne-centre
+        .contenant-titre
+          h3 who are the beeleevers
+      h2
+        ' Beeleevers are carefully screened CEOs and co-founders who share an international vision and mindset empowered by our
+        a.lien-partner href="/partners" Partners
+
+
+#cartedumonde
+  .container
+    .row
+      .col-xs-6.col-sm-3.col-md-2.col-md-offset-2
+        p.chiffre= ceil_to(@beeleevers, 50)
+        p.definition-chiffre Beeleevers
+      .col-xs-6.col-sm-3.col-md-2
+        p.chiffre= @countries
+        p.definition-chiffre countries
+      .col-xs-6.col-sm-3.col-md-2
+        p.chiffre= @nationalities
+        p.definition-chiffre nationalities
+      .col-xs-6.col-sm-3.col-md-2
+        p.chiffre 5
+        a href="/team"
+          p.definition-chiffre-lien offices
+          p.villes
+            span Paris - New York
+            br
+            span OMAHA, NE – Montreal
+            br
+            span Copenhaguen
+            
+      .col-md-1
+
+  .container-fluid.cdm
+    .row
+      .col-md-12
+        .lien-apply2
+
+          - unless user_signed_in?
+            a href=new_user_registration_path data-toggle="modal" data-target="#ajaxSmallModal"
+              .apply-btn
+                p Apply
+          - else
+            a href=network_path
+              .apply-btn
+                p Beeleevers' space

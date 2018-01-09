@@ -1,0 +1,13 @@
+.col-md-4
+  .text-partner
+    a href=partner.url target="_blank"
+      = cl_image_tag partner.image.full_public_id,
+                     width: 150,
+                     height: 150,
+                     crop: :lpad,
+                     gravity: :center,
+                     fetch_format: :auto,
+                     class: 'img-responsive, center-block'
+                     
+    / h4.sous-titre-partner= partner.title
+    / p.text-justify = auto_link(partner.body)

@@ -1,0 +1,65 @@
+/ See CSS class .below-navbar-fixed-top-anchor to understand why we need this
+/ empty div
+#benefits.below-navbar-fixed-top-anchor
+
+.container
+  .row
+    .col-md-12
+      .bloc
+        .ligne-centre
+        .contenant-titre
+          h3 Offer
+
+      h2
+        | We create business opportunities,
+        br we empower international growth, you get...
+
+  .row
+    .col-md-4
+      .service
+        .service-picto
+          = cl_image_tag "homepage/benefits/icone-digital", class: 'img-responsive', width: 100, crop: "scale", fetch_format: 'auto'
+        h2.darker A Digital Platform
+        = cl_image_tag "homepage/benefits/fleche-bas", class: 'img-responsive', width: 100, crop: "scale", fetch_format: 'auto'
+        p style="color: #ccc;" Private access to our web platform and CEOs directory
+      .benefits
+        .fleche-bnf
+          = cl_image_tag "homepage/benefits/fleche-bnf", class: 'img-responsive', width: 80, crop: "scale", fetch_format: 'auto'
+        p Create and manage your profile and network
+        p Get pre-qualified connection as your next business partner, investor, distributor or customer
+        p.final Request online connection suggestions from our community agents regarding any specific business needs
+      .result
+        = cl_image_tag "homepage/benefits/macaron-business", class: 'img-responsive', width: 150, crop: "scale", fetch_format: 'auto'
+
+
+    .col-md-4
+      .service
+        .service-picto
+          = cl_image_tag "homepage/benefits/icone-support", class: 'img-responsive', width: 100, crop: "scale", fetch_format: 'auto'
+        h2.darker Dedicated Support
+        = cl_image_tag "homepage/benefits/fleche-bas", class: 'img-responsive', width: 100, crop: "scale", fetch_format: 'auto'
+        p style="color: #ccc;" Contact our community agents by phone or online any time you need assistance
+      .benefits
+        .fleche-bnf
+          = cl_image_tag "homepage/benefits/fleche-bnf", class: 'img-responsive', width: 80, crop: "scale", fetch_format: 'auto'
+        p Community agents approve every connection to ensure their quality
+        p They provide tailored suggestions within the Beeleev community
+        p.final They guarantee confidential assistance
+      .result
+        = cl_image_tag "homepage/benefits/macaron-local", class: 'img-responsive', width: 150, crop: "scale", fetch_format: 'auto'
+
+    .col-md-4
+      .service
+        .service-picto
+          = cl_image_tag "homepage/benefits/icone-visibility", class: 'img-responsive', width: 100, crop: "scale", fetch_format: 'auto'
+        h2.darker Events
+        = cl_image_tag "homepage/benefits/fleche-bas", class: 'img-responsive', width: 100, crop: "scale", fetch_format: 'auto'
+        p style="color: #ccc;" Exclusive access to our invitation-only events around the world
+      .benefits
+        .fleche-bnf
+          = cl_image_tag "homepage/benefits/fleche-bnf", class: 'img-responsive', width: 80, crop: "scale", fetch_format: 'auto'
+        p Business networking events and cocktails with high-level speakers
+        p Theme-based round-tables with renowned experts and labeled partners
+        p.final Entrepreneurial expeditions from 2 to 5 days' “Go to market” journeys in major business cities
+      .result
+        = cl_image_tag "homepage/benefits/macaron-visibility", class: 'img-responsive', width: 150, crop: "scale", fetch_format: 'auto'

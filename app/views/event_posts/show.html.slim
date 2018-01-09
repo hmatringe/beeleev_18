@@ -1,0 +1,27 @@
+- content_for :body_class, "textured"
+
+br
+br
+
+.container.news-form
+
+  .row
+    .col-md-12
+        .surtitre-date
+          .ligne-centre
+          .contenant-titre
+            h3= l @post.publication_date, format: "%B %Y"
+
+  .row  
+    .col-md-6
+      img.img-responsive src=@post.illustration.url
+  
+    .col-md-6
+      h2= @post.title
+      h2.suite= @post.subtitle.html_safe
+  
+      p= @post.body.html_safe
+
+  .row
+    .col-md-12
+      p= @post.detailed_body.html_safe

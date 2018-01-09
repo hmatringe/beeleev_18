@@ -1,0 +1,73 @@
+.container
+  .row
+    .col-md-12
+      .bloc
+        .ligne-centre
+        .contenant-titre
+          h3 Apply
+      h2
+        | Want to become a Beeleever?
+        br
+        | We carefully review every application
+
+  .row
+    .col-xs-6.col-md-2.col-md-offset-1
+      .beeleever-example
+        = cl_image_tag "homepage/apply/1", class: 'img-responsive', width: 165, crop: "scale", radius: 'max', fetch_format: 'auto'
+        span Nathan Watson
+        br
+        a href="http://canworksmart.com/" target="_blank" CanWorkSmart
+        h5 USA
+
+    .col-xs-6.col-md-2
+      .beeleever-example
+        = cl_image_tag "homepage/apply/2", class: 'img-responsive', width: 165, crop: "scale", radius: 'max', fetch_format: 'auto'
+        span Mikael Aubertin
+        br
+        a href="http://www.goodgout.fr/" target="_blank" Good Gout
+        h5 France
+
+    .col-xs-6.col-md-2
+      .beeleever-example
+        = cl_image_tag "homepage/apply/3", class: 'img-responsive', width: 165, crop: "scale", radius: 'max', fetch_format: 'auto'
+        span Gabriela Mejia
+        br
+        a href="http://www.geniosenlinea.co/" target="_blank" Genios en Linea
+        h5 Mexico
+
+    .col-xs-6.col-md-2
+      .beeleever-example
+        = cl_image_tag "homepage/apply/4", class: 'img-responsive', width: 165, crop: "scale", radius: 'max', fetch_format: 'auto'
+        span Marco Macari
+        br
+        a href="http://www.ittweb.net/" target="_blank" ITTWeb
+        h5 Italy
+
+    .col-xs-6.col-md-2.hidden-xs
+      .beeleever-example
+        = cl_image_tag "homepage/apply/5", class: 'img-responsive', width: 165, crop: "scale", radius: 'max', fetch_format: 'auto'
+        span Joao Muccioli
+        br
+        a href="http://www.sushi-itto.com.mx/" target="_blank" Grupo Much
+        h5 Nicaragua
+
+  br
+
+  .row
+    .col-xs-offset-3.col-xs-6.col-md-2.col-md-offset-5
+      .lien-apply
+
+        - unless user_signed_in?
+          a href=new_user_registration_path data-toggle="modal" data-target="#ajaxSmallModal"
+            .apply-btn
+              span
+                | Apply as an
+                br
+                | Entrepreneur
+        - else
+          a href=network_path
+            .apply-btn
+              span Beeleevers' space
+
+
+      h5.text-center style="margin-top: 10px;" CEOs, Co-founders

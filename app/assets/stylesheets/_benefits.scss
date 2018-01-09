@@ -1,0 +1,108 @@
+
+
+.service {
+  text-align: center;
+  margin-top: 10px;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .service {
+    p {
+      min-height: 66px;
+    }
+  }
+}
+
+.service-picto {
+  // on phones only
+  display: none;
+}
+
+@media (min-width: $screen-sm-min) {
+  .service-picto {
+    display: block;
+  }
+}
+
+.benefits {
+
+  // on phones only
+  display: none;
+
+  margin-top: 30px;
+  min-height: 320px;
+
+  @include gradient-vertical($grey, white);
+
+  .fleche-bnf {
+      margin-top: 0px;
+      margin-bottom: 10px;
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+  }
+
+  p {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 2px dotted #ccc;
+  }
+
+  p.final {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: inherit;
+  }
+
+}
+
+@media (min-width: $screen-sm-min) {
+  .benefits {
+    display: block;
+  }
+}
+
+
+.result {
+  margin-top: $gutter;
+  text-align: center;
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn {
+    @include gradient-vertical($bleu, $bleu-fonce);
+  }
+}
+
+
+
+

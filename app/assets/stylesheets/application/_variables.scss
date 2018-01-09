@@ -1,0 +1,20 @@
+// Brand colors
+$brand-primary: $bleu-fonce;
+$brand-info: $light-blue;
+$brand-success: $orange;
+$brand-warning: $pink;
+$brand-danger: darken(#d9534f, 10%);
+
+// Navbar
+$navbar-height: 60px;
+$navbar-default-link-color: #fff;
+$navbar-default-link-hover-color: white;
+$navbar-default-bg: $brand-primary;
+$navbar-default-brand-hover-color: white !default;
+
+$badge-bg: $brand-info;
+
+$state-success-text: white;
+$state-success-bg: $brand-success;
+
+$nav-tabs-active-link-hover-border-color: white;

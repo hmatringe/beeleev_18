@@ -1,0 +1,54 @@
+/ See CSS class .below-navbar-fixed-top-anchor to understand why we need this
+/ empty div
+#testimonials.below-navbar-fixed-top-anchor
+
+.container
+
+  .row
+    .col-md-12
+      .bloc
+        .ligne-centre
+        .contenant-titre
+          h3 Testimonials
+      h2
+        |
+          Beeleevers are part of a trusted and high-level community of
+          successful entrepreneurs building personal and mutually
+          beneficial connections for...
+
+  #carousel-testimonies.carousel.slide data-ride="carousel"
+    ol.carousel-indicators
+      li.active data-target="#carousel-testimonies" data-slide-to="0"
+      li data-target="#carousel-testimonies" data-slide-to="1"
+      li data-target="#carousel-testimonies" data-slide-to="2"
+      li data-target="#carousel-testimonies" data-slide-to="3"
+      li data-target="#carousel-testimonies" data-slide-to="4"
+      li data-target="#carousel-testimonies" data-slide-to="5"
+      li data-target="#carousel-testimonies" data-slide-to="6"
+      li data-target="#carousel-testimonies" data-slide-to="7"
+      li data-target="#carousel-testimonies" data-slide-to="8"
+
+    .carousel-inner
+      = render "home/testimonials/jehan_de_castet"
+      = render "home/testimonials/charles_dunston"
+      = render "home/testimonials/perrine_bismuth"
+      = render "home/testimonials/senior_compagnie"
+      = render "home/testimonials/netino"
+      = render "home/testimonials/frederic_mazzella"
+      = render "home/testimonials/tim_kunde"
+      = render "home/testimonials/marshall_sterio"
+      = render "home/testimonials/charles_wanecq"
+
+    a.left.carousel-control{
+      href="#carousel-testimonies"
+      role="button"
+      data-slide="prev"
+    }
+      span.glyphicon.glyphicon-chevron-left
+
+    a.right.carousel-control{
+      href="#carousel-testimonies"
+      role="button"
+      data-slide="next"
+    }
+      span.glyphicon.glyphicon-chevron-right

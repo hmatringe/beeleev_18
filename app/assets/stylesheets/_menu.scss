@@ -1,0 +1,142 @@
+#sign_up_with_email {
+  display: none;
+}
+
+#sign_up_with_email, #log_in_with_email {
+
+  .form-group {
+    position: relative;
+
+    span.form-control-feedback {
+      opacity: 0.5;
+      top: 0px;
+    }
+
+  }
+}
+
+.navbar-default .navbar-nav > li {
+
+  a {color: #555;}
+
+  .btn-default.active {
+    background-color: inherit;
+    @include box-shadow(none);
+    color: $orange;
+  }
+}
+
+body.cookiebanner .lemenu {
+  top: 28px;
+}
+
+.lemenu {
+  background-color: white;
+  border: none;
+  border-radius: 0px;
+  margin: 0px;
+  padding: 10px;
+
+  .navbar-nav {
+    li {
+      a {
+        padding: 10px;
+      }
+    }
+
+  }
+
+  .navbar-brand {
+    position: relative;
+    top: -7px;
+  }
+
+  .btn.btn-default {
+    border: $bleu-fonce;
+    margin-left: 6px;
+    margin-right: 6px;
+    &:hover{
+      background-color: $bleu;
+      color: #fff;
+    }
+    &:focus{
+      background-color: #fff;
+    }
+  }
+
+
+  .btn.btn-default2 {
+    //color: $orange;
+    border: 1px solid $orange;
+    color: $orange;
+    //background-color: white;
+    margin-right: 4px;
+    margin-left: 4px;
+    &:hover{
+      color: #fff;
+      background-color: $orange; //$bleu-clair;
+    }
+    &:focus{
+      background-color: $bleu;
+    }
+
+  }
+
+  a {
+    //padding-top: 7px;
+    text-transform: uppercase;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+
+  .dropdown-menu {
+    width: 100%;
+    .simple-lien {
+      text-transform: none;
+      letter-spacing: 1px;
+    }
+  }
+
+}
+
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-sm-min) and (orientation: portrait) {
+  .logo img {
+    width: 88px;
+  }
+}
+
+
+@media(max-width:767px) {
+
+
+  .lemenu {
+    .btn.btn-default2 {
+      border: 1px solid $bleu-clair;
+      margin: 5px;
+
+      &:hover{
+        color: #fff;
+        background-color: $bleu-clair;
+      }
+      &:focus{
+        background-color: $bleu;
+      }
+    }
+  }
+
+}
+
+// This class must be used on anchors before blocks that we don't want to
+// be hidden by the navbar-fixed-top
+.below-navbar-fixed-top-anchor {
+  position: relative; top: -62px;
+}

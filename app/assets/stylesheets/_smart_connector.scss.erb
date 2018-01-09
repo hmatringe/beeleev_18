@@ -1,0 +1,88 @@
+$orange-pink: #E42739;
+
+#smart-connector {
+
+  #main-row {
+    background-repeat: no-repeat;
+  }
+
+  .title, .step-title {
+    font-size: 1.5em;
+    color: $orange-pink;
+    letter-spacing: 4px;
+  }
+
+  .step-wrapper {
+
+    .step-title {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .step-desc {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  #smart-connector {
+    .step-wrapper {
+      padding-left: 75px;
+      background: url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/red-arrow", width: 21, height: 17, crop: :fill %>') no-repeat 12% 7%;
+
+      .step-title {
+        text-align: left;
+      }
+
+      .step-desc {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1111px) {
+  #main-row {
+    background-position: 29% 56%, 64% 56%;
+    background-image:
+      url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/gray-arrows", width: 149, height: 16, crop: :fill, gravity: :west %>'),
+      url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/gray-arrows", width: 149, height: 16, crop: :fill, gravity: :west %>');
+  }
+}
+
+@media (min-width: 1111px) and (max-width: 1140px) {
+  #main-row {
+    background-position: 27% 60%, 63% 60%;
+    background-image:
+      url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/gray-arrows", width: 181, height: 16, crop: :fill, gravity: :west %>'),
+      url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/gray-arrows", width: 181, height: 16, crop: :fill, gravity: :west %>');
+  }
+}
+
+@media (min-width: 1140px) and (max-width: 1240px) {
+  #main-row {
+    background-position: 25% 65%, 63% 65%;
+    background-image:
+      url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/gray-arrows", width: 213, height: 16, crop: :fill, gravity: :west %>'),
+      url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/gray-arrows", width: 213, height: 16, crop: :fill, gravity: :west %>');
+  }
+}
+
+@media (min-width: 1240px) and (max-width: 1390px) {
+  #main-row {
+    background-position: 24% 65%, 62% 65%;
+    background-image:
+      url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/gray-arrows", width: 245, height: 16, crop: :fill, gravity: :west %>'),
+      url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/gray-arrows", width: 245, height: 16, crop: :fill, gravity: :west %>');
+  }
+}
+
+@media (min-width: 1390px) {
+  #main-row {
+    background-position: 24% 65%, 62% 65%;
+    background-image:
+      url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/gray-arrows", width: 277, height: 16, crop: :fill, gravity: :west %>'),
+      url('<%= Cloudinary::Utils.cloudinary_url "smart-connector/gray-arrows", width: 277, height: 16, crop: :fill, gravity: :west %>');
+  }
+}

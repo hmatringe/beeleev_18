@@ -1,0 +1,93 @@
+.row
+  .col-md-4
+    .form-group
+      = f.label :avatar
+      .row
+        .col-md-3
+          = image_tag f.object.avatar.url(:panel)
+        .col-md-9
+          .input-group
+            span.input-group-addon
+              span.glyphicon.glyphicon-picture
+            = f.file_field :avatar, class: "form-control"
+    .form-group
+      = f.label :civility
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-user
+        = f.select :civility, %w(Mr. Mrs. Ms. Dr.),
+            {prompt: "Select title"}, class: "form-control"
+    .form-group
+      = f.label :first_name
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-user
+        = f.text_field :first_name, class: "form-control"
+    .form-group
+      = f.label :last_name
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-user
+        = f.text_field :last_name, class: "form-control"
+
+  .col-md-4
+    .form-group
+      = f.label :country
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-globe
+        = f.country_select :country, nil, {prompt: "Select a country"},
+            class: "form-control"
+    .form-group
+      = f.label :city
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-globe
+        = f.text_field :city, class: "form-control", placeholder: 'Select a city'
+    .form-group
+      = f.label :nationalite
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-globe
+        = f.text_field :nationalite, class: "form-control"
+    .form-group
+      = f.label :twitter_account
+      .input-group
+        span.input-group-addon
+          i.fa.fa-twitter
+        = f.text_field :twitter_account, class: "form-control"
+
+  .col-md-4
+    .form-group
+      = f.label :position
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-home
+        = f.text_field :position, class: "form-control"
+    .form-group
+      = f.label :company
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-home
+        = f.text_field :company, class: "form-control"
+    .form-group
+      = f.label :business_sectors
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-home
+        = f.select :business_sectors,
+            User::BUSINESS_SECTORS,
+            {prompt: "Select your business sectors"},
+            multiple: true,
+            class: "form-control"
+
+    .form-group
+      = f.label :website
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-home
+        = f.text_field :website, class: "form-control"
+
+.form-group
+  = f.label :description, "Services or Products description"
+  = f.text_area :description, class: "form-control", rows: 5

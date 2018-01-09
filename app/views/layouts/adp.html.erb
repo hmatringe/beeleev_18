@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Beeleev - ADP</title>
+
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="description" content="Beeleev facilitates cross-border collaboration between entrepreneurs around the world to foster their SME’s international growth.">
+
+    <%= render "shared/linkedin" %>
+    <%= stylesheet_link_tag 'adp' %>
+    <%= favicon_link_tag 'favicon-16x16.png', type: 'image/png' %>
+    <%= favicon_link_tag 'favicon-32x32.png', rel: 'apple-touch-icon', type: 'image/png' %>
+
+    <script src="https://use.typekit.net/lln5ukr.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+  </head>
+  <body>
+
+    <header class="adp__header">
+      <%= cl_image_tag 'homepage/logo-beeleev', height: 45, fetch_format: :auto, quality: 80 %>
+    </header>
+
+    <%= yield %>
+
+    <footer class="ta-center adp__footer">
+      <div class="adp__footer__title">BECOME A BEELEEVER</div>
+
+      <div class="adp__signup-buttons">
+        <%= link_to user_omniauth_authorize_path(:linkedin), class: "adp__btn adp__btn--linkedin" do %>
+          Sign up with
+          &nbsp;
+          <%= image_tag "LinkedIn-Logo-2C.png", size: "83x20" %>
+        <% end %>
+
+        <%= link_to root_path(anchor: 'apply'), class: "adp__btn adp__btn--email" do %>
+          Sign up with Email
+        <% end %>
+      </div>
+
+      <span class="adp__footer_signin">
+        Already a member?
+        <%= link_to "Log in", root_path(anchor: 'login'), class: "white" %>
+      </span>
+    </footer>
+  </body>
+</html>

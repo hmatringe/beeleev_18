@@ -1,0 +1,151 @@
+#mantra-row {
+  margin-top: 25px;
+}
+
+#smart-connector-desc {
+  position: relative;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  background-color: rgba(black, 0.3);
+  padding: 15px 15px 106px;
+  font-size: 1.5em;
+
+  #link-to-smart-connector-wrapper {
+    position: absolute;
+    left: 50%;
+    bottom: -24px;
+  }
+  a {
+    color: white;
+    position: relative;
+    top: 0px;
+    left: -50%;
+    display: inline-block;
+
+    i {
+      color: $bleu;
+      font-size: 2em;
+      transform: rotate(90deg);
+      background-color: white;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    &:hover {
+      color: $orange;
+      i {color: $orange;}
+    }
+  }
+}
+
+#mantra {
+  color: white;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "HelveticaNeue-CondensedBlack", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 30px;
+}
+
+.visuel {
+  margin-top: 62px;
+  background-image: asset-url('homepage/smart-connector-bg.jpg');
+  background-repeat:no-repeat;
+  background-position: top center;
+  height: 900px;
+  background-color: #07185C;
+
+  .container {
+    position: relative;
+  }
+}
+
+.bloc-visuel{
+  position: absolute;
+  top: 400px;
+  left: 0px;
+  text-align: center;
+
+  .contenant-baseline {
+    @include gradient-horizontal ($orange, $rouge);
+    max-width: 100%;
+    h1.baseline {
+      padding: 5px;
+      font-size: 24px;
+    }
+  }
+
+  .claim {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    h2 {
+      color: $bleu-ciel;
+      font-family: "proxima-nova",sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 25px;
+    }
+  }
+
+  .arrow-scroll {
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+//-------------------- media queries ----------------------
+
+@media (min-width: $screen-sm-min) {
+
+  .baseline2 {
+    padding: 0 350px;
+  }
+
+  #mantra-row {
+    margin-top: 75px;
+  }
+
+  #smart-connector-desc {
+    font-size: 1.2em;
+  }
+
+  #mantra {
+    font-size: 3.3em;
+  }
+
+  .visuel {
+    background-image: asset-url('homepage/smart-connector-bg.jpg');
+    height: 1100px;
+  }
+
+  .bloc-visuel{
+    .contenant-baseline {
+      h1.baseline {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media(max-width:767px) {
+
+  .bloc-visuel {
+    .claim {
+      h2 {
+        line-height: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .arrow-scroll {
+      display: none;
+    }
+
+}

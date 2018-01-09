@@ -1,0 +1,51 @@
+.item.active
+  .row.fond-testimonies-bleu
+    .col-md-12
+      .row
+        .col-md-6
+          = cl_image_tag "homepage/testimonies/3",
+              class: 'img-responsive',
+              fetch_format: 'auto',
+              width: 555,
+              crop: 'scale'
+        .col-md-5
+          .discours
+            h4 Business Development
+            p
+              |
+              
+                "The Beeleev team introduced me to Geoffroy de Becdelievre,
+                Founder of MarcoVasco, which was Fluo’s first travel agency
+                client. Fluo has greatly benefited from MarcoVasco’s ability to
+                integrate innovation which itself has seen its travel insurance
+                sales increased by 100% in the meantime."
+
+            p.person Jehan de Castet
+
+            .legende
+              h4 Jehan de Castet
+              p
+                ' Co-Fondateur et Président at
+                a.company-name href='http://www.fluo.com/' target="_blank"
+                  | Fluo
+            
+            .connection
+              h4 Connected with Geoffroy de Becdelièvre
+              p
+                ' CEO Founder of
+                a.company-name href='http://www.marcovasco.fr/' target='_blank'
+                  | Marco Vasco
+                |, based in Paris, France
+            = cl_image_tag "homepage/testimonies/geoffroy-de-becdelievre",
+                fetch_format: 'auto',
+                width: 68,
+                crop: 'scale',
+                radius: 'max'
+
+            
+            span
+              = cl_image_tag "homepage/testimonies/carte-paris",
+                  fetch_format: 'auto',
+                  width: 168,
+                  crop: 'scale'
+        .col-md-1

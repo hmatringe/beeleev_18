@@ -1,0 +1,2 @@
+# set the DATABASE_URL env var to something like
+# DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"

@@ -1,0 +1,20 @@
+- content_for :body_class, "textured"
+
+.fond-news
+  .container
+    .row#news
+      .col-md-12
+        h2.blanc Latest news from Beeleev
+
+  - @posts.each do |post|
+
+    .container.news-form id=post.id
+
+      .row
+        .col-md-12
+            .surtitre-date
+              .ligne-centre
+              .contenant-titre
+                h3= l post.publication_date, format: "%B %Y"
+
+      = post_row post, cycle(illustration_cycle_values)

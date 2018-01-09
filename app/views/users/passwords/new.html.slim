@@ -1,0 +1,23 @@
+- content_for :body_class, "textured"
+
+.container style="padding-top: 62px;"
+
+  .row
+    .col-md-offset-4.col-md-4
+
+      .panel.panel-info style="margin-top: 100px;"
+        .panel-heading
+          .panel-title Forgot your password?
+        .panel-body
+          = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+
+            .form-group
+              .input-group
+                span.input-group-addon
+                  span.glyphicon.glyphicon-lock
+
+                = f.text_field :email, class: "form-control",
+                  placeholder: f.object.class.human_attribute_name(:email),
+                  required: true
+
+            = f.submit "Send me reset password instructions", class: "btn btn-info btn-block"

@@ -1,0 +1,86 @@
+@import "variables";
+@import "common";
+@import "application/variables";
+
+@import "bootstrap";
+@import "bootstrap3-datepicker/css/datepicker";
+@import "select2/select2";
+@import "select2-bootstrap-css/compass/stylesheets/select2-bootstrap";
+@import "font-awesome";
+@import "black-tie/black-tie";
+
+@import "rating";
+@import "footer";
+@import "application/navbar";
+
+@import 'products';
+@import 'application/shop';
+@import 'application/beeleever_post';
+@import 'application/newsfeed';
+
+body {
+  background-image: asset-url('application/patterns/shattered.png');
+  background-repeat: repeat;
+
+  &.no-bg {
+    background-image: none;
+  }
+}
+
+h1 {
+  margin: 16px 0 16px;
+  color: #fff;
+  font-family: "fira-sans",sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  text-align: center;
+  font-style: italic;
+}
+
+#activity
+  .pending-connection {
+    margin-bottom: 10px;
+  }
+
+.modal-body .form-group.datepicker-wrapper {
+  // position must be set to relative because webkit browsers always return 'auto'
+  // for $(this).css('z-index') otherwize
+  // and the datepicker plugin uses this z-index value
+  //
+  // 1040 is the first value I found to have the datepicker work in a modal
+  position: relative;
+  z-index: 1040;
+}
+
+#network-search {
+
+  a, select, input, .select2-container {
+    margin-bottom: 10px;
+  }
+}
+
+.modal.modal-custom {
+  .modal-content {
+    background-color: $brand-info;
+    color: white;
+
+    .modal-header {
+      .close {
+        // color: white;
+        // opacity: 0.3;
+        // text-shadow: 0 1px 0 black;
+      }
+    }
+
+    .modal-body {
+      background-color: white;
+      color: black;
+    }
+
+    .modal-footer {
+      background-color: white;
+      border-bottom-left-radius: $border-radius-large;
+      border-bottom-right-radius: $border-radius-large;
+    }
+  }
+}

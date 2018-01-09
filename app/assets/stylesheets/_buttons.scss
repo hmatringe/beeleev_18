@@ -1,0 +1,29 @@
+.btn-white {
+  color: $bleu-fonce;
+  background-color: white;
+  border-color: $bleu-fonce;
+
+  &:focus {
+    color: $bleu-fonce;
+  }
+
+  &:hover {
+    color: $orange;
+    border-color: $orange;
+  }
+}
+
+.btn-orange {
+  color: white;
+  background-color: $orange;
+  border-color: none;
+
+  &:focus {
+    color: white;
+  }
+
+  &:hover {
+    color: white;
+    background-color: darken($orange, 10%);
+  }
+}

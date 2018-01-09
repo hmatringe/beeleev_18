@@ -1,0 +1,50 @@
+- content_for :body_class, 'no-bg'
+
+#shop
+  = render 'shop/smart_connector'
+
+  hr    
+
+.container
+  p.text-center id="activate-package" style="font-weight: bold; font-size: 1.5em;" Activate your package now
+  br
+
+  .row
+    - @products.each do |product|
+      .col-xs-12.col-sm-4{id="product-#{product.id}"}
+      
+        .panel.panel-info.product-panel
+          .panel-heading = product.title
+          .panel-body
+            = simple_format(product.description, class: 'product-description')
+
+          .panel-footer
+            p.amount= number_to_currency product.money.amount,
+                unit: product.money.currency.code
+            
+            div.coupon_code.col-sm-10.col-sm-offset-1
+              = form_for product, remote: true, method: :get do |f|              
+              
+                .input-group
+                  span.input-group-addon
+                    i.fa.fa-spinner.fa-spin
+                    
+                  = text_field_tag 'coupon_code',
+                                   nil,
+                                   placeholder: 'coupon', id: nil,
+                                   class: 'form-control'
+                  span.input-group-btn
+                    = f.submit "Check", class: 'btn btn-info btn-check-coupon'
+                
+            .stripe_checkout_buttons              
+              = render partial="orders/stripe_checkout_form",
+                       product: product,
+                       currency: 'usd',
+                       money: product.money
+                       
+              ' &nbsp;
+              
+              = render partial="orders/stripe_checkout_form",
+                       product: product,
+                       currency: 'eur',
+                       money: product.euro_money

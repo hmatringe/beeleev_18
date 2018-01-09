@@ -1,0 +1,44 @@
+.product-panel {
+  text-align: center;
+
+  .panel-body {
+    min-height: 150px;
+
+    .product-description {
+      text-align: center;
+    }
+  }
+
+  form {
+    display: inline;
+  }
+}
+
+.product-step {
+  text-align: center;
+  border-radius: 50%;
+
+  i {
+    font-size: 3em;
+    width: 100px;
+    height: 100px;
+    padding-top: 28px;
+  }
+}
+
+.product-step-picto-wrapper {
+  color: $bleu;
+  display: inline-block;
+  border: 2px dotted $bleu;
+  border-radius: 50%;
+}
+
+.product-step-step {
+  margin-top: 10px;
+  color: $bleu;
+  font-weight: bold;
+}
+
+.product-step-arrow {
+  color: $bleu;
+}

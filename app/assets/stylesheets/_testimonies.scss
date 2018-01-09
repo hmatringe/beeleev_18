@@ -1,0 +1,173 @@
+.company-name {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.discours {
+  min-height: 260px;
+  text-align: left;
+  margin-top: 10px;
+  padding: 0 20px 0 20px;
+
+  .label-default {
+    font-size: inherit;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  img {
+    display: none;
+  }
+
+  h4 {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 20px;
+  }
+
+  p {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: justify;
+
+    &.longtext {
+      font-size: 13px;
+    }
+  }
+
+  p.person {
+    display: block;
+  }
+
+
+
+  .legende {
+    display: none;
+    h4{
+      color: #fff;
+      font-size: 13px;
+      text-align: left;
+      text-transform: uppercase;
+      margin-bottom: 0px;
+      margin-top: -5px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-top: 1px solid #fff;
+      padding-top: 10px;
+    }
+    p {
+      margin-top: 3px;
+      font-size: 13px;
+      color: #fff;
+    }
+
+    a {
+      color: #fff;
+      font-size: 13px;
+      text-decoration: underline;
+    }
+  }
+
+
+  .connection {
+    display: none;
+    h4{
+      color: #fff;
+      font-size: 13px;
+      text-align: left;
+      text-transform: uppercase;
+      margin-bottom: 0px;
+      margin-top: -5px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-top: 1px solid #fff;
+      padding-top: 10px;
+    }
+    p {
+      margin-top: 3px;
+      font-size: 13px;
+      color: #fff;
+    }
+    a {
+      color: #fff;
+      font-size: 13px;
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+.fond-testimonies {
+  background-color: #c5beae;
+}
+
+.fond-testimonies-bleu {
+  background-color: #9db8df;
+}
+.fond-testimonies-gris {
+  background-color: #59595b;
+}
+
+
+//------------- media queries ------------------
+
+@media (min-width: $screen-sm-min) {
+
+  .discours {
+    min-height: 200px;
+    padding: 0 20px 0 20px;
+
+    p {
+      font-size: 17px;
+      text-align: left;
+      &.longtext {
+        font-size: 14px;
+      }
+    }
+
+    .legende {
+      display: block;
+    }
+
+    .connection {
+      display: block;
+    }
+
+    p.person {
+      display: none;
+    }
+
+    h4 {
+      text-align: left;
+      font-size: 24px;
+    }
+
+    img {
+      display: inline;
+    }
+
+  }
+
+}
+

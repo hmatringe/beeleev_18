@@ -1,0 +1,12 @@
+<div class="comment">
+  <div class="comment-avatar pull-left">
+    <%= cl_image_tag comment.author.avatar_url width: 30, crop: :fill %>
+  </div>
+
+  <div class="comment-body">
+    <%= link_to comment.author_name, comment.author %>
+    <%= comment.body %>
+  </div>
+
+  <br>
+</div>

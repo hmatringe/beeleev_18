@@ -1,0 +1,55 @@
+.footer
+  .container
+    .row
+      .col-xs-12.col-sm-6
+        .text-center.logos-fpartners
+          span
+            a href="http://www.orange.fr/" target="_blank"
+              = cl_image_tag "logos/orange.jpg"
+          span
+            a href="http://www.cms-bfl.com/Pages/default.aspx" target="_blank"
+              = cl_image_tag "logos/CMS-francis-lefebvre.png"
+          span
+            a href="http://www.photononstop.com/home.php" target="_blank"
+              = cl_image_tag 'footer/partner3'
+
+          span = cl_image_tag "footer/partner4.png"
+
+          span
+            a href="http://www.gensse-associates.com" target="_blank"
+              = cl_image_tag "footer/partner5.png"
+
+          span
+            a href="http://www.bnpparibas.com/en/onebank" target="_blank"
+              = cl_image_tag "footer/bnp.png"
+
+      .col-xs-4.col-sm-2
+        ul
+          li
+            a.smoothscroll href="/#testimonials" data-no-turbolink='true'
+              | Testimonials
+          li = link_to 'Events', events_path
+          li = link_to 'About us', team_path
+
+      .col-xs-4.col-sm-2
+        ul
+          - unless user_signed_in?
+            li
+              a href=new_user_registration_path data-toggle="modal" data-target="#ajaxSmallModal" Apply
+            li
+              a href=new_user_session_path data-toggle="modal" data-target="#ajaxSmallModal" Sign In
+          - else
+            li
+              a href=network_path
+                | Beeleevers' space
+          li
+            a href=faq_path FAQ
+
+      .col-xs-4.col-sm-2
+        ul
+          li
+            a href=gtc_path GTC
+          li
+            a href=legal_path Legal notice
+          li
+            a href="mailto:team@beeleev.com" Contact us

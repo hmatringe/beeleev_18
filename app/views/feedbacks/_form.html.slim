@@ -1,0 +1,55 @@
+= form_for @resource do |f|
+
+  .modal-header
+    button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+    h4.modal-title
+      | Feedback
+
+  .modal-body
+
+    = f.hidden_field :connection_id
+
+    .form-group
+      = f.label :contacted, "Did you have contact together"
+      = f.select :contacted, ["Yes", "No", "Scheduled"], {}, class: "form-control"
+
+    .form-group
+      b Quality of qualification
+      .clearfix
+        .rating
+          - (1..5).to_a.reverse.to_a.each do |i|
+            = f.radio_button :quality_of_qualification, i
+            = f.label :quality_of_qualification, pluralize(i, 'star'), value: i
+
+    .form-group
+      b Quality of contact
+      .clearfix
+        .rating
+          - (1..5).to_a.reverse.to_a.each do |i|
+            = f.radio_button :quality_of_contact, i
+            = f.label :quality_of_contact, pluralize(i, 'star'), value: i
+
+    .form-group
+      = f.label :prolific_contact, "Prolific contact"
+      = f.select :prolific_contact,
+          ["Yes", "No", "Maybe"],
+          {}, class: "form-control"
+
+    .form-group
+      = f.label :met, "Have you met the contact"
+      = f.select :met,
+          ["Yes", "No", "Scheduled"],
+          {}, class: "form-control"
+
+    .checkbox
+      label
+        = f.check_box :would_you_recommend
+        | I would recommend this contact
+
+    .form-group
+      = f.label :description, "Description"
+      = f.text_area :description, class: "form-control", rows: 5
+
+  .modal-footer
+    button.btn.btn-default type="button" data-dismiss="modal" Cancel
+    = f.submit "Send", class: "btn btn-primary"

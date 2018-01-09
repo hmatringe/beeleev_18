@@ -1,0 +1,45 @@
+br
+
+.container#partners
+  .row
+    .col-md-12
+      .bloc
+        .ligne-centre
+        .contenant-titre
+          h3 Our Partners
+      h2.suite
+        | Our partners are International Groups and leaders in their fields. They support our Community by :
+
+  .row
+    .col-md-4
+      p.support-points Creating strategic partnerships and business opportunities
+    .col-md-4
+      p.support-points Spreading useful content and contacts to accelerate their international and local growth
+    .col-md-4
+      p.support-points Supporting our members through exclusive promotions
+
+  .row
+    .col-md-12
+      h2.suite Apply to join and contact our partners!
+
+  .row
+    .col-md-2.col-md-offset-5
+      .lien-apply
+        a href="mailto:team@beeleev.com"
+          .apply-btn
+            span Apply Now
+
+  - @partners.each do |partners|
+    .row
+      - partners.each do |partner|
+        = render partner if partner
+        
+  .row
+    .col-md-2.col-md-offset-5
+      .lien-apply
+        a href="mailto:team@beeleev.com"
+          .apply-btn
+            span Apply Now
+        br
+
+            
