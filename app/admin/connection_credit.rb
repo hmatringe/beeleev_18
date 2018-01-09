@@ -12,9 +12,9 @@ ActiveAdmin.register ConnectionCredit do
     resultFormat: "data.first_name + ' ' + data.last_name"
   }
 
-  select2_filter :user_id, input_html: { data: {
-    select2_options: user_select2_options
-  } }
+  # select2_filter :user_id, input_html: { data: {
+  #   select2_options: user_select2_options
+  # } }
 
   index do
     column :user

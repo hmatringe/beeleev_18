@@ -19,9 +19,9 @@ ActiveAdmin.register Comment do
     resultFormat: "data.first_name + ' ' + data.last_name"
   }
 
-  select2_filter :author_id, input_html: {data: {
-    select2_options: user_select_options
-  }}
+  # select2_filter :author_id, input_html: {data: {
+  #   select2_options: user_select_options
+  # }}
 
   index do
     column :author

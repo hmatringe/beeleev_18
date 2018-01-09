@@ -42,9 +42,11 @@ gem 'money'
 gem 'eu_central_bank'
 gem 'rack-rewrite'
 
-source 'https://Tx3zEy8nojpuh8JgTqUp@gem.fury.io/crux/' do
-  gem 'activeadmin_select2' # , path: "Users/julien/Projects/active_admin_select2"
-end
+# gem 'activeadmin_select2', github: 'hmatringe/active_admin_select2'
+
+# source 'https://Tx3zEy8nojpuh8JgTqUp@gem.fury.io/crux/' do
+#   gem 'activeadmin_select2' # , path: "Users/julien/Projects/active_admin_select2"
+# end
 
 group :development do
   gem 'better_errors'

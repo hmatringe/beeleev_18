@@ -10,13 +10,13 @@ ActiveAdmin.register ConnectionDemand do
     resultFormat: "data.first_name + ' ' + data.last_name"
   }
 
-  select2_filter :user1_id, input_html: {data: {
-    select2_options: user_select2_options
-  }}
+  # select2_filter :user1_id, input_html: {data: {
+  #   select2_options: user_select2_options
+  # }}
 
-  select2_filter :user2_id, input_html: {data: {
-    select2_options: user_select2_options
-  }}
+  # select2_filter :user2_id, input_html: {data: {
+  #   select2_options: user_select2_options
+  # }}
 
 
   config.resource_class.aasm.states.each do |state|

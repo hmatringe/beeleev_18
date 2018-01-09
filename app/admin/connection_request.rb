@@ -16,9 +16,9 @@ ActiveAdmin.register ConnectionRequest do
     resultFormat: "data.first_name + ' ' + data.last_name"
   }
 
-  select2_filter :author_id, input_html: {data: {
-    select2_options: user_select2_options
-  }}
+  # select2_filter :author_id, input_html: {data: {
+  #   select2_options: user_select2_options
+  # }}
 
   filter :subject
 

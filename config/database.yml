@@ -1,2 +1,45 @@
 # set the DATABASE_URL env var to something like
 # DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+
+
+# fork > https://github.com/bartocc/active_admin_select2
+
+# Deployement
+#  
+
+# pg_restore -d beeleev_18 /Users/Baobair/code/FREE/201712\ Beeleev/from\ back\ dev/beeleev.dump
+# pg_restore -d beeleev_18_temp_development /Users/Baobair/code/FREE/201712\ Beeleev/from\ back\ dev/beeleev.dump
+# > /.zshrc
+# DATABASE_URL="postgres://Baobair@localhost/beeleev_18"
+
+# Advised by prev. dev
+# development:
+#   adapter: postgresql
+#   database: beeleev_18
+#   host: localhost
+
+
+
+# preferred setup:
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: beeleev_18_temp_development
+
+test:
+  <<: *default
+  database: beeleev_18_temp_test
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+#
+# production:
+  # database: beeleev_18_temp_production
+  # username: beeleev_18_temp
+  # password: <%= ENV['BEELEEV_18_TMP_DATABASE_PASSWORD'] %>
