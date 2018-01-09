@@ -41,6 +41,7 @@ gem 'stripe'
 gem 'money'
 gem 'eu_central_bank'
 gem 'rack-rewrite'
+gem 'figaro'
 
 # gem 'activeadmin_select2', github: 'hmatringe/active_admin_select2'
 
