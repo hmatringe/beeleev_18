@@ -46,4 +46,6 @@ Rails.application.routes.draw do
   get 'adp',      to: 'adp#show',      as: :adp
 
   root to: 'home#index'
+  get 'home_18', to: 'home#home_18'
+  get 'components', to: 'home#components'
 end

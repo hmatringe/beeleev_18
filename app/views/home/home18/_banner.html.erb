@@ -1,0 +1,52 @@
+<div id="home_banner" class="">
+	
+  <% url = cl_image_path "handshake18-1",
+  fetch_format: :auto,
+  width: 1750,
+  height: 700,
+  crop: :fill,
+  gravity: :center,
+  quality: 70 %>
+
+	<div class="slideshow_wrapper text-center" style="
+	background-image: linear-gradient(rgba(251,144,72,0.1), rgba(20,20,20,0.2), rgba(251,144,72,0.1)), url(<%= url %>);
+	background-size: cover;
+	background-repeat: none;
+	">
+		<div id="slideshow_title">	
+			<h1>
+				GROW GLOBAL WITH <span>US</span>
+			</h1>
+		</div>
+		<div id="slideshow_subtitle">
+			<h2>
+				BEELEEV IS THE FIRST ENTREPRENEUR-ONLY COMMUNITY <br>
+				DEDICATED TO THEIR INTERNATIONAL GROWTH
+			</h2>
+		</div>
+		<div class="subsubtitles">
+				<div>
+					<h3>
+						EXCHANGE & LEARN
+					</h3>
+				</div>
+				•
+				<div>
+					<h3>
+						FIND INTERNATIONAL CONTACTS
+					</h3>
+				</div>
+				•
+				<div>
+					<h3>
+						MEET IN REAL LIFE
+					</h3>
+				</div>
+		</div>
+		<!-- <div class="btn btn-warning cta_filled"> -->
+		<div class="btn btn-orange18-white">
+			APPLY NOW
+		</div>
+	<%= image_tag "down_arrow.svg", class: "down-arrow floating" %>
+	</div>
+</div>
