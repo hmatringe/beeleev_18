@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'connection_propositions/show'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  # ActiveAdmin.routes(self) #Original 
+  ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
