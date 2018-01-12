@@ -17,7 +17,9 @@
 #   adapter: postgresql
 #   database: beeleev_18
 #   host: localhost
-
+#
+# restoring from dump
+# heroku pg:backups:restore 'Dropbox_publicly_accessible_url.dump' DATABASE_URL -a staging-beeleev18
 
 
 # preferred setup:
