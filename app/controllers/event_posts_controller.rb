@@ -9,6 +9,10 @@ class EventPostsController < ApplicationController
     @posts = resource_collection.order('publication_date desc')
   end
 
+  def index_18
+    @posts = resource_collection.order('publication_date desc')
+  end
+
   def show
     @post = EventPost.find params[:id]
 
