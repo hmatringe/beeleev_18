@@ -24,6 +24,10 @@ html
     = render "layouts/ajax_modal"
     = render "layouts/ajax_small_modal"
 
-    = render "layouts/menu"
+    - if @navbar_type == "transparent"
+      = render "layouts/menu18_transparent"
+    - else
+      = render "layouts/menu18_white"
+    end
     = yield
     = render 'layouts/footer'

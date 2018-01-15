@@ -39,7 +39,7 @@ gem 'rails_autolink'
 gem 'cloudinary'
 gem 'stripe'
 gem 'money'
-gem 'eu_central_bank'
+gem 'eu_central_bank', '<= 0.5.0'
 gem 'rack-rewrite'
 gem 'figaro'
 

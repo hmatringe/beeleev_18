@@ -13,6 +13,7 @@
 #= require website/homepage
 #= require tag_analytics_cnil
 #= require social_plugins
+#= require navbar-change
 
 shouldOpenApplyModal = ->
   window.location.hash == "#apply"
@@ -52,7 +53,6 @@ $(document).on 'ready page:load', ->
     false
 
   $('#navbar-collapse-body ul.dropdown-menu li').on 'click', ->
-    console.log 'this'
     $('#navbar-collapse-body').collapse 'hide'
 
 $ ->

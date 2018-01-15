@@ -1,0 +1,48 @@
+#testimonials{
+	color: $text-grey;
+	h2{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+	  font-size: 40px;
+	  font-style: normal;
+		color: $orange;
+	  padding: 1em 0;
+	}
+	.testimonial{
+		display: flex;
+	}
+	.testimonial-img-wrapper{
+		flex: 0 0 40%;
+	}
+	.testimonial-txt-wrapper{
+		flex: 1 1 auto;
+
+	}
+	.testimonial-title {
+		text-align: left;
+		color: $text-grey;
+		font-family: 'Lato-Bold', sans-serif;
+    letter-spacing: -0.02em;
+		font-weight: 700;
+	  font-size: 2.5em;
+	  font-style: normal;
+	  margin-top: 1em;
+	}
+	.testimonial-quote{
+		text-align: left;
+		font-size: 1.4em;
+		font-style: italic;
+		line-height: 1.6em;
+		padding-top: 1em;
+		padding-bottom: 3em;
+	}
+	.testimonial-author{
+		font-size: 1.75em;
+	}
+	.testimonial-position{
+		font-size: 1.5em;
+		font-family: 'Lato-Bold', sans-serif;
+		font-weight: 700;
+
+	}
+}

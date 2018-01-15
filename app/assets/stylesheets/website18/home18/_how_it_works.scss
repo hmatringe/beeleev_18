@@ -1,0 +1,26 @@
+#how_it_works{
+	background-color: $orange;	
+	h2{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+	  font-size: 2.5em;
+	  font-style: normal;
+		color: white;
+	  padding: 1em 0;
+	}
+	i {
+		color: white;
+	}
+	.how_it_works_step {
+		color: $text-grey;
+		font-size: 1.75em;
+
+	}
+	span {
+		// color: $bleu-fonce;
+		color: rgb(0,53,226);
+	}
+	img{
+		width: 100px;
+	}
+}

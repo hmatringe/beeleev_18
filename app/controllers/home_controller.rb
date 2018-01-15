@@ -10,6 +10,18 @@ class HomeController < ApplicationController
     @nationalities = nationalities_count(active_users)
   end
 
+  def home_18
+    @navbar_type = "transparent"
+    active_users = User.active
+
+    @beeleevers    = active_users.size
+    @countries     = active_users.map(&:country).reject(&:blank?).uniq.size
+    @nationalities = nationalities_count(active_users)
+  end
+
+  def components
+  end
+
   def team
   end
 
