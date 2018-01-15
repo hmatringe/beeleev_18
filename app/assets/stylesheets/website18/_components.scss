@@ -2,7 +2,7 @@
  
 .btn-orange18-white {
 	color: $orange;
-	background-color: white;
+  background-color: white;
   border-color: $orange !important;
   font-weight: bold;
   padding: 0.75em 2em;
@@ -10,12 +10,13 @@
   font-size: 1.5em;
   box-shadow: 2px 1px 1px rgb(214,121,59);
   &:hover{
-    color: $bleu-fonce;
+    color: white;
+    background-color: $orange;
   }
 }
 .btn-orange18-orange {
-	color: white;
-	background-color: $orange;
+  color: white;
+  background-color: $orange;
   border-color: $orange !important;
   font-family: 'Lato', sans-serif;
   font-weight: bold;
@@ -24,7 +25,8 @@
   font-size: 1.5em;
   box-shadow: 2px 1px 1px rgb(214,121,59);
   &:hover{
-    color: $bleu-fonce;
+    color: $orange;
+    background-color: white;
   }
 }
 

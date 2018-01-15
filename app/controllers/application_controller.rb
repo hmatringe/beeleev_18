@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
     http_basic_authenticate_with :name => "beeleev", :password => "beeleev"
   end
 
+  @navbar_type = "white"
+
   private
 
   # def current_user; User.find 244; end
