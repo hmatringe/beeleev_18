@@ -10,7 +10,7 @@ class EventPostsController < ApplicationController
   end
 
   def index_18
-    @posts = resource_collection.order('publication_date desc')
+    @posts = resource_collection.order('publication_date desc').first(3)
   end
 
   def show

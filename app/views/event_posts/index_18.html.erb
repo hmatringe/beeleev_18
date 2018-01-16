@@ -1,0 +1,42 @@
+<div class="fond-news">
+  <div class="container">
+    <div class="row" id="news">
+      <div class="col-xs-12">
+        <h2>
+          LATEST NEWS FROM BEELEEV
+        </h2>
+      </div>
+      <% last_date = "" %>
+      <% foo = false %>
+      <% @posts.each do |post| %>
+        <% post.publication_year_month == last_date ? foo = true : foo =false %>
+        <%= render partial: "event_posts/post_row18", locals: { post: post, same_date: foo } %>
+        <% last_date = post.publication_year_month %>
+        <%# binding.pry %>
+      <% end %>
+
+    </div>
+  </div>  
+</div>
+
+
+<!-- 
+/ .fond-news
+/   .container
+/     .row#news
+/       .col-md-12
+/         h2.blanc LATEST NEWS FROM BEELEEV
+
+/   - @posts.each do |post|
+
+/     .container.news-form id=post.id
+
+/       .row
+/         .col-md-12
+/             .surtitre-date
+/               .ligne-centre
+/               .contenant-titre
+/                 h3= l post.publication_date, format: "%B %Y"
+
+/       = post_row post, cycle(illustration_cycle_values)
+ -->
