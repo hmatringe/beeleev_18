@@ -3,10 +3,13 @@
     <div class="row" id="news">
       
       <div class="col-xs-12">
+        <h1>
+          LATEST NEWS FROM BEELEEV
+        </h1>
         <h2>
-          <!-- LATEST NEWS FROM BEELEEV -->
           All the Meet Ups, Breakfast Talks, Networking Events and Learning Expeditions you missed!
         </h2>
+
       </div>
       <% last_date = "" %>
       <% same_date = false %>
@@ -19,3 +22,8 @@
     </div>
   </div>  
 </div>
+
+
+<% content_for :meta_title, "Past Events" %>
+<% content_for :meta_description, "Our latest Meet ups, Breakfast Talks, Networking Events & Learning Expeditions" %>
+<%= content_for :meta_image, cl_image_path(@posts.first.illustration.full_public_id) %>
