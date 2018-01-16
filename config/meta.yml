@@ -1,0 +1,5 @@
+# meta_product_name: "Product Name"
+meta_title: "Beeleev - Grow Global With Us"
+meta_description: "Join our Global Community of Successful Entrepreneurs and Get Support for your International Growth - Apply Today!"
+meta_image: "og_beeleev.png" # should exist in `app/assets/images/`
+twitter_account: "@beeleev_" # required for Twitter Cards

@@ -12,5 +12,8 @@ class ApplicationController < ActionController::Base
   private
 
   # def current_user; User.find 244; end
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
 
 end

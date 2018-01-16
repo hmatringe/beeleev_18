@@ -4,7 +4,6 @@
     font-weight: 400;
     font-style: normal;
     color: $gray;
-    padding: 1em 0;
     text-transform: none;
     letter-spacing: inherit;
     text-align: left;
@@ -30,10 +29,10 @@
   }
   .caption {
     font-weight: 400;
-    font-size: 40px;
+    font-size: 3em;
+    padding: 0.75em 0 0;
     font-style: normal;
     color: $orange;
-    padding: 0 0 0;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
     text-align: center;
