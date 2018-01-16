@@ -1,0 +1,43 @@
+<div class="col-xs-12">
+  <div class="news-form">
+        
+      <div class="col-xs-12">
+          <% if same_date %>
+              <hr>
+          <% else %>
+            <div class="overtitle-date">
+              <div class="lign-center">
+              </div>
+              <div class="title-wrapper">
+                <h3>
+                  <%= post.publication_year_month %>
+                </h3>
+              </div>
+            </div>
+          <% end %>
+
+      </div>
+
+
+      <div class="col-xs-12 col-sm-4 col-md-3 img_side">
+        <%#= cl_image_tag post.illustration %>
+        <%= cl_image_tag post.illustration.full_public_id,
+                     fetch_format: :auto,
+                     width: 555,
+                     crop: :fill,
+                     quality: 80,
+                     class: 'img-responsive' %>
+      </div>
+      <div class="col-xs-12 col-sm-8 col-md-9 text-side">
+        <h3>
+          <%= post.title %>
+        </h3>
+        <h3 class="subtitle">
+          <%= strip_tags post.subtitle %>
+        </h3>
+        <p>
+          <%= post.body %>
+        </p>
+      </div>
+  </div>
+</div>

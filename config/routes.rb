@@ -48,5 +48,7 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
   get 'home_18', to: 'home#home_18'
+  get 'events_18', to: 'event_posts#index_18'
+
   get 'components', to: 'home#components'
 end
