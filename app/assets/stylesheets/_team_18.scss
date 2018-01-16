@@ -2,7 +2,6 @@
   h1{
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    // font-size: 40px;
     font-style: normal;
     color: $gray;
     padding: 1em 0;
@@ -22,7 +21,6 @@
   h2{
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    // font-size: 40px;
     font-style: normal;
     color: $gray;
     text-align: left;
@@ -60,17 +58,8 @@
   .boss {
     margin: -50px 0 50px; 
   }
-  // .bigbokss {
-  //   background-color: $gray;
-  //   width: 300px;
-  //   height: 300px;
-  // }
-  // .smallbokss {
-  //   background-color: $gray;
-  //   width: 250px;
-  //   height: 250px;
-  // }
 }
+// ------------ former team page ------------
 #aboutus {
   margin-top: 40px;
 }
@@ -126,6 +115,7 @@
     order: -1;
   }
 }
+// ------------ former team page media queries------------
 @media (min-width: $screen-sm-min) {
   #team {
     background-position: center top;
@@ -139,9 +129,6 @@
   hr {
     display: inherit;
   }
-
-
-
 
 .team {
   text-align: center;
@@ -158,9 +145,6 @@
 
   }
 }
-
-
-
 
  .portrait {
     margin-top: $gutter*2;
