@@ -44,3 +44,27 @@
   width: 350px;
   border-radius: 50%;
 }
+
+.small-card {
+  width: 200px;
+}
+.large-card {
+  width: 250px;
+}
+.small-card, .large-card {
+  font-family: "lato-bold",sans-serif;
+  padding: 10px;
+  .name {
+    font-weight: 700;
+    margin: 0.5em 0 0;
+    font-size:1.3em;
+    color: $bleu-fonce;
+  }
+  .title {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size:1em;
+    color: $gray;
+
+  }
+}

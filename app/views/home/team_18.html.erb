@@ -1,0 +1,138 @@
+<div id="team_18" class="below-nav">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-12">
+        <div class="caption">About us</div>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h1>To <span class='highlight'>Grow your Business Internationally</span> is a challenge.</h1>
+        <div class="sub_header">We make Success easier for Entrepreneurs by enabling them to build their Go-to-Market online, within a Peer Community.</div>
+
+        <h2><span class='highlight'>International contacts</span> to find your future Business Partners</h2>
+        <h2>All the <span class='highlight'>Expertise</span> required to understand your target market.</h2>
+        <h2><span class='highlight'>Networking Events & Learning Expeditions</span>, to meet in real life</h2>
+        <h2>Grow further, faster, better. Join the <span class='highlight'>First Global Community of Successful Entrepreneurs!</span></h2>
+      </div>
+      <div class="col-xs-12 text-center">
+        <% if user_signed_in? %>
+          <div class="btn btn-orange18-orange">
+            COUNTRY SEARCH
+          </div>
+        <% else %>
+          <div class="btn btn-orange18-orange">
+            APPLY
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="caption">The Beeleev Team</div>
+      </div>
+      <div class="col-xs-12">
+        <div class="first-row-wrapper">
+          <div class="large-card">
+            <%=  render "home/team/pascal_18"  %>
+          </div>
+          <div class="large-card boss">
+            <%=  render "home/team/hugues_18"  %>
+          </div>
+          <div class="large-card">
+            <%=  render "home/team/sabrina_18"  %>
+          </div>
+        </div>
+        <div class="row-wrapper">
+          <div class="small-card">
+            <%=  render "home/team/hicham_18" %>
+          </div>
+          <div class="small-card">
+            <%=  render "home/team/rasmus_18" %>
+          </div>
+          <div class="small-card">
+            <%=  render "home/team/tom_18" %>
+          </div>
+          <div class="small-card">
+            <%=  render "home/team/arnaud_18" %>
+          </div>
+          <div class="small-card">
+            <%=  render "home/team/laurent_18" %>
+          </div>
+        </div>
+        <div class="last-row-wrapper">
+          <div class="small-card">
+            <%=  render "home/team/jean_michel_18" %>
+          </div>
+          <div class="small-card">
+            <%=  render "home/team/wandrille_18" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+br
+
+.container
+  .row#aboutus
+    .col-md-12
+      .bloc
+        .ligne-centre
+        .contenant-titre
+          h3 Vision Statement
+
+      h2
+        |
+
+          Building a best-in-class collaborative business platform in every
+          country, focused on
+          
+      ul class='text-center' style="list-style-position: inside; color: #999; font-size: 19px;"
+        li assisting SMEs’ CEOs & Founders grow internationally, thus
+        li contributing to richer innovation, and
+        li global GDP growth, while
+        li embracing cultural diversity to enhance best practices
+
+      .bloc
+        .ligne-centre
+        .contenant-titre
+          h3 Mission Statement
+
+      h2
+        |
+
+          Together Beeleevers collaborate through their:
+
+      ul class='text-center' style="list-style-position: inside; color: #999; font-size: 19px;"
+        li common desire to grow internationally
+        li respective understanding of their domestic market
+        li commitment to their peer entrepreneurs - beyond borders.
+
+br
+
+  .row
+    .col-md-2.col-md-offset-5
+      .lien-apply
+        a href="mailto:team@beeleev.com"
+          .apply-btn
+            span Contact us
+
+
+#team
+  .container.team
+    .row.members.hugues
+        
+
+    .row.members
+      
+        
+        
+        
+        
+        
+        = render "home/team/jean_michel"
+        = render "home/team/wandrille"
+ -->

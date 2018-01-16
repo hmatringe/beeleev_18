@@ -25,6 +25,9 @@ class HomeController < ApplicationController
   def team
   end
 
+  def team_18
+  end
+
   def partners
   end
 
