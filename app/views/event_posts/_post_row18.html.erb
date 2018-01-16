@@ -15,12 +15,9 @@
               </div>
             </div>
           <% end %>
-
       </div>
 
-
       <div class="col-xs-12 col-sm-4 col-md-3 img_side">
-        <%#= cl_image_tag post.illustration %>
         <%= cl_image_tag post.illustration.full_public_id,
                      fetch_format: :auto,
                      width: 555,
@@ -28,16 +25,18 @@
                      quality: 80,
                      class: 'img-responsive' %>
       </div>
+      
       <div class="col-xs-12 col-sm-8 col-md-9 text-side">
         <h3>
           <%= post.title %>
         </h3>
         <h3 class="subtitle">
-          <%= strip_tags post.subtitle %>
+          <%= post.subtitle.html_safe %>
         </h3>
         <p>
-          <%= post.body %>
+          <%= post.body.html_safe %>
         </p>
       </div>
+      
   </div>
 </div>
