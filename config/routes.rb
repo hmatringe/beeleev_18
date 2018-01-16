@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   resources :partners, only: [:index]
 
   get 'team',     to: 'home#team',     as: :team
+  get 'team_18',     to: 'home#team_18',     as: :team_18
   get 'pricing',  to: 'home#pricing',  as: :pricing
   get 'gtc',      to: 'home#gtc',      as: :gtc
   get 'legal',    to: 'home#legal',    as: :legal

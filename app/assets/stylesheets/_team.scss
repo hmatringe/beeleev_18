@@ -1,94 +1,94 @@
 
 
-#aboutus {
-  margin-top: 40px;
-}
+// #aboutus {
+//   margin-top: 40px;
+// }
 
 
-#team {
-  margin-top: $gutter;
-  background-image: asset-url('team/carte-team.jpg');
-  background-repeat:no-repeat;
-  background-position: 35% top;
-  background-size: 350%;
-}
+// #team {
+//   margin-top: $gutter;
+//   background-image: asset-url('team/carte-team.jpg');
+//   background-repeat:no-repeat;
+//   background-position: 35% top;
+//   background-size: 350%;
+// }
 
-.team {
+// .team {
 
-  .portrait {
-    img {
-      margin-left: auto;
-      margin-right: auto;
-      width: 80%;
-    }
-  }
+//   .portrait {
+//     img {
+//       margin-left: auto;
+//       margin-right: auto;
+//       width: 80%;
+//     }
+//   }
 
-  .members {
-    &.hugues { margin-top: 13em; }
-    margin-bottom: $gutter*2;
-  }
+//   .members {
+//     &.hugues { margin-top: 13em; }
+//     margin-bottom: $gutter*2;
+//   }
 
-  h3.name {
-    text-align: left;
-    color: $bleu;
-    font-size: 24px;
-    margin-top: 20px;
+//   h3.name {
+//     text-align: left;
+//     color: $bleu;
+//     font-size: 24px;
+//     margin-top: 20px;
 
-  }
+//   }
 
-  h4.poste {
-    text-transform: uppercase;
-    font-weight: 100;
-    text-align: left;
-    font-size: 14px;
-    height: 60px;
-  }
-}
+//   h4.poste {
+//     text-transform: uppercase;
+//     font-weight: 100;
+//     text-align: left;
+//     font-size: 14px;
+//     height: 60px;
+//   }
+// }
 
-//--------------- media queries ------------------
+// //--------------- media queries ------------------
 
-@media (min-width: $screen-sm-min) {
-  #team {
-    background-position: center top;
-    background-size: auto;
-  }
-}
+// @media (min-width: $screen-sm-min) {
+//   #team {
+//     background-position: center top;
+//     background-size: auto;
+//   }
+// }
 
-@media(max-width:980px)  {
-
-
-  hr {
-    display: inherit;
-  }
+// @media(max-width:980px)  {
 
 
-
-
-.team {
-  text-align: center;
-  .members {
-    h3.name {
-      text-align: center;
-
-    }
-
-    h4.poste {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-  }
-}
+//   hr {
+//     display: inherit;
+//   }
 
 
 
 
- .portrait {
-    margin-top: $gutter*2;
-    img {
-      max-width: 250px;
-    }
+// .team {
+//   text-align: center;
+//   .members {
+//     h3.name {
+//       text-align: center;
 
- }
+//     }
 
-}
+//     h4.poste {
+//       text-align: center;
+//       margin-bottom: 10px;
+//     }
+
+//   }
+// }
+
+
+
+
+//  .portrait {
+//     margin-top: $gutter*2;
+//     img {
+//       max-width: 250px;
+//     }
+
+//  }
+
+// }

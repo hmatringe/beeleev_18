@@ -1,0 +1,157 @@
+#team_18{
+  h1{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: $gray;
+    padding: 1em 0;
+    text-transform: none;
+    letter-spacing: inherit;
+    text-align: left;
+  }
+  .sub_header{
+    color: $gray;
+    font-family: 'Lato-light', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.5em;
+    text-transform: none;
+    padding: 0 0 1em;
+    }
+  h2{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: $gray;
+    text-align: left;
+  }
+  .highlight{
+    color: $orange;
+  }
+  .caption {
+    font-weight: 400;
+    font-size: 40px;
+    font-style: normal;
+    color: $orange;
+    padding: 0 0 0;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .first-row-wrapper {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    padding-top: 100px;
+  }
+  .row-wrapper {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .last-row-wrapper {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+  }
+  .boss {
+    margin: -50px 0 50px; 
+  }
+}
+// ------------ former team page ------------
+#aboutus {
+  margin-top: 40px;
+}
+
+
+#team {
+  margin-top: $gutter;
+  background-image: asset-url('team/carte-team.jpg');
+  background-repeat:no-repeat;
+  background-position: 35% top;
+  background-size: 350%;
+}
+
+.team {
+
+  .portrait {
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+  }
+
+  .members {
+    &.hugues { margin-top: 13em; }
+    margin-bottom: $gutter*2;
+  }
+
+  h3.name {
+    text-align: left;
+    color: $bleu;
+    font-size: 24px;
+    margin-top: 20px;
+
+  }
+
+  h4.poste {
+    text-transform: uppercase;
+    font-weight: 100;
+    text-align: left;
+    font-size: 14px;
+    height: 60px;
+  }
+}
+
+//--------------- media queries ------------------
+@media(max-width:767px) {
+  .first-row-wrapper, .row-wrapper, .last-row-wrapper{
+    flex-direction: column;
+    align-items: center;
+  }
+  .boss{
+    order: -1;
+  }
+}
+// ------------ former team page media queries------------
+@media (min-width: $screen-sm-min) {
+  #team {
+    background-position: center top;
+    background-size: auto;
+  }
+}
+
+@media(max-width:980px)  {
+
+
+  hr {
+    display: inherit;
+  }
+
+.team {
+  text-align: center;
+  .members {
+    h3.name {
+      text-align: center;
+
+    }
+
+    h4.poste {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+  }
+}
+
+ .portrait {
+    margin-top: $gutter*2;
+    img {
+      max-width: 250px;
+    }
+
+ }
+
+}
