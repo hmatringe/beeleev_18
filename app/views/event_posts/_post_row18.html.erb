@@ -19,10 +19,16 @@
       </div>
 
 
-      <div class="col-xs-12 col-sm-3 img_side">
+      <div class="col-xs-12 col-sm-4 col-md-3 img_side">
         <%#= cl_image_tag post.illustration %>
+        <%= cl_image_tag post.illustration.full_public_id,
+                     fetch_format: :auto,
+                     width: 555,
+                     crop: :fill,
+                     quality: 80,
+                     class: 'img-responsive' %>
       </div>
-      <div class="col-xs-12 col-sm-9 text-side">
+      <div class="col-xs-12 col-sm-8 col-md-9 text-side">
         <h3>
           <%= post.title %>
         </h3>
