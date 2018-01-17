@@ -1,13 +1,19 @@
 #home_world{
-	height: 95vh;
+	.height-setter{
+		height: 65vh;
+	}
+	// background-color: red;
 	h2 {
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
 		font-style: normal;
-		color: $orange;
+		color: $gray;
 	  font-size: 40px;
 	  text-align: center;
-	  padding: 1em 0;
+	  padding: 1em 0 1em;
+	  span{
+			color: $orange;
+	  }
 	}
 	h3 {
 		font-family: 'Lato', sans-serif;
@@ -28,9 +34,24 @@
 	  text-align: center;
 	}
 }
-
-.continent {
-	margin: 2em 0;
-	width: 100%;
-	height: 66vh;
+//--------------- media queries ------------------
+@media(max-width:991px) {
+	#home_world{
+		.height-setter{
+			height: unset;
+		}
+		.continent-coverage-pc{
+		  font-size: 7em;
+		}
+	}
+}
+@media(max-width:767px) {
+	#home_world{
+		.continent-coverage-pc{
+		  font-size: 4em;
+		}
+		h3 {
+			font-size: 2em;
+		}
+	}
 }

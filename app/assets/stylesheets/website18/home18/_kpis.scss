@@ -1,8 +1,5 @@
 #kpis{
 	background-color: $bg-grey;
-	display: flex;
-  justify-content: space-around;
-  height: 100%;
 	.kpis-number{
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
@@ -18,4 +15,18 @@
 	  font-size: 2em;
 	}
 
+}
+
+//--------------- media queries ------------------
+@media(max-width:767px) {
+	#kpis{
+		.kpis-number{
+	  	font-size: 3em;
+	  	padding-top: 0.5em;
+		}
+		.kpis-text{
+	  	font-size: 2em;
+	  	padding-bottom: 0.5em;
+		}
+	}
 }
