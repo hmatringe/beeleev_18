@@ -1,12 +1,14 @@
 #testimonials{
 	color: $text-grey;
+  margin-bottom: 0.5em;
 	h2{
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
 	  font-size: 2.5em;
 	  font-style: normal;
 		color: $orange;
-	  padding: 0.5em 0 0.5em;
+	  padding: 0.5em 0 0;
+	  // padding: 0;
 	}
 	.testimonial{
 		display: flex;
@@ -30,22 +32,22 @@
 		font-family: 'Lato-Bold', sans-serif;
     letter-spacing: -0.02em;
 		font-weight: 700;
-	  font-size: 2em;
+	  font-size: 1.8em;
 	  font-style: normal;
 	  margin-top: 0;
 	}
 	.testimonial-quote{
 		text-align: left;
-		font-size: 1.4em;
+		font-size: 1.2em;
 		font-style: italic;
-		line-height: 1.4em;
-		padding: 1em 0;
+		line-height: 1.2em;
+		padding: 0.5em 0;
 	}
 	.testimonial-author{
-		font-size: 1.75em;
+		font-size: 1.5em;
 	}
 	.testimonial-position{
-		font-size: 1.5em;
+		font-size: 1.3em;
 		font-family: 'Lato-Bold', sans-serif;
 		font-weight: 700;
 	}

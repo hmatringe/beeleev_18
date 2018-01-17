@@ -4,7 +4,7 @@
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
 	  font-size: 2.5em;
-	  font-style: normal;
+	  font-style: italic;
 		color: white;
 	  padding: 1em 0;
 	  text-align: unset;
@@ -15,6 +15,10 @@
 	  .cascade2{
 	  	margin-left: 14em;
 	  }
+		span {
+			font-style: normal;
+			color: rgb(0,53,226);
+		}
 	}
 	i {
 		color: white;
@@ -22,14 +26,13 @@
 	.how_it_works_step {
 		color: $text-grey;
 		font-size: 1.75em;
-
-	}
-	span {
-		// color: $bleu-fonce;
-		color: rgb(0,53,226);
+		text-align: left;
 	}
 	img{
 		width: 85px;
+	}
+	.btn-orange18-white {
+		margin: 1.3em 0 1.3em;
 	}
 }
 //--------------- media queries ------------------

@@ -1,18 +1,17 @@
 #home_world{
 	.height-setter{
-		height: 65vh;
+		height: 45vh;
 	}
-	// background-color: red;
 	h2 {
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
 		font-style: normal;
 		color: $gray;
-	  font-size: 2.5em;
+	  font-size: 1.8em;
 	  text-align: center;
-	  padding: 1em 0 1em;
 	  span{
 			color: $orange;
+	  	font-size: 2.3em;
 	  }
 	}
 	h3 {
@@ -24,6 +23,9 @@
 	  text-align: center;
 	  padding: 1em 0 0;
 	  margin-bottom: 0;
+	}
+	img {
+		padding: 0 2em;
 	}
 	.continent-coverage-pc{
 		font-family: 'Lato', sans-serif;
@@ -51,7 +53,10 @@
 		  font-size: 4em;
 		}
 		h2 {
-			font-size: 2em;
+			font-size: 1.5em;
+			span {
+				font-size: 1.4em;
+			}
 		}
 		h3 {
 			font-size: 1.7em;

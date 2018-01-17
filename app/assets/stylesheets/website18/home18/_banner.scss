@@ -21,9 +21,6 @@
     // filter: hue-rotate(90deg);
   }
 	.slideshow_inner_wrapper{
-		// display: flex;
-	 //  align-items: center;
-	 //  flex-direction: column;
 	}
 
 	#slideshow_title h1{
@@ -38,12 +35,19 @@
 		}
 	}
 	#slideshow_subtitle h2{
-		font-family: 'Lato', sans-serif;
-		font-weight: 200;
+		// font-family: 'Lato', sans-serif;
+		// font-weight: 200;
 		font-style: normal;
+		// color: white;
+		// font-size: 1.7em;
+		text-transform: uppercase;
+		// ______________________
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
 		color: white;
-		font-size: 1.7em;
-		text-transform: none;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 1.5em;
 	}
 	.subsubtitles {
 		margin-top: 3em;
