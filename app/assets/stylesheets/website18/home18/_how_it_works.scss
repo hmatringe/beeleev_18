@@ -7,6 +7,13 @@
 	  font-style: normal;
 		color: white;
 	  padding: 1em 0;
+	  text-align: unset;
+	  .cascade1{
+	  	margin-left: 11em;
+	  }
+	  .cascade2{
+	  	margin-left: 14em;
+	  }
 	}
 	i {
 		color: white;
@@ -23,4 +30,24 @@
 	img{
 		width: 100px;
 	}
+}
+//--------------- media queries ------------------
+@media(max-width:767px) {
+	#how_it_works{
+		padding: 0 1em;
+		h2{
+			text-align: center;
+			font-size: 2em;
+			.cascade1{
+		  	margin-left: 0;
+			}
+			.cascade2{
+		  	margin-left: 0;
+			}
+		}
+		.how_it_works_step {
+			font-size: 1.2em;
+    	padding: 1em 0;
+		}
+	}	
 }

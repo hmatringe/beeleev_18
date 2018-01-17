@@ -3,16 +3,22 @@
 	h2{
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
-	  font-size: 40px;
+	  font-size: 2.5em;
 	  font-style: normal;
 		color: $orange;
-	  padding: 1em 0;
+	  padding: 0.5em 0 0.5em;
 	}
 	.testimonial{
 		display: flex;
 	}
 	.testimonial-img-wrapper{
 		flex: 0 0 40%;
+	}
+	.testimonial-img-inner-wrapper{
+		display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  height: 100%;
 	}
 	.testimonial-txt-wrapper{
 		flex: 1 1 auto;
@@ -24,17 +30,16 @@
 		font-family: 'Lato-Bold', sans-serif;
     letter-spacing: -0.02em;
 		font-weight: 700;
-	  font-size: 2.5em;
+	  font-size: 2em;
 	  font-style: normal;
-	  margin-top: 1em;
+	  margin-top: 0;
 	}
 	.testimonial-quote{
 		text-align: left;
 		font-size: 1.4em;
 		font-style: italic;
-		line-height: 1.6em;
-		padding-top: 1em;
-		padding-bottom: 3em;
+		line-height: 1.4em;
+		padding: 1em 0;
 	}
 	.testimonial-author{
 		font-size: 1.75em;
@@ -43,6 +48,30 @@
 		font-size: 1.5em;
 		font-family: 'Lato-Bold', sans-serif;
 		font-weight: 700;
-
 	}
+}
+//--------------- media queries ------------------
+@media(max-width:767px) {
+	#testimonials{
+		padding: 0 1em;
+		h2{
+			font-size: 2em;
+		}
+		.testimonial-title {
+			font-size: 1.7em;
+			text-align: center;
+		}	
+		.testimonial-quote {
+			font-size: 1em;
+			text-align: justify;
+		}
+		.testimonial-author{
+			font-size: 1.25em;
+			text-align: right;
+		}
+		.testimonial-position{
+			font-size: 1.125em;
+			text-align: right;
+		}
+	}	
 }
