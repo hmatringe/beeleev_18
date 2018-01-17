@@ -57,3 +57,22 @@
     }
 	}
 }
+//--------------- media queries ------------------
+@media(max-width:767px) {
+	#home_banner{
+		.slideshow_inner_wrapper{
+			padding: 0 1em;
+		}
+		#slideshow_title h1 {
+			font-size: 3em;		
+		}
+		.subsubtitles{
+			flex-direction: column;
+			align-items: center;
+			width: unset;
+		}
+		.down-arrow{
+			width: 30vw;
+		}
+	}
+}
