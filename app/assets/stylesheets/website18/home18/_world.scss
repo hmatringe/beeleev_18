@@ -8,7 +8,7 @@
 		font-weight: 700;
 		font-style: normal;
 		color: $gray;
-	  font-size: 40px;
+	  font-size: 2.5em;
 	  text-align: center;
 	  padding: 1em 0 1em;
 	  span{
@@ -50,8 +50,11 @@
 		.continent-coverage-pc{
 		  font-size: 4em;
 		}
-		h3 {
+		h2 {
 			font-size: 2em;
+		}
+		h3 {
+			font-size: 1.7em;
 		}
 	}
 }
