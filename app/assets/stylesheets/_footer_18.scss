@@ -1,0 +1,69 @@
+//------------original footer.scss commented-------------
+@import "sticky_footer";
+
+.footer {
+  // margin-top: 20px;
+  @include gradient-vertical($bleu, $bleu-fonce);
+  padding: 20px 0 15px;
+  .lazy-centrer {
+    padding: 2em 0;
+  }
+  .logos-fpartners {
+
+    margin-bottom: 20px;
+
+    img {
+      // width: 45px;
+    }
+
+    p {
+      color: $bleu-footer;
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 3px;
+    }
+
+    span {
+      margin-top: 0;
+      margin-right: 8px;
+    }
+  }
+
+  ul {
+    padding: 0;
+    text-align: left;
+
+    li {
+      list-style: none;
+      color: $bleu-footer;
+      font-weight: 300;
+
+      a {
+        font-weight: 300;
+        line-height: 24px;
+        color: $bleu-footer;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .footer {
+    .logos-fpartners {
+      text-align: left;
+
+      p {
+        text-align: left;
+      }
+    }
+
+    ul {
+      text-align: right;
+    }
+  }
+}

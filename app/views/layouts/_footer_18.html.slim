@@ -1,0 +1,32 @@
+.footer
+  .container
+    .row.lazy-centrer
+      .col-xs-12.col-sm-6
+        .logos-footer
+          span
+            = cl_image_tag "white-logo", height: 30, id: "white-logo-footer", class: "hidden-xs" 
+
+      .col-xs-12.col-sm-6
+        ul.list-inline
+          li
+            a href=faq_path FAQ
+          li
+            a href="mailto:team@beeleev.com" Contact us
+          li
+            a href=legal_path Legal notice
+          li
+            a href=gtc_path GTC
+          / li
+          /   a.smoothscroll href="/#testimonials" data-no-turbolink='true'
+          /     | Testimonials
+          / li = link_to 'Events', events_path
+          / li = link_to 'About us', team_path
+          - unless user_signed_in?
+            li
+              a href=new_user_registration_path data-toggle="modal" data-target="#ajaxSmallModal" Apply
+            li
+              a href=new_user_session_path data-toggle="modal" data-target="#ajaxSmallModal" Sign In
+          - else
+            li
+              a href=network_path
+                | Beeleevers' space

@@ -118,14 +118,16 @@ body.cookiebanner .lemenu {
   transition: all 0.5s ease;
 }
 .lemenu18_transparent{
-  background-color: transparent;
+  // background-color: transparent;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.15), rgba(0,0,0,0));
   .navbar-nav > li a {
-    color: #555;
+    color: white;
     &:hover{
       color: $orange;
     }
   }
 }
+
 @media(max-width:767px) {
   .lemenu18_transparent{
     background-color: white;
@@ -157,9 +159,12 @@ body.cookiebanner .lemenu {
   color: white;
 }
 .scrolled_transparent {
+  background: unset;
   background-color: white;
   border-bottom: 1px solid $grey;
-  
+  .navbar-nav > li a {
+    color: #555;
+  }
   .SoMeicons i {
     color: $bleu-fonce;
   }

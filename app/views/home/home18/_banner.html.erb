@@ -1,18 +1,23 @@
 <div id="home_banner" class="">
 	
-  <% url = cl_image_path "handshake18-1",
+  <%# url = cl_image_path "handshake18-1",
   fetch_format: :auto,
   width: 1750,
   height: 700,
   crop: :fill,
   gravity: :center,
   quality: 70 %>
-
-	<div class="slideshow_wrapper text-center" style="
-	background-image: linear-gradient(rgba(251,144,72,0.1), rgba(20,20,20,0.2), rgba(251,144,72,0.1)), url(<%= url %>);
+	
+	<!-- <div class="slideshow_wrapper text-center" style="
+	background-image: linear-gradient(rgba(251,144,72,0.1), rgba(20,20,20,0.2), rgba(251,144,72,0.1)), url(<%#= url %>);
 	background-size: cover;
 	background-repeat: none;
-	">
+	"> -->
+	<div class="slideshow_wrapper text-center">
+		<video autoplay="" muted="" loop="" class="embed-responsive-item video-banner" id="autovid" width="100%">
+	    <source src="https://res.cloudinary.com/hfnojcdpy/video/upload/v1516200506/home-banner-background-video.mp4">
+	  </video>
+
 		<div class="slideshow_inner_wrapper">
 			<div id="slideshow_title">	
 				<h1>
@@ -21,11 +26,17 @@
 					<span>WITH US</span>
 				</h1>
 			</div>
+			
+			<div class="btn btn-orange18-orange">
+				APPLY NOW
+			</div>
+
 			<div id="slideshow_subtitle">
 				<h2>
 					Beeleev is the First Entrepreneur-Only Community dedicated to their International Growth
 				</h2>
 			</div>
+			
 			<div class="subsubtitles">
 					<div>
 						<h3>
@@ -45,9 +56,7 @@
 						</h3>
 					</div>
 			</div>
-			<div class="btn btn-orange18-white">
-				APPLY NOW
-			</div>
+			
 			<div class="down-arrow floating">
 				<%= show_svg 'down_arrow.svg' %>
 			</div>

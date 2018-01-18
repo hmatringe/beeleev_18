@@ -5,10 +5,9 @@
 		font-weight: 700;
 		color: $orange;
 	  font-size: 5em;
-	  padding-top: 1em;
 	}
 	.kpis-text{
-	  padding-bottom: 3em;
+	  padding-bottom: 0.5em;
 		font-family: 'Lato', sans-serif;
 		font-weight: 400;
 		color: $bleu-fonce;
@@ -22,11 +21,9 @@
 	#kpis{
 		.kpis-number{
 	  	font-size: 3em;
-	  	padding-top: 0.5em;
 		}
 		.kpis-text{
 	  	font-size: 2em;
-	  	padding-bottom: 0.5em;
 		}
 	}
 }
