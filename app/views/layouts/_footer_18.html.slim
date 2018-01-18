@@ -8,10 +8,21 @@
 
       .col-xs-12.col-sm-6
         ul.list-inline
+          - unless user_signed_in?
+            li
+              a href=new_user_registration_path data-toggle="modal" data-target="#ajaxSmallModal" Apply
+            / li
+            /   a href=new_user_session_path data-toggle="modal" data-target="#ajaxSmallModal" Sign In
+          - else
+            li
+              a href=network_path
+                | Beeleevers' space
           li
-            a href=faq_path FAQ
+            = link_to 'Blog', 'http://blog.beeleev.com/', target: '_blank'
           li
             a href="mailto:team@beeleev.com" Contact us
+          li
+            a href=faq_path FAQ
           li
             a href=legal_path Legal notice
           li
@@ -21,12 +32,3 @@
           /     | Testimonials
           / li = link_to 'Events', events_path
           / li = link_to 'About us', team_path
-          - unless user_signed_in?
-            li
-              a href=new_user_registration_path data-toggle="modal" data-target="#ajaxSmallModal" Apply
-            li
-              a href=new_user_session_path data-toggle="modal" data-target="#ajaxSmallModal" Sign In
-          - else
-            li
-              a href=network_path
-                | Beeleevers' space
