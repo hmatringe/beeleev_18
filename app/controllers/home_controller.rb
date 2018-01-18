@@ -17,6 +17,8 @@ class HomeController < ApplicationController
     @beeleevers    = active_users.size
     @countries     = active_users.map(&:country).reject(&:blank?).uniq.size
     @nationalities = nationalities_count(active_users)
+
+    @partners = Partner.order(position: :asc).first(3)
   end
 
   def components
