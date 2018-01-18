@@ -33,20 +33,20 @@
         </div>
       </div>
       
-      <% @partners.each_with_index do |partners, i| %>
+      <% @partners_categories.each do |partner_category| %>
       <div class="col-xs-12">
         <div class="overtitle-date">
           <div class="lign-center">
           </div>
           <div class="title-wrapper">
             <h3>
-              <%= @partners_categories[i] %>
+              <%= partner_category.name %>
             </h3>
           </div>
         </div>
       </div>
       <div class="col-xs-12 partners-wrapper">
-        <% partners.each do |partner|  %>
+        <% partner_category.partners.each do |partner|  %>
           <%= render partial: 'partners/partner_18', locals: { partner: partner } if partner %>
         <% end %>
       </div>

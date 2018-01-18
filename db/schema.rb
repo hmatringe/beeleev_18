@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130104755) do
+ActiveRecord::Schema.define(version: 20180118120313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -188,6 +188,12 @@ ActiveRecord::Schema.define(version: 20170130104755) do
   add_index "orders", ["product_id"], name: "index_orders_on_product_id", using: :btree
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
+  create_table "partner_categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "partners", force: true do |t|
     t.string   "url"
     t.string   "image"
@@ -196,6 +202,7 @@ ActiveRecord::Schema.define(version: 20170130104755) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "partner_category_id"
   end
 
   create_table "posts", force: true do |t|
@@ -293,5 +300,8 @@ ActiveRecord::Schema.define(version: 20170130104755) do
 
   add_index "users", ["expertises"], name: "index_users_on_expertises", using: :gin
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  Foreigner.load
+  add_foreign_key "partners", "partner_categories", name: "partners_partner_category_id_fk"
 
 end

@@ -7,8 +7,7 @@ class PartnersController < ApplicationController
   end
 
   def index_18
-    @partners = Partner.order(position: :asc).first(20).in_groups_of(5)
-    @partners_categories = %w( premium expert incubation media )
+    @partners_categories = PartnerCategory.all
   end
 
 end

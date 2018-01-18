@@ -14,6 +14,7 @@
 
 class Partner < ActiveRecord::Base
 
+  belongs_to :partner_category
   # Callbacks
   ###########
 
