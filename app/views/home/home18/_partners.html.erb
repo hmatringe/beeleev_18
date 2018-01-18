@@ -4,21 +4,19 @@
 		<h2>
 			OUR GLOBAL PARTNERS
 		</h2>
+		<% @partners.each do |partner| %>
 		<div class="col-xs-12 col-md-4">
-			<a href="#" target="_blank">
-				<%= image_tag "18/logo_adp.png", class: "partners-logo img-responsive" %>
+			<a href=<%= partner.url %> target="_blank">
+				<%= cl_image_tag partner.image.full_public_id,
+	                   width: 150,
+	                   height: 150,
+	                   crop: :lpad,
+	                   gravity: :center,
+	                   fetch_format: :auto,
+	                   class: 'img-responsive partners-logo' %>
 			</a>
 		</div>
-		<div class="col-xs-12 col-md-4">
-			<a href="#" target="_blank">
-				<%= image_tag "18/logo_adp.png", class: "partners-logo img-responsive" %>
-			</a>
-		</div>
-		<div class="col-xs-12 col-md-4">
-			<a href="#" target="_blank">
-				<%= image_tag "18/logo_adp.png", class: "partners-logo img-responsive" %>
-			</a>
-		</div>
+		<% end %>
 			
 		</div>
 	</div>

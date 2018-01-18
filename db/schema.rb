@@ -301,7 +301,4 @@ ActiveRecord::Schema.define(version: 20180118120313) do
   add_index "users", ["expertises"], name: "index_users_on_expertises", using: :gin
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  Foreigner.load
-  add_foreign_key "partners", "partner_categories", name: "partners_partner_category_id_fk"
-
 end
