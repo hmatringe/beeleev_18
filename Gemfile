@@ -42,6 +42,7 @@ gem 'money'
 gem 'eu_central_bank', '<= 0.5.0'
 gem 'rack-rewrite'
 gem 'figaro'
+gem 'annotate'
 
 # gem 'activeadmin_select2', github: 'hmatringe/active_admin_select2'
 

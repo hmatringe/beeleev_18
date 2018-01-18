@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: email_templates
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  subject    :string(255)
+#  body       :text
+#  created_at :datetime
+#  updated_at :datetime
+#  attachment :string(255)
+#
+
 class EmailTemplate < ActiveRecord::Base
 
   validates_presence_of :name, :subject

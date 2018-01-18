@@ -67,6 +67,7 @@ ActiveAdmin.register Partner do
       f.input :url
       f.input :title
       f.input :body
+      f.input :position
     end
 
     f.actions

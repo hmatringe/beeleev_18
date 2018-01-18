@@ -45,6 +45,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    annotate (2.7.2)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
@@ -315,6 +318,7 @@ PLATFORMS
 DEPENDENCIES
   aasm
   activeadmin!
+  annotate
   awesome_print
   better_errors
   binding_of_caller
