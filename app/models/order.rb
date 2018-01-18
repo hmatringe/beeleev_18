@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id               :integer          not null, primary key
+#  user_id          :integer
+#  product_id       :integer
+#  cents            :integer
+#  currency         :string(255)
+#  stripe_charge_id :string(255)
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 class Order < ActiveRecord::Base
 
   # Associations

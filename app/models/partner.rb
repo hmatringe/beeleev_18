@@ -1,5 +1,20 @@
+# == Schema Information
+#
+# Table name: partners
+#
+#  id         :integer          not null, primary key
+#  url        :string(255)
+#  image      :string(255)
+#  title      :string(255)
+#  body       :text
+#  position   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Partner < ActiveRecord::Base
 
+  belongs_to :partner_category
   # Callbacks
   ###########
 

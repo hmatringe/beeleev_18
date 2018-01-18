@@ -1,0 +1,52 @@
+//------------original partners.scss commented-------------
+#partners_18{
+  background-color: white;
+  h1{
+    font-family: 'Lato-bold', sans-serif;
+    font-weight: 400;
+    font-size: 3em;
+    font-style: normal;
+    color: $orange;
+    padding: 1em 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    text-align: center;
+  }
+  h2{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    font-style: normal;
+    color: $gray;
+    padding: 0.5em 0;
+    text-transform: normal;
+  }
+  p{
+    margin: 0 10px 10px;
+    color: #9B9B9B;
+  }
+  .partners-wrapper{
+    // display: flex;
+    // align-items: space-between;
+    // flex-wrap: nowrap;
+    // height: 100%;
+  }
+  .partner-wrapper{
+    // width: 20%;
+    // img{
+      // width: 150px;
+    // }
+  }
+
+}
+@media(max-width:767px) {
+  #partners_18{
+      h1{
+     font-size: 2em;
+    }
+  }
+  .partners-wrapper{
+    flex-direction: column;
+    justify-content: center;
+  }
+}

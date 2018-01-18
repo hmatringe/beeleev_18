@@ -31,7 +31,11 @@
     background-color: white;
   }
 }
-
+@media(max-width:767px) {
+  .btn-orange18-orange, .btn-orange18-white {
+    font-size: 1.1em;
+  }
+}
 
 .bg-behave{
   background-size: cover;
@@ -68,5 +72,39 @@
     font-size:1em;
     color: $gray;
 
+  }
+}
+// ------------ title followed by horizontal line
+.overtitle-date {
+  background-color: #fff;
+  margin: 40px 0 20px;
+  .lign-center {
+    height: 1px;
+    width: 100%;
+    background-color: #ddd;
+  }
+  .title-wrapper {
+    width: 200px;
+    margin: -0.75em auto 0 0;
+    h3 {
+      font-family: 'Lato', sans-serif;
+      text-align: left;
+      font-size: 1.5em;
+      background-color: #fff;
+      margin: 0px;
+      padding: 0px;
+      color: #fb9048;
+    }
+  }
+}
+@media(max-width:767px) {
+  .overtitle-date {
+    .title-wrapper {
+      width: 110px;
+      h3 {
+        font-size: 1.1em;
+        
+      }
+    }
   }
 }

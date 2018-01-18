@@ -34,22 +34,23 @@ Rails.application.routes.draw do
   get 'shop', to: 'shop#show'
   get 'network',  to: 'networks#show', as: 'user_root'
   resources :event_posts, path: 'news', only: [:index, :show], as: 'events'
+  get 'events_18', to: 'event_posts#index_18'
+  
   resources :beeleever_posts, only: [:index, :create]
   resources :comments, only: [:create]
   resources :partners, only: [:index]
+  get 'partners_18',     to: 'partners#index_18', as: :partners_18
 
-  get 'team',     to: 'home#team',     as: :team
-  get 'team_18',     to: 'home#team_18',     as: :team_18
-  get 'pricing',  to: 'home#pricing',  as: :pricing
-  get 'gtc',      to: 'home#gtc',      as: :gtc
-  get 'legal',    to: 'home#legal',    as: :legal
-  get 'faq',      to: 'home#faq',      as: :faq
-
-  get 'adp',      to: 'adp#show',      as: :adp
+  get 'team',     to: 'home#team',        as: :team
+  get 'team_18',     to: 'home#team_18',  as: :team_18
+  get 'pricing',  to: 'home#pricing',     as: :pricing
+  get 'gtc',      to: 'home#gtc',         as: :gtc
+  get 'legal',    to: 'home#legal',       as: :legal
+  get 'faq',      to: 'home#faq',         as: :faq
+  get 'adp',      to: 'adp#show',         as: :adp
 
   root to: 'home#index'
   get 'home_18', to: 'home#home_18'
-  get 'events_18', to: 'event_posts#index_18'
 
   get 'components', to: 'home#components'
 end

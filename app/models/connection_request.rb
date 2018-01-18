@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: connection_requests
+#
+#  id               :integer          not null, primary key
+#  author_id        :integer
+#  subject          :string(255)
+#  countries        :text
+#  description      :text
+#  created_at       :datetime
+#  updated_at       :datetime
+#  status           :string(255)
+#  business_sectors :text             default([]), is an Array
+#
+
 class ConnectionRequest < ActiveRecord::Base
 
   # Callbacks

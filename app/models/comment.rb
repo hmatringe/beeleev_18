@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id                :integer          not null, primary key
+#  body              :string(255)
+#  author_id         :integer
+#  beeleever_post_id :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
 class Comment < ActiveRecord::Base
 
   # Associations

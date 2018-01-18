@@ -1,0 +1,65 @@
+<div id="partners_18" class="below-nav">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-xs-12 text-center">
+        <h1>
+          Meet our partners
+        </h1>
+        <h2>
+          Our partners are International Groups and leaders in their fields. They support our Community by :
+        </h2>
+      </div>
+
+      <div class="col-xs-12 text-center col-sm-4">
+        <p>
+          Creating strategic partnerships and  business opportunities
+        </p>
+      </div>
+      <div class="col-xs-12 text-center col-sm-4">
+        <p>
+          Spreading useful content and contacts to accelerate their international and local growth
+        </p>
+      </div>
+      <div class="col-xs-12 text-center col-sm-4">
+        <p>
+          Offering our members exclusive promotions
+        </p>
+      </div>
+
+      <div class="col-xs-12 text-center">
+        <div class="btn btn-orange18-orange">
+          CONTACT OUR PARTNERS
+        </div>
+      </div>
+      
+      <% @partners_categories.each do |partner_category| %>
+      <div class="col-xs-12">
+        <div class="overtitle-date">
+          <div class="lign-center">
+          </div>
+          <div class="title-wrapper">
+            <h3>
+              <%= partner_category.name %>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 partners-wrapper">
+        <% partner_category.partners.each do |partner|  %>
+          <%= render partial: 'partners/partner_18', locals: { partner: partner } if partner %>
+        <% end %>
+      </div>
+      <% end %>
+
+      <div class="col-xs-12 text-center">
+        <div class="btn btn-orange18-orange">
+          CONTACT OUR PARTNERS
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :meta_title, "Our Partners" %>
+<% content_for :meta_description, "Our Partners Call for Projects, Source Innovation and provide our members content, contacts, exclusive discounts and support for their international growth" %>
