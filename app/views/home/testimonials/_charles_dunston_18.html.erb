@@ -6,20 +6,29 @@
           <div class="testimonial">
             <div class="testimonial-img-wrapper hidden-xs">
               <div class="testimonial-img-inner-wrapper">
-                <%=  cl_image_tag "homepage/testimonies/Charles-Dunston-18",
-              class: 'avatar-l box-shadowed',
-              fetch_format: 'auto',
-              width: 200,
-              crop: 'scale' %>
+                <% url = "homepage/testimonies/Charles-Dunston-18" %>
+                <%=  cl_image_tag url,
+                  class: 'avatar-l box-shadowed',
+                  fetch_format: 'auto',
+                  width: 200,
+                  crop: 'scale' %>
               </div>
             </div>
             <div class="testimonial-txt-wrapper">
+              <div class="visible-xs img-wrapper-mobile">
+                <%=  cl_image_tag url,
+                class: 'avatar-m box-shadowed',
+                fetch_format: 'auto',
+                width: 150,
+                crop: 'scale' %>
+              </div>
               <h3 class="testimonial-title">
                 SMART CONNECTOR
               </h3>
               <p class="testimonial-quote">
                 "Through Beeleev, I had an appointment with Geopost that went well. We exchanged on the development of our two companies, and considered a potential collaboration. Our discussion lead us to the conclusion that we needed to stay in touch to build a partnership between Géopost and Dial-Once. Thank you for the connection!"
               </p>
+
               <div class="testimonial-author">
                 Charles Dunston
               </div>
