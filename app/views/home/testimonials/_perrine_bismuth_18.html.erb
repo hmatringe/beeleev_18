@@ -6,15 +6,22 @@
           <div class="testimonial">
             <div class="testimonial-img-wrapper hidden-xs">
               <div class="testimonial-img-inner-wrapper">
-                <%#= image_tag "18/perrine_bismuth_18.png", class: "avatar-l box-shadowed " %>
-                <%=  cl_image_tag "homepage/testimonies/perrine_bismuth_18",
-              class: 'avatar-l box-shadowed',
-              fetch_format: 'auto',
-              width: 200,
-              crop: 'scale' %>
+                <% url = "homepage/testimonies/perrine_bismuth_18" %>
+                <%=  cl_image_tag url,
+                  class: 'avatar-l box-shadowed',
+                  fetch_format: 'auto',
+                  width: 200,
+                  crop: 'scale' %>
               </div>
             </div>
             <div class="testimonial-txt-wrapper">
+              <div class="visible-xs img-wrapper-mobile">
+                <%=  cl_image_tag url,
+                class: 'avatar-m box-shadowed',
+                fetch_format: 'auto',
+                width: 150,
+                crop: 'scale' %>
+              </div>
               <h3 class="testimonial-title">
                 SMART CONNECTOR
               </h3>
