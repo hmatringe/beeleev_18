@@ -16,10 +16,15 @@
 }
 //--------------- media queries ------------------
 @media(max-width:767px) {
-	#partners{
+	#partners_home_18{
 		padding: 0 1em;
+		margin: 0;
 		h2{
 			font-size: 2em;
+		}
+		.partners-logo {
+			width: 200px;
+			margin: 0 auto;
 		}
 	}
 }
