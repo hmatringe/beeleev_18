@@ -5,9 +5,10 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		align-items: center;
 		padding: 1em 0;
 	}
-	h2, .ending-h2,.cascade0,.cascade1,.cascade2{
+	h2, .ending-h2, .cascade0, .cascade1, .cascade2{
 		// font-family: 'Lato', sans-serif;
 		// font-weight: 700;
 	 //  font-size: 2.5em;
@@ -30,6 +31,9 @@
 	  .discreet{
 	  	display: none;
 	  }
+	}
+	h2 {
+ 	  padding: 0;
 	}
 	.cascades{
 		padding:0 1em;
@@ -70,12 +74,16 @@
 		h2{
 			text-align: center;
 			font-size: 2em;
+			padding: 0.5em 0;
 			.cascade1{
 		  	margin-left: 0;
 			}
 			.cascade2{
 		  	margin-left: 0;
 			}
+		}
+		.title-wrapper{
+			flex-direction: column;
 		}
 		.how_it_works_step {
 			font-size: 1.2em;
