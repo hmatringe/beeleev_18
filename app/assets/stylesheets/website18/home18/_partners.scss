@@ -6,12 +6,14 @@
 	  font-size: 2.5em;
 	  font-style: normal;
 		color: $orange;
-	  padding: 0.5em 0 0.5em;
+	  // padding: 0.5em 0 0.5em;
 	  // padding: 0;
+	  margin: 1em 0 0;
 	}
 	.partners-logo {
 		width: 150px;
-		margin: 0 auto 1em;
+		// margin: 0 auto 1em;
+		margin: 0 auto;
 	}
 }
 //--------------- media queries ------------------
