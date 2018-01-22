@@ -15,14 +15,15 @@
   h2{
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 1.2em;
+    font-size: 1.7em;
     font-style: normal;
     color: $gray;
     padding: 0.5em 0;
     text-transform: normal;
   }
   p{
-    margin: 0 10px 10px;
+    font-size: 0.7em;
+    margin: 0;
     color: #9B9B9B;
   }
   .partners-wrapper{
@@ -37,7 +38,16 @@
       // width: 150px;
     // }
   }
-
+  .partners-bullets-wrapper{
+    color: #9B9B9B;
+    font-size: 2em;
+  }
+  .partners-bullets{
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 @media(max-width:767px) {
   #partners_18{
@@ -46,7 +56,10 @@
     }
   }
   .partners-wrapper{
+    // flex-direction: column;
+    // justify-content: center;
+  }
+  .partners-bullets{
     flex-direction: column;
-    justify-content: center;
   }
 }
