@@ -1,5 +1,6 @@
 #how_it_works{
 	background-color: $orange;	
+	min-height: 100vh;
 	.title-wrapper{
 		display: flex;
 		flex-direction: row;
@@ -48,6 +49,7 @@
 	
 	i {
 		color: white;
+		margin: 0.3em 0;
 	}
 	.how_it_works_step {
 		color: $text-grey;
