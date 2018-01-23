@@ -1,5 +1,10 @@
 <div class="col-xs-12 col-md-8">
-  <img src=<%= image_path '18/world.png' %> alt="" class="img-responsive">	      
+  <!-- <img src=<%#= image_path '18/world.png' %> alt="" class="img-responsive">	       -->
+  <%=  cl_image_tag "maps/Europe__",
+    class: 'img-responsive',
+    fetch_format: 'auto',
+    width: image_width,
+    crop: 'scale' %>
 </div>
 
 <div class="col-xs-12 col-md-4 height-setter">

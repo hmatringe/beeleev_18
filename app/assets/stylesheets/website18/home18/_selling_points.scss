@@ -1,6 +1,12 @@
 #selling-points{
+	min-height: 86vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	 
 	.selling-points-wrapper{
-		padding: 1.8em 0 2em;
+		// padding: 1.8em 0 2em;
 		// padding: 0.7em 0;
 	}
 	h2{
@@ -10,6 +16,8 @@
 	  font-style: normal;
 		color: $orange;
 	  // padding: 1em 0;
+	  // margin: 0.5em 0 0.5em;
+	  margin: 2vh 0;
 	}
 	h3{
 		font-family: 'Lato', sans-serif;
@@ -37,12 +45,13 @@
 		font-size: 1em;
 	}
 	.btn-orange18-orange{
-		margin: 1em 0 1.6em;
+		// margin: 1em 0 1.6em;
+	  margin: 2vh 0;
 	}
 }
 @media(max-width:767px) {
 	#selling-points{
-		padding: 0 1em;
+		// padding: 0 1em;
 		h2{
 	  	font-size: 2em;
 		}
@@ -51,5 +60,8 @@
 		}
 		img{
 		}
+	}
+	.selling-point{
+		padding: 0.5em 0;
 	}
 }
