@@ -4,20 +4,21 @@
     font-family: 'Lato-bold', sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: $gray;
-    text-transform: none;
+    color: $orange;
+    text-transform: uppercase;
     letter-spacing: inherit;
     text-align: center;
-    font-size: 2.8em;
+    font-size: 2em;
+    padding-top: 1em;
   }
   .sub_header{
     color: $gray;
     font-family: 'Lato-light', sans-serif;
     font-weight: 200;
-    font-style: italic;
+    // font-style: italic;
     font-size: 1.5em;
     text-transform: none;
-    padding: 0.75em 0 0.5em;
+    padding: 1.5em 0;
     text-align: center;
     }
   h2{
@@ -26,10 +27,12 @@
     font-style: normal;
     color: $gray;
     text-align: center;
+    font-size: 1.5em;
   }
   .last-wrapper {
     .last-over-title {
-      padding: 0.75em 0;
+      padding: 1.5em 0 0.5em;
+      font-size: 1em;
     }
     .last-title{
       font-family: 'Lato-bold', sans-serif;
@@ -39,7 +42,7 @@
       text-transform: none;
       letter-spacing: inherit;
       text-align: center;
-      font-size: 1.8em;
+      font-size: 1.4em;
     }
   }
   .highlight{
@@ -76,7 +79,7 @@
     margin: -50px 0 50px; 
   }
   .btn-orange18-orange{
-    margin:0;
+    // margin:0 0 0.5em;
   }
 }
 // ------------ former team page ------------
