@@ -5,3 +5,36 @@
 @import 'how_it_works';
 @import 'testimonials';
 @import 'partners';
+
+
+.placeholder1{
+	background-color : white;
+	height: 72px;
+}
+.placeholder2{
+	background-color : white;
+	height: 72px;
+}
+.placeholder3{
+	background-color : $orange;
+	height: 72px;
+}
+.placeholder4{
+	background-color : white;
+	height: 72px;
+}
+
+@media(max-width:767px) {
+	.placeholder1{
+		height: 20px;
+	}
+	.placeholder2{
+		height: 20px;
+	}
+	.placeholder3{
+		height: 20px;
+	}
+	.placeholder4{
+		height: 20px;
+	}
+}

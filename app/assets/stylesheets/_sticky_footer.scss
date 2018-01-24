@@ -1,24 +1,24 @@
-/* Sticky footer styles
--------------------------------------------------- */
-$footer-height: 123px;
+// /* Sticky footer styles
+// -------------------------------------------------- */
+// $footer-height: 123px;
 
-@media (min-width: $screen-sm-min) {
+// @media (min-width: $screen-sm-min) {
 
-  html {
-    position: relative;
-    min-height: 100%;
-  }
+//   html {
+//     position: relative;
+//     min-height: 100%;
+//   }
 
-  body {
-    /* Margin bottom by footer height */
-    margin-bottom: $footer-height;
-  }
+//   body {
+//     /* Margin bottom by footer height */
+//     margin-bottom: $footer-height;
+//   }
 
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: $footer-height;
-  }
-}
+//   .footer {
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     /* Set the fixed height of the footer here */
+//     height: $footer-height;
+//   }
+// }
