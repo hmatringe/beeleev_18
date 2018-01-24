@@ -41,6 +41,7 @@ html
   body class="#{yield :body_class}" data-no-turbolink="true"
     = render "layouts/ajax_modal"
     = render "layouts/ajax_small_modal"
+    = render "layouts/ajax_large_modal"
 
     - if @navbar_type == "transparent"
       = render "layouts/menu18_transparent"

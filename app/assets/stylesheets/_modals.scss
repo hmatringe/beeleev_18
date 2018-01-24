@@ -1,0 +1,33 @@
+.modal-18-title{
+	color: $orange;
+	text-transform: uppercase;
+}
+.sign-in-left{
+	padding: 0 1em;
+	border-right: $gray 1px solid;
+	color: $gray;
+}
+.sign-in-avatar-wrapper-line-top{
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	text-align:center;
+}
+.sign-in-avatar-wrapper-line-bottom{
+	display: flex;
+	justify-content: space-around;
+	height: 100%;
+	text-align:center;
+}
+.sign-in-avatar-wrapper{
+
+}
+.sign-in-avatar-name{
+	color: $gray;
+}
+.sign-in-avatar-cie{
+	color: $bleu-fonce;
+}
+.sign-in-avatar-country{
+	color: $orange;
+}

@@ -1,0 +1,54 @@
+.modal-header
+  button.close type="button" data-dismiss="modal" aria-hidden="true"
+    == "&times;"
+  h4.modal-title Sign In
+
+.modal-body
+
+  .text-center
+
+    = link_to user_omniauth_authorize_path(:linkedin), class: "btn btn-primary btn-block" do
+      => t("log_in_with")
+      = image_tag "LinkedIn-Logo-2C.png", size: "83x20"
+
+    hr
+
+  section#log_in_with_email
+    .row
+      .col-md-12
+        = form_for resource, as: resource_name, url: session_path(resource) do |f|
+
+          .form-group
+            .input-group
+              span.input-group-addon @
+              = f.text_field :email, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:email),
+                required: true
+
+          .form-group
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-lock
+              = f.password_field :password, class: "form-control",
+                placeholder: f.object.class.human_attribute_name(:password),
+                required: true
+
+          - if devise_mapping.rememberable?
+            .checkbox
+              label
+                = f.check_box :remember_me
+                = f.label :remember_me
+
+          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+            a href=new_password_path(resource_name)
+              | Forgot your password?
+            br
+            br
+
+          = f.submit t('log_in'), class: "btn btn-info btn-block"
+
+.modal-footer
+  .text-left
+    | You wish to become a Beeleever ?
+    br
+    = link_to t("sign_up"), new_user_registration_path, data: {toggle: "reopen-modal"}
