@@ -7,7 +7,7 @@ class PartnersController < ApplicationController
   end
 
   def index_18
-    @partners_categories = PartnerCategory.all
+    @partners_categories = PartnerCategory.order(position: :asc)
   end
 
 end
