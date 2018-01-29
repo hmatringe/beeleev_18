@@ -32,12 +32,12 @@
 }
 
 body.textured {
-  background-image: asset-url('application/patterns/shattered.png');
-  background-repeat: repeat;
+  // background-image: asset-url('application/patterns/shattered.png');
+  // background-repeat: repeat;
 }
 
 .below-nav {
-  margin-top: 70px;
+  margin-top: 73px;
 }
 
 h1 {
@@ -176,6 +176,6 @@ a {
 @import "team_18";
 @import "news";
 @import "news18";
-@import "modals";
+@import "signin_18";
 
 
