@@ -1,54 +1,72 @@
 .modal-header
   button.close type="button" data-dismiss="modal" aria-hidden="true"
     == "&times;"
-  h4.modal-title Sign In
+  h4.modal-title.modal-18-title Join the Community
 
 .modal-body
+  .row
+    .col-md-6
+      .sign-in-left
+        p Beeleev connects entrepreneurs worldwide  to accelerate their international expansion
+        .sign-in-avatar-wrapper-line-top
+          = render 'users/sessions/avatars/profile1'
+          = render 'users/sessions/avatars/profile2'
+          = render 'users/sessions/avatars/profile3'
+        
+        .sign-in-avatar-wrapper-line-bottom
+          = render 'users/sessions/avatars/profile4'
+          = render 'users/sessions/avatars/profile5'
 
-  .text-center
+    .col-md-6
+      .text-center
 
-    = link_to user_omniauth_authorize_path(:linkedin), class: "btn btn-primary btn-block" do
-      => t("log_in_with")
-      = image_tag "LinkedIn-Logo-2C.png", size: "83x20"
+        = link_to user_omniauth_authorize_path(:linkedin), class: "btn btn-primary btn-block" do
+          => t("log_in_with")
+          = image_tag "LinkedIn-Logo-2C.png", size: "83x20"
 
-    hr
+        hr
 
-  section#log_in_with_email
-    .row
-      .col-md-12
-        = form_for resource, as: resource_name, url: session_path(resource) do |f|
+      section#log_in_with_email
+        .row
+          .col-md-12
+            = form_for resource, as: resource_name, url: session_path(resource) do |f|
 
-          .form-group
-            .input-group
-              span.input-group-addon @
-              = f.text_field :email, class: "form-control",
-                placeholder: f.object.class.human_attribute_name(:email),
-                required: true
+              .form-group
+                .input-group
+                  span.input-group-addon @
+                  = f.text_field :email, class: "form-control",
+                    placeholder: f.object.class.human_attribute_name(:email),
+                    required: true
 
-          .form-group
-            .input-group
-              span.input-group-addon
-                span.glyphicon.glyphicon-lock
-              = f.password_field :password, class: "form-control",
-                placeholder: f.object.class.human_attribute_name(:password),
-                required: true
+              .form-group
+                .input-group
+                  span.input-group-addon
+                    span.glyphicon.glyphicon-lock
+                  = f.password_field :password, class: "form-control",
+                    placeholder: f.object.class.human_attribute_name(:password),
+                    required: true
 
-          - if devise_mapping.rememberable?
-            .checkbox
-              label
-                = f.check_box :remember_me
-                = f.label :remember_me
+              - if devise_mapping.rememberable?
+                .checkbox
+                  label
+                    = f.check_box :remember_me
+                    = f.label :remember_me
 
-          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-            a href=new_password_path(resource_name)
-              | Forgot your password?
-            br
-            br
+              - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+                a href=new_password_path(resource_name)
+                  | Forgot your password?
+                br
+                br
 
-          = f.submit t('log_in'), class: "btn btn-info btn-block"
+              = f.submit t('log_in'), class: "btn btn-info btn-block"
+
+              hr
+              = link_to t("Apply Now"), new_user_registration_path, data: {toggle: "reopen-modal"}, class: "btn btn-orange18-orange"
+              /.modal-18-title.text-center
+               | Entrepreneurs Sign-Up for FREE!
 
 .modal-footer
-  .text-left
+  .text-center
     | You wish to become a Beeleever ?
     br
-    = link_to t("sign_up"), new_user_registration_path, data: {toggle: "reopen-modal"}
+    /= link_to t("sign_up"), new_user_registration_path, data: {toggle: "reopen-modal"}

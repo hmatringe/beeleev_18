@@ -36,11 +36,12 @@ html
     - if Rails.env.production?
       = render "layouts/ga"
       = render "layouts/hubspot"
-      = render 'layouts/tawk_to'
+      /= render 'layouts/tawk_to'
 
   body class="#{yield :body_class}" data-no-turbolink="true"
     = render "layouts/ajax_modal"
     = render "layouts/ajax_small_modal"
+    = render "layouts/ajax_large_modal"
 
     - if @navbar_type == "transparent"
       = render "layouts/menu18_transparent"

@@ -14,11 +14,11 @@ class HomeController < ApplicationController
     @navbar_type = "transparent"
     active_users = User.active
 
-    @beeleevers    = active_users.size
+    @beeleevers    = active_users.size.round(-2) + 100
     @countries     = active_users.map(&:country).reject(&:blank?).uniq.size
     @nationalities = nationalities_count(active_users)
 
-    @partners = Partner.order(position: :asc).first(3)
+    # @partners = Partner.order(position: :asc).first(6)
   end
 
   def components
