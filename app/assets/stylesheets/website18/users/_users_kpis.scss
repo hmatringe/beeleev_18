@@ -23,12 +23,14 @@
 
 //--------------- media queries ------------------
 @media(max-width:767px) {
-	#kpis{
+	#users_kpis{
+  margin-right: -15px;
+
 		.kpis-number{
-	  	font-size: 3em;
+	  	font-size: 2em;
 		}
 		.kpis-text{
-	  	font-size: 2em;
+	  	font-size: 1.5em;
 		}
 	}
 }

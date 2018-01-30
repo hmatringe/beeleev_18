@@ -48,15 +48,35 @@
 	h5{
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
-		color: $bleu-fonce;
+		color: $gray;
 		margin-top: 0;
 		margin-bottom: 0;
-		font-size: 1.4em;
+		font-size: 2.0em;
 		span {
 			color: $orange;
+			font-size: 1.6em;
 		}
 	}
 	.btn-orange18-orange{
 		margin:0 0 0.5em;
+		padding: 0.35em 1em;
 	}
+	.linkedin-btn{
+		padding: 0.35em 1em;
+	}
+	.secundary-cta{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+		color: $orange;
+	}
+}
+@media (max-width: $screen-xs-max) {
+	#signin_18{
+		.sign-in-left{
+			border-right: none;
+		}
+		.bullets{
+		  margin-bottom:  2em;
+		}
+	}	
 }

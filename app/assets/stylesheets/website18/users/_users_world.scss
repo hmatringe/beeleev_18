@@ -60,7 +60,10 @@
 	}
 }
 @media(max-width:767px) {
-	#home_world{
+	#users_home_world{
+		.height-setter{
+			height: 35vh;
+		}
 		.continent-coverage-pc{
 		  font-size: 3em;
 		}
