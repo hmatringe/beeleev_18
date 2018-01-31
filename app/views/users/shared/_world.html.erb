@@ -1,0 +1,46 @@
+<div id="users_home_world">
+
+	    <div id="carousel-continents" class="carousel slide" data-ride="carousel">
+	      <!-- Indicators -->
+	      <ol class="carousel-indicators">
+	        <li data-target="#carousel-continents" data-slide-to="0" class="active"></li>
+	        <li data-target="#carousel-continents" data-slide-to="1"></li>
+	        <li data-target="#carousel-continents" data-slide-to="2"></li>
+	        <li data-target="#carousel-continents" data-slide-to="3"></li>
+	        <li data-target="#carousel-continents" data-slide-to="4"></li>
+	      </ol>
+
+	      <!-- images width -->
+	      <% image_width = 600  %>
+	      <!-- Wrapper for slides -->
+	      <div class="carousel-inner" role="listbox">
+	        <div class="item active">
+	          <%= render partial: "home/home18/continents/north_america", locals: {image_width: image_width} %>
+	        </div>
+	        <div class="item">
+            <%= render partial: "home/home18/continents/europe", locals: {image_width: image_width} %>
+	        </div>
+	        <div class="item">
+            <%= render partial: "home/home18/continents/asia", locals: {image_width: image_width} %>
+	        </div>
+	        <div class="item">
+            <%= render partial: "home/home18/continents/south_america", locals: {image_width: image_width} %>
+	        </div>
+	        <div class="item">
+            <%= render partial: "home/home18/continents/africa", locals: {image_width: image_width} %>
+	        </div>
+	      </div>
+
+	      <!-- Controls -->
+	      <a class="left carousel-control" href="#carousel-continents" role="button" data-slide="prev">
+	        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	        <span class="sr-only">Previous</span>
+	      </a>
+	      <a class="right carousel-control" href="#carousel-continents" role="button" data-slide="next">
+	        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	        <span class="sr-only">Next</span>
+	      </a>
+	    </div>
+
+
+</div>

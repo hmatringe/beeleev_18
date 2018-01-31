@@ -1,0 +1,82 @@
+#signin_18{
+	min-height: 82vh;
+	.sign-in-left{
+		border-right: $bg-grey 2px solid;
+	}
+	h1{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+	  font-size: 2.5em;
+	  font-style: normal;
+		color: $orange;
+	  // margin: 1em 0 0;
+	  text-align:center;
+	  letter-spacing: unset;
+	  margin: 1em 0;
+	}
+	h2{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+	  font-size: 1.7em;
+	  font-style: normal;
+		color: $gray;
+	  margin: 0 0 0.4em ;
+	  text-align:center;
+	  letter-spacing: unset;	
+	}
+	.bullets{
+		display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  height: 100%;
+	  flex-direction: row;
+	  margin-bottom:  1em;
+		h3{
+			font-family: 'Lato', sans-serif;
+			font-weight: 400;
+			color: $gray;
+			margin-top: 0;
+			margin-bottom: 0;
+			font-size: 1.4em;
+			text-transform: none;
+			font-style: italic;
+		}
+		.middle-dash {
+			font-size: 1.4em;
+		}
+	}
+	h5{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+		color: $gray;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 2.0em;
+		span {
+			color: $orange;
+			font-size: 1.6em;
+		}
+	}
+	.btn-orange18-orange{
+		margin:0 0 0.5em;
+		padding: 0.35em 1em;
+	}
+	.linkedin-btn{
+		padding: 0.35em 1em;
+	}
+	.secundary-cta{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+		color: $orange;
+	}
+}
+@media (max-width: $screen-xs-max) {
+	#signin_18{
+		.sign-in-left{
+			border-right: none;
+		}
+		.bullets{
+		  margin-bottom:  2em;
+		}
+	}	
+}

@@ -19,8 +19,8 @@
 @import 'application/newsfeed';
 
 body {
-  background-image: asset-url('application/patterns/shattered.png');
-  background-repeat: repeat;
+  // background-image: asset-url('application/patterns/shattered.png');
+  // background-repeat: repeat;
 
   &.no-bg {
     background-image: none;
