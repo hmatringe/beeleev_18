@@ -1,0 +1,97 @@
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for resource, as: resource_name, url: user_registration_path(resource) do |f| %>
+
+        <div class="form-group has-feedback">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-user"></span>
+            </span>
+            <%= f.text_field :first_name, class: "form-control",
+              placeholder: :first_name.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-user"></span>
+            </span>
+            <%= f.text_field :last_name, class: "form-control",
+              placeholder: :last_name.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <%= f.email_field :email, class: "form-control",
+              placeholder: :email.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-globe"></span>
+            </span>
+            <%= f.country_select :country, [],
+              {prompt: :country.to_s.humanize},
+              class: "form-control",
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-home"></span>
+            </span>
+            <%= f.text_field :company, class: "form-control",
+              placeholder: :company.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-home"></span>
+            </span>
+            <%= f.text_field :position, class: "form-control",
+              placeholder: :position.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password, class: "form-control",
+              placeholder: :password.to_s.humanize + " (6 characters minimum)",
+              required: true%>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password_confirmation, class: "form-control",
+              placeholder: :password_confirmation.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+        <%= f.submit "Sign up", class: "btn btn-info btn-block" %>
+        <% end %>
+    </div>          
+  </div>
+</section>

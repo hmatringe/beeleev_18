@@ -1,0 +1,78 @@
+.js_slider_wrap {
+  position: absolute;
+  // top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  // margin-top: -306px;
+  border-radius: 5px;
+  width: 330px;
+  overflow: hidden;
+  padding: 1px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.js_slider_frame {
+  width: 998px;
+  transition: .6s cubic-bezier(.3, 0, 0, 1.3)
+}
+
+.js_slider_card {
+  width: 332px;
+  height: 53vh;
+  transition: 0.8s;
+  overflow: hidden;
+  display: inline-block;
+  // padding-top: 7%;
+  // padding-bottom: 10%;
+  padding: 10px;
+  margin-left: -5px;
+}
+.dots {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  bottom: 25%;
+}
+.dots div {
+  margin: 3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  transition: 0.2s;
+}
+.js_slider_nav {
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+.js_slider_button {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  margin-right: -4px;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+  .js_slider_navicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+  }
+}
+.js_slider_button:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.8);
+}
+#sign_up_btn_js_slider[disabled]{
+    background-color: $gray;
+    border-color: #333;
+}

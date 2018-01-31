@@ -1,0 +1,54 @@
+<section>
+  <div class="row">
+    <div class="col-md-12">
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-home"></span>
+            </span>
+            <%= f.text_field :company, class: "form-control",
+              placeholder: :company.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-home"></span>
+            </span>
+            <%= f.text_field :website, class: "form-control",
+              placeholder: :website.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-home"></span>
+            </span>
+             <%= f.select :business_sectors, @business_sectors, {}, class: "form-control",
+              multiple: true,
+              placeholder: :business_sectors.to_s.humanize,
+              # + " (ex: Accounting)"
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-home"></span>
+            </span>
+            <%= f.text_field :position, class: "form-control",
+              placeholder: :position.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+
+    </div>          
+  </div>
+</section>

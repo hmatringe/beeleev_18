@@ -12,6 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #########
 
   def new
+    @expertises = YAML.load (Rails.root + 'config/expertises.yml').read
+    @business_sectors = YAML.load (Rails.root + 'config/business_sectors.yml').read
     build_resource({})
     # render layout: false
     render layout: "website"

@@ -62,7 +62,7 @@
 @media(max-width:767px) {
 	#users_home_world{
 		.height-setter{
-			height: 35vh;
+			height: unset;
 		}
 		.continent-coverage-pc{
 		  font-size: 3em;

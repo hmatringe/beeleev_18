@@ -74,6 +74,11 @@
 		font-weight: 700;
 		color: $orange;
 	}
+	.sign-up-body{
+		min-height: 65vh;
+	}
+	.sign-up-footer{
+	}
 }
 @media (max-width: $screen-xs-max) {
 	#signin_18{

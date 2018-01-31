@@ -7,7 +7,7 @@
     
       <div class="col-xs-12 col-sm-4 col-sm-push-8">
         
-        <div class="modal-body">
+        <div class="sign-up-body">
 
           <%= link_to user_omniauth_authorize_path(:linkedin), class: "btn btn-primary btn-block" do %> 
             <%= t("sign_up_with") %>
@@ -16,111 +16,42 @@
 
           <hr>
 
-          <section>
-            <div class="row">
-              <div class="col-md-12">
-                <%= form_for resource, as: resource_name, url: user_registration_path(resource) do |f| %>
-
-                  <div class="form-group has-feedback">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-user"></span>
-                      </span>
-                      <%= f.text_field :first_name, class: "form-control",
-                        placeholder: :first_name.to_s.humanize,
-                        required: true %>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-user"></span>
-                      </span>
-                      <%= f.text_field :last_name, class: "form-control",
-                        placeholder: :last_name.to_s.humanize,
-                        required: true %>
-                    </div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">@</span>
-                      <%= f.email_field :email, class: "form-control",
-                        placeholder: :email.to_s.humanize,
-                        required: true %>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-globe"></span>
-                      </span>
-                      <%= f.country_select :country, [],
-                        {prompt: :country.to_s.humanize},
-                        class: "form-control",
-                        required: true %>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-home"></span>
-                      </span>
-                      <%= f.text_field :company, class: "form-control",
-                        placeholder: :company.to_s.humanize,
-                        required: true %>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-home"></span>
-                      </span>
-                      <%= f.text_field :position, class: "form-control",
-                        placeholder: :position.to_s.humanize,
-                        required: true %>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock"></span>
-                      </span>
-                      <%= f.password_field :password, class: "form-control",
-                        placeholder: :password.to_s.humanize + " (6 characters minimum)",
-                        required: true%>
-                    </div>
-                    <!-- <span class="help-block">  </span> -->
-                  </div>
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock"></span>
-                      </span>
-                      <%= f.password_field :password_confirmation, class: "form-control",
-                        placeholder: :password_confirmation.to_s.humanize,
-                        required: true %>
-                    </div>
-                  </div>
-
-                  <%= f.submit "Sign up", class: "btn btn-info btn-block" %>
-                  <% end %>
-              </div>          
+          <div class="js_slider_wrap">
+            <div class="js_slider_frame">
+            <%= form_for resource, as: resource_name, url: user_registration_path(resource) do |f| %>
+              <div class="js_slider_card one">
+                <%= render partial: 'sign_up_section_1', locals: {f: f}%>
+              </div>
+              <div class="js_slider_card two">
+                <%= render partial: 'sign_up_section_2', locals: {f: f} %>
+              </div>
+              <div class="js_slider_card three">
+                <%= render partial: 'sign_up_section_3', locals: {f: f} %>
+              </div>
+              <% end %>
             </div>
-          </section>
+              <div class="js_slider_nav">
+                <div id="js-slider-btn-left" class="js_slider_button">
+                  <div class="js_slider_navicon">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div id="js-slider-btn-right" class="js_slider_button">
+                  <div class="js_slider_navicon">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+          </div>
         </div>
-        <div class="modal-footer">
-          <div class="text-left">
+        <!-- <div class="sign-up-footer"> -->
+          <div class="text-center">
             Already a member ?
             <%= link_to t("log_in"), new_user_session_path, data: {toggle: "reopen-modal"} %> 
           </div>
-        </div>
+          <br><br>
+        <!-- </div> -->
       </div>
 
       <div class="col-xs-12 col-sm-8 col-sm-pull-4">
@@ -154,7 +85,11 @@
   <%= render "shared/linkedin" %>
 
   <script>
-    $('#user_country').select2({
-      minimumInputLength: 3});
+    $(function() {
+      $('#user_country').select2({
+        minimumInputLength: 3});
+      $('#user_expertises').select2();
+      $('#user_business_sectors').select2();
+     });
   </script>
 <% end %>

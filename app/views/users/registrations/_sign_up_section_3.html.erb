@@ -1,0 +1,35 @@
+<section>
+  <div class="row">
+    <div class="col-md-12">
+
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-globe"></span>
+            </span>
+            <!-- , [["Cold","cold"],["Hot","hot"]] -->
+            <%= f.select :expertises, @expertises, {}, class: "form-control",
+              multiple: true,
+              # placeholder: :expertises.to_s.humanize + " (ex: Accounting)",
+              # placeholder: "In which fields are you willing to help other members?",
+              placeholder: "In which fields will you help others?",
+              required: true %>
+          </div>
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <%#= check_box(resource, :terms_of_service) %>
+            <%= check_box(:user, :terms_of_service) %>
+            <label for="client_terms_of_service">
+              By joining Beeleev’s Entrepreneurial Community, I commit to reach out to other members and answer them in the shortest delays possible, as they would when I need support myself. 
+              Because we grow faster together!
+            </label>
+          </label>
+        </div> 
+
+
+        <%= f.submit "Sign up", class: "btn btn-info btn-block", id: "sign_up_btn_js_slider" %>
+    </div>          
+  </div>
