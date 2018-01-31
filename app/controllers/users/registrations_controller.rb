@@ -13,7 +13,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def new
     build_resource({})
-    render layout: false
+    # render layout: false
+    render layout: "website"
   end
 
   def create
