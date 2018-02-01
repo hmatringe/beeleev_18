@@ -16,21 +16,21 @@
 
           <hr>
 
-          <div class="js_slider_wrap">
-            <div class="js_slider_frame">
+          <!-- <div class="js_slider_wrap"> -->
+            <!-- <div class="js_slider_frame"> -->
             <%= form_for resource, as: resource_name, url: user_registration_path(resource) do |f| %>
-              <div class="js_slider_card one">
+              <!-- <div class="js_slider_card one"> -->
                 <%= render partial: 'sign_up_section_1', locals: {f: f}%>
-              </div>
-              <div class="js_slider_card two">
-                <%= render partial: 'sign_up_section_2', locals: {f: f} %>
-              </div>
-              <div class="js_slider_card three">
+              <!-- </div> -->
+              <!-- <div class="js_slider_card two"> -->
+                <%#= render partial: 'sign_up_section_2', locals: {f: f} %>
+              <!-- </div> -->
+              <!-- <div class="js_slider_card three"> -->
                 <%= render partial: 'sign_up_section_3', locals: {f: f} %>
-              </div>
+              <!-- </div> -->
               <% end %>
-            </div>
-              <div class="js_slider_nav">
+            <!-- </div> -->
+              <!-- <div class="js_slider_nav">
                 <div id="js-slider-btn-left" class="js_slider_button">
                   <div class="js_slider_navicon">
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -41,9 +41,9 @@
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
-          </div>
+          <!-- </div> -->
         </div>
         <!-- <div class="sign-up-footer"> -->
           <div class="text-center">

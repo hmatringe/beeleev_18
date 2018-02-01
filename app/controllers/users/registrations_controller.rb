@@ -12,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #########
 
   def new
+    # for experience: more sign up inputs split in JS horizontal slider
     @expertises = YAML.load (Rails.root + 'config/expertises.yml').read
     @business_sectors = YAML.load (Rails.root + 'config/business_sectors.yml').read
     build_resource({})

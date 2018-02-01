@@ -5,10 +5,10 @@
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon">
-              <span class="glyphicon glyphicon-home"></span>
+              <span class="glyphicon glyphicon-user"></span>
             </span>
-            <%= f.text_field :company, class: "form-control",
-              placeholder: :company.to_s.humanize,
+            <%= f.text_field :civility, class: "form-control",
+              placeholder: :civility.to_s.humanize,
               required: true %>
           </div>
         </div>
@@ -40,13 +40,19 @@
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon">
-              <span class="glyphicon glyphicon-home"></span>
+              <span class="glyphicon glyphicon-globe"></span>
             </span>
-            <%= f.text_field :position, class: "form-control",
-              placeholder: :position.to_s.humanize,
+            <!-- , [["Cold","cold"],["Hot","hot"]] -->
+            <%= f.select :expertises, @expertises, {}, class: "form-control",
+              multiple: true,
+              # placeholder: :expertises.to_s.humanize + " (ex: Accounting)",
+              # placeholder: "In which fields are you willing to help other members?",
+              placeholder: "In which fields will you help others?",
               required: true %>
           </div>
         </div>
+
+        
 
 
     </div>          
