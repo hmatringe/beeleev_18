@@ -50,6 +50,12 @@
 			font-size: 1.4em;
 		}
 	}
+	.sign-up-slogan{
+		min-height: 30vh;
+		display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
 	h5{
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
@@ -64,7 +70,9 @@
 	}
 	.btn-orange18-orange{
 		margin:0 0 0.5em;
-		padding: 0.35em 1em;
+		padding: 0.5em 4em;
+		font-size: 1.3em;
+		font-weight: normal;
 	}
 	.linkedin-btn{
 		padding: 0.35em 1em;
@@ -75,9 +83,13 @@
 		color: $orange;
 	}
 	.sign-up-body{
-		min-height: 65vh;
+    padding: 0 2em;
 	}
 	.sign-up-footer{
+	}
+	.approve-terms a{
+		color: $bleu-fonce;
+		text-decoration: none;
 	}
 }
 @media (max-width: $screen-xs-max) {
