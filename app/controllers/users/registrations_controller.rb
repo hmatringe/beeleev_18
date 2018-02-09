@@ -30,13 +30,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
       )
 
     @user.profil = "Entrepreneur"
-
     if @user.save
       # For Email template liquid variables
       @user1 = @user
 
       sign_in @user
-      redirect_to edit_account_path
+      # redirect_to edit_account_path
+      redirect_to onboarding_first_path
     else
       redirect_to root_path, alert: "Could not save user"
     end

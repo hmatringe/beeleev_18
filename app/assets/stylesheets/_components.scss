@@ -31,6 +31,22 @@
     background-color: white;
   }
 }
+.btn-orange18-gray {
+  color: white;
+  background-color: $gray;
+  border-color: $gray !important;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  padding: 0.75em 2em;
+  margin: 2em;
+  font-size: 1.5em;
+  box-shadow: 2px 1px 1px $gray;
+  transition: all 0.5s ease;
+  &:hover{
+    color: black;
+    background-color: #AAA;
+  }
+}
 @media(max-width:767px) {
   .btn-orange18-orange, .btn-orange18-white {
     font-size: 1.1em;

@@ -65,6 +65,7 @@
 #  activated_at                     :datetime
 #  stripe_customer_id               :string(255)
 #  can_post                         :boolean          default(TRUE)
+#  targeted_countries               :text             default([]), is an Array
 #
 
 class User < ActiveRecord::Base
@@ -169,25 +170,52 @@ class User < ActiveRecord::Base
   # Validations
   #############
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
   validates :email,
             presence: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
-  validates :date_of_birth, inclusion: {
-    in: Date.new(1900)..Time.zone.today,
-    message: 'must be between 1900 and today'
-  }, allow_nil: true
+  # validates :date_of_birth, inclusion: {
+  #   in: Date.new(1900)..Time.zone.today,
+  #   message: 'must be between 1900 and today'
+  # }, allow_nil: true
   validates :terms_of_service, acceptance: { message: 'must be abided' }
-
 
 
   # only validate this on update, which means those validations will not run
   # for registrations (ie : Apply)
-  validates_presence_of :civility,                         on: :update
-  validates_presence_of :country,                          on: :update
-  validates_presence_of :city,                             on: :update
-  validates_presence_of :position,                         on: :update
-  validates_presence_of :website,                          on: :update
+  validates :first_name,
+              presence: {
+                on: :update,
+                unless: -> { skip_first_name_validation == '1' }
+              }
+  validates :last_name,
+              presence: {
+                on: :update,
+                unless: -> { skip_last_name_validation == '1' }
+              }
+  validates :civility,
+              presence: {
+                on: :update,
+                unless: -> { skip_civility_validation == '1' }
+              }
+  validates :country,
+              presence: {
+                on: :update,
+                unless: -> { skip_country_validation == '1' }
+              }
+  validates :city,
+              presence: {
+                on: :update,
+                unless: -> { skip_city_validation == '1' }
+              }
+  validates :position,
+              presence: {
+                on: :update,
+                unless: -> { skip_position_validation == '1' }
+              }
+  validates :website,
+              presence: {
+                on: :update,
+                unless: -> { skip_website_validation == '1' }
+              }
 
   validates :turnover,
             presence: {
@@ -204,7 +232,7 @@ class User < ActiveRecord::Base
   validates :international_activity_countries,
             presence: {
               on: :update,
-              unless: -> { password_confirmation.present? }
+              unless: -> { password_confirmation.present? || skip_international_activity_countries_validation == "1"}
             }
 
   validate :presence_of_business_sectors,  on: :update
@@ -349,6 +377,16 @@ class User < ActiveRecord::Base
   attr_accessor :terms_of_service
   attr_accessor :skip_turnover_validation
   attr_accessor :skip_staff_volume_validation
+  attr_accessor :skip_first_name_validation
+  attr_accessor :skip_last_name_validation
+  attr_accessor :skip_civility_validation
+  attr_accessor :skip_title_validation
+  attr_accessor :skip_country_validation
+  attr_accessor :skip_city_validation
+  attr_accessor :skip_position_validation
+  attr_accessor :skip_website_validation
+  attr_accessor :skip_international_activity_countries_validation
+  attr_accessor :skip_business_sectors_validation
 
   # Instance methods
   ##################
@@ -445,7 +483,8 @@ class User < ActiveRecord::Base
       :expertises,
       :international_activity_countries,
       :business_sectors,
-      :investment_levels
+      :investment_levels,
+      :targeted_countries
     ].each do |attribute|
       # get the current attribute value
       value = send(attribute)
@@ -460,7 +499,7 @@ class User < ActiveRecord::Base
   # Make sure at least 1 business sector is present
   def presence_of_business_sectors
     errors.add(:business_sectors, "can't be blank") \
-    if business_sectors.all?(&:blank?)
+    if business_sectors.all?(&:blank?) && self.skip_business_sectors_validation != "1"
   end
 
 end
