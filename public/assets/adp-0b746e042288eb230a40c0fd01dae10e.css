@@ -1,0 +1,199 @@
+/* line 11, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.red {
+  color: #ca4d36;
+}
+
+/* line 12, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.white {
+  color: white !important;
+}
+
+/* line 13, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.dark-grey {
+  color: #4a4a4a;
+}
+
+/* line 15, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.fw-700 {
+  font-weight: 700;
+}
+
+/* line 16, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.fw-900 {
+  font-weight: 900;
+}
+
+/* line 18, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.ta-center {
+  text-align: center;
+}
+
+/* line 20, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+body {
+  color: #4a4a4a;
+  background-color: white;
+  font-family: "lato";
+  margin: 0;
+}
+
+/* line 27, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__header {
+  background-image: url("http://res.cloudinary.com/dc0jl0qi9/image/upload/c_fill,f_auto,h_800,q_80/adp-cover");
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 39, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+main {
+  padding: 20px 70px;
+}
+
+/* line 43, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+h1 {
+  text-transform: uppercase;
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 0.2em;
+}
+
+/* line 50, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+h2 {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 57, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp--intro {
+  text-align: center;
+  line-height: 1.5em;
+  margin: 40px 0;
+  padding: 0 30px;
+}
+
+/* line 64, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__list {
+  line-height: 2em;
+  font-size: 0.8em;
+  margin-bottom: 25px;
+  padding-left: 20px;
+}
+
+/* line 71, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__code {
+  border: 1px solid #ca4d36;
+  border-radius: 5px;
+  color: #ca4d36;
+  text-transform: uppercase;
+  width: 100px;
+  height: 20px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  line-height: 1em;
+}
+
+/* line 83, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 40px;
+}
+
+/* line 90, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__footer {
+  background-color: #ca4d36;
+  padding: 20px 0;
+  color: white;
+}
+/* line 94, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__footer a {
+  text-decoration: none;
+}
+
+/* line 99, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__footer__title {
+  font-size: 1.5em;
+}
+
+/* line 103, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__signup-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90px;
+  margin: 20px 0;
+}
+
+/* line 111, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__btn {
+  color: white !important;
+  line-height: 1em;
+  margin: 0 auto;
+  width: 250px;
+  padding: 10px;
+}
+
+/* line 119, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__btn--linkedin {
+  background-color: #428bca;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 125, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__btn--email {
+  background-color: #5bc0de;
+}
+
+/* line 129, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+.adp__footer_signin {
+  font-size: 0.8em;
+}
+
+@media (max-width: 767px) {
+  /* line 134, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+  .adp__header {
+    height: 200px;
+    background-image: url("http://res.cloudinary.com/dc0jl0qi9/image/upload/c_fill,f_auto,h_400,q_80/adp-cover");
+  }
+
+  /* line 139, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+  main {
+    padding: 20px 25px;
+  }
+
+  /* line 140, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+  h1 {
+    font-size: 1.5em;
+  }
+
+  /* line 141, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+  h2 {
+    font-size: 1em;
+  }
+
+  /* line 142, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+  .adp--how {
+    font-size: 1em;
+  }
+
+  /* line 144, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+  .adp--intro {
+    margin: 30px 0;
+    padding: 0;
+    font-size: 0.9em;
+  }
+
+  /* line 150, /Users/Baobair/code/FREE/201712 Beeleev/beeleev_18/app/assets/stylesheets/adp.css.scss.erb */
+  .adp__footer__title {
+    font-size: 1.2em;
+  }
+}
