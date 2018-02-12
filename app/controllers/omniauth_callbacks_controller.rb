@@ -25,7 +25,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     elsif @user.activation_pending?
       # For Email template liquid variables
       @recipient = @user
-
       sign_in @user
       
       # redirect_to edit_account_path
