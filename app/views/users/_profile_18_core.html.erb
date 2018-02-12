@@ -1,0 +1,117 @@
+<div id="profile_18_core">
+	<div class="container">
+	  <div class="row">
+	    
+	    <div class="col-xs-12 col-sm-3">
+				<div class="left-wrapper">
+					<div class="profile-avatar">
+						<%#= cl_image_tag @user.avatar, transformation:
+						{width: 200, height: 200, gravity: :face, radius: :max, crop: :crop} %>
+						<%= cl_image_tag @user.avatar, transformation: [
+							  {width: 400, height: 400, gravity: :face, radius: :max, crop: :fill},
+							  {width: 200, crop: :scale}] %>
+					</div>
+					
+					<% if current_user == @user || current_user.decorate.network.include?(@user) %>
+					<!-- only for  me of my network -->
+					<div class="some-icons">
+						<% if @user.facebook_username.present? %>
+							<%= link_to "https://www.facebook.com/#{@user.facebook_username}", target: "_blank" do %>
+								<i class="fa fa-2x fa-facebook-square facebook-color" aria-hidden="true"></i>
+							<% end %>
+						<% end %>
+
+						<% if @user.twitter_account.present? %>
+							<%= link_to "https://www.twitter.com/#{@user.twitter_account}", target: "_blank" do %>
+								<i class="fa fa-2x fa-twitter-square twitter-color" aria-hidden="true"></i>
+							<% end %>
+						<% end %>
+						
+						<% if @user.provider_public_profile_url.present? %>
+							<%= link_to @user.provider_public_profile_url, target: "_blank" do %>
+								<i class="fa fa-2x fa-linkedin-square linkedin-color" aria-hidden="true"></i>
+							<% end %>
+						<% end %>
+
+					</div>
+					<% end %>
+
+				</div>
+	    </div>
+
+	    <div class="col-xs-12 col-sm-6">
+	    	<div class="center-wrapper">
+	    		<h1><%= @user.full_capitalized_name %></h1>
+	    		<div class="bold-item">
+	    			<%= @user.position_at_company %>
+	    		</div>
+	    		<div class="item">
+	    			<%= @user.city + ", " if @user.city.present?%>
+	    			<%= @user.country if @user.country.present?%>
+	    			<% unless @user.all_spoken_languages == "" %>
+	    			<%= "- " + @user.all_spoken_languages %>
+	    			<% end %>
+	    		</div>
+					
+	    		<% if current_user == @user || current_user.decorate.network.include?(@user) %>
+	    		<!-- only for  me of my network -->
+	    		<% unless @user.cellphone.empty? %>
+		    		<div class="item">
+		    			<%= @user.cellphone %>
+		    		</div>
+	    		<% end %>
+	    		<div class="item">
+	    			<%= @user.email %>
+	    		</div>
+	    	<% end %>
+	    	</div>
+
+	    		<div class="tags-wrapper">
+		    		<div class="tag-title">
+	    				CAN HELP WITH:
+		    			<div class="tags">
+		    			<% @user.expertises.each do |i| %>
+			    			<span class="tag">
+			    				<%= i %>
+			    			</span>
+		    			<% end %>
+		    			</div>
+		    		</div>
+
+				    <% if @user == current_user %>
+				    <br>
+		    		<div class="tag-title">
+	    				TARGETED COUNTRIES:
+		    				<div class="tags">
+		    				<% @user.targeted_countries.each do |i| %>
+				    			<span class="tag">
+				    				<%= i %>
+				    			</span>
+		    				<% end %>
+		    				</div>
+		    		</div>
+	  				<% end %>
+  				</div>
+  				
+	    </div>
+	    
+	    <% if @user == current_user %>
+		    <div class="col-xs-12 col-sm-3">
+		    	<div class="right-wrapper">
+		    		<%= link_to "EDIT PROFILE", edit_account_path(@user), class: "edit-button" %>
+		    	</div>
+		    </div>
+	    <% elsif current_user.decorate.network.exclude? @user %>
+	    	<div class="col-xs-12 col-sm-3">
+		    	<div class="right-wrapper">
+		    		<%= link_to "ASK SUPPORT", new_connection_demand_path(user2_id: @user.id),
+		    															data: { toggle: 'modal', target: '#ajaxModal' },
+		    															class: "support-button-orange" %>
+		    	</div>
+		    </div>    		
+    	<% else %>
+	    <% end %>
+
+	  </div>
+	</div>
+</div>

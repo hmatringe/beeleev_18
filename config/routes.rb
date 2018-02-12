@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
+  get "show_old/:id", to: "users#show_old"
   resource :account
   get "onboarding_first", to: "accounts#onboarding_first"
   post "onboarding_first_update", to: "accounts#onboarding_first_update"

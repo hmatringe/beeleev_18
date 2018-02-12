@@ -1,0 +1,236 @@
+#profile{
+	padding-top: 1em;
+	min-height: 75vh;
+}
+#profile_18_core, #profile_18_company{
+	h1{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+	  font-size: 2.5em;
+	  font-style: normal;
+		color: $orange;
+	  margin: 0;
+	  text-align: initial;
+	}
+	.left-wrapper{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	.center-wrapper, .right-wrapper{
+		display: flex;
+		flex-direction: column;
+		min-height: 22vh;
+	}
+	.center-wrapper{
+		justify-content: space-between;
+		.bold-item{
+			color: $gray;
+			font-weight: bold;
+		}
+		.item{
+			color: $gray;
+		}
+		.item-orange{
+			color: $orange;
+		}
+	}
+	.right-wrapper{	
+		align-items: center;
+		justify-content: center;
+	}
+	.profile-avatar{
+		min-height: 200px;
+	}
+	.tags-wrapper{
+		margin-top: 2vh;
+		min-height: 5vh;
+	}
+	.tag-title{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+	  font-style: normal;
+		color: $orange;
+	  text-align: initial;
+	}
+	.tags{
+		white-space: nowrap;
+	}
+	.tag{
+		background-color: $bleu-fonce;
+		color: white;
+		padding: 2px 4px;
+		margin: 0 4px 0 0 ;
+		border-radius: 4px;
+		font-weight: 300;
+		font-size: 0.8em;
+	}	
+	.some-icons{
+		padding: 10px 0;
+		display: flex;
+		flex-direction: row;
+		& i {
+			padding: 0 5px;
+		}
+		.facebook-color{
+			color: #3B5998;
+		}
+		.twitter-color{
+			color: #6CA7D3;
+		}
+		.linkedin-color{
+			color: #007BB6;
+		}
+	}
+	.edit-button{
+		color: white;
+		background-color: #555555;
+		border-color: #555555 !important;
+		font-family: 'Lato', sans-serif;
+		font-weight: lighter;
+		padding: 0.5em 1em;
+		font-size: 1.2em;
+		box-shadow: 2px 1px 1px #555555;
+		transition: all 0.5s ease;
+		&:hover, &:active, &:focus{
+			text-decoration:none;
+		}
+	}
+	.support-button-orange{
+		margin: 0 3px;
+		font-family: 'Lato', sans-serif;
+		display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: white;
+    background-color: $orange;
+    border-color: $orange;
+    &:hover{
+    	text-decoration: none;
+    }
+	} 
+}
+#profile_18_description, #profile_18_company_description{
+	.arrow_box {
+		position: relative;
+		border: 1px solid $orange;
+		margin: 2vw 5vw;
+		padding: 10px;
+		color: $gray;
+		font-style: italic;
+		font-family: 'Lato', sans-serif;
+		font-weight: normal;
+		font-size: 1em;
+		min-height: 15vh;
+	}
+	.arrow_box:after, .arrow_box:before {
+		bottom: 100%;
+		left: 15%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	.arrow_box:after {
+		border-color: rgba(255, 131, 80, 0);
+		border-bottom-color: $orange;
+		border-width: 20px;
+		margin-left: -20px;
+	}
+	.arrow_box:before {
+		border-color: rgba(255, 131, 80, 0);
+		border-bottom-color: $orange;
+		border-width: 26px;
+		margin-left: -26px;
+	}
+}
+#profile_community{
+	// background-color: red;
+	min-height: 30vh;
+	h2{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+	  font-size: 2.5em;
+	  font-style: normal;
+		color: $orange;
+	  margin: 1em 0 0;
+	  text-align: center;
+	}
+	.profile-card{
+		border: #979797 1px solid;
+		border-radius: 5px;
+		margin: 10px 0;
+		& a:hover {
+			text-decoration: none;
+		}
+		.profile-card-top{
+			padding: 10px;
+			display: flex;
+			.img-wrapper {
+				flex: 0 0 20%;
+			}
+			.txt-wrapper{
+				flex: 1 1 auto;
+				.inner-wrapper{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+					height: 100%;
+					text-align: center;
+					.name{
+						font-family: 'Lato', sans-serif;
+						font-weight: 700;
+						color: $orange;
+					}
+					.title{
+						font-family: 'Lato', sans-serif;
+						font-weight: 400;
+						color: $gray;
+						font-style: italic;
+					}
+				}
+			}
+		}
+		.profile-card-bottom{
+			border-top: #979797 1px solid;
+			display: flex;
+			justify-content: flex-end;
+			padding: 6px;
+			.card-button{
+				margin: 0 3px;
+				font-family: 'Lato', sans-serif;
+				display: inline-block;
+		    margin-bottom: 0;
+		    font-weight: 400;
+		    text-align: center;
+		    vertical-align: middle;
+		    cursor: pointer;
+		    background-image: none;
+		    border: 1px solid transparent;
+		    white-space: nowrap;
+		    padding: 6px 12px;
+		    font-size: 14px;
+		    border-radius: 4px;
+		    color: white;
+        background-color: $orange;
+        border-color: $orange;
+        &:hover{
+        	text-decoration: none;
+        }
+			}
+		}
+	}
+}
