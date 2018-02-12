@@ -2,14 +2,15 @@
 #
 # Table name: partners
 #
-#  id         :integer          not null, primary key
-#  url        :string(255)
-#  image      :string(255)
-#  title      :string(255)
-#  body       :text
-#  position   :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id                  :integer          not null, primary key
+#  url                 :string(255)
+#  image               :string(255)
+#  title               :string(255)
+#  body                :text
+#  position            :integer
+#  created_at          :datetime
+#  updated_at          :datetime
+#  partner_category_id :integer
 #
 
 class Partner < ActiveRecord::Base

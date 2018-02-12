@@ -65,6 +65,7 @@
 #  activated_at                     :datetime
 #  stripe_customer_id               :string(255)
 #  can_post                         :boolean          default(TRUE)
+#  targeted_countries               :text             default([]), is an Array
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

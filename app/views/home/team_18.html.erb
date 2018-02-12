@@ -40,9 +40,7 @@
             COUNTRY SEARCH
           </div>
         <% else %>
-          <div class="btn btn-orange18-orange">
-            APPLY NOW
-          </div>
+          <%= link_to "APPLY NOW", new_user_registration_path, class: "btn btn-orange18-orange" %>
         <% end %>
       </div>
       </div>

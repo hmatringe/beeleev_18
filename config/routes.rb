@@ -17,6 +17,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resource :account
+  get "onboarding_first", to: "accounts#onboarding_first"
+  post "onboarding_first_update", to: "accounts#onboarding_first_update"
+  get "onboarding_second", to: "accounts#onboarding_second"
+  post "onboarding_second_update", to: "accounts#onboarding_second_update"
+  get "onboarding_third", to: "accounts#onboarding_third"
+  post "onboarding_third_update", to: "accounts#onboarding_third_update"
   resource :network, only: [:show] do
     get :search
   end

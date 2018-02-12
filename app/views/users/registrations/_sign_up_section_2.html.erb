@@ -1,0 +1,60 @@
+<section>
+  <div class="row">
+    <div class="col-md-12">
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-user"></span>
+            </span>
+            <%= f.text_field :civility, class: "form-control",
+              placeholder: :civility.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-home"></span>
+            </span>
+            <%= f.text_field :website, class: "form-control",
+              placeholder: :website.to_s.humanize,
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-home"></span>
+            </span>
+             <%= f.select :business_sectors, @business_sectors, {}, class: "form-control",
+              multiple: true,
+              placeholder: :business_sectors.to_s.humanize,
+              # + " (ex: Accounting)"
+              required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-globe"></span>
+            </span>
+            <!-- , [["Cold","cold"],["Hot","hot"]] -->
+            <%= f.select :expertises, @expertises, {}, class: "form-control",
+              multiple: true,
+              # placeholder: :expertises.to_s.humanize + " (ex: Accounting)",
+              # placeholder: "In which fields are you willing to help other members?",
+              placeholder: "In which fields will you help others?",
+              required: true %>
+          </div>
+        </div>
+
+        
+
+
+    </div>          
+  </div>
+</section>

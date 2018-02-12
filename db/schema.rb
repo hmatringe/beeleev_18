@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124100221) do
+ActiveRecord::Schema.define(version: 20180209141147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -297,6 +297,7 @@ ActiveRecord::Schema.define(version: 20180124100221) do
     t.datetime "activated_at"
     t.string   "stripe_customer_id"
     t.boolean  "can_post",                         default: true
+    t.text     "targeted_countries",               default: [],                 array: true
   end
 
   add_index "users", ["expertises"], name: "index_users_on_expertises", using: :gin

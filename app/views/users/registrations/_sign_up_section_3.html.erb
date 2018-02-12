@@ -1,0 +1,18 @@
+<section>
+  <div class="row">
+    <div class="col-md-12">
+
+        <div class="checkbox">
+          <label>
+            <%#= check_box(resource, :terms_of_service) %>
+            <%= check_box(:user, :terms_of_service) %>
+            <label for="client_terms_of_service">
+              By joining Beeleev’s Entrepreneurial Community, I commit to reach out to other members and answer them in the shortest delays possible, as they would when I need support myself. 
+              Because we grow faster together!
+            </label>
+          </label>
+        </div> 
+
+        <%= f.submit "Sign up", class: "btn btn-info btn-block", id: "sign_up_btn_js_slider" %>
+    </div>          
+  </div>

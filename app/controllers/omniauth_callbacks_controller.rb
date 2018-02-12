@@ -25,9 +25,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     elsif @user.activation_pending?
       # For Email template liquid variables
       @recipient = @user
-
       sign_in @user
-      redirect_to edit_account_path
+      
+      # redirect_to edit_account_path
+      redirect_to onboarding_first_path
     else
       session['devise.linkedin_data'] = request.env['omniauth.auth']
       redirect_to root_url

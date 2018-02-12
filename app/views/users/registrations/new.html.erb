@@ -1,0 +1,123 @@
+<div id="signup_18" class="below-nav">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>JOIN THE COMMUNITY</h1>
+      </div>
+    
+      <div class="col-xs-12 col-sm-4 col-sm-push-8">
+        
+        <div class="sign-up-body">
+
+          <%= link_to user_omniauth_authorize_path(:linkedin), class: "btn btn-primary btn-block" do %> 
+            <%= t("sign_up_with") %>
+            <%= image_tag "LinkedIn-Logo-2C.png", size: "83x20" %>
+          <% end %>
+
+          <hr>
+
+            <%= form_for resource, as: resource_name, url: user_registration_path(resource) do |f| %>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">@</span>
+                  <%= f.email_field :email, class: "form-control",
+                    placeholder: :email.to_s.humanize,
+                    required: true %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-lock"></span>
+                  </span>
+                  <%= f.password_field :password, class: "form-control",
+                    placeholder: :password.to_s.humanize + " (6 characters minimum)",
+                    required: true%>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-lock"></span>
+                  </span>
+                  <%= f.password_field :password_confirmation, class: "form-control",
+                    placeholder: :password_confirmation.to_s.humanize,
+                    required: true %>
+                </div>
+              </div>
+
+              <div class="checkbox text-center">
+                <label>
+                  <%= check_box(:user, :terms_of_service) %>
+                  <label for="client_terms_of_service" class="approve-terms">
+                    By applying to Beeleev, I hereby accept its <br>
+                    <%= link_to "General Terms & Conditions", gtc_path, target: "_blank" %>.
+                  </label>
+                </label>
+              </div> 
+              <div class="text-center">
+                <%= f.submit "APPLY NOW", class: "btn btn-orange18-orange", id: "sign_up_btn_js_slider" %>
+              </div>
+
+            <% end %>
+
+        </div>
+        
+        <div class="text-center">
+          Already a member ?
+          <%= link_to t("log_in"), new_user_session_path, data: {toggle: "reopen-modal"} %> 
+        </div>
+
+        <div class="sign-up-slogan">
+          <h5>
+            GROW GLOBAL <br>
+            <span>
+              WITH US!
+            </span>
+          </h5>
+        </div>
+
+      </div>
+
+      <div class="col-xs-12 col-sm-8 col-sm-pull-4">
+        <div class="sign-up-left">
+          <div>
+            <div>
+              <h2>To Grow your Business Internationally is a Challenge </h2>
+            </div>
+            <div class="bullets">
+              <h3>Get Support</h3>
+              <div class="middle-dash">&nbsp;-&nbsp;</div>
+              <h3>Find Contacts</h3>
+              <div class="middle-dash">&nbsp;-&nbsp;</div>
+              <h3>Meet in Real Life</h3>
+            </div>
+          </div>
+
+          <%= render partial: "users/shared/world" %>
+          <%= render partial: "users/shared/kpis" %>
+
+        </div>
+      </div>  
+
+    </div>
+  </div>
+</div>
+
+
+
+<%= content_for :javascripts do %> 
+  <%= render "shared/linkedin" %>
+
+  <script>
+    $(function() {
+      $('#user_country').select2({
+        minimumInputLength: 3});
+      $('#user_expertises').select2();
+      $('#user_business_sectors').select2();
+     });
+  </script>
+<% end %>

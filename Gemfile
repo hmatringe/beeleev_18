@@ -44,7 +44,10 @@ gem 'rack-rewrite'
 gem 'figaro'
 gem 'annotate'
 gem 'foreigner'
+gem 'simple_form'
 
+# schema graph
+gem "rails-erd"
 
 # gem 'activeadmin_select2', github: 'hmatringe/active_admin_select2'
 

@@ -1,7 +1,12 @@
-#signin_18{
-	min-height: 82vh;
-	.sign-in-left{
+#signup_18{
+	// min-height: 82vh;
+	.sign-up-left{
+		// min-height: 60vh;
 		border-right: $bg-grey 2px solid;
+		flex-direction: column;
+		display: flex;
+	  justify-content: space-between;
+	  height: 100%
 	}
 	h1{
 		font-family: 'Lato', sans-serif;
