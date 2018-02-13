@@ -46,5 +46,7 @@ module Beeleev
     config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
       r302 '/newsfeed', '/'
     end
+    # serve error pages from the Rails app itself > see routes.
+    config.exceptions_app = self.routes
   end
 end
