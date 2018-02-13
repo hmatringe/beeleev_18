@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'errors/not_found'
+
+  get 'errors/internal_server_error'
+
   get 'connection_propositions/show'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -64,4 +68,8 @@ Rails.application.routes.draw do
   # get 'home_18', to: 'home#home_18'
 
   get 'components', to: 'home#components'
+
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/422", :to => "errors#unacceptable", :via => :all
+  match "/500", :to => "errors#internal_server_error", :via => :all
 end
