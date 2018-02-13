@@ -1,0 +1,58 @@
+<br><hr class="hr-75pc">
+<br><br>
+<div id="profile_18_company">
+	<div class="container">
+	  <div class="row">
+	    
+	    <div class="col-xs-12 col-sm-3">
+				<div class="left-wrapper">
+					<div class="profile-avatar">
+						<%#= cl_image_tag @user.avatar, transformation:
+						{width: 200, height: 200, gravity: :face, radius: :max, crop: :crop} %>
+						<%= cl_image_tag @user.avatar, transformation: [
+							  {width: 400, height: 400, gravity: :face, radius: :max, crop: :fill},
+							  {width: 200, crop: :scale}] %>
+					</div>
+					<ul class="some-icons list-inline">
+						<li>
+							<i class="fa fa-2x fa-facebook-square facebook-color" aria-hidden="true"></i>
+						</li>
+						<li>
+							<i class="fa fa-2x fa-twitter-square twitter-color" aria-hidden="true"></i>
+						</li>
+						<li>
+							<i class="fa fa-2x fa-linkedin-square linkedin-color" aria-hidden="true"></i>
+						</li>
+					</ul>
+				</div>
+	    </div>
+
+	    <div class="col-xs-12 col-sm-6">
+	    	<div class="center-wrapper">
+	    		<h1><%= @user.company.upcase %></h1>
+	    		<div class="bold-item">
+	    			<%= @user.position_at_company %>
+	    		</div>
+	    		
+	    		<% unless @user.staff_volume.empty? %>
+		    		<div class="item">
+		    			<%= "#{@user.staff_volume} Employee" %>
+		    		</div>
+	    		<% end %>
+	    		
+	    		<% unless @user.turnover.empty? %>
+		    		<div class="item">
+		    			<%= "#{@user.turnover} Turnover" %>
+		    		</div>
+	    		<% end %>
+	    		
+	    		<div class="item-orange">
+	    			<%= @user.website %>
+	    		</div>
+	    		
+	    	</div>
+	    </div>
+
+	  </div>
+	</div>
+</div>

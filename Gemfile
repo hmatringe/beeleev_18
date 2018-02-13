@@ -42,12 +42,10 @@ gem 'money'
 gem 'eu_central_bank', '<= 0.5.0'
 gem 'rack-rewrite'
 gem 'figaro'
-gem 'annotate'
 gem 'foreigner'
 gem 'simple_form'
+gem 'draper'
 
-# schema graph
-gem "rails-erd"
 
 # gem 'activeadmin_select2', github: 'hmatringe/active_admin_select2'
 
@@ -58,6 +56,8 @@ gem "rails-erd"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+	gem "rails-erd" # schema graph
+	gem 'annotate' # model attributes annotation
 end
 
 group :test, :development do

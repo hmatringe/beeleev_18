@@ -1,0 +1,42 @@
+<br><hr class="hr-75pc">
+<div id="profile_community">
+	<h2>MY COMMUNITY</h2>
+	<br>
+
+
+
+	<div class="container">
+		<div class="row">
+					
+					<% @user.network.each do |connection| %>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						
+						<%= link_to user_path(connection) do %>
+						<div class="profile-card">
+							<div class="profile-card-top">
+									<%= cl_image_tag connection.avatar, height: 120, crop: :scale, class: "img-wrapper" %>
+								<div class="txt-wrapper">
+									<div class="inner-wrapper">
+										<div class="name">
+											<%= connection.decorate.full_capitalized_name %>
+										</div>
+										<div class="title">
+											<%= "#{connection.position} #{connection.country}" %>
+										</div>
+									</div>
+								</div>
+							</div>
+							<% end %>
+							<div class="profile-card-bottom">
+								<%= link_to "PROFILE", user_path(connection), class: "card-button", target: "_blank" %>
+								<%= mail_to connection.email, target: "_blank", class: "card-button" do %>
+									<i class="fa fa-envelope-o" aria-hidden="true"></i>
+								<% end %>
+							</div>
+						</div>
+					</div>
+					<% end %>
+
+		</div>
+	</div>
+</div>
