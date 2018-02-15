@@ -28,9 +28,6 @@ Rails.application.routes.draw do
   post "onboarding_second_update", to: "accounts#onboarding_second_update"
   get "onboarding_third", to: "accounts#onboarding_third"
   post "onboarding_third_update", to: "accounts#onboarding_third_update"
-  resource :network, only: [:show] do
-    get :search
-  end
   resource :activity, only: [:show]
   resource :my_network, only: [:show]
   resources :connection_demands, only: [:new, :create, :show, :update]
@@ -43,6 +40,15 @@ Rails.application.routes.draw do
             constraints: lambda { |request| request.xhr? }
 
   get 'shop', to: 'shop#show'
+  
+  # old_start
+  get 'network_show_old',  to: 'networks#show_original'
+  # old_end
+  resource :network, only: [:show] do
+    get :search
+    get :search_any
+    get :search_one
+  end
   get 'network',  to: 'networks#show', as: 'user_root'
   # resources :event_posts, path: 'news', only: [:index, :show], as: 'events'
   resources :event_posts, path: 'news', only: [:show], as: 'events'

@@ -1,33 +1,24 @@
-#network.container
-  h1.text-center= t("network")
+#network-search
+  h1.text-center BROWSE THE COMMUNITY
   br
+  .container
+    .row.filter-box
+      .col-xs-12.col-sm-6.bordered
+          = render "networks/search_any"
+      .col-xs-12.col-sm-6
+          = render "networks/search_one"
+    .text-center
+      h2.network-help
+        | Can’t find your match? Send us a 
+        = new_connection_request_btn(classes: "no-deco-focus no-deco-active no-deco-hover bleu-fonce", btn_title: "DIRECT REQUEST", tag_classes:"inline-block")
 
-  .alert.alert-info
+    .text-right
+      = paginate @users, :theme => 'twitter-bootstrap-3'
 
-    p.panel-title 
-      strong Great! Now you can start collaborating with entrepreneurs from all over the world.
-    br
-    
-    span You can either:
+    .row
+      - @users.each do |user|
+        .col-sm-6.col-lg-4
+          = user_panel(user)
 
-    ul
-      li Look up the community members by using the search engine - select a country, a city and/or an industry - and send connection requests
-      li Use the Smart Connector to send us a customized request so we can find the most suitable contacts for you within and outside the Beeleev network
-    
-    br
-    p
-      strong It's networking time!
-
-
-  = render "networks/search"
-
-  .text-right
-    = paginate @users, :theme => 'twitter-bootstrap-3'
-
-  .row
-    - @users.each do |user|
-      .col-sm-6.col-lg-4
-        = user_panel(user)
-
-  .text-right
-    = paginate @users, :theme => 'twitter-bootstrap-3'
+    .text-right
+      = paginate @users, :theme => 'twitter-bootstrap-3'

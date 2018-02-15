@@ -1,0 +1,18 @@
+<div id="network-search-one">
+	<%= search_form_for @q, url: search_one_network_path do |f| %>
+	      <div class="form-title">Or Someone in Particular...</div>
+		    
+				<div class="expadded">
+			    <%= f.search_field :full_name_or_unaccented_full_name_cont,
+			      class: "form-control",
+			      placeholder: "Name" %>
+
+			    <%= f.search_field :company_cont,
+			      class: "form-control",
+			      placeholder: "Company" %>
+	      </div>
+				<div>
+		    	<%= f.submit "GO!", class: "btn btn-orange18-orange" %>
+		    </div>
+	<% end %>
+</div>

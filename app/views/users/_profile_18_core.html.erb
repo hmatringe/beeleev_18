@@ -69,6 +69,7 @@
 	    		<div class="tags-wrapper">
 		    		<div class="tag-title">
 	    				CAN HELP WITH:
+		    		</div>
 		    			<div class="tags">
 		    			<% @user.expertises.each do |i| %>
 			    			<span class="tag">
@@ -76,12 +77,12 @@
 			    			</span>
 		    			<% end %>
 		    			</div>
-		    		</div>
 
 				    <% if @user == current_user %>
 				    <br>
 		    		<div class="tag-title">
 	    				TARGETED COUNTRIES:
+		    		</div>
 		    				<div class="tags">
 		    				<% @user.targeted_countries.each do |i| %>
 				    			<span class="tag">
@@ -89,7 +90,6 @@
 				    			</span>
 		    				<% end %>
 		    				</div>
-		    		</div>
 	  				<% end %>
   				</div>
   				

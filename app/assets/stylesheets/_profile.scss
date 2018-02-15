@@ -234,3 +234,24 @@
 		}
 	}
 }
+@media(max-width:767px) {
+	#profile{
+		.arrow_box{
+			margin: 10vw 5vw;
+		}
+		.arrow_box:after, .arrow_box:before {
+			left: 50%;
+		}
+		.tag-title{
+			text-align: center;
+			margin: 0 0 0.5vh;
+		}
+		.tags{
+			white-space: unset;
+		}
+		.center-wrapper{
+			align-items: center;
+			min-height: 15vh;
+		}
+	}
+}

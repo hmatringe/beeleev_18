@@ -152,3 +152,30 @@
     }
   }
 }
+.italic{
+  font-style: italic;
+}
+.bleu-fonce {
+  color: $bleu-fonce;
+}
+.orange {
+  color: $orange;
+}
+.no-deco-hover{
+  &:hover{
+    text-decoration: none;
+  }
+}
+.no-deco-active{
+  &:active{
+    text-decoration: none;
+  }
+}
+.no-deco-focus{
+  &:focus{
+    text-decoration: none;
+  }
+}
+.inline-block{
+  display: inline-block;
+}

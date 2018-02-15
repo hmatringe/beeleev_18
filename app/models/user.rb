@@ -407,6 +407,10 @@ class User < ActiveRecord::Base
     profil == 'Expert'
   end
 
+  def company?
+    profil == 'Company'
+  end
+
   def connected_user_ids
     (
       user1_connections.live.pluck(:user2_id) +

@@ -213,7 +213,7 @@ ActiveAdmin.register User do
   form do |f|
     f.inputs 'Public informations' do
       f.input :avatar
-      f.input :profil, as: :radio, collection: %w(Entrepreneur Expert)
+      f.input :profil, as: :radio, collection: %w(Entrepreneur Expert Company)
       f.input :civility, as: :radio, collection: %w(Mr. Mrs. Ms. Dr.)
       f.input :last_name
       f.input :first_name

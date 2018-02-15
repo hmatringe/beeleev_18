@@ -21,7 +21,6 @@ module UsersHelper
   def user_contact_infos_btn(user)
     link_to "", class: "btn btn-success btn-xs toggle-user-contact-info-modal", data: {toggle: "tooltip"}, title: t("contact_infos") do
       content_tag(:span, nil, class: "glyphicon glyphicon-eye-open")
-      # t("contact_infos")
     end
   end
 
