@@ -54,16 +54,16 @@
 	  text-align: initial;
 	}
 	.tags{
-		white-space: nowrap;
 	}
 	.tag{
 		background-color: $bleu-fonce;
 		color: white;
-		padding: 2px 4px;
-		margin: 0 4px 0 0 ;
+		padding: 3px 5px;
+		margin: 1px;
 		border-radius: 4px;
 		font-weight: 300;
 		font-size: 0.8em;
+		display: inline-block;
 	}	
 	.some-icons{
 		padding: 10px 0;
@@ -157,7 +157,6 @@
 	}
 }
 #profile_community{
-	// background-color: red;
 	min-height: 30vh;
 	h2{
 		font-family: 'Lato', sans-serif;
@@ -231,6 +230,30 @@
         	text-decoration: none;
         }
 			}
+		}
+	}
+}
+@media(max-width:767px) {
+	#profile{
+		h1{
+	  	text-align: center;
+		}
+		.arrow_box{
+			margin: 10vw 5vw;
+		}
+		.arrow_box:after, .arrow_box:before {
+			left: 50%;
+		}
+		.tag-title{
+			text-align: center;
+			margin: 0 0 0.5vh;
+		}
+		.tags{
+			text-align: center;
+		}
+		.center-wrapper{
+			align-items: center;
+			min-height: 15vh;
 		}
 	}
 }

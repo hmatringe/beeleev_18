@@ -1,0 +1,59 @@
+<div id="network-search-any">
+  <%= search_form_for @q, url: search_any_network_path do |f| %> 
+
+      <div class="form-title">I'm Looking for a</div>
+              
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="col-xs-7 col-sm-4">
+                <% @profiles.each do |profile| %> 
+                  <div class= "italic">
+                    <% if params[:q] && params[:q]["profil_eq_any"] %>
+                    <%= check_box_tag('q[profil_eq_any][]',
+                                      profile,
+                                      params[:q]["profil_eq_any"].include?(profile) ) %>
+                    <% else %>
+                    <%= check_box_tag('q[profil_eq_any][]',
+                                      profile) %>
+
+                    <% end %>
+                    <%= profile %>
+                  </div>
+                <% end %>         
+              </div>   
+              
+              <div class="col-xs-2">
+                <div class="form-title">In</div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6">
+                <%= f.select :country_in,
+                  @countries,
+                    {},
+                    class: "form-control",
+                    placeholder: "Country",
+                    multiple: true %>
+
+                <%= f.select :city_eq,
+                  @q.result.pluck(:city).uniq.compact.sort,
+                    {prompt: "City"},
+                    class: "form-control",
+                    readonly: @q.city_eq.present? %>
+              </div>
+              
+          </div>
+        </div>
+
+        <div class="form-title">That Can Help Me With</div>
+        
+        <%= f.select :expertises_overlap,
+          @q.result.pluck(:expertises).flatten.uniq.compact.sort,
+            {},
+            class: "form-control padded-width",
+            placeholder: "Expertises",
+            multiple: true %>
+        <div>
+          <%= f.submit "GO!", class: "btn btn-orange18-orange" %>
+        </div>
+  <% end %>
+</div>
