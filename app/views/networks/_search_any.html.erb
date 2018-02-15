@@ -8,7 +8,15 @@
             <div class="col-xs-7 col-sm-4">
                 <% @profiles.each do |profile| %> 
                   <div class= "italic">
-                    <%= check_box_tag('q[profil_eq_any][]', profile, params[:q] ? false : params[:q]["profil_eq_any"].include?(profile) ) %>
+                    <% if params[:q] && params[:q]["profil_eq_any"] %>
+                    <%= check_box_tag('q[profil_eq_any][]',
+                                      profile,
+                                      params[:q]["profil_eq_any"].include?(profile) ) %>
+                    <% else %>
+                    <%= check_box_tag('q[profil_eq_any][]',
+                                      profile) %>
+
+                    <% end %>
                     <%= profile %>
                   </div>
                 <% end %>         
