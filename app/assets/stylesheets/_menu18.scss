@@ -16,12 +16,28 @@
   }
 }
 
+.navbar-default{
+  background-color: white;
+  border-color: white;
+  border-bottom: 1px solid $grey;
+  .SoMeicons i {
+    color: $bleu-fonce;
+  }
+}
 .navbar-default .navbar-nav > li {
-
 
   .btn-default.active {
     background-color: inherit;
     @include box-shadow(none);
+    color: $orange;
+  }
+}
+.navbar-default .navbar-nav > li > a {
+  color: $bleu-fonce;
+  &.active {
+    color: $orange;
+  }
+  &:hover, &:focus, &:active{
     color: $orange;
   }
 }
@@ -144,7 +160,6 @@ body.cookiebanner .lemenu {
     }
     &.active {
       color: $orange;
-      // color: $grey;
     }
   }
   

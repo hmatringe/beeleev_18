@@ -60,7 +60,7 @@ module ApplicationHelper
       }
     end
 
-    link = link_to title, network_path, html_options
+    link = link_to title, members_path, html_options
     content_tag :div, link, class: tag_classes
   end
 

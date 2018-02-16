@@ -1,5 +1,5 @@
 #network-search
-  = search_form_for @q, url: search_network_path do |f|
+  = search_form_for @q, url: members_search_path do |f|
     .panel.panel-info
 
       .panel-heading
@@ -53,6 +53,6 @@
       .panel-footer
         .row
           .col-sm-2
-            = link_to "Clear filters", network_path, class: "btn btn-warning btn-block"
+            = link_to "Clear filters", members_search_path, class: "btn btn-warning btn-block"
           .col-sm-2
             = f.submit "Search", class: "btn btn-primary btn-block"

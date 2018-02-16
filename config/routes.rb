@@ -42,15 +42,17 @@ Rails.application.routes.draw do
 
   get 'shop', to: 'shop#show'
   
-  # old_start
-  get 'network_show_old',  to: 'networks#show_original'
-  # old_end
-  resource :network, only: [:show] do
-    get :search
-    get :search_any
-    get :search_one
-  end
-  get 'network',  to: 'networks#show', as: 'user_root'
+  # get 'network_show_old',  to: 'networks#show_original'
+  # resource :network, only: [:show] do
+  #   get :search
+  #   get :search_any
+  #   get :search_one
+  # end
+  get 'members',  to: 'networks#show', as: 'user_root'
+  get 'members',  to: 'networks#show'
+  get 'members/search',  to: 'networks#search'
+  get 'members/search_any',  to: 'networks#search_any'
+  get 'members/search_one',  to: 'networks#search_one'
   # resources :event_posts, path: 'news', only: [:index, :show], as: 'events'
   resources :event_posts, path: 'news', only: [:show], as: 'events'
   # get 'events_18', to: 'event_posts#index_18'
