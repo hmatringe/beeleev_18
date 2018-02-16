@@ -43,10 +43,10 @@
 	    	<div class="center-wrapper">
 	    		<h1><%= @user.full_capitalized_name %></h1>
 	    		<div class="bold-item">
-	    			<%= @user.position_at_company %>
+	    			<%= @user.position_at_company if @user.position %>
 	    		</div>
 	    		<div class="item">
-	    			<%= @user.city + ", " if @user.city.present?%>
+	    			<%= (@user.city + ", ") if @user.city.present?%>
 	    			<%= @user.country if @user.country.present?%>
 	    			<% unless @user.all_spoken_languages == "" %>
 	    			<%= "- " + @user.all_spoken_languages %>
