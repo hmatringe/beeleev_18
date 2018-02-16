@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   post "onboarding_second_update", to: "accounts#onboarding_second_update"
   get "onboarding_third", to: "accounts#onboarding_third"
   post "onboarding_third_update", to: "accounts#onboarding_third_update"
-  resource :activity, only: [:show]
+  # resource :activity, only: [:show]
   resource :my_network, only: [:show]
   resources :connection_demands, only: [:new, :create, :show, :update]
   resources :connection_requests, only: [:new, :edit, :create, :update]

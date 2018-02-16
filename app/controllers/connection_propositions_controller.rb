@@ -18,8 +18,8 @@ class ConnectionPropositionsController < ApplicationController
     if ConnectionProposition.aasm_events.keys.include? params[:commit].to_sym
       @cp.send params[:commit]
     end
-
-    notice = "TODO"
+    # TODO
+    notice = ""
 
     if @cp.save
       redirect_options = {notice: notice}
@@ -27,6 +27,6 @@ class ConnectionPropositionsController < ApplicationController
       redirect_options = {alert: "Unable to save the connection proposition"}
     end
 
-    redirect_to activity_path, redirect_options
+    redirect_to account_path, redirect_options
   end
 end

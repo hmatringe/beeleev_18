@@ -42,7 +42,7 @@ class ConnectionDemandsController < ApplicationController
     case params[:commit]
     when 'user2_accept'
       @cd.user2_accept!
-      redirect_to activity_path, notice: "Your are now connected with #{@cd.user1_name}"
+      redirect_to account_path, notice: "Your are now connected with #{@cd.user1_name}"
     when 'user2_reject'
       # update the reject_description
       @cd.update_attributes(
@@ -51,12 +51,12 @@ class ConnectionDemandsController < ApplicationController
 
       @cd.user2_reject!
 
-      redirect_to activity_path, alert: 'Connection demand rejected'
+      redirect_to account_path, alert: 'Connection demand rejected'
     else
-      redirect_to activity_path, alert: 'Invalid commit param'
+      redirect_to account_path, alert: 'Invalid commit param'
     end
   rescue ActiveRecord::RecordNotFound
-    redirect_to activity_path, alert: 'Invalid connection demand id'
+    redirect_to account_path, alert: 'Invalid connection demand id'
   end
 
   # Instance methods

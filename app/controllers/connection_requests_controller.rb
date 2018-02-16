@@ -51,9 +51,9 @@ class ConnectionRequestsController < ApplicationController
       .permit(:subject, :countries, :description, business_sectors: [])
 
     if @cr.save
-      redirect_to activity_path, notice: 'Your connection request has been updated'
+      redirect_to account_path, notice: 'Your connection request has been updated'
     else
-      redirect_to activity_path, alert: 'Unable to update connection request'
+      redirect_to account_path, alert: 'Unable to update connection request'
     end
 
   end

@@ -23,7 +23,7 @@ nav.navbar.navbar-default[role="navigation"]
             
           li= link_to 'Our Partners', partners_path
 
-          - if can? :access_activity, current_user
+          /- if can? :access_activity, current_user
             li
               = link_to activity_path do
                 => t("activity")

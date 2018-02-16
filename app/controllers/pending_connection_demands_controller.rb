@@ -6,15 +6,15 @@ class PendingConnectionDemandsController < ApplicationController
     case params[:commit]
     when "accept"
       @cd.accept!
-      redirect_to activity_path, notice: "Your are now connected with #{@cd.requester_name}"
+      redirect_to account_path, notice: "Your are now connected with #{@cd.requester_name}"
     when "reject"
       @cd.reject!
-      redirect_to activity_path, alert: "Connection demand rejected"
+      redirect_to account_path, alert: "Connection demand rejected"
     else
-      redirect_to activity_path, alert: "Invalid commit param"
+      redirect_to account_path, alert: "Invalid commit param"
     end
   rescue ActiveRecord::RecordNotFound
-    redirect_to activity_path, alert: "Invalid connection demand id"
+    redirect_to account_path, alert: "Invalid connection demand id"
   end
 
 end
