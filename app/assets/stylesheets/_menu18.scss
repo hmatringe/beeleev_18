@@ -24,14 +24,19 @@
     color: $bleu-fonce;
   }
 }
-.navbar-default .navbar-nav > li {
 
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+  background-color: white;
+}
+
+.navbar-default .navbar-nav > li {
   .btn-default.active {
     background-color: inherit;
     @include box-shadow(none);
     color: $orange;
   }
 }
+
 .navbar-default .navbar-nav > li > a {
   color: $bleu-fonce;
   &.active {
@@ -47,20 +52,17 @@ body.cookiebanner .lemenu {
 }
 
 .lemenu {
-  // background-color: white;
   border: none;
   border-radius: 0px;
   margin: 0px;
   padding: 10px;
-
-  // responsive nav
+  
   .navbar-nav {
     li {
       a {
         padding: 10px;
       }
     }
-
   }
 
   .navbar-brand {
@@ -83,31 +85,22 @@ body.cookiebanner .lemenu {
 
 
   .btn.btn-default2 {
-    //color: $orange;
     border: 1px solid $orange;
     color: $orange;
-    //background-color: white;
     margin-right: 4px;
     margin-left: 4px;
-    &:hover{
+    &:hover, &:focus, &:active{
       color: #fff;
-      background-color: $orange; //$bleu-clair;
+      background-color: $orange;
     }
-    &:focus{
-      background-color: $bleu;
-    }
-
   }
 
   a {
-    //padding-top: 7px;
     text-transform: uppercase;
     font-family: "proxima-nova", sans-serif;
     font-size: 13px;
     font-weight: 300;
     letter-spacing: 2px;
-    // color: #fff;
-
     &:hover {
       color: #fff;
     }
@@ -123,18 +116,10 @@ body.cookiebanner .lemenu {
   }
 
 }
-// HM_18
-// bootstrap override
-  // .nav > li > a:hover, .nav > li > a:focus {
-  //   text-decoration: none;
-  //   background-color: transparent;
-  //   color: $orange;
-  // }
 #lemenu{
   transition: all 0.5s ease;
 }
 .lemenu18_transparent{
-  // background-color: transparent;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.15), rgba(0,0,0,0));
   .navbar-nav > li a {
     color: white;
@@ -189,7 +174,6 @@ body.cookiebanner .lemenu {
     color: $orange;
     &:hover{
       color: rgba(216,125,64,1);
-      // margin: -1px 0 1px;
     }
   }
   
@@ -203,8 +187,6 @@ body.cookiebanner .lemenu {
 
 
 @media(max-width:767px) {
-
-
   .lemenu {
     .btn.btn-default2 {
       border: 1px solid $bleu-clair;
