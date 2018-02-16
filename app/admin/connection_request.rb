@@ -51,7 +51,10 @@ ActiveAdmin.register ConnectionRequest do
 
   form do |f|
     f.inputs 'Details' do
-      f.input :author_id, as: :select2, select2_options: user_select2_options
+      # f.input :author_id#, as: :select2, select2_options: user_select2_options
+      f.input :author_id,
+              as: :select,
+              collection: User.all
       f.input :subject
       f.input :status,
               as: :select,

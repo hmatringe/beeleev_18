@@ -55,7 +55,7 @@
 					
 	    		<% if current_user == @user || current_user.decorate.network.include?(@user) %>
 	    		<!-- only for  me of my network -->
-	    		<% unless @user.cellphone.empty? %>
+	    		<% unless @user.cellphone.nil? %>
 		    		<div class="item">
 		    			<%= @user.cellphone %>
 		    		</div>

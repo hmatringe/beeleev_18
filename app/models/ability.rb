@@ -39,8 +39,21 @@ class Ability
         user.id != cd.user2_id
       end unless user.expert?
 
+      # TODO original: delete after exhaustive tests
+      # can [
+      #   :access_network, :access_activity, :access_my_network,
+      #   :see_new_connection_request_button
+      # ], User, status: 'active'
+      # TODO refactor: destroy always true policies after exhaustive tests with client
       can [
-        :access_network, :access_activity, :access_my_network,
+        :access_activity,
+        :see_new_connection_request_button
+      ], User, status: 'activation_pending'
+      
+      can [
+        :access_network,
+        :access_activity,
+        :access_my_network,
         :see_new_connection_request_button
       ], User, status: 'active'
 

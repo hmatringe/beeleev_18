@@ -21,14 +21,15 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   get "show_old/:id", to: "users#show_old"
-  resource :account
+  resource :account, only: [:show, :edit, :update]
+  get "account_old", to: "accounts#show_old"
   get "onboarding_first", to: "accounts#onboarding_first"
   post "onboarding_first_update", to: "accounts#onboarding_first_update"
   get "onboarding_second", to: "accounts#onboarding_second"
   post "onboarding_second_update", to: "accounts#onboarding_second_update"
   get "onboarding_third", to: "accounts#onboarding_third"
   post "onboarding_third_update", to: "accounts#onboarding_third_update"
-  resource :activity, only: [:show]
+  # resource :activity, only: [:show]
   resource :my_network, only: [:show]
   resources :connection_demands, only: [:new, :create, :show, :update]
   resources :connection_requests, only: [:new, :edit, :create, :update]
@@ -39,17 +40,20 @@ Rails.application.routes.draw do
             only: [:show],
             constraints: lambda { |request| request.xhr? }
 
-  get 'shop', to: 'shop#show'
+  # get 'shop', to: 'shop#show'
+  get 'direct_request', to: 'shop#show'
   
-  # old_start
-  get 'network_show_old',  to: 'networks#show_original'
-  # old_end
-  resource :network, only: [:show] do
-    get :search
-    get :search_any
-    get :search_one
-  end
-  get 'network',  to: 'networks#show', as: 'user_root'
+  # get 'network_show_old',  to: 'networks#show_original'
+  # resource :network, only: [:show] do
+  #   get :search
+  #   get :search_any
+  #   get :search_one
+  # end
+  get 'members',  to: 'networks#show', as: 'user_root'
+  get 'members',  to: 'networks#show'
+  get 'members/search',  to: 'networks#search'
+  get 'members/search_any',  to: 'networks#search_any'
+  get 'members/search_one',  to: 'networks#search_one'
   # resources :event_posts, path: 'news', only: [:index, :show], as: 'events'
   resources :event_posts, path: 'news', only: [:show], as: 'events'
   # get 'events_18', to: 'event_posts#index_18'

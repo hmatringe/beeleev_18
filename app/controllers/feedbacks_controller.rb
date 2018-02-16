@@ -13,7 +13,7 @@ class FeedbacksController < ApplicationController
       .permit!
 
     if @resource.save
-      redirect_to activity_path, notice: "Feedback submitted"
+      redirect_to account_path, notice: "Feedback submitted"
     else
       Rails.logger.debug @resource.errors.full_messages
       raise "unable to create feedback"
@@ -31,7 +31,7 @@ class FeedbacksController < ApplicationController
       .permit!
 
     if @resource.save
-      redirect_to activity_path, notice: "Feedback updated"
+      redirect_to account_path, notice: "Feedback updated"
     else
       Rails.logger.debug @resource.errors.full_messages
       raise "unable to update feedback"

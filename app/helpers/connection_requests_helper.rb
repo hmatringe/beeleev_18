@@ -1,6 +1,6 @@
 module ConnectionRequestsHelper
 
-  def new_connection_request_btn(classes: nil, btn_title: nil, tag_classes: nil)
+  def new_connection_request_btn(classes: nil, btn_title: nil, tag_classes: nil, display_div: true)
 
     return nil if cannot?(:see_new_connection_request_button, current_user)
 
@@ -35,6 +35,9 @@ module ConnectionRequestsHelper
 
 
     link = link_to title, path, html_options
+    if !display_div
+      return link
+    end
     content_tag :div, link, class: tag_classes
   end
 

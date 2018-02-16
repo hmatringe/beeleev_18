@@ -37,5 +37,32 @@ module ApplicationHelper
     end
   end
 
+  def browse_btn(classes: nil, btn_title: nil, tag_classes: nil)
+    if cannot?(:access_network, current_user)
+      message = "account under review"
+      return content_tag :div, message, class: "bleu-fonce"
+    end
+    
+    data = [toggle: 'modal', target: '#ajaxModal']
+    if classes 
+      title = btn_title
+      html_options = {
+        id: 'navbar-new-connection-request-btn',
+        class: classes,
+        data: data
+      }
+    else
+      title = "BROWSE"
+      html_options = {
+        id: 'navbar-new-connection-request-btn',
+        class: 'no-deco-focus no-deco-active no-deco-hover btn btn-orange',
+        data: data
+      }
+    end
+
+    link = link_to title, members_path, html_options
+    content_tag :div, link, class: tag_classes
+  end
+
 
 end

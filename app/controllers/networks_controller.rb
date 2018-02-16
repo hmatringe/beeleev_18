@@ -4,12 +4,12 @@ class NetworksController < BeeleeverSpaceController
   before_action :setup_countries
   before_action :setup_profiles
 
-  def show_original
-    authorize! :access_network, current_user
-    @users = users_scope.page(params[:page]).per(24)
-  rescue CanCan::AccessDenied
-    redirect_to edit_account_path
-  end
+  # def show_original
+  #   authorize! :access_network, current_user
+  #   @users = users_scope.page(params[:page]).per(24)
+  # rescue CanCan::AccessDenied
+  #   redirect_to edit_account_path
+  # end
 
   def show
     authorize! :access_network, current_user

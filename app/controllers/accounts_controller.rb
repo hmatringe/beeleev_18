@@ -11,7 +11,23 @@ class AccountsController < BeeleeverSpaceController
                                               :onboarding_third,
                                               :onboarding_third_update]
 
-  def show
+  def show    
+      @orders = current_user.orders.order(created_at: :desc)
+      @credits = current_user.connection_credits.order(created_at: :desc)
+      @usable_credits = current_user.connection_credits.reject{|cc| !cc.usable?}
+
+      @connections_history =
+        current_user.user1_connections.history +
+        current_user.user2_connections.history
+
+      @connections_history = @connections_history.sort_by(&:created_at).reverse
+
+      @connection_requests = current_user.connection_requests.order("created_at desc")
+
+      @connection_credits = current_user.connection_credits.order(created_at: :desc)
+  end
+
+  def show_old
     @orders = current_user.orders.order(created_at: :desc)
     @credits = current_user.connection_credits.order(created_at: :desc)
   end

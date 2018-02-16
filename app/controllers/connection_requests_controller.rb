@@ -28,7 +28,7 @@ class ConnectionRequestsController < ApplicationController
   end
 
   def create
-    redirect_to shop_path, notice: UNAUTHORIZED_MESSAGE and return \
+    redirect_to direct_request_path, notice: UNAUTHORIZED_MESSAGE and return \
       unless can? :create, ConnectionRequest
 
     @cr = current_user.connection_requests
@@ -37,9 +37,9 @@ class ConnectionRequestsController < ApplicationController
           .permit(:subject, :countries, :description, business_sectors: [])
 
     if @cr.save
-      redirect_to shop_path(anchor: 'activate-package'), notice: 'Your connection request has been sent'
+      redirect_to direct_request_path(anchor: 'activate-package'), notice: 'Your connection request has been sent'
     else
-      redirect_to shop_path, alert: 'Unable to send connection request'
+      redirect_to direct_request_path, alert: 'Unable to send connection request'
     end
   end
 
@@ -51,9 +51,9 @@ class ConnectionRequestsController < ApplicationController
       .permit(:subject, :countries, :description, business_sectors: [])
 
     if @cr.save
-      redirect_to activity_path, notice: 'Your connection request has been updated'
+      redirect_to account_path, notice: 'Your connection request has been updated'
     else
-      redirect_to activity_path, alert: 'Unable to update connection request'
+      redirect_to account_path, alert: 'Unable to update connection request'
     end
 
   end
@@ -61,7 +61,7 @@ class ConnectionRequestsController < ApplicationController
   private
 
   def ensure_xhr
-    redirect_to shop_path(anchor: 'new_connection_request') and return \
+    redirect_to direct_request_path(anchor: 'new_connection_request') and return \
       unless request.xhr?
   end
 

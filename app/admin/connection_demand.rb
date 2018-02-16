@@ -117,8 +117,14 @@ ActiveAdmin.register ConnectionDemand do
 
   form do |f|
     f.inputs "Details" do
-      f.input :user1_id#, as: :select2, select2_options: user_select2_options
-      f.input :user2_id#, as: :select2, select2_options: user_select2_options
+      # f.input :user1_id#, as: :select2, select2_options: user_select2_options
+      f.input :user1_id,
+                as: :select,
+                collection: User.all
+      # f.input :user2_id#, as: :select2, select2_options: user_select2_options
+      f.input :user2_id,
+                as: :select,
+                collection: User.all
       f.input :description
       f.input :reject_description
     end
