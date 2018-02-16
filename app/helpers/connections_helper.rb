@@ -20,10 +20,10 @@ module ConnectionsHelper
     css = %w(btn btn-xs)
 
     if resource.history?
-      name = "See"
-      css << 'btn-info'
+      name = "See".upcase
+      css << 'btn-bleu-fonce'
     else
-      name = 'Answer'
+      name = 'Answer'.upcase
       css << 'btn-warning'
     end
 
@@ -50,7 +50,7 @@ module ConnectionsHelper
       new_feedback_path(connection_id: resource.id)
     end
 
-    link_to "Feedback",
+    link_to 'Feedback'.upcase,
       path,
       class: "btn btn-success btn-xs",
       data: {toggle: "modal", target: "#ajaxModal"}

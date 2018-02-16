@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   get "show_old/:id", to: "users#show_old"
-  resource :account
+  resource :account, only: [:show, :edit, :update]
+  get "account_old", to: "accounts#show_old"
   get "onboarding_first", to: "accounts#onboarding_first"
   post "onboarding_first_update", to: "accounts#onboarding_first_update"
   get "onboarding_second", to: "accounts#onboarding_second"

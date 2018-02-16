@@ -39,7 +39,7 @@ ActiveAdmin.register ConnectionCredit do
 
   form do |f|
     f.inputs do
-      f.input :user_id, as: :select2, select2_options: user_select2_options
+      f.input :user_id#, as: :select2, select2_options: user_select2_options
       f.input :expires_on, as: 'datepicker'
     end
 
