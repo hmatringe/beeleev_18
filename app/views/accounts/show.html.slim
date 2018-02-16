@@ -55,7 +55,7 @@
             =< "CUSTOM CONNECTION HISTORY"
 
       .panel-body
-        - if @connections_history.empty?
+        - if @connection_requests.empty?
         | You have not requested any custom connection yet
         .pull-right
           = new_connection_request_btn(classes: "btn btn-success btn-xs", btn_title: "DIRECT REQUEST", tag_classes:"")
