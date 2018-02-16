@@ -20,9 +20,6 @@
   background-color: white;
   border-color: white;
   border-bottom: 1px solid $grey;
-  .SoMeicons i {
-    color: $bleu-fonce;
-  }
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
@@ -127,6 +124,9 @@ body.cookiebanner .lemenu {
       color: $orange;
     }
   }
+  .SoMeicons i {
+    color: white;
+  }
 }
 
 @media(max-width:767px) {
@@ -137,7 +137,6 @@ body.cookiebanner .lemenu {
 .lemenu18_white{
   background-color: white;
   border-bottom: 1px solid $grey;
-  
   .navbar-nav > li a {
     color: $bleu-fonce;
     &:hover{
@@ -147,17 +146,12 @@ body.cookiebanner .lemenu {
       color: $orange;
     }
   }
-  
-  .SoMeicons i {
-    color: $bleu-fonce;
-  }
-
 }
 .logo-hidden{
   display: none; 
 }
 .SoMeicons i {
-  color: white;
+  color: $bleu-fonce;
 }
 .scrolled_transparent {
   background: unset;
