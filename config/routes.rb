@@ -40,7 +40,8 @@ Rails.application.routes.draw do
             only: [:show],
             constraints: lambda { |request| request.xhr? }
 
-  get 'shop', to: 'shop#show'
+  # get 'shop', to: 'shop#show'
+  get 'direct_request', to: 'shop#show'
   
   # get 'network_show_old',  to: 'networks#show_original'
   # resource :network, only: [:show] do

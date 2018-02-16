@@ -17,18 +17,18 @@ class OrdersController < BeeleeverSpaceController
       redirect_to new_connection_request_path
     else
       flash[:notice] = @order.errors.full_messages.join('<br>'.html_safe)
-      redirect_to shop_path
+      redirect_to direct_request_path
     end
 
   rescue Stripe::StripeError => e
     flash[:error] = e.message
-    redirect_to shop_path
+    redirect_to direct_request_path
   rescue => e
     raise if Rails.env.development?
     Rails.logger.error "orders#create failed with : '#{e.message}'".red
 
     flash[:notice] = 'We are sorry but we could not process your order'
-    redirect_to shop_path
+    redirect_to direct_request_path
   end
 
   # Private

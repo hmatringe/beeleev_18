@@ -31,7 +31,7 @@
 
     <% if controller.is_a? HomeController %>
       <% if user_signed_in? %>
-        <a href="<%= shop_path %>"
+        <a href="<%= direct_request_path %>"
            class="btn btn-orange">
              LOG IN TO YOUR BEELEEVER SPACE
         </a>
