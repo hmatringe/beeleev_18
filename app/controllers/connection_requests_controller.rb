@@ -6,10 +6,15 @@ class ConnectionRequestsController < ApplicationController
   UNAUTHORIZED_MESSAGE =  'You must buy credits before sending us '\
                           'a connection request'
 
+  TARGETS = { "An Entrepreneur" => 1,
+              "A Company or Agency" => 2,
+              "An International Group" => 4}
+
   # Filters
   #########
 
   before_filter :ensure_xhr, only: [:new, :edit]
+  before_action :set_targets, only: [:new, :edit]
 
   # Actions
   #########
@@ -68,6 +73,13 @@ class ConnectionRequestsController < ApplicationController
   def ensure_can_create_connection_request
     render text: 'You must buy credits before sending us a connection request' \
       and return unless can? :create, ConnectionRequest
+  end
+
+  def set_targets
+    # @targets = ["An Entrepreneur",
+                # "A Company or Agency",
+                # "An International Group"]
+    @targets = TARGETS
   end
 
 end

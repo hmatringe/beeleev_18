@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212190952) do
+ActiveRecord::Schema.define(version: 20180218184832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +112,8 @@ ActiveRecord::Schema.define(version: 20180212190952) do
     t.datetime "updated_at"
     t.string   "status"
     t.text     "business_sectors", default: [], array: true
+    t.text     "targets",          default: [], array: true
+    t.text     "city"
   end
 
   add_index "connection_requests", ["author_id"], name: "index_connection_requests_on_author_id", using: :btree
