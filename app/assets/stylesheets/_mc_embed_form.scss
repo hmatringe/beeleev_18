@@ -1,0 +1,60 @@
+#mc_embed_signup{
+	background: $orange;
+	clear:left;
+	font:14px Helvetica,Arial,sans-serif;
+	.bullets-wrapper{
+    color: white;
+	  font-family: 'Lato', sans-serif;
+	  font-size: 1.3em;
+	  font-style: italic;
+	}
+	h2{
+	  font-family: 'Lato', sans-serif;
+	  font-weight: 400;
+	  font-size: 2.5em;
+	  font-style: italic;
+	  color: #333333;
+	  padding: 2em 0 1em !important;
+	}
+	.outer-wrapper{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.inner-wrapper{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.btn-orange18-white{
+		margin: 0;
+		padding: 0.38em 0.8em;
+	}
+}
+
+#mc_embed_signup .mc-field-group input{
+	padding: 12px 0 !important;
+	margin: 0 1em 2em 3em !important;
+	width: 300px !important;
+}
+#mc_embed_signup form{
+	padding: 1.7em 0 0 !important;
+}
+@media (max-width: $screen-xs-max) {
+	#mc_embed_signup{
+		.btn-orange18-white{
+			padding: 0.71em 0.8em;
+		}
+		.outer-wrapper{
+			flex-direction: column;
+			align-items: center;
+		}
+		.bullets-wrapper{
+		  font-size: 1.2em;
+		}
+	}
+	#mc_embed_signup .mc-field-group input{
+		margin: 0 1em 2em 0 !important;
+		width: 240px !important;
+	}
+}

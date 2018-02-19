@@ -29,6 +29,7 @@ html
     = favicon_link_tag 'favicon-16x16.png', type: 'image/png'
     = favicon_link_tag 'favicon-32x32.png', rel: 'apple-touch-icon', type: 'image/png'
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    link rel="stylesheet" href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"  type="text/css"
     script type="text/javascript" src="//use.typekit.net/lln5ukr.js"
     javascript:
       try{Typekit.load();}catch(e){}
@@ -48,5 +49,7 @@ html
     - else
       = render "layouts/menu18_white"
     end
+    
     = yield
+
     = render 'layouts/footer_18'
