@@ -31,27 +31,10 @@ p<div id="partners_18" class="below-nav">
             </p>
         </div>
       </div>
-      <!-- <div class="col-xs-12 text-center col-sm-4">
-        <p>
-          Sourcing Innovations and Calling For Projects within the Community
-        </p>
-      </div>
-      <div class="col-xs-12 text-center col-sm-4">
-        <p>
-          Providing them useful content, contacts & support for their international growth
-        </p>
-      </div>
-      <div class="col-xs-12 text-center col-sm-4">
-        <p>
-          Offering them Exclusive Discounts on their services
-        </p>
-      </div> -->
+    
 
-      <div class="col-xs-12 text-center">
-        <div class="btn btn-orange18-orange">
-          CONTACT OUR PARTNERS
-        </div>
-      </div>
+      
+      <%= new_connection_request_btn(classes: "btn btn-orange18-orange", btn_title: "CONTACT OUR PARTNERS", tag_classes: "col-xs-12 text-center") %>
       
       <% @partners_categories.each do |partner_category| %>
       <div class="col-xs-12">
@@ -72,11 +55,6 @@ p<div id="partners_18" class="below-nav">
       </div>
       <% end %>
 
-      <!-- <div class="col-xs-12 text-center">
-        <div class="btn btn-orange18-orange">
-          CONTACT OUR PARTNERS
-        </div>
-      </div> -->
     </div>
   </div>
 </div>
