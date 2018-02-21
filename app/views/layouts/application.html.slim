@@ -5,7 +5,7 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     
-    script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}&libraries=places"
+    script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_BROWSER_KEY']}&libraries=places"
     
     = yield :javascripts
     = csrf_meta_tags
