@@ -47,9 +47,7 @@ class ConnectionDemand < Connection
 
       after do
         # # Send an email to user1 and user2
-        # [1, 2].each do |i|
-        # Only Send an email to user2
-        [2].each do |i|
+        [1, 2].each do |i|
           sender = EmailTemplateSender.new(
             "after-beeleev-accept-connection-demand-to-user-#{i}",
             self.send("user#{i}")
