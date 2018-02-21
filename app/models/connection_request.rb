@@ -11,6 +11,8 @@
 #  updated_at       :datetime
 #  status           :string(255)
 #  business_sectors :text             default([]), is an Array
+#  targets          :text             default([]), is an Array
+#  city             :text
 #
 
 class ConnectionRequest < ActiveRecord::Base

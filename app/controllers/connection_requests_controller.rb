@@ -39,8 +39,7 @@ class ConnectionRequestsController < ApplicationController
     @cr = current_user.connection_requests
           .build params
           .require(:connection_request)
-          .permit(:subject, :countries, :description, business_sectors: [])
-
+          .permit(:subject, :countries, :description, :city, business_sectors: [], targets: [])
     if @cr.save
       redirect_to direct_request_path(anchor: 'activate-package'), notice: 'Your connection request has been sent'
     else

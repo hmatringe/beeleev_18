@@ -29,6 +29,7 @@ ActiveAdmin.register ConnectionRequest do
   index do
     column :author
     column :subject
+    column :description
     column :status
     column :updated_at
 
@@ -40,11 +41,15 @@ ActiveAdmin.register ConnectionRequest do
       row :author
       row :subject
       row :countries
+      row :city
       row :business_sectors do
         resource.business_sectors.join(', ')
       end
       row :description do
         simple_format resource.description
+      end
+      row :targets do
+        resource.targets.join(', ')
       end
     end
   end
