@@ -12,7 +12,7 @@
         div
           - @targets.each do |k, v|
             .flex-horiz
-              = f.radio_button :targets, k
+              = f.radio_button :targets, k, { checked: true }
               = f.label k, k.titleize
 
         div 

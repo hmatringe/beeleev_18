@@ -35,11 +35,12 @@ class ConnectionRequestsController < ApplicationController
   def create
     redirect_to direct_request_path, notice: UNAUTHORIZED_MESSAGE and return \
       unless can? :create, ConnectionRequest
-
+    
     @cr = current_user.connection_requests
-          .build params
+          .build formatted_params
           .require(:connection_request)
           .permit(:subject, :countries, :description, :city, business_sectors: [], targets: [])
+
     if @cr.save
       redirect_to direct_request_path(anchor: 'activate-package'), notice: 'Your connection request has been sent'
     else
@@ -50,9 +51,9 @@ class ConnectionRequestsController < ApplicationController
   def update
     @cr = current_user.connection_requests.find params[:id]
 
-    @cr.update_attributes params
+    @cr.update_attributes formatted_params
       .require(:connection_request)
-      .permit(:subject, :countries, :description, business_sectors: [])
+      .permit(:subject, :countries, :description, :city, business_sectors: [], targets: [])
 
     if @cr.save
       redirect_to account_path, notice: 'Your connection request has been updated'
@@ -75,10 +76,13 @@ class ConnectionRequestsController < ApplicationController
   end
 
   def set_targets
-    # @targets = ["An Entrepreneur",
-                # "A Company or Agency",
-                # "An International Group"]
     @targets = TARGETS
   end
 
+  def formatted_params
+    if params[:connection_request][:targets]
+      params[:connection_request][:targets] = [params[:connection_request][:targets]]
+    end
+    params
+  end
 end
