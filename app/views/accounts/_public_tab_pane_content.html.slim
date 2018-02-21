@@ -18,13 +18,20 @@
         = f.select :civility, %w(Mr. Mrs. Ms. Dr.),
             {prompt: "Select title"}, class: "form-control"
     .form-group
-      = f.label :first_name
+      = f.label :profil, "Profile"
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-user
+        = f.select :profil, %w(Entrepreneur Expert Company),
+            {prompt: "Select profile"}, class: "form-control"            
+    .form-group
+      = f.label :first_name, "First Name"
       .input-group
         span.input-group-addon
           span.glyphicon.glyphicon-user
         = f.text_field :first_name, class: "form-control"
     .form-group
-      = f.label :last_name
+      = f.label :last_name, "Last Name"
       .input-group
         span.input-group-addon
           span.glyphicon.glyphicon-user
@@ -51,11 +58,17 @@
           span.glyphicon.glyphicon-globe
         = f.text_field :nationalite, class: "form-control"
     .form-group
-      = f.label :twitter_account
+      = f.label :twitter_account, "Twitter Account"
       .input-group
         span.input-group-addon
           i.fa.fa-twitter
         = f.text_field :twitter_account, class: "form-control"
+    .form-group
+      = f.label :facebook_username, "Facebook Account"
+      .input-group
+        span.input-group-addon
+          i.fa.fa-facebook
+        = f.text_field :facebook_username, class: "form-control"
 
   .col-md-4
     .form-group
@@ -71,7 +84,7 @@
           span.glyphicon.glyphicon-home
         = f.text_field :company, class: "form-control"
     .form-group
-      = f.label :business_sectors
+      = f.label :business_sectors, "Business Sectors"
       .input-group
         span.input-group-addon
           span.glyphicon.glyphicon-home
@@ -89,5 +102,8 @@
         = f.text_field :website, class: "form-control"
 
 .form-group
-  = f.label :description, "Services or Products description"
-  = f.text_area :description, class: "form-control", rows: 5
+  = f.label :description, "Description"
+  = f.text_area :description, class: "form-control", rows: 3
+.form-group
+  = f.label :company_description, "Company Description"
+  = f.text_area :company_description, class: "form-control", rows: 3    

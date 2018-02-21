@@ -1,8 +1,7 @@
 .row
-
   .col-md-4
     .form-group
-      = f.label :date_of_birth
+      = f.label :date_of_birth, "Date of Birth"
       .input-group
         span.input-group-addon
           span.glyphicon.glyphicon-calendar
@@ -36,7 +35,7 @@
           span.glyphicon.glyphicon-phone
         = f.text_field :cellphone, class: "form-control"
     .form-group
-      = f.label :skype_account
+      = f.label :skype_account, "Skype Account"
       .input-group
         span.input-group-addon
           i.fa.fa-skype
@@ -48,15 +47,15 @@
       = f.select :expertises,
           User::EXPERTISES, {}, multiple: true, class: "form-control"
     .form-group
-      = f.label :spoken_languages
+      = f.label :spoken_languages, "Spoken Languages"
       = f.select :spoken_languages,
           User::LANGUAGES, {}, multiple: true, class: "form-control"
     .form-group
-      = f.label :entrepreneur_clubs
+      = f.label :entrepreneur_clubs, "Entrepreneur Clubs"
       = f.text_field :entrepreneur_clubs, class: "form-control"
 
     .form-group
-      label Investment activity ?
+      label Investment Activity ?
       br
       .radio-inline
         = f.radio_button :investment_activity, true
@@ -65,19 +64,19 @@
         = f.radio_button :investment_activity, false
         | No
     .form-group
-      = f.label :year_of_creation
+      = f.label :year_of_creation, "Year of Creation"
       = f.select :year_of_creation, (1920..Date.today.year).to_a.reverse,
         {prompt: "Select Year of creation"}, class: "form-control"
 
-  .col-md-4
     .form-group
-      = f.label :business_model
+      = f.label :business_model, "Buisness Model"
       = f.select :business_model,
           ["B2C", "B2B", "B2B2C", "B2B & B2C", "C2C", 'B2G'],
           {prompt: "Select Business model"}, class: 'form-control'
 
+  .col-md-4
     .form-group
-      label International activity ?
+      label International Activity ?
       br
       .radio-inline
         = f.radio_button :international_activity, true
@@ -87,10 +86,18 @@
         | No
 
     .form-group
-      = f.label :international_activity_countries
+      = f.label :international_activity_countries, "International Activity Countries"
       = f.country_select(:international_activity_countries,
           [],
           {prompt: "Select International actvity countries"},
+          multiple: true,
+          class: "form-control")
+
+    .form-group
+      = f.label :targeted_countries, "Targeted Countries"
+      = f.country_select(:targeted_countries,
+          [],
+          {prompt: "Select targeted activity countries"},
           multiple: true,
           class: "form-control")
 
@@ -109,7 +116,7 @@
             {prompt: "Select Turnover"},
             class: 'form-control'
     .form-group
-      = f.label :staff_volume
+      = f.label :staff_volume, "Staff Volume"
       = f.select :staff_volume, ["myself only",
             "2-10",
             "11-50",
@@ -121,7 +128,7 @@
             "+10001"], {prompt: "Select Staff volume"}, class: 'form-control'
 
     .form-group
-      label Hiring objectives ?
+      label Hiring Objectives ?
       br
       .radio-inline
         = f.radio_button :hiring_objectives, true
@@ -131,9 +138,8 @@
         | No
 
     .form-group
-      = f.label :investment_levels
+      = f.label :investment_levels, "Investment Levels"
       = f.select :investment_levels,
                  ["Seed", "Serie A", "Serie B", "Serie C", "IPO", "None", "Other"],
                  {prompt: "Select Investment level"},
                  multiple: true, class: 'form-control'
-        
