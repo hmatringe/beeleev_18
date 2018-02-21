@@ -66,6 +66,8 @@
 #  stripe_customer_id               :string(255)
 #  can_post                         :boolean          default(TRUE)
 #  targeted_countries               :text             default([]), is an Array
+#  company_description              :string(255)      default("")
+#  facebook_username                :string(255)      default("")
 #
 
 require 'spec_helper'
