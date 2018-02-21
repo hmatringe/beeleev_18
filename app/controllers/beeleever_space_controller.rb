@@ -14,5 +14,4 @@ class BeeleeverSpaceController < ApplicationController
       .user1_connections
       .waiting_user1_response
   end
-
 end

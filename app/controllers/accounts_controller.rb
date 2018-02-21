@@ -9,7 +9,8 @@ class AccountsController < BeeleeverSpaceController
                                               :onboarding_second,
                                               :onboarding_second_update,
                                               :onboarding_third,
-                                              :onboarding_third_update]
+                                              :onboarding_third_update, 
+                                              :destroy_account]
 
   def show    
       @orders = current_user.orders.order(created_at: :desc)
@@ -82,6 +83,17 @@ class AccountsController < BeeleeverSpaceController
     end
   end
 
+  def destroy_account
+    anonymise_attributes
+    if @user.save
+      sign_out @user
+      redirect_to root_path, notice: "profile destroyed"
+    else
+      flash.now[:alert] = current_user.errors.full_messages.join('<br>').html_safe
+      render :show
+    end
+  end
+
   private 
 
   def set_user
@@ -102,6 +114,63 @@ class AccountsController < BeeleeverSpaceController
     @user.skip_business_sectors_validation = '1'
     @user.skip_turnover_validation = '1'
     @user.skip_staff_volume_validation = '1'
+  end
+
+  def anonymise_attributes
+    @user.first_name = "unavailable"
+    @user.last_name =  "unavailable"
+    @user.email =  "#{rand(1.0...100000.0)}@unavailable.com"
+    @user.provider =  ""
+    @user.uid =  ""
+    @user.remove_avatar = true
+    @user.week =  ""
+    @user.active =  "unavailable"
+    @user.sponsor =  ""
+    @user.source =  ""
+    @user.profil =  "unavailable"
+    @user.prospects =  ""
+    @user.civility =  ""
+    @user.nationalite =  ""
+    @user.city =  ""
+    @user.country =  ""
+    @user.cellphone =  ""
+    @user.position =  ""
+    @user.company =  ""
+    @user.activities_1 =  ""
+    @user.activities_2 =  ""
+    @user.turnover =  ""
+    @user.staff_volume =  ""
+    @user.website =  ""
+    @user.url_profile =  ""
+    @user.meeting_form =  ""
+    @user.provider_public_profile_url =  nil #LinkedIn
+    @user.password =  "1234554321"
+    @user.phone =  ""
+    @user.twitter_account =  nil
+    @user.skype_account =  nil
+    @user.spoken_languages =  []
+    @user.expertises =  []
+    @user.date_of_birth =  ""
+    @user.entrepreneur_clubs =  ""
+    @user.investment_activity =  false
+    @user.year_of_creation =  ""
+    @user.description =  ""
+    @user.tagline =  ""
+    @user.business_model =  ""
+    @user.international_activity =  false
+    @user.international_activity_countries =  []
+    @user.growth_rate =  ""
+    @user.current_customers =  ""
+    @user.current_partners =  ""
+    @user.hiring_objectives =  false
+    @user.phone_interview_realized =  false
+    @user.new_application_reminder_count =  0
+    @user.application_reject_reason =  ""
+    @user.business_sectors =  []
+    @user.investment_levels =  []
+    @user.targeted_countries =  []
+    @user.company_description =  ""
+    @user.facebook_username =  nil
   end
 
 end
