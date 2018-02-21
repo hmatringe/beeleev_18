@@ -10,13 +10,13 @@
         .top-left I'm Looking For
         
         div
-          - @targets.keys.each do |k|
+          - @targets.each do |k, v|
             .flex-horiz
-              = f.check_box :targets, { :multiple => true }, k, nil
+              = f.radio_button :targets, k
               = f.label k, k.titleize
 
         div 
-          - @targets.values.each do |v|
+          - @targets.each do |k, v|
             .credits
               = "(#{pluralize v, 'credit'})"
 
