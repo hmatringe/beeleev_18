@@ -117,3 +117,6 @@
                 td= cc.usable? ? "Yes" : "No"
 
 
+      - if @user.active?
+        = link_to destroy_account_path, class: "delete-profile", data: {confirm: "Irreversible action! \nIn accordance with EU regulations, your account will be deleted forever!"} do
+          h4 delete my profile

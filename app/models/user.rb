@@ -273,6 +273,7 @@ class User < ActiveRecord::Base
     state :activation_pending, initial: true
     state :active
     state :rejected
+    state :account_deleted
 
     event :activate do
       after do
@@ -294,6 +295,14 @@ class User < ActiveRecord::Base
       end
 
       transitions from: :activation_pending, to: :rejected
+    end
+
+    event :delete_account do
+      after do
+        instance_variable_set :@user1, self
+      end
+
+      transitions from: :active, to: :account_deleted
     end
   end
 
@@ -336,7 +345,6 @@ class User < ActiveRecord::Base
         user.uid = auth.uid
         user.remote_avatar_url = auth.info.image unless user.avatar?
         user.provider_public_profile_url ||= auth.info.urls.public_profile
-        # raise user.inspect
         user.save
       else
         user = where(auth.slice(:provider, :uid)).first_or_create do |u|

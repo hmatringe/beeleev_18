@@ -35,4 +35,19 @@
 			font-size: 2em;
 		}
 	}
+	.delete-profile{
+  	&:hover, &:active, &:focus{
+	  	text-decoration: none;
+	  }
+	  h4{
+			font-family: 'Lato', sans-serif;
+			color: $orange;
+			font-weight: 400;
+		  font-size: 1em;
+	  	margin-bottom: 2em;
+		  &:hover{
+		  		color: red;
+		  }
+	  }
+	}
 }	

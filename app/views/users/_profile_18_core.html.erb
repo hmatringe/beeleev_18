@@ -7,9 +7,16 @@
 					<div class="profile-avatar">
 						<%#= cl_image_tag @user.avatar, transformation:
 						{width: 200, height: 200, gravity: :face, radius: :max, crop: :crop} %>
-						<%= cl_image_tag @user.avatar, transformation: [
+						<%#= cl_image_tag @user.avatar, transformation: [
 							  {width: 400, height: 400, gravity: :face, radius: :max, crop: :fill},
 							  {width: 200, crop: :scale}] %>
+						<% if @user.avatar? %>
+							<%= cl_image_tag @user.avatar, transformation: [
+								  {width: 400, height: 400, gravity: :face, radius: :max, crop: :fill},
+								  {width: 200, crop: :scale}] %>
+						<% else %>
+							<%= image_tag @user.avatar_url, class: "img-responsive" %>
+						<% end %>
 					</div>
 					
 					<% if current_user == @user || current_user.decorate.network.include?(@user) %>
