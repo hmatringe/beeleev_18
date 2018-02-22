@@ -1,5 +1,11 @@
 //------------original team.scss commented-------------
 #team_18{
+  .top-wrapper{
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   h1{
     font-family: 'Lato-bold', sans-serif;
     font-weight: 400;
@@ -7,7 +13,6 @@
     color: $orange;
     text-transform: uppercase;
     letter-spacing: inherit;
-    text-align: center;
     font-size: 2em;
     padding-top: 1em;
   }
@@ -18,20 +23,22 @@
     font-size: 1.5em;
     text-transform: none;
     padding: 1.5em 0;
-    text-align: center;
     }
+  .bullet-points{
+  }
   h2{
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-style: normal;
     color: $gray;
-    text-align: center;
+    text-align: unset;
     font-size: 1.5em;
   }
   .last-wrapper {
     .last-over-title {
       padding: 1.5em 0 0.5em;
       font-size: 1em;
+      text-align: center;
     }
     .last-title{
       font-family: 'Lato-bold', sans-serif;
@@ -40,7 +47,7 @@
       color: $gray;
       text-transform: none;
       letter-spacing: inherit;
-      text-align: center;
+      // text-align: center;
       font-size: 1.4em;
     }
   }
@@ -71,7 +78,7 @@
     font-weight: 700;
     font-style: normal;
     color: $bleu-fonce;
-    text-align: center;
+    // text-align: center;
     font-size: 1.5em;
     text-transform: uppercase;
   }
@@ -80,13 +87,17 @@
     font-weight: 400;
     font-style: normal;
     color: $gray;
-    text-align: center;
+    // text-align: center;
     font-size: 1.2em;
     text-transform: uppercase;
     margin: 10px 0 30px;
   }
 }
 //--------------- media queries ------------------
-// @media(max-width:767px) {
-  
-// }
+@media(max-width:767px) {
+  #team_18{
+    .top-wrapper{
+      text-align: center;
+    }
+  }
+}
