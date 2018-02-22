@@ -9,8 +9,7 @@ class AccountsController < BeeleeverSpaceController
                                               :onboarding_second,
                                               :onboarding_second_update,
                                               :onboarding_third,
-                                              :onboarding_third_update, 
-                                              :destroy_account]
+                                              :onboarding_third_update]
 
   def show    
       @orders = current_user.orders.order(created_at: :desc)
@@ -85,12 +84,13 @@ class AccountsController < BeeleeverSpaceController
 
   def destroy_account
     anonymise_attributes
-    if @user.save
+    if @user.save validate: false
       sign_out @user
       redirect_to root_path, notice: "profile destroyed"
     else
+      raise
       flash.now[:alert] = current_user.errors.full_messages.join('<br>').html_safe
-      render :show
+      redirect_to account_path
     end
   end
 
@@ -117,17 +117,18 @@ class AccountsController < BeeleeverSpaceController
   end
 
   def anonymise_attributes
+    @user.delete_account
+
     @user.first_name = "unavailable"
-    @user.last_name =  "unavailable"
+    @user.last_name =  ""
     @user.email =  "#{rand(1.0...100000.0)}@unavailable.com"
     @user.provider =  ""
     @user.uid =  ""
     @user.remove_avatar = true
     @user.week =  ""
-    @user.active =  "unavailable"
     @user.sponsor =  ""
     @user.source =  ""
-    @user.profil =  "unavailable"
+    @user.profil =  "-"
     @user.prospects =  ""
     @user.civility =  ""
     @user.nationalite =  ""

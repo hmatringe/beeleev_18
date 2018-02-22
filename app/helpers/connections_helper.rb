@@ -8,7 +8,7 @@ module ConnectionsHelper
       resource.user1
     end
 
-    link_to user.name, user
+    user.first_name == "unavailable" ? user.name : link_to(user.name, user)
   end
 
   def connection_display_type(resource)

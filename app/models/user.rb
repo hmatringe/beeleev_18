@@ -273,6 +273,7 @@ class User < ActiveRecord::Base
     state :activation_pending, initial: true
     state :active
     state :rejected
+    state :account_deleted
 
     event :activate do
       after do
@@ -294,6 +295,14 @@ class User < ActiveRecord::Base
       end
 
       transitions from: :activation_pending, to: :rejected
+    end
+
+    event :delete_account do
+      after do
+        instance_variable_set :@user1, self
+      end
+
+      transitions from: :active, to: :account_deleted
     end
   end
 
