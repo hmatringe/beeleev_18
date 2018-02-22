@@ -1,8 +1,14 @@
 #profile{
 	padding-top: 1em;
 	min-height: 75vh;
+	.user-unavailable{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 75vh;
+	}
 }
-#profile_18_core, #profile_18_company{
+#profile, .user-unavailable, #profile_18_core, #profile_18_company{
 	h1{
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
@@ -12,6 +18,8 @@
 	  margin: 0;
 	  text-align: initial;
 	}
+}
+#profile_18_core, #profile_18_company{
 	.left-wrapper{
 		display: flex;
 		align-items: center;
@@ -233,6 +241,7 @@
 		}
 	}
 }
+
 @media(max-width:767px) {
 	#profile{
 		h1{
@@ -257,3 +266,4 @@
 		}
 	}
 }
+

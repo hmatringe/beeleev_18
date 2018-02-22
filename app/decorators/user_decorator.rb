@@ -1,6 +1,10 @@
 class UserDecorator < Draper::Decorator
   delegate_all
 
+  def active_network
+    network.reject{ |u| !u.active? }
+  end
+
   def network
   	connections_received + connections_sent
   end

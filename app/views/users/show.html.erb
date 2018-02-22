@@ -1,7 +1,11 @@
 <div id="profile">
-	<%= render "users/profile_18_core" %>
-	<%= render "users/profile_18_description" if @user.description.present? %>
-	<%#= render "users/profile_18_cie" %>
-	<%#= render "users/profile_18_cie_descr" if @user.company_description.present? %>
-	<%= render "users/profile_mycommunity" if @user == current_user %>
+	<% if @user.account_deleted? %>
+		<%= render "users/profile_18_deleted" %>
+	<% else %>
+		<%= render "users/profile_18_core" %>
+		<%= render "users/profile_18_description" if @user.description.present? %>
+		<%#= render "users/profile_18_cie" %>
+		<%#= render "users/profile_18_cie_descr" if @user.company_description.present? %>
+		<%= render "users/profile_mycommunity" if @user == current_user %>
+	<% end %>
 </div>
