@@ -17,6 +17,9 @@ ActiveAdmin.register User do
   scope :activation_pending
   scope :active
   scope :rejected
+  scope :account_deleted
+
+  actions :all, except: [:destroy]
 
   # Custom Controller Actions
   ###########################
@@ -62,6 +65,7 @@ ActiveAdmin.register User do
     if_proc = proc { resource.aasm.events.include? event_name }
 
     action_item only: :show, if: if_proc do
+      
       link_to(
         event_name.to_s.titleize,
         polymorphic_path(
@@ -105,7 +109,7 @@ ActiveAdmin.register User do
         row :city
         row :nationalite
         row :twitter_account
-        row :company
+        row :facebook_username
         row :business_sectors
         row :website do
           if resource.website_uri.present?
@@ -119,6 +123,10 @@ ActiveAdmin.register User do
           end
         end
         row :description do
+          simple_format resource.description
+        end
+        row :company
+        row :company_description do
           simple_format resource.description
         end
       end
@@ -142,6 +150,7 @@ ActiveAdmin.register User do
         row :business_model
         row :international_activity
         row :international_activity_countries
+        row :targeted_countries
         row :turnover
         row :staff_volume
         row :hiring_objectives
@@ -222,7 +231,7 @@ ActiveAdmin.register User do
       f.input :city
       f.input :nationalite
       f.input :twitter_account
-      f.input :company
+      f.input :facebook_username
       f.input(
         :business_sectors,
         as: :select, collection: User::BUSINESS_SECTORS,
@@ -230,6 +239,8 @@ ActiveAdmin.register User do
       )
       f.input :website
       f.input :description
+      f.input :company
+      f.input :company_description
     end
 
     f.inputs 'Private informations' do
@@ -264,6 +275,12 @@ ActiveAdmin.register User do
       f.input :international_activity
       f.input(
         :international_activity_countries,
+        as: :select,
+        collection: Country.all.map(&:first),
+        multiple: true
+      )
+      f.input(
+        :targeted_countries,
         as: :select,
         collection: Country.all.map(&:first),
         multiple: true
@@ -331,6 +348,7 @@ ActiveAdmin.register User do
     end
 
     f.actions
+
   end
 
 end

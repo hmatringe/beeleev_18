@@ -300,9 +300,14 @@ class User < ActiveRecord::Base
     event :delete_account do
       after do
         instance_variable_set :@user1, self
+        # sender = EmailTemplateSender.new('after-reject-user', self)
+        # sender.after(self)
+        anonymise_attributes(self)
       end
 
-      transitions from: :active, to: :account_deleted
+      transitions from: :activation_pending, to: :account_deleted
+      transitions from: :rejected,           to: :account_deleted
+      transitions from: :active,             to: :account_deleted
     end
   end
 
@@ -484,6 +489,65 @@ class User < ActiveRecord::Base
     nil
   end
 
+  def anonymise_attributes(user)
+    # delete_account
+
+    user.first_name = "unavailable"
+    user.last_name =  ""
+    user.email =  "#{rand(1.0...100000.0)}@unavailable.com"
+    user.provider =  ""
+    user.uid =  ""
+    user.remove_avatar = true
+    user.week =  ""
+    user.sponsor =  ""
+    user.source =  ""
+    user.profil =  "-"
+    user.prospects =  ""
+    user.civility =  ""
+    user.nationalite =  ""
+    user.city =  ""
+    user.country =  ""
+    user.cellphone =  ""
+    user.position =  ""
+    user.company =  ""
+    user.activities_1 =  ""
+    user.activities_2 =  ""
+    user.turnover =  ""
+    user.staff_volume =  ""
+    user.website =  ""
+    user.url_profile =  ""
+    user.meeting_form =  ""
+    user.provider_public_profile_url =  nil #LinkedIn
+    user.password =  "1234554321"
+    user.phone =  ""
+    user.twitter_account =  nil
+    user.skype_account =  nil
+    user.spoken_languages =  []
+    user.expertises =  []
+    user.date_of_birth =  ""
+    user.entrepreneur_clubs =  ""
+    user.investment_activity =  false
+    user.year_of_creation =  ""
+    user.description =  ""
+    user.tagline =  ""
+    user.business_model =  ""
+    user.international_activity =  false
+    user.international_activity_countries =  []
+    user.growth_rate =  ""
+    user.current_customers =  ""
+    user.current_partners =  ""
+    user.hiring_objectives =  false
+    user.phone_interview_realized =  false
+    user.new_application_reminder_count =  0
+    user.application_reject_reason =  ""
+    user.business_sectors =  []
+    user.investment_levels =  []
+    user.targeted_countries =  []
+    user.company_description =  ""
+    user.facebook_username =  nil
+    return user
+  end
+
   private
 
   # Strip blank values from :spoken_languages, :expertises,
@@ -515,5 +579,6 @@ class User < ActiveRecord::Base
     errors.add(:business_sectors, "can't be blank") \
     if business_sectors.all?(&:blank?) && self.skip_business_sectors_validation != "1"
   end
+
 
 end
