@@ -3,6 +3,7 @@ class NetworksController < BeeleeverSpaceController
   before_action :setup_search
   before_action :setup_countries
   before_action :setup_profiles
+  before_action :set_pagination
 
   # def show_original
   #   authorize! :access_network, current_user
@@ -13,28 +14,25 @@ class NetworksController < BeeleeverSpaceController
 
   def show
     authorize! :access_network, current_user
-    @users = users_scope.page(params[:page]).per(3)
-    # @users = User.none
+    @users = users_scope.page(params[:page]).per(@pagination)
   rescue CanCan::AccessDenied
     redirect_to edit_account_path
   end
 
   # def search
-  #   @users = @q.result.page(params[:page]).per(24)
+  #   @users = @q.result.page(params[:page]).per(@pagination)
   #   render :show
   # end
 
   def search_any
-    @users = @q.result.page(params[:page]).per(24)
+    @users = @q.result.page(params[:page]).per(@pagination)
     render :show
   end
 
   def search_one
-    @users = @q.result.page(params[:page]).per(24)
+    @users = @q.result.page(params[:page]).per(@pagination)
     render :show
   end
-
-
 
   protected
 
@@ -47,7 +45,6 @@ class NetworksController < BeeleeverSpaceController
   # Do the actual ransack search
   def setup_search
     @q = users_scope.search params[:q]
-    # raise
   end
 
   def setup_countries
@@ -55,10 +52,13 @@ class NetworksController < BeeleeverSpaceController
                  .uniq.compact.reject(&:blank?)
                  .sort
   end
+
   def setup_profiles
-    @profiles = User.active.pluck(:profil)
-                 .uniq.compact.reject(&:blank?)
-                 .sort
+    @profiles = %w( Entrepreneur Company Expert )
+  end
+  
+  def set_pagination
+    @pagination = 24
   end
 
 end

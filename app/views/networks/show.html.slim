@@ -11,14 +11,23 @@
       h2.network-help
         | Can’t find your match? Send us a 
         = new_connection_request_btn(classes: "no-deco-focus no-deco-active no-deco-hover bleu-fonce", btn_title: "DIRECT REQUEST", tag_classes:"inline-block")
+    - if @users.length < @pagination
+      .no-paginattion-placeholder-quickfix
 
-    .text-right
-      = paginate @users, :theme => 'twitter-bootstrap-3'
 
-    .row
-      - @users.each do |user|
-        .col-sm-6.col-lg-4
-          = user_panel(user)
+    - if @users.empty?
+      .text-center
+        h2.network-help
+          | No results, try an other search!
 
-    .text-right
-      = paginate @users, :theme => 'twitter-bootstrap-3'
+    - else
+      .text-right
+        = paginate @users, :theme => 'twitter-bootstrap-3'
+
+      .row
+        - @users.each do |user|
+          .col-sm-6.col-lg-4
+            = user_panel(user, version_18: true)
+
+      .text-right
+        = paginate @users, :theme => 'twitter-bootstrap-3'

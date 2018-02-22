@@ -1,0 +1,34 @@
+<%= link_to user_path(user) do %>
+<div class="profile-card">
+  <div class="profile-card-top">
+      <div class="img-wrapper">
+        <%= cl_image_tag user.avatar, transformation: [
+                  {width: 200, height: 200, gravity: :face, crop: :fill},
+                  {width: 100, crop: :scale}] %>
+      </div>
+    <div class="txt-wrapper">
+      <div class="inner-wrapper">
+        <div class="first">
+          <div class="name">
+            <%= user.decorate.full_titleized_name.truncate(38) %>
+          </div>
+          <%= safe_truncate(user.position, 35) %>
+          <br>
+          <%= safe_truncate(user.company, 20) %>
+        </div>
+        <div class="second">
+            <%= safe_truncate(user.profil, 24) %>
+            <br>
+            <%= safe_truncate(user.country, 24) %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <div class="profile-card-bottom">
+    <%= link_to "PROFILE", user_path(user), class: "card-button", target: "_blank", data: {toggle: "tooltip"}, title: "visit profile" %>
+    <%= user_mailto_btn_18(user) if actions.include?(:mailto)%>
+    <%= new_connection_demand_btn_18(user) if actions.include?(:connect) %>
+  </div>
+</div>

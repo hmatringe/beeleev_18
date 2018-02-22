@@ -2,7 +2,7 @@
 	<%= search_form_for @q, url: members_search_one_path do |f| %>
 	      <div class="form-title">Or Someone in Particular...</div>
 		    
-				<div class="expadded">
+				<div class="expanded height-ruler">
 			    <%= f.search_field :full_name_or_unaccented_full_name_cont,
 			      class: "form-control",
 			      placeholder: "Name" %>

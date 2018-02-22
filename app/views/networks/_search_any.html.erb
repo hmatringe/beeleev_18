@@ -5,7 +5,7 @@
               
         <div class="row">
           <div class="col-xs-12">
-            <div class="col-xs-7 col-sm-4">
+            <div class="col-xs-7 col-sm-5">
                 <% @profiles.each do |profile| %> 
                   <div class= "italic">
                     <% if params[:q] && params[:q]["profil_eq_any"] %>
@@ -22,36 +22,39 @@
                 <% end %>         
               </div>   
               
-              <div class="col-xs-2">
+              <div class="col-xs-1">
                 <div class="form-title">In</div>
               </div>
 
               <div class="col-xs-12 col-sm-6">
-                <%= f.select :country_in,
-                  @countries,
-                    {},
-                    class: "form-control",
-                    placeholder: "Country",
-                    multiple: true %>
+                <div class="country-city-wrapper">
+                  <%= f.select :country_in,
+                    @countries,
+                      {},
+                      class: "form-control",
+                      placeholder: "Country",
+                      multiple: true %>
 
-                <%= f.select :city_eq,
-                  @q.result.pluck(:city).uniq.compact.sort,
-                    {prompt: "City"},
-                    class: "form-control",
-                    readonly: @q.city_eq.present? %>
+                  <%= f.select :city_eq,
+                    @q.result.pluck(:city).uniq.compact.sort,
+                      {prompt: "City"},
+                      class: "form-control",
+                      readonly: @q.city_eq.present? %>
+                </div>
               </div>
               
           </div>
         </div>
 
         <div class="form-title">That Can Help Me With</div>
-        
-        <%= f.select :expertises_overlap,
-          @q.result.pluck(:expertises).flatten.uniq.compact.sort,
-            {},
-            class: "form-control padded-width",
-            placeholder: "Expertises",
-            multiple: true %>
+          <div class="expanded">
+          <%= f.select :expertises_overlap,
+            @q.result.pluck(:expertises).flatten.uniq.compact.sort,
+              {},
+              class: "form-control padded-width",
+              placeholder: "Expertises",
+              multiple: true %>
+          </div>
         <div>
           <%= f.submit "GO!", class: "btn btn-orange18-orange" %>
         </div>

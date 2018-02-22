@@ -34,7 +34,15 @@ p<div id="partners_18" class="below-nav">
     
 
       
-      <%= new_connection_request_btn(classes: "btn btn-orange18-orange", btn_title: "CONTACT OUR PARTNERS", tag_classes: "col-xs-12 text-center") %>
+      <% if user_signed_in? %>
+        <%= new_connection_request_btn(classes: "btn btn-orange18-orange", btn_title: "CONTACT OUR PARTNERS", tag_classes: "col-xs-12 text-center") %>
+      <% else %>
+        <div class="col-xs-12 text-center">
+          <%= link_to "CONTACT OUR PARTNERS", new_user_session_path, class: "btn btn-orange18-orange", data: {toggle:"modal", target: "#ajaxSmallModal"} %>
+        </div>
+          
+        </div>
+      <% end %>
       
       <% @partners_categories.each do |partner_category| %>
       <div class="col-xs-12">

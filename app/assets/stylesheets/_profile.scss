@@ -174,72 +174,7 @@
 		color: $orange;
 	  margin: 1em 0 0;
 	  text-align: center;
-	}
-	.profile-card{
-		border: #979797 1px solid;
-		border-radius: 5px;
-		margin: 10px 0;
-		& a:hover {
-			text-decoration: none;
-		}
-		.profile-card-top{
-			padding: 10px;
-			display: flex;
-			.img-wrapper {
-				flex: 0 0 20%;
-			}
-			.txt-wrapper{
-				flex: 1 1 auto;
-				.inner-wrapper{
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					flex-direction: column;
-					height: 100%;
-					text-align: center;
-					.name{
-						font-family: 'Lato', sans-serif;
-						font-weight: 700;
-						color: $orange;
-					}
-					.title{
-						font-family: 'Lato', sans-serif;
-						font-weight: 400;
-						color: $gray;
-						font-style: italic;
-					}
-				}
-			}
-		}
-		.profile-card-bottom{
-			border-top: #979797 1px solid;
-			display: flex;
-			justify-content: flex-end;
-			padding: 6px;
-			.card-button{
-				margin: 0 3px;
-				font-family: 'Lato', sans-serif;
-				display: inline-block;
-		    margin-bottom: 0;
-		    font-weight: 400;
-		    text-align: center;
-		    vertical-align: middle;
-		    cursor: pointer;
-		    background-image: none;
-		    border: 1px solid transparent;
-		    white-space: nowrap;
-		    padding: 6px 12px;
-		    font-size: 14px;
-		    border-radius: 4px;
-		    color: white;
-        background-color: $orange;
-        border-color: $orange;
-        &:hover{
-        	text-decoration: none;
-        }
-			}
-		}
-	}
+	}		
 }
 
 @media(max-width:767px) {
@@ -267,3 +202,75 @@
 	}
 }
 
+.profile-card{
+	font-family: 'Lato', sans-serif;
+	border: #dddddd 1px solid;
+	border-radius: 5px;
+	margin: 10px 0;
+	& a:hover {
+		text-decoration: none;
+	}
+	.profile-card-top{
+		padding: 10px;
+		display: flex;
+		.img-wrapper{
+			flex-grow: 0;
+			flex-shrink: 0;
+		}
+		.txt-wrapper{
+			flex: 1 1 auto;
+		}
+		.inner-wrapper{
+			font-weight: 400;
+			color: $gray;
+			display: flex;
+			justify-content: space-between;
+			align-items: felx-start;
+			height: 100%;
+			.first{
+			padding: 3px;
+			flex: 1 1 auto;
+			}
+			.second{
+			flex: 0 0 20%;
+			}
+		}
+		.name{
+			font-weight: 700;
+			color: $orange;
+		}
+	}		
+}
+.profile-card-bottom{
+	border-top: #dddddd 1px solid;
+	display: flex;
+	justify-content: flex-end;
+	padding: 6px;
+	.card-button{
+		margin: 0 3px;
+		display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 0.8em;
+    border-radius: 4px;
+    color: white;
+    background-color: $orange;
+    border-color: $orange;
+    &:hover, &:active, &:focus{
+    	text-decoration: none;
+    }
+	}
+}
+@media(max-width:767px) {
+	.inner-wrapper{
+		flex-direction: column;
+		padding-left: 10px;
+	}
+}
