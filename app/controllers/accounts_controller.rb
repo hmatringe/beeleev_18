@@ -66,7 +66,7 @@ class AccountsController < BeeleeverSpaceController
 
   def onboarding_third_update
     if @user.save
-      redirect_to current_user, notice: "Profile completed"
+      redirect_to edit_account_path, notice: "Profile completed"
     else
       flash.now[:alert] = @user.errors.full_messages.join('<br>').html_safe
       render :onboarding_third
