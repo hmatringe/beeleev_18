@@ -491,8 +491,6 @@ class User < ActiveRecord::Base
   end
 
   def anonymise_attributes(user)
-    # delete_account
-
     user.first_name = "unavailable"
     user.last_name =  ""
     user.email =  "#{rand(1.0...100000.0)}@unavailable.com"
