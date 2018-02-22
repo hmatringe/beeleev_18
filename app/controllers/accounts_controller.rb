@@ -83,14 +83,9 @@ class AccountsController < BeeleeverSpaceController
   end
 
   def destroy_account
-    @user.anonymise_attributes
-    if @user.save validate: false
-      sign_out @user
-      redirect_to root_path, notice: "profile destroyed"
-    else
-      flash.now[:alert] = current_user.errors.full_messages.join('<br>').html_safe
-      redirect_to account_path
-    end
+    @user.delete_account
+    sign_out @user
+    redirect_to root_path, notice: "profile destroyed"
   end
 
   private 

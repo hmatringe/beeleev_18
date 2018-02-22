@@ -300,9 +300,10 @@ class User < ActiveRecord::Base
     event :delete_account do
       after do
         instance_variable_set :@user1, self
-        # sender = EmailTemplateSender.new('after-reject-user', self)
-        # sender.after(self)
+        sender = EmailTemplateSender.new('after-delete-account', self)
+        sender.after(self)
         anonymise_attributes(self)
+        self.save validate: false
       end
 
       transitions from: :activation_pending, to: :account_deleted

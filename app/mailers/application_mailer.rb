@@ -43,7 +43,9 @@ class ApplicationMailer < ActionMailer::Base
     end
 
     # add the activity_url helper result to the liquid options
-    options['activity_url'] = Rails.application.routes.url_helpers.activity_url
+    if options['activity_url']
+      options['activity_url'] = Rails.application.routes.url_helpers.activity_url
+    end
 
     # render the email template with the liquid options
     # and simple_formats it
