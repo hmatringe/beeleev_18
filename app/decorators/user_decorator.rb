@@ -21,6 +21,10 @@ class UserDecorator < Draper::Decorator
   	first_name.upcase + " " + last_name.upcase
   end
 
+  def full_titleized_name
+    first_name.titleize + " " + last_name.titleize
+  end
+
   def position_at_company
     position + " @" + company
   end
