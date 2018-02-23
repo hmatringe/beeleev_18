@@ -53,9 +53,13 @@ html
     end
     
     - if @home
+      .container
+        = render "layouts/flash"
       = yield
     - else
       .below-nav
+        .container
+          = render "layouts/flash"
         = yield
 
     = render 'layouts/footer_18'

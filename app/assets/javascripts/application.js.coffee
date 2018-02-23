@@ -9,7 +9,7 @@
 
 #= require cloudinary
 #= require social_plugins
-#= require flashes
+#= require flashes_fade
 
 #= require select2/select2.min
 #= require sign_up

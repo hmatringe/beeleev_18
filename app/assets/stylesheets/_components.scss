@@ -255,3 +255,10 @@ h3{
 .uppercase {
   text-transform: uppercase;
 }
+.fancy-flash{
+  z-index: 100;
+  position:absolute;
+  left: 10vw;
+  top: 73px;
+  width: 80vw;
+}
