@@ -3,7 +3,7 @@
   h1 NEED A LOCAL BUSINESS PARTNER?
   h2 Entrepreneur, Expert and any Company, Leave the Search to Us!
   .row
-    .col-xs-12.col-sm-9
+    .col-xs-12.col-sm-7.height-wrapper
       .shop-top-wrapper.height-wrapper
         .content When receiving your request, we will contact you to detail it further.
         .content After which, we’ll come back with as many contacts as you requested.
@@ -12,11 +12,12 @@
           = new_connection_request_btn(classes: "btn btn-orange", btn_title: "SEND YOUR REQUEST")
         .content Our service is efficient. Choose the best contacts from our selection and pay only when you are introduced to each other
 
-    .col-xs-12.col-sm-3.height-wrapper.testimonial-wrapper
-      =< "design to be confirmed"
+    .col-xs-12.col-sm-5
+      = render partial: "shop/testimonials"
+      br
 
     - @products.each do |product|
-      .col-xs-12.col-sm-3{id="product-#{product.id}"}
+      .col-xs-12.col-sm-4{id="product-#{product.id}"}
       
         .panel.panel-info.product-panel
           .panel-heading = product.title
@@ -53,6 +54,4 @@
                        product: product,
                        currency: 'eur',
                        money: product.euro_money
-    .col-xs-12.col-sm-3.height-wrapper.testimonial-wrapper
-      =< "design to be confirmed"
 
