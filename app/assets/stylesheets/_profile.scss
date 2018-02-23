@@ -222,22 +222,26 @@
 		}
 		.inner-wrapper{
 			font-weight: 400;
-			color: $gray;
+			color: #898989;
+			font-style: italic;
 			display: flex;
 			justify-content: space-between;
-			align-items: felx-start;
+			flex-direction: column;
 			height: 100%;
-			.first{
-			padding: 3px;
-			flex: 1 1 auto;
-			}
-			.second{
-			flex: 0 0 20%;
-			}
+			padding-left: 10px;
 		}
 		.name{
 			font-weight: 700;
 			color: $orange;
+			font-style: normal;
+		}
+		.country{
+			color: $orange;
+			font-style: normal;
+		}
+		.profil{
+			color: $orange;
+			text-align: right;
 		}
 	}		
 }
@@ -271,6 +275,5 @@
 @media(max-width:767px) {
 	.inner-wrapper{
 		flex-direction: column;
-		padding-left: 10px;
 	}
 }

@@ -8,18 +8,20 @@
       </div>
     <div class="txt-wrapper">
       <div class="inner-wrapper">
-        <div class="first">
-          <div class="name">
-            <%= user.decorate.full_titleized_name.truncate(38) %>
-          </div>
-          <%= safe_truncate(user.position, 35) %>
-          <br>
-          <%= safe_truncate(user.company, 20) %>
+        <div class="name">
+          <%= user.decorate.full_titleized_name.truncate(28) %>
         </div>
-        <div class="second">
-            <%= safe_truncate(user.profil, 24) %>
-            <br>
-            <%= safe_truncate(user.country, 24) %>
+        <div>
+          <%= safe_truncate(user.position, 35) %>
+        </div>
+        <div>
+          <%= safe_truncate(user.company, 30) %>
+        </div>
+        <div class="country">
+          <%= safe_truncate(user.country, 30) %>
+        </div>
+        <div class="profil">
+            <%= safe_truncate(user.profil, 30) %>
         </div>
 
       </div>
