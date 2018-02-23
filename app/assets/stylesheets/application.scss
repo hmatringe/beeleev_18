@@ -18,25 +18,6 @@
 @import 'application/beeleever_post';
 @import 'application/newsfeed';
 
-body {
-  // background-image: asset-url('application/patterns/shattered.png');
-  // background-repeat: repeat;
-
-  &.no-bg {
-    background-image: none;
-  }
-}
-
-h1 {
-  margin: 16px 0 16px;
-  color: #fff;
-  font-family: "fira-sans",sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-  text-align: center;
-  font-style: italic;
-}
-
 #activity
   .pending-connection {
     margin-bottom: 10px;

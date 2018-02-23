@@ -1,33 +1,6 @@
 //------------original news.scss commented-------------
 #news {
-  margin: $gutter*3 0;
-
-  h1{
-    font-family: 'Lato-bold', sans-serif;
-    font-weight: 400;
-    font-size: 3em;
-    font-style: normal;
-    color: $orange;
-    padding: 1em 0 0;
-    text-transform: uppercase;
-    letter-spacing: 0;
-    text-align: center;
-  }
-  h2{
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-size: 1.2em;
-    font-style: normal;
-    color: $gray;
-    padding: 0.5em 0;
-    text-transform: normal;
-  }
   .img_side{
-    // background-color: $grey;
-    // height: 250px;
-    // background-image: url("https://picsum.photos/200/200");
-    // background-size: cover;
-    // padding-bottom: 20px;
     padding: 0;
   }
   .text-side{
@@ -56,9 +29,7 @@
       color: $bleu-fonce;
       text-transform: uppercase;
     }
-
   }
-  
 }
 .news-form {
   padding-bottom: 10px;
@@ -75,10 +46,8 @@
     text-align: left;
     font-style: normal;
     margin-bottom: 5px;
-    // color: $bleu;
     color: $gray;
   }
-
   h2.suite {
     font-size: 18px;
     font-weight: 100;

@@ -1,27 +1,25 @@
-<div class="fond-news">
-  <div class="container">
-    <div class="row" id="news">
-      
-      <div class="col-xs-12">
-        <h1>
-          LATEST NEWS
-        </h1>
-        <h2>
-          All the Meet Ups, Breakfast Talks, Networking Events and Learning Expeditions you missed!
-        </h2>
-
-      </div>
-      <% last_date = "" %>
-      <% same_date = false %>
-      <% @posts.each do |post| %>
-        <% post.publication_year_month == last_date ? same_date = true : same_date = false %>
-        <%= render partial: "event_posts/post_row18", locals: { post: post, same_date: same_date } %>
-        <% last_date = post.publication_year_month %>
-      <% end %>
+<div class="container">
+  <div class="row" id="news">
+    
+    <div class="col-xs-12">
+      <h1>
+        LATEST NEWS
+      </h1>
+      <h2>
+        All the Meet Ups, Breakfast Talks, Networking Events and Learning Expeditions you missed!
+      </h2>
 
     </div>
-  </div>  
-</div>
+    <% last_date = "" %>
+    <% same_date = false %>
+    <% @posts.each do |post| %>
+      <% post.publication_year_month == last_date ? same_date = true : same_date = false %>
+      <%= render partial: "event_posts/post_row18", locals: { post: post, same_date: same_date } %>
+      <% last_date = post.publication_year_month %>
+    <% end %>
+
+  </div>
+</div>  
 
 
 <% content_for :meta_title, "Past Events" %>

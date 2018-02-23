@@ -1,38 +1,20 @@
 //------------original team.scss commented-------------
 #team_18{
+  h2{
+  }
+  h3{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.7em;
+    font-style: normal;
+    color: $gray;
+    text-align: unset;
+  }
   .top-wrapper{
     padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  h1{
-    font-family: 'Lato-bold', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: $orange;
-    text-transform: uppercase;
-    letter-spacing: inherit;
-    font-size: 2em;
-    padding-top: 1em;
-  }
-  .sub_header{
-    color: $gray;
-    font-family: 'Lato-light', sans-serif;
-    font-weight: 200;
-    font-size: 1.5em;
-    text-transform: none;
-    padding: 1.5em 0;
-    }
-  .bullet-points{
-  }
-  h2{
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: $gray;
-    text-align: unset;
-    font-size: 1.5em;
   }
   .last-wrapper {
     .last-over-title {
@@ -47,7 +29,6 @@
       color: $gray;
       text-transform: none;
       letter-spacing: inherit;
-      // text-align: center;
       font-size: 1.4em;
     }
   }
@@ -78,7 +59,6 @@
     font-weight: 700;
     font-style: normal;
     color: $bleu-fonce;
-    // text-align: center;
     font-size: 1.5em;
     text-transform: uppercase;
   }
@@ -87,7 +67,6 @@
     font-weight: 400;
     font-style: normal;
     color: $gray;
-    // text-align: center;
     font-size: 1.2em;
     text-transform: uppercase;
     margin: 10px 0 30px;
