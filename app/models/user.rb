@@ -65,7 +65,6 @@
 #  activated_at                     :datetime
 #  stripe_customer_id               :string(255)
 #  can_post                         :boolean          default(TRUE)
-#  targeted_countries               :text             default([]), is an Array
 #  company_description              :string(255)      default("")
 #  facebook_username                :string(255)      default("")
 #
@@ -541,7 +540,6 @@ class User < ActiveRecord::Base
     user.application_reject_reason =  ""
     user.business_sectors =  []
     user.investment_levels =  []
-    user.targeted_countries =  []
     user.company_description =  ""
     user.facebook_username =  nil
     return user
@@ -560,8 +558,7 @@ class User < ActiveRecord::Base
       :expertises,
       :international_activity_countries,
       :business_sectors,
-      :investment_levels,
-      :targeted_countries
+      :investment_levels
     ].each do |attribute|
       # get the current attribute value
       value = send(attribute)

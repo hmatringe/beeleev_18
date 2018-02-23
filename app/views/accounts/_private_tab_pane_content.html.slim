@@ -94,14 +94,6 @@
           class: "form-control")
 
     .form-group
-      = f.label :targeted_countries, "Targeted Countries_"
-      = f.country_select(:targeted_countries,
-          [],
-          {prompt: "Select targeted activity countries"},
-          multiple: true,
-          class: "form-control")
-
-    .form-group
       = f.label :turnover
       = f.select :turnover, ["0 to $100K",
             "$100K to $500K",

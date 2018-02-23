@@ -34,10 +34,10 @@ html
     = render "layouts/mailchimp_connect"
     = render "layouts/facebook_pixel"
 
-    .container
-      = render "layouts/flash"
     
     .below-nav
+      .container
+        = render "layouts/flash"
       = yield
 
     = render "layouts/footer_18"

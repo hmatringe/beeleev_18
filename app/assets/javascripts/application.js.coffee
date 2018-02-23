@@ -9,6 +9,7 @@
 
 #= require cloudinary
 #= require social_plugins
+#= require flashes
 
 #= require select2/select2.min
 #= require sign_up
@@ -76,7 +77,6 @@ $(document).on 'ready page:load', ->
 
   $('#user_country').select2()
   $('#user_civility').select2()
-  $('#user_targeted_countries').select2()
 
   $('
     #user_business_sector,
