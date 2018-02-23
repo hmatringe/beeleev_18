@@ -14,6 +14,7 @@
 	  font-size: 2.5em;
 	  margin: 0;
 	  text-align: left;
+	  padding: 0 0 10px;
 	}
 }
 #profile_18_core, #profile_18_company{
@@ -128,7 +129,7 @@
 	.arrow_box {
 		position: relative;
 		border: 1px solid $orange;
-		margin: 2vw 5vw;
+		margin: 2vw 10vw;
 		padding: 10px;
 		color: $gray;
 		font-style: italic;
@@ -139,7 +140,7 @@
 	}
 	.arrow_box:after, .arrow_box:before {
 		bottom: 100%;
-		left: 15%;
+		left: 8%;
 		border: solid transparent;
 		content: " ";
 		height: 0;

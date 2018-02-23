@@ -8,7 +8,6 @@
 	.shop-top-wrapper{
 		display: flex;
 		justify-content: space-between;
-		// align-items: center;
 		flex-direction: column;
 		height: 100%;
 		.content{
@@ -21,7 +20,7 @@
 	.testimonial-wrapper{
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: space-around;
 		align-items: center;
 		background-size: cover !important;
 		height: 300px;
@@ -34,7 +33,7 @@
 		font-weight: 400;
 		font-style: italic;
 		font-size: 1em;
-		line-height: 2.5;
+		line-height: 2;
 	}
 	.height-wrapper{
 		min-height: 300px;
