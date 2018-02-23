@@ -3,25 +3,6 @@
 	.container{
 		padding: 0;
 	}
-	h1{
-		font-family: 'Lato', sans-serif;
-		font-weight: 700;
-	  font-size: 2.5em;
-	  font-style: normal;
-		color: $orange;
-	  text-align: center;
-	  margin: 5vh 0;
-	}
-	h2{
-		font-family: 'Lato', sans-serif;
-		font-weight: 700;
-    font-size: 1.5em;
-	  font-style: normal;
-		color: $gray;
-	  margin: 0;
-	  text-align: center;
-	  margin: 0 0 5vh;
-	}
 	.shop-top-wrapper{
 		display: flex;
 		justify-content: space-between;
@@ -34,6 +15,24 @@
 			font-weight: 400;
 			font-family: "Lato";
 		}
+	}
+	.testimonial-wrapper{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		background-size: cover !important;
+		height: 300px;
+		padding: 10px;
+	}
+	.testimonial-author{
+	  font-size: 1.1em;
+	}
+	.testimonial-quote{
+		font-weight: 400;
+		font-style: italic;
+		font-size: 1em;
+		line-height: 2.5;
 	}
 	.height-wrapper{
 		min-height: 300px;
