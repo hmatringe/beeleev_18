@@ -52,7 +52,6 @@ body.cookiebanner .lemenu {
 .navbar-brand-custom {
   float: left;
   padding: 10px 22px;
-  // min-height: unset !important;
 }
 
 .navbar-default .navbar-nav > li > a, .dropdown-menu > li > a {
@@ -62,11 +61,13 @@ body.cookiebanner .lemenu {
   font-weight: 300;
   letter-spacing: 2px;
   color: $bleu-fonce;
-  padding: 15px 15px !important;
+  padding: 10px !important;
   &:hover, &:focus, &:active{
     color: $orange;
+    background-color: white !important;
   }
 }
+
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
   background-color: white;
 }

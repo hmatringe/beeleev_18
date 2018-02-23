@@ -69,6 +69,12 @@
         span.input-group-addon
           i.fa.fa-facebook
         = f.text_field :facebook_username, class: "form-control"
+    .form-group
+      = f.label :provider_public_profile_url, "LinkedIn URL"
+      .input-group
+        span.input-group-addon
+          i.fa.fa-facebook
+        = f.text_field :provider_public_profile_url, class: "form-control"
 
   .col-md-4
     .form-group
@@ -102,8 +108,8 @@
         = f.text_field :website, class: "form-control"
 
 .form-group
-  = f.label :description, "Description"
+  = f.label :description, "About You"
   = f.text_area :description, class: "form-control", rows: 3
 .form-group
-  = f.label :company_description, "Company Description"
+  = f.label :company_description, "About your Company"
   = f.text_area :company_description, class: "form-control", rows: 3    

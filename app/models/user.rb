@@ -203,11 +203,11 @@ class User < ActiveRecord::Base
                 on: :update,
                 unless: -> { skip_country_validation == '1' }
               }
-  validates :city,
-              presence: {
-                on: :update,
-                unless: -> { skip_city_validation == '1' }
-              }
+  # validates :city,
+  #             presence: {
+  #               on: :update,
+  #               unless: -> { skip_city_validation == '1' }
+  #             }
   validates :position,
               presence: {
                 on: :update,
@@ -219,17 +219,17 @@ class User < ActiveRecord::Base
                 unless: -> { skip_website_validation == '1' }
               }
 
-  validates :turnover,
-            presence: {
-              on: :update,
-              unless: -> { skip_turnover_validation == '1' }
-            }
+  # validates :turnover,
+  #           presence: {
+  #             on: :update,
+  #             unless: -> { skip_turnover_validation == '1' }
+  #           }
 
-  validates :staff_volume,
-            presence: {
-              on: :update,
-              unless: -> { skip_staff_volume_validation == '1' }
-            }
+  # validates :staff_volume,
+  #           presence: {
+  #             on: :update,
+  #             unless: -> { skip_staff_volume_validation == '1' }
+  #           }
 
   validates :international_activity_countries,
             presence: {
