@@ -52,7 +52,10 @@ html
       = render "layouts/menu18_white"
     end
     
-    .below-nav
+    - if @home
+      = yield
+    - else
+      .below-nav
         = yield
 
     = render 'layouts/footer_18'

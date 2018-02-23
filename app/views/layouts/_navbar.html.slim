@@ -1,22 +1,21 @@
-nav.navbar.navbar-default[role="navigation"]
+nav#lemenu.lemenu.lemenu18_white.nav.navbar.navbar-default.navbar-fixed-top role="navigation"
   .container-fluid
+    
     .navbar-header
-      button.navbar-toggle[type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"]
-        span.sr-only
-          | Toggle navigation
+      button.navbar-toggle.collapsed data-target="#navbar-collapse-body" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
 
-      a.navbar-brand href=root_url
-        /= image_tag("homepage/logo-beeleev-menu2.png")
+      a.navbar-brand-custom href=root_url
         = cl_image_tag "blue-logo", height: 30
       
-      .navbar-social-links
-        / = render "shared/company_social_links"
+
+      .navbar-social-links.hidden-xs
         = render "shared/company_social_links18"
 
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+    .collapse.navbar-collapse#navbar-collapse-body
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
 
@@ -24,18 +23,7 @@ nav.navbar.navbar-default[role="navigation"]
             li= menu_link "MEMBERS", members_path
             
           li= link_to 'To Slack', 'https://entrepreneurs-beeleev.slack.com', target: '_blank'
-
-
-          /- if can? :access_activity, current_user
-            li
-              = link_to activity_path do
-                => t("activity")
-                span.badge= activities_badge_content @pending_connections
-
           li= menu_link 'DIRECT REQUEST', direct_request_path
-          
-          /li= new_connection_request_btn(classes: "", btn_title: "DIRECT REQUEST", display_div: false)
-
           li.dropdown
             a.dropdown-toggle[href="#" data-toggle="dropdown"]
               b.caret
@@ -53,10 +41,6 @@ nav.navbar.navbar-default[role="navigation"]
             ul.dropdown-menu
               li= link_to 'My Account', account_path
               li= link_to t("my_profile"), current_user
-
-              /- if can? :access_my_network, current_user
-                li= link_to t("my_network"), my_network_path
-
               li.divider
               li
                 = link_to(t("log_out"), destroy_user_session_path)
