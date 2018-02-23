@@ -1,4 +1,4 @@
 - if alert || notice
-  .alert.fade.in{class: alert.present? ? "alert-warning" : "alert-success"}
+  .alert.fade.in{class: alert.present? ? "alert-warning fancy-flash" : "alert-success fancy-flash"}
     %button.close{type: "button", data: {dismiss: "alert"}, "aria-hidden" => "true"} &times;
     = flash[:html_safe] ? (alert || notice).html_safe : (alert || notice)

@@ -150,7 +150,6 @@ ActiveAdmin.register User do
         row :business_model
         row :international_activity
         row :international_activity_countries
-        row :targeted_countries
         row :turnover
         row :staff_volume
         row :hiring_objectives
@@ -275,12 +274,6 @@ ActiveAdmin.register User do
       f.input :international_activity
       f.input(
         :international_activity_countries,
-        as: :select,
-        collection: Country.all.map(&:first),
-        multiple: true
-      )
-      f.input(
-        :targeted_countries,
         as: :select,
         collection: Country.all.map(&:first),
         multiple: true

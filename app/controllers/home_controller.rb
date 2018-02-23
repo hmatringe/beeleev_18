@@ -18,6 +18,7 @@ class HomeController < ApplicationController
     @countries     = active_users.map(&:country).reject(&:blank?).uniq.size
     @nationalities = nationalities_count(active_users)
 
+    @home = ""
     # @partners = Partner.order(position: :asc).first(6)
   end
 

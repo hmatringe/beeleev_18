@@ -1,3 +1,37 @@
+.below-nav {
+  margin-top: 73px;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+}
+h1{
+  font-weight: 400;
+  font-size: 3em;
+  font-style: normal;
+  color: $orange;
+  padding: 1em 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  text-align: center;
+}
+h2{
+  font-weight: 400;
+  font-size: 1.7em;
+  font-style: normal;
+  color: $gray;
+}
+h3{
+  font-weight: 400;
+  font-size: 1.7em;
+  font-style: normal;
+  color: $gray;
+  text-align: unset;
+}
+
+.select2-choice{
+  text-align: left;
+}
 // __________________components______________________
  
 .btn-orange18-white {
@@ -217,4 +251,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.fancy-flash{
+  z-index: 100;
+  position:absolute;
+  left: 10vw;
+  top: 73px;
+  width: 80vw;
 }

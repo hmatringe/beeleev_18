@@ -1,62 +1,43 @@
+<%= form_for @user, url: onboarding_third_update_path, method: :post do |f|%>
 <div id="onboarding3">
-	 <div class="wrapper">
-		<h1>YOUR INTERESTS</h1>
-		<div class="form-wrapper">
-			<%= form_for @user, url: onboarding_third_update_path, method: :post do |f|%>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-8 col-xs-offset-2">
-						<div>
-		          <div class="form-inputs">
-		            <%= f.select :expertises, @expertises, {}, class: "form-control",
-								              placeholder: "In which fields are you willing to help other members?",
-								              multiple: true,
-								              required: true %>
-		          </div>
+	<div class="flex-wrapper">
+		<h1>YOUR INTERESTS</h1>		
+		<div class="body-wrapper">
+			<div>
+	      <div class="form-inputs">
+	        <%= f.select :expertises, @expertises, {}, class: "form-control",
+					              placeholder: "In which fields are you willing to help other members?",
+					              multiple: true,
+					              required: true %>
+	      </div>
 
-							<div class="form-inputs">
-								<%= f.country_select :targeted_countries, [],
-																  {prompt: "Which countries are you interested in?"},
-																  class: "form-control",
-																  placeholder: "Which countries are you interested in?",
-																  multiple: true,
-																  required: true, 
-																  syle: "width: 100%;" %>	  							
-							</div>
-							<div class="checkbox">
-							  <label>
-							    <%= check_box(:user, :terms_of_service) %>
-							    <label for="client_terms_of_service">
-							      By joining Beeleev’s Entrepreneurial Community, I commit to reach out to other members and answer them in the shortest delays possible, as they would when I need support myself.
-							      <br>
-							      Because we grow faster together!
-							    </label>
-							  </label>
-							</div>
-
-						</div>
-					</div>
-
-
+				<div class="form-inputs">
+					<%= f.country_select :international_activity_countries, [],
+													  {prompt: "Which countries are you interested in?"},
+													  class: "form-control",
+													  placeholder: "Which countries are you interested in?",
+													  multiple: true,
+													  required: true, 
+													  syle: "width: 100%;" %>	  							
+				</div>
+				<div class="checkbox">
+				  <label>
+				    <%= check_box(:user, :terms_of_service) %>
+				    <label for="client_terms_of_service">
+				      By joining Beeleev, I commit to reach out to others and answer in the shortest delays possible, as they would when I need support myself.Because we grow faster together!
+				    </label>
+				  </label>
 				</div>
 			</div>
 		</div>
-		<div class="container">
-			<div class="row">
-					
-					<div class="col-xs-4 col-xs-offset-2 text-left">
-						<div class="form-actions">
-							<%= link_to "PREVIOUS PAGE", onboarding_second_path, class: "btn btn-orange18-gray" %>
-						</div>
-					</div>
-					<div class="col-xs-4 text-right">
-						<div class="form-actions">
-						  <%= f.submit "FINISH", class: "btn btn-orange18-orange", id: "onboarding" %>
-					<% end %>
-						</div>
-					</div>
-				
-			</div>
+		<div class="buttons-wrapper">
+				<div class="form-actions">
+					<%= link_to "PREVIOUS PAGE", onboarding_second_path, class: "btn btn-orange18-gray" %>
+				</div>
+				<div class="form-actions">
+				  <%= f.submit "FINISH", class: "btn btn-orange18-orange", id: "onboarding" %>
+				</div>
 		</div>
 	</div>
 </div>
+<% end %>

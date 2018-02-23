@@ -86,18 +86,10 @@
         | No
 
     .form-group
-      = f.label :international_activity_countries, "International Activity Countries"
+      = f.label :international_activity_countries, "Targeted Countries"
       = f.country_select(:international_activity_countries,
           [],
           {prompt: "Select International actvity countries"},
-          multiple: true,
-          class: "form-control")
-
-    .form-group
-      = f.label :targeted_countries, "Targeted Countries"
-      = f.country_select(:targeted_countries,
-          [],
-          {prompt: "Select targeted activity countries"},
           multiple: true,
           class: "form-control")
 

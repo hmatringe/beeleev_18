@@ -1,7 +1,8 @@
 <div id="how_it_works">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-8 col-sm-offset-2 title-wrapper">
+	<div class="flex-wrapper">
+			
+		<div class="flex-head">
+			<div class="title-wrapper">
 				<h2>looking for <span class="discreet">partners abroad?</span></h2>
 				<div class="cascades">
 					<span class="cascade0">advice</span> <br>
@@ -10,64 +11,71 @@
 				</div>
 				<div class="ending-h2">abroad?</div>
 			</div>
+		</div>
+		
+		<div class="flex-body">
+			<div class="container">
+				<div class="row">
+					<div class="">
+						<div class="col-sm-2 col-sm-offset-1 hidden-xs text-center">
+							<%= image_tag '18/people.png'%>
+						</div>
+						<div class="col-xs-12 col-sm-8">
+							<span class="how_it_works_step">
+								<strong>Reach out to other Entrepreneurs and Ambassadors</strong>
+								<br>
+								in the Slack or within the Platform
+							</span>
+						</div>
+					
+						<div class="col-xs-12 text-center">
+							<i class="fa fa-4x fa-angle-down" aria-hidden="true"></i>
+						</div>
+					</div>
 
-			<div class="">
-				<div class="col-sm-2 col-sm-offset-1 hidden-xs text-center">
-					<%= image_tag '18/people.png'%>
-				</div>
-				<div class="col-xs-12 col-sm-8">
-					<span class="how_it_works_step">
-						<strong>Reach out to other Entrepreneurs and Ambassadors</strong>
-						<br>
-						in the Slack or within the Platform
-					</span>
-				</div>
-			
-				<div class="col-xs-12 text-center">
-					<i class="fa fa-4x fa-angle-down" aria-hidden="true"></i>
-				</div>
-			</div>
+					<div class="">
+						<div>
+						<div class="col-sm-2 col-sm-offset-1 hidden-xs text-center">
+							<%= image_tag '18/connection.png' %>
+						</div>
+						<div class="col-xs-12 col-sm-8">
+							<span class="how_it_works_step">
+								<strong>Can't Find Your Match?</strong>
+								<br>
+								Send us a Direct Request and let our Teams do the Search
+							</span>
+						</div>
+						</div>
 
-			<div class="">
-				<div>
-				<div class="col-sm-2 col-sm-offset-1 hidden-xs text-center">
-					<%= image_tag '18/connection.png' %>
-				</div>
-				<div class="col-xs-12 col-sm-8">
-					<span class="how_it_works_step">
-						<strong>Can't Find Your Match?</strong>
-						<br>
-						Send us a Direct Request and let our Teams do the Search
-					</span>
-				</div>
-				</div>
+						<div class="col-xs-12 text-center">
+							<i class="fa fa-4x fa-angle-down" aria-hidden="true"></i>
+						</div>
+						<div>
+					</div>
 
-				<div class="col-xs-12 text-center">
-					<i class="fa fa-4x fa-angle-down" aria-hidden="true"></i>
+					<div class="">
+						<div>
+						<div class="col-sm-2 col-sm-offset-1 hidden-xs text-center">
+							<%= image_tag '18/approved.png' %>
+						</div>
+						<div class="col-xs-12 col-sm-8">
+							<span class="how_it_works_step">
+								<strong>Like the Contacts we found?</strong>
+								<br>
+								Credit your Account and we'll organize introductions!
+							</span>
+						</div>
+						</div>
+					</div>
+					</div>
 				</div>
-				<div>
-			</div>
-
-			<div class="">
-				<div>
-				<div class="col-sm-2 col-sm-offset-1 hidden-xs text-center">
-					<%= image_tag '18/approved.png' %>
-				</div>
-				<div class="col-xs-12 col-sm-8">
-					<span class="how_it_works_step">
-						<strong>Like the Contacts we found?</strong>
-						<br>
-						Credit your Account and we'll organize introductions!
-					</span>
-				</div>
-				</div>
-			</div>
-			
-			<div class="col-xs-12 text-center">
-				<span id="navbar-switch"></span>
-				<%= link_to "APPLY NOW", new_user_registration_path, class: "btn btn-orange18-white" %>
-			</div>
 			</div>
 		</div>
+		
+		<div class="flex-cta">
+			<span id="navbar-switch"></span>
+			<%= link_to "APPLY NOW", new_user_registration_path, class: "btn btn-orange18-white" %>
+		</div>
+
 	</div>
 </div>

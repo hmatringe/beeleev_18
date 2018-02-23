@@ -2,6 +2,8 @@
 	background: $orange;
 	clear:left;
 	font:14px Helvetica,Arial,sans-serif;
+	border-bottom: 2px dashed #f37e4f;
+	padding: 10px;
 	.bullets-wrapper{
     color: white;
 	  font-family: 'Lato', sans-serif;
@@ -15,6 +17,7 @@
 	  font-style: italic;
 	  color: #333333;
 	  padding: 2em 0 1em !important;
+	  text-align: center;
 	}
 	.outer-wrapper{
 		display: flex;
@@ -38,10 +41,13 @@
 	width: 300px !important;
 }
 #mc_embed_signup form{
-	padding: 1.7em 0 0 !important;
+	padding: 1.2em 0 0 !important;
 }
 @media (max-width: $screen-xs-max) {
 	#mc_embed_signup{
+		h2{
+			font-size: 1.3em !important;
+		}
 		.btn-orange18-white{
 			padding: 0.71em 0.8em;
 		}
@@ -55,6 +61,6 @@
 	}
 	#mc_embed_signup .mc-field-group input{
 		margin: 0 1em 2em 0 !important;
-		width: 240px !important;
+		width: 220px !important;
 	}
 }

@@ -8,26 +8,15 @@ nav#lemenu.lemenu.lemenu18_white.nav.navbar.navbar-default.navbar-fixed-top role
         span.icon-bar
         span.icon-bar
       
-      a.navbar-brand href="/"
+      a.navbar-brand-custom href=root_url
         = cl_image_tag "blue-logo", height: 30
       
+
       .navbar-social-links.hidden-xs
         = render "shared/company_social_links18"
 
     .collapse.navbar-collapse#navbar-collapse-body
       ul.nav.navbar-nav.navbar-right
-        /li
-          a.dropdown-toggle href="#Offer" role="button" data-toggle="dropdown"
-            | Entrepreneurs
-            span.caret
-          ul.dropdown-menu
-            li
-              a.smoothscroll href="/#testimonials" Testimonials
-            li
-              a.smoothscroll href="/#beeleevers" Beeleevers
-            li
-              a.smoothscroll href="/#benefits" Offer
-
         = menu_link 'Our Partners', partners_path
         = menu_link 'Events', events_path
         li= link_to 'Blog', 'http://blog.beeleev.com/', target: '_blank'
@@ -35,17 +24,11 @@ nav#lemenu.lemenu.lemenu18_white.nav.navbar.navbar-default.navbar-fixed-top role
 
 
         - unless user_signed_in?
-          /li
-            a#navbar-apply-btn.btn.btn-default2{
-              href=new_user_registration_path
-              data-toggle="modal"
-              data-target="#ajaxSmallModal"
-            } Apply
           li
             a#navbar-signin-btn.btn.btn-default2{
               href=new_user_session_path
               data-toggle="modal"
-              data-target="#ajaxLargeModal"
+              data-target="#ajaxSmallModal"
             } Sign In
         - else
           li
