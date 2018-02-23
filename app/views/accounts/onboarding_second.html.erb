@@ -1,73 +1,54 @@
+<%= form_for @user, url: onboarding_second_update_path, method: :post do |f|%>
 <div id="onboarding2">
-	 <div class="wrapper">
-		<h1>ABOUT YOUR COMPANY</h1>
-		<div class="form-wrapper">
-			<%= form_for @user, url: onboarding_second_update_path, method: :post do |f|%>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-8 col-xs-offset-2">
-						<div>
-							<div class="form-inputs">
-						  	<%= f.text_field :company,
+	<div class="flex-wrapper">
+		<h1>ABOUT YOUR COMPANY</h1>	
+		<div class="body-wrapper">
+			<div>
+				<div class="form-inputs">
+			  	<%= f.text_field :company,
+			  							class: "form-control",
+			  							placeholder: "Company Name",
+			  							required: true,
+			  							autofocus: true,
+			  							label: false %>
+			
+				</div>
+				<div class="form-inputs">
+				  <%= f.text_field :website,
+										  class: "form-control",
+										  placeholder: :website.to_s.humanize,
+				  						required: true,
+				  						label: false %>
+				</div>
+				<div class="form-inputs">
+				  <%= f.select :business_sectors,
+											  @business_sectors,
+											  {},
+											  class: "form-control",
+											   multiple: true,
+											   placeholder: "Industry",
+											   required: true %>
+				</div>
+				<div class="form-inputs">
+				  <%= f.text_field :position,
 						  							class: "form-control",
-						  							placeholder: "Company Name",
+						  							placeholder: :position.to_s.humanize,
 						  							required: true,
-						  							autofocus: true,
 						  							label: false %>
-					
-							</div>
-							<div class="form-inputs">
-							  <%= f.text_field :website,
-													  class: "form-control",
-													  placeholder: :website.to_s.humanize,
-							  						required: true,
-							  						label: false %>
-							</div>
-
-							<div class="form-inputs">
-							  <%= f.select :business_sectors,
-														  @business_sectors,
-														  {},
-														  class: "form-control",
-														   multiple: true,
-														   placeholder: "Industry",
-														   required: true %>
-
-							</div>
-
-							<div class="form-inputs">
-							  <%= f.text_field :position,
-									  							class: "form-control",
-									  							placeholder: :position.to_s.humanize,
-									  							required: true,
-									  							label: false %>
-							</div>
-						</div>
-					</div>
-
-
 				</div>
 			</div>
 		</div>
-		<div class="container">
-			<div class="row">
-					
-					<div class="col-xs-4 col-xs-offset-2 text-left">
-						<div class="form-actions">
-							<%= link_to "PREVIOUS PAGE", onboarding_first_path, class: "btn btn-orange18-gray" %>
-						</div>
-					</div>
-					<div class="col-xs-4 text-right">
-						<div class="form-actions">
-						  <%= f.submit "NEXT PAGE 2 / 3", class: "btn btn-orange18-orange" %>
-					<% end %>
-						</div>
-					</div>
-				
+		<div class="buttons-wrapper">
+			<div class="form-actions">
+				<%= link_to "PREVIOUS PAGE", onboarding_first_path, class: "btn btn-orange18-gray" %>
 			</div>
+			<div class="form-actions">
+				<%= f.submit "NEXT PAGE 2 / 3", class: "btn btn-orange18-orange" %>
+			</div>			
 		</div>
 	</div>
 </div>
+<% end %>
 
 
 
