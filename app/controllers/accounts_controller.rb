@@ -76,7 +76,7 @@ class AccountsController < BeeleeverSpaceController
 
   def update
     if current_user.save
-      redirect_to @user, notice: t("profile_updated")
+      redirect_to account_path, notice: t("profile_updated")
     else
       flash.now[:alert] = @user.errors.full_messages.join('<br>').html_safe
       render :edit

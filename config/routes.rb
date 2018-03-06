@@ -21,15 +21,16 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   get "show_old/:id", to: "users#show_old"
-  resource :account, only: [:show, :edit, :update]
   get "account_old", to: "accounts#show_old"
+  resource :account, only: [:show, :edit, :update]
+  get "destroy_account", to: "accounts#destroy_account"
+  
   get "onboarding_first", to: "accounts#onboarding_first"
   post "onboarding_first_update", to: "accounts#onboarding_first_update"
   get "onboarding_second", to: "accounts#onboarding_second"
   post "onboarding_second_update", to: "accounts#onboarding_second_update"
   get "onboarding_third", to: "accounts#onboarding_third"
   post "onboarding_third_update", to: "accounts#onboarding_third_update"
-  get "destroy_account", to: "accounts#destroy_account"
   # resource :activity, only: [:show]
   resource :my_network, only: [:show]
   resources :connection_demands, only: [:new, :create, :show, :update]
