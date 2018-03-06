@@ -4,6 +4,9 @@
 		color: $gray;
 		font-style: normal;
 	  margin: 0;
+	.modal-title{
+		text-align: center;
+	}
 	.modal-header{
 		background-color: $orange;
 		h4{
@@ -32,7 +35,7 @@
 		width: 150px;
 	}
 	.top-left, .middle-left, .bigger-label{
-		font-size: 1.5em;
+		font-size: 1.4em;
 	}
 	.flex-horiz{
 		display: flex;

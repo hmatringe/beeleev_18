@@ -5,6 +5,7 @@
     font-size: 0.7em;
     margin: 0;
     color: #9B9B9B;
+    text-align: center;
   }
   .partners-bullets-wrapper{
     color: #9B9B9B;
@@ -15,6 +16,9 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+  }
+  .btn-orange18-orange{
+    margin: 1em 0;
   }
 }
 @media(max-width:767px) {

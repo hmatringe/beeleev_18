@@ -72,6 +72,9 @@ $(document).on 'ready page:load', ->
     $('.modal-ajax').modal('hide')
     false
 
+  
+  
+
   $('#q_city_eq').on 'change', ->
     @.form.submit()
 

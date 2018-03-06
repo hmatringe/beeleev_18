@@ -1,4 +1,4 @@
-<div id="profile_18_core">
+<div id="profile_18_core" class="margin-top-62">
 	<div class="container">
 	  <div class="row">
 	    
@@ -50,8 +50,8 @@
 	    		<div class="item">
 	    			<%= (@user.city + ", ") if @user.city.present?%>
 	    			<%= @user.country if @user.country.present?%>
-	    			<% unless @user.all_spoken_languages == "" %>
-	    			<%= "- " + @user.all_spoken_languages %>
+	    			<% unless @user.nationalite.blank? %>
+	    			<%= "- " + @user.nationalite %>
 	    			<% end %>
 	    		</div>
 					
