@@ -43,14 +43,12 @@ ActiveAdmin.register User do
     end
 
     def update
-      # params[:user] does not contain a :password info
-      # since the admin interface does not have that field
-      @user = User.find(params[:id])
-
+      require 'pry-byebug'
+      binding.pry
       # proceed with the regular update method
       # see InheritedResources documentation
       super do |format|
-        redirect_to(admin_user_path(@user), notice: "User #{@user.decorate.full_titleized_name} updated") and return
+        redirect_to(admin_user_path(resource), notice: "User #{@user.decorate.full_titleized_name} updated") and return if resource.valid?
       end
     end
   end
