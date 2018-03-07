@@ -1,6 +1,7 @@
 ActiveAdmin.register User do
 
-  config.sort_order = 'last_name_asc'
+  config.sort_order = 'created_at_desc'
+
 
   menu label: 'Beeleevers'
 
@@ -36,7 +37,11 @@ ActiveAdmin.register User do
 
       # proceed with the regular create method
       # see InheritedResources documentation
-      create!
+      # require 'pry-byebug'
+      # binding.pry
+      create! do |format|
+        redirect_to(admin_users_path, notice: "User #{@user.decorate.full_titleized_name} created") and return
+      end
     end
   end
 
@@ -44,8 +49,6 @@ ActiveAdmin.register User do
   member_action :send_aasm_event, method: :put do
     if resource.class.aasm.events.keys.include?(params[:aasm_event].to_sym)
 
-      # require 'pry-byebug'
-      # binding.pry
       # HACK
       resource.skip_turnover_validation = '1'
       resource.skip_staff_volume_validation = '1'
@@ -89,6 +92,7 @@ ActiveAdmin.register User do
   #######
 
   index title: 'Users' do
+    
     column :first_name
     column :last_name
     column :email
