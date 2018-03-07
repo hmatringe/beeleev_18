@@ -48,9 +48,6 @@ ActiveAdmin.register Partner do
   controller do
     def create
       @partner = Partner.new(params[:partner])
-
-      # require 'pry-byebug'
-      # binding.pry
       super do |format|
         redirect_to(admin_partner_path(@partner), notice: "Partner created") and return if resource.valid?
       end
