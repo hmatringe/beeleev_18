@@ -37,10 +37,20 @@ ActiveAdmin.register User do
 
       # proceed with the regular create method
       # see InheritedResources documentation
-      # require 'pry-byebug'
-      # binding.pry
       create! do |format|
         redirect_to(admin_users_path, notice: "User #{@user.decorate.full_titleized_name} created") and return
+      end
+    end
+
+    def update
+      # params[:user] does not contain a :password info
+      # since the admin interface does not have that field
+      @user = User.find(params[:id])
+
+      # proceed with the regular update method
+      # see InheritedResources documentation
+      super do |format|
+        redirect_to(admin_user_path(@user), notice: "User #{@user.decorate.full_titleized_name} updated") and return
       end
     end
   end
