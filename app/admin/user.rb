@@ -51,7 +51,7 @@ ActiveAdmin.register User do
       resource.send params[:aasm_event]
       resource.save(validate: false)
     end
-
+    
     redirect_to(
       [:admin, resource],
       notice: "Event '#{params[:aasm_event]}' sent"
@@ -61,7 +61,7 @@ ActiveAdmin.register User do
   # Dynamically build action_items for each aasm event available
   # for the resource
   config.resource_class.aasm.events.each do |event_name, _event|
-
+    # binding.pry
     if_proc = proc { resource.aasm.events.include? event_name }
 
     action_item only: :show, if: if_proc do
