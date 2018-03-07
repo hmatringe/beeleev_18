@@ -103,6 +103,27 @@ ActiveAdmin.register ConnectionProposition do
     actions
   end
 
+  controller do
+    def create
+      @connection_proposition = ConnectionProposition.new(params[:connection_proposition])
+      super do |format|
+        redirect_to(admin_connection_proposition_path(@connection_proposition), notice: "Connection Proposition created") and return if resource.valid?
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to(admin_connection_proposition_path(resource), notice: "Connection Proposition updated") and return if resource.valid?
+      end
+    end
+
+    def destroy
+      super do |format|
+        redirect_to(admin_connection_propositions_path, notice: "Connection Proposition deleted") and return
+      end
+    end
+  end
+
   show do
     attributes_table do
       row :user1
@@ -146,11 +167,11 @@ ActiveAdmin.register ConnectionProposition do
 
   form do |f|
 
-    if Rails.env.development?
-      f.inputs 'Debug' do
-        debug params
-      end
-    end
+    # if Rails.env.development?
+    #   f.inputs 'Debug' do
+    #     debug params
+    #   end
+    # end
 
     if f.object.new_record?
       f.inputs "Connection Credits" do

@@ -31,7 +31,6 @@ ActiveAdmin.register ConnectionDemand do
       resource.send params[:aasm_event]
       resource.save
     end
-
     redirect_to [:admin, resource], notice: "Event '#{params[:aasm_event]}' sent"
   end
 
@@ -57,6 +56,27 @@ ActiveAdmin.register ConnectionDemand do
     column :created_at
 
     actions
+  end
+
+  controller do
+    def create
+      @connection_demand = ConnectionDemand.new(params[:connection_demand])
+      super do |format|
+        redirect_to(admin_connection_demand_path(@connection_demand), notice: "Connection Request created") and return if resource.valid?
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to(admin_connection_demand_path(resource), notice: "Connection Request updated") and return if resource.valid?
+      end
+    end
+
+    def destroy
+      super do |format|
+        redirect_to(admin_connection_demands_path, notice: "Connection Request deleted") and return
+      end
+    end
   end
 
   show do
