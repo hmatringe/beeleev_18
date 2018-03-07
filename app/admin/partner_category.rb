@@ -34,7 +34,7 @@ ActiveAdmin.register PartnerCategory do
       end
     end
 
-    def detroy
+    def destroy
       super do |format|
         redirect_to(admin_partner_categories_path) and return
       end

@@ -59,7 +59,7 @@ ActiveAdmin.register Partner do
       end
     end
 
-    def detroy
+    def destroy
       super do |format|
         redirect_to(admin_partners_path) and return
       end
