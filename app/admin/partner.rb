@@ -61,7 +61,7 @@ ActiveAdmin.register Partner do
 
     def destroy
       super do |format|
-        redirect_to(admin_partners_path) and return
+        redirect_to(admin_partners_path, notice: "Partner deleted") and return
       end
     end
   end

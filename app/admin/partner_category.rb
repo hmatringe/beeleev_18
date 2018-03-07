@@ -36,7 +36,7 @@ ActiveAdmin.register PartnerCategory do
 
     def destroy
       super do |format|
-        redirect_to(admin_partner_categories_path) and return
+        redirect_to(admin_partner_categories_path, notice: "Partner Category deleted") and return
       end
     end
   end

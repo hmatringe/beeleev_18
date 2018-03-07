@@ -50,7 +50,7 @@ ActiveAdmin.register User do
 
     def destroy
       super do |format|
-        redirect_to(admin_users_path) and return
+        redirect_to(admin_users_path, notice: "User deleted") and return
       end
     end
   end
