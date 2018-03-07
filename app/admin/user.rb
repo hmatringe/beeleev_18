@@ -43,8 +43,6 @@ ActiveAdmin.register User do
     end
 
     def update
-      require 'pry-byebug'
-      binding.pry
       # proceed with the regular update method
       # see InheritedResources documentation
       super do |format|
