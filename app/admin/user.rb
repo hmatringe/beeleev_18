@@ -62,9 +62,15 @@ ActiveAdmin.register User do
     #   notice: "Event '#{params[:aasm_event]}' sent"
     # )
     if params[:aasm_event].to_sym == :destroy
-      redirect_to admin_users_path and return
+      redirect_to(
+        admin_users_path,
+        notice: "Event '#{params[:aasm_event]}' sent"
+        ) and return
     else
-      redirect_to admin_user_path(resource) and return
+      redirect_to(
+        admin_user_path(resource),
+        notice: "Event '#{params[:aasm_event]}' sent"
+        ) and return
     end
   end
 
