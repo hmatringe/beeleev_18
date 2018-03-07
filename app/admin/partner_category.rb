@@ -20,6 +20,21 @@ ActiveAdmin.register PartnerCategory do
     actions
   end
 
+  controller do
+    def create
+      @partner_category = PartnerCategory.new(params[:partner_category])
+      super do |format|
+        redirect_to(admin_partner_category_path(@partner_category), notice: "Partner Category created") and return if resource.valid?
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to(admin_partner_category_path(resource), notice: "Partner Category updated") and return if resource.valid?
+      end
+    end
+  end
+
   show do
     attributes_table do
       row :name
