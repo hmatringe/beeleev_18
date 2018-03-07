@@ -43,10 +43,14 @@ ActiveAdmin.register User do
     end
 
     def update
-      # proceed with the regular update method
-      # see InheritedResources documentation
       super do |format|
         redirect_to(admin_user_path(resource), notice: "User #{@user.decorate.full_titleized_name} updated") and return if resource.valid?
+      end
+    end
+
+    def destroy
+      super do |format|
+        redirect_to(admin_users_path) and return
       end
     end
   end

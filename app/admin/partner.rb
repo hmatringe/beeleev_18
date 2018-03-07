@@ -58,6 +58,12 @@ ActiveAdmin.register Partner do
         redirect_to(admin_partner_path(resource), notice: "Partner updated") and return if resource.valid?
       end
     end
+
+    def detroy
+      super do |format|
+        redirect_to(admin_partners_path) and return
+      end
+    end
   end
 
   show do

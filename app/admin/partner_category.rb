@@ -33,6 +33,12 @@ ActiveAdmin.register PartnerCategory do
         redirect_to(admin_partner_category_path(resource), notice: "Partner Category updated") and return if resource.valid?
       end
     end
+
+    def detroy
+      super do |format|
+        redirect_to(admin_partner_categories_path) and return
+      end
+    end
   end
 
   show do
