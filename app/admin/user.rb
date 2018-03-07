@@ -44,6 +44,8 @@ ActiveAdmin.register User do
   member_action :send_aasm_event, method: :put do
     if resource.class.aasm.events.keys.include?(params[:aasm_event].to_sym)
 
+      # require 'pry-byebug'
+      # binding.pry
       # HACK
       resource.skip_turnover_validation = '1'
       resource.skip_staff_volume_validation = '1'
@@ -51,11 +53,16 @@ ActiveAdmin.register User do
       resource.send params[:aasm_event]
       resource.save(validate: false)
     end
-    
-    redirect_to(
-      [:admin, resource],
-      notice: "Event '#{params[:aasm_event]}' sent"
-    )
+
+    # redirect_to(
+    #   [:admin, resource],
+    #   notice: "Event '#{params[:aasm_event]}' sent"
+    # )
+    if params[:aasm_event].to_sym == :destroy
+      redirect_to admin_users_path and return
+    else
+      redirect_to admin_user_path(resource) and return
+    end
   end
 
   # Dynamically build action_items for each aasm event available

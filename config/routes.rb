@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'errors/not_found'
-
-  get 'errors/internal_server_error'
-
-  get 'connection_propositions/show'
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   # ActiveAdmin.routes(self) #Original 
   ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
