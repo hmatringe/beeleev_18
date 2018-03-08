@@ -31,7 +31,10 @@
 
       
       <% if user_signed_in? %>
-        <%= new_connection_request_btn(classes: "btn btn-orange18-orange", btn_title: "CONTACT OUR PARTNERS", tag_classes: "col-xs-12 text-center") %>
+        <div class="col-xs-12 text-center">
+          <%= link_to "BROWSE MEMBERS", members_path, class: "btn btn-orange18-orange" %>
+        </div>
+        <%#= new_connection_request_btn(classes: "btn btn-orange18-orange", btn_title: "BROWSE MEMBERS", tag_classes: "col-xs-12 text-center") %>
       <% else %>
         <div class="col-xs-12 text-center">
           <%= link_to "APPLY NOW", new_user_session_path, class: "btn btn-orange18-orange", data: {toggle:"modal", target: "#ajaxSmallModal"} %>
