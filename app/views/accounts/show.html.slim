@@ -14,12 +14,21 @@
 
     .col-xs-12.col-sm-10
 
-      .overtitle-date
+      .overtitle-date.hidden-xs
         .lign-center
-        .title-wrapper-550
+        .title-wrapper-550.title-wrapper-account
           h3.inline-block
             i.fa.fa-arrow-right aria-hidden= "true"
             =< "CONNECTIONS WAITING FOR YOUR RESPONSE"
+
+      .overtitle-date.visible-xs
+        .lign-center
+        .title-wrapper-550.title-wrapper-account
+          h3.inline-block
+            i.fa.fa-arrow-right aria-hidden= "true"
+            =< "CONNECTIONS WAITING"
+            br
+            =< "FOR YOUR RESPONSE"
     
       .panel-body
         - if @pending_connections.empty?
@@ -33,7 +42,7 @@
 
       .overtitle-date
         .lign-center
-        .title-wrapper-300
+        .title-wrapper-300.title-wrapper-account
           h3.inline-block
             i.fa.fa-arrow-right aria-hidden= "true"
             =< "CONNECTION HISTORY"
@@ -49,7 +58,7 @@
 
       .overtitle-date
         .lign-center
-        .title-wrapper-500
+        .title-wrapper-500.title-wrapper-account
           h3.inline-block
             i.fa.fa-pencil aria-hidden= "true"
             =< "CUSTOM CONNECTION HISTORY"
@@ -80,7 +89,7 @@
 
       .overtitle-date
         .lign-center
-        .title-wrapper
+        .title-wrapper.title-wrapper-account
           h3 SHOP HISTORY
 
       

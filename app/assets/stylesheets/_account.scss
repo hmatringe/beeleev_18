@@ -35,3 +35,15 @@
 	  }
 	}
 }	
+@media(max-width:767px){
+	#account{
+		.credit-box-credit-wrapper{
+			min-height: 12vh;
+			margin: 0 0 2vh;
+		}
+		.title-wrapper-account{
+			// correction / title-wrapper... classes in components.scss
+			// font-size: 0.65em;
+		}
+	}
+}

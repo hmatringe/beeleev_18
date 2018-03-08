@@ -77,6 +77,13 @@
 	}
 }
 @media(max-width:767px) {
+	.pagination{
+		display: flex;
+	}
+	.check-geo-wrapper{
+		flex-direction: column;
+    align-items: center;
+	}
 	#my_network, #network-search{
 		font-size: 1.2em;
 	}
