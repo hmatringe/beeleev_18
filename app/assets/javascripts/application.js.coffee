@@ -20,6 +20,7 @@
 setupNetworkSearchSelect2 = ->
   $(
     '#q_country_in,
+    #q_city_in,
     #q_city_eq:not([readonly]),
     #q_expertises_overlap,
     #q_business_sectors_overlap,
