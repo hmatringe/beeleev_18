@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'errors/not_found'
-
-  get 'errors/internal_server_error'
-
-  get 'connection_propositions/show'
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   # ActiveAdmin.routes(self) #Original 
   ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
@@ -21,16 +15,17 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   get "show_old/:id", to: "users#show_old"
-  resource :account, only: [:show, :edit, :update]
   get "account_old", to: "accounts#show_old"
+  resource :account, only: [:show, :edit, :update]
+  get "destroy_account", to: "accounts#destroy_account"
+  
   get "onboarding_first", to: "accounts#onboarding_first"
   post "onboarding_first_update", to: "accounts#onboarding_first_update"
   get "onboarding_second", to: "accounts#onboarding_second"
   post "onboarding_second_update", to: "accounts#onboarding_second_update"
   get "onboarding_third", to: "accounts#onboarding_third"
   post "onboarding_third_update", to: "accounts#onboarding_third_update"
-  get "destroy_account", to: "accounts#destroy_account"
-  # resource :activity, only: [:show]
+  resource :activity, only: [:show]
   resource :my_network, only: [:show]
   resources :connection_demands, only: [:new, :create, :show, :update]
   resources :connection_requests, only: [:new, :edit, :create, :update]
@@ -45,11 +40,11 @@ Rails.application.routes.draw do
   get 'direct_request', to: 'shop#show'
   
   # get 'network_show_old',  to: 'networks#show_original'
-  # resource :network, only: [:show] do
-  #   get :search
-  #   get :search_any
-  #   get :search_one
-  # end
+  resource :network, only: [:show] do
+    get :search
+    get :search_any
+    get :search_one
+  end
   get 'members',  to: 'networks#show', as: 'user_root'
   get 'members',  to: 'networks#show'
   get 'members/search',  to: 'networks#search'

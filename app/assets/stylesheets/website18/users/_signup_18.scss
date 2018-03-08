@@ -1,5 +1,5 @@
 #signup_18{
-	// min-height: 82vh;
+	min-height: 84vh;
 	.sign-up-left{
 		min-height: 62vh;
 		border-right: $bg-grey 2px solid;
@@ -17,7 +17,7 @@
 	  // margin: 1em 0 0;
 	  text-align:center;
 	  letter-spacing: unset;
-	  margin: 0.5em 0;
+	  margin: 1em 0 0;
 	}
 	h2{
 		font-family: 'Lato', sans-serif;
@@ -30,11 +30,7 @@
 	  letter-spacing: unset;	
 	}
 	.bullets{
-		display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  height: 100%;
-	  flex-direction: row;
+	 	text-align: center;
 	  margin-bottom:  1em;
 		h3{
 			font-family: 'Lato', sans-serif;

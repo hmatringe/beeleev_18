@@ -36,6 +36,27 @@ ActiveAdmin.register ConnectionRequest do
     actions
   end
 
+  controller do
+    def create
+      @connection_request = ConnectionRequest.new(params[:connection_request])
+      super do |format|
+        redirect_to(admin_connection_request_path(@connection_request), notice: "Connection Request created") and return if resource.valid?
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to(admin_connection_request_path(resource), notice: "Connection Request updated") and return if resource.valid?
+      end
+    end
+
+    def destroy
+      super do |format|
+        redirect_to(admin_connection_requests_path, notice: "Connection Request deleted") and return
+      end
+    end
+  end
+
   show do
     attributes_table do
       row :author

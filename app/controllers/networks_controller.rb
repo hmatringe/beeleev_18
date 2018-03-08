@@ -2,6 +2,7 @@ class NetworksController < BeeleeverSpaceController
 
   before_action :setup_search
   before_action :setup_countries
+  before_action :setup_cities
   before_action :setup_profiles
   before_action :set_pagination
 
@@ -49,6 +50,12 @@ class NetworksController < BeeleeverSpaceController
 
   def setup_countries
     @countries = User.active.pluck(:country)
+                 .uniq.compact.reject(&:blank?)
+                 .sort
+  end
+
+  def setup_cities
+    @cities = User.active.pluck(:city)
                  .uniq.compact.reject(&:blank?)
                  .sort
   end

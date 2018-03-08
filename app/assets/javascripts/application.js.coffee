@@ -10,6 +10,7 @@
 #= require cloudinary
 #= require social_plugins
 #= require flashes_fade
+#= require disable_enter_form
 
 #= require select2/select2.min
 #= require sign_up
@@ -19,6 +20,7 @@
 setupNetworkSearchSelect2 = ->
   $(
     '#q_country_in,
+    #q_city_in,
     #q_city_eq:not([readonly]),
     #q_expertises_overlap,
     #q_business_sectors_overlap,
@@ -71,6 +73,9 @@ $(document).on 'ready page:load', ->
     $('.modal-ajax').data('remote', $(@).attr('href'))
     $('.modal-ajax').modal('hide')
     false
+
+  
+  
 
   $('#q_city_eq').on 'change', ->
     @.form.submit()

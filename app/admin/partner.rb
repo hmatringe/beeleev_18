@@ -45,6 +45,27 @@ ActiveAdmin.register Partner do
     actions
   end
 
+  controller do
+    def create
+      @partner = Partner.new(params[:partner])
+      super do |format|
+        redirect_to(admin_partner_path(@partner), notice: "Partner created") and return if resource.valid?
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to(admin_partner_path(resource), notice: "Partner updated") and return if resource.valid?
+      end
+    end
+
+    def destroy
+      super do |format|
+        redirect_to(admin_partners_path, notice: "Partner deleted") and return
+      end
+    end
+  end
+
   show do
     attributes_table do
       row :image do

@@ -2,51 +2,50 @@
   <%= search_form_for @q, url: members_search_any_path do |f| %> 
 
       <div class="form-title">I'm Looking for a</div>
-              
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="col-xs-7 col-sm-5">
-                <% @profiles.each do |profile| %> 
-                  <div class= "italic">
-                    <% if params[:q] && params[:q]["profil_eq_any"] %>
-                    <%= check_box_tag('q[profil_eq_any][]',
-                                      profile,
-                                      params[:q]["profil_eq_any"].include?(profile) ) %>
-                    <% else %>
-                    <%= check_box_tag('q[profil_eq_any][]',
-                                      profile) %>
+        
+        <div class="check-geo-wrapper">
+          <div class="check-boxes-wrapper">
+            <% @profiles.each do |profile| %> 
+              <div class= "italic input-height-wrapper">
+                <% if params[:q] && params[:q]["profil_eq_any"] %>
+                <%= check_box_tag('q[profil_eq_any][]',
+                                  profile,
+                                  params[:q]["profil_eq_any"].include?(profile) ) %>
+                <% else %>
+                <%= check_box_tag('q[profil_eq_any][]',
+                                  profile) %>
 
-                    <% end %>
-                    <%= profile %>
-                  </div>
-                <% end %>         
-              </div>   
-              
-              <div class="col-xs-1">
-                <div class="form-title">In</div>
+                <% end %>
+                <%= profile %>
               </div>
-
-              <div class="col-xs-12 col-sm-6">
-                <div class="country-city-wrapper">
-                  <%= f.select :country_in,
-                    @countries,
-                      {},
-                      class: "form-control",
-                      placeholder: "Country",
-                      multiple: true %>
-
-                  <%= f.select :city_eq,
-                    @q.result.pluck(:city).uniq.compact.sort,
-                      {prompt: "City"},
-                      class: "form-control",
-                      readonly: @q.city_eq.present? %>
-                </div>
-              </div>
+            <% end %>         
+          </div> 
               
+          <div class="inner-form-title">
+            <div class="centerer">
+              In
+            </div>
           </div>
+
+          <div class="country-city-wrapper">
+            <%= f.select :country_in,
+              @countries,
+                {},
+                class: "form-control",
+                placeholder: "Country",
+                multiple: true %>
+
+            <%= f.select :city_in,
+              @cities,
+                {},
+                class: "form-control",
+                placeholder: "City",
+                multiple: true  %>
+          </div>
+              
         </div>
 
-        <div class="form-title">That Can Help Me With</div>
+        <div class="inner-form-title">That Can Help Me With</div>
           <div class="expanded">
           <%= f.select :expertises_overlap,
             @q.result.pluck(:expertises).flatten.uniq.compact.sort,

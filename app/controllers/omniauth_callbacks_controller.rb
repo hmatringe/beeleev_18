@@ -31,7 +31,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to onboarding_first_path
     else
       session['devise.linkedin_data'] = request.env['omniauth.auth']
-      redirect_to root_url
+      redirect_to root_path
     end
   end
 

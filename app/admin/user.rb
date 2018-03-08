@@ -1,6 +1,7 @@
 ActiveAdmin.register User do
 
-  config.sort_order = 'last_name_asc'
+  config.sort_order = 'created_at_desc'
+
 
   menu label: 'Beeleevers'
 
@@ -36,7 +37,21 @@ ActiveAdmin.register User do
 
       # proceed with the regular create method
       # see InheritedResources documentation
-      create!
+      create! do |format|
+        redirect_to(admin_users_path, notice: "User #{@user.decorate.full_titleized_name} created") and return
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to(admin_user_path(resource), notice: "User #{@user.decorate.full_titleized_name} updated") and return if resource.valid?
+      end
+    end
+
+    def destroy
+      super do |format|
+        redirect_to(admin_users_path, notice: "User deleted") and return
+      end
     end
   end
 
@@ -52,16 +67,27 @@ ActiveAdmin.register User do
       resource.save(validate: false)
     end
 
-    redirect_to(
-      [:admin, resource],
-      notice: "Event '#{params[:aasm_event]}' sent"
-    )
+    # redirect_to(
+    #   [:admin, resource],
+    #   notice: "Event '#{params[:aasm_event]}' sent"
+    # )
+    if params[:aasm_event].to_sym == :destroy
+      redirect_to(
+        admin_users_path,
+        notice: "Event '#{params[:aasm_event]}' sent"
+        ) and return
+    else
+      redirect_to(
+        admin_user_path(resource),
+        notice: "Event '#{params[:aasm_event]}' sent"
+        ) and return
+    end
   end
 
   # Dynamically build action_items for each aasm event available
   # for the resource
   config.resource_class.aasm.events.each do |event_name, _event|
-
+    # binding.pry
     if_proc = proc { resource.aasm.events.include? event_name }
 
     action_item only: :show, if: if_proc do
@@ -82,6 +108,7 @@ ActiveAdmin.register User do
   #######
 
   index title: 'Users' do
+    
     column :first_name
     column :last_name
     column :email
