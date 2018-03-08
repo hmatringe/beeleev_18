@@ -269,3 +269,13 @@ h3{
   top: 73px;
   width: 80vw;
 }
+
+// select2 alert messages positionning
+.select2-offscreen,
+.select2-offscreen:focus {
+  top: auto !important;
+  left: auto !important;
+  // original vendor 
+  // clip: rect(0 0 0 0) !important;
+  // width: 1px !important;
+}
