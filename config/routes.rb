@@ -40,11 +40,11 @@ Rails.application.routes.draw do
   get 'direct_request', to: 'shop#show'
   
   # get 'network_show_old',  to: 'networks#show_original'
-  # resource :network, only: [:show] do
-  #   get :search
-  #   get :search_any
-  #   get :search_one
-  # end
+  resource :network, only: [:show] do
+    get :search
+    get :search_any
+    get :search_one
+  end
   get 'members',  to: 'networks#show', as: 'user_root'
   get 'members',  to: 'networks#show'
   get 'members/search',  to: 'networks#search'
