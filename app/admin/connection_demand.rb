@@ -31,7 +31,11 @@ ActiveAdmin.register ConnectionDemand do
       resource.send params[:aasm_event]
       resource.save
     end
-    redirect_to [:admin, resource], notice: "Event '#{params[:aasm_event]}' sent"
+    # redirect_to [:admin, resource], notice: "Event '#{params[:aasm_event]}' sent"
+    redirect_to(
+      admin_connection_demand_path(resource),
+      notice: "Event '#{params[:aasm_event]}' sent"
+      ) and return
   end
 
   # Dynamically build action_items for each aasm event available
