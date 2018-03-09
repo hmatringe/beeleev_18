@@ -64,5 +64,14 @@ module ApplicationHelper
     content_tag :div, link, class: tag_classes
   end
 
+  def timef(time, format)
+    case format
+    when :short
+      time.strftime("%e %b %Y")
+    when :long
+      time.strftime("%e %b %Y %H:%M")
+    end
+  end
+
 
 end

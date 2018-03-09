@@ -64,10 +64,17 @@ body.cookiebanner .lemenu {
   padding: 10px !important;
   &:hover, &:focus, &:active{
     color: $orange;
-    background-color: white !important;
+    background-color: unset !important;
   }
 }
 
+.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+  color: $bleu-fonce;
+  &:hover, &:focus, &:active{
+    color: $orange;
+    background-color: unset !important;
+  }
+}
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
   background-color: white;
 }
@@ -129,7 +136,21 @@ body.cookiebanner .lemenu {
     color: white;
   }
 }
-
+@media(max-width:767px) {
+  .lemenu18_transparent{
+    .navbar-collapse{
+      .navbar-nav > li a {
+        color: $bleu-fonce !important;
+        &:hover{
+          color: $orange !important;
+        }
+      }
+      .SoMeicons i {
+        color: white;
+      }
+    }
+  }
+}
 
 .lemenu18_white{
   background-color: white;
@@ -137,7 +158,7 @@ body.cookiebanner .lemenu {
   .navbar-nav > li a {
     color: $bleu-fonce;
     &:hover{
-      color: $orange;
+      color: $orange !important;
     }
     &.active {
       color: $orange;
@@ -178,7 +199,8 @@ body.cookiebanner .lemenu {
 
 @media(max-width:767px) {
   .lemenu18_transparent{
-    background-color: white;
+    // background-color: white;
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
   }
 }
 @media(max-width:767px) {

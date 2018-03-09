@@ -14,12 +14,21 @@
 
     .col-xs-12.col-sm-10
 
-      .overtitle-date
+      .overtitle-date.hidden-xs
         .lign-center
-        .title-wrapper-550
+        .title-wrapper-550.title-wrapper-account
           h3.inline-block
             i.fa.fa-arrow-right aria-hidden= "true"
             =< "CONNECTIONS WAITING FOR YOUR RESPONSE"
+
+      .overtitle-date.visible-xs
+        .lign-center
+        .title-wrapper-550.title-wrapper-account
+          h3.inline-block
+            i.fa.fa-arrow-right aria-hidden= "true"
+            =< "CONNECTIONS WAITING"
+            br
+            =< "FOR YOUR RESPONSE"
     
       .panel-body
         - if @pending_connections.empty?
@@ -33,7 +42,7 @@
 
       .overtitle-date
         .lign-center
-        .title-wrapper-300
+        .title-wrapper-300.title-wrapper-account
           h3.inline-block
             i.fa.fa-arrow-right aria-hidden= "true"
             =< "CONNECTION HISTORY"
@@ -49,7 +58,7 @@
 
       .overtitle-date
         .lign-center
-        .title-wrapper-500
+        .title-wrapper-500.title-wrapper-account
           h3.inline-block
             i.fa.fa-pencil aria-hidden= "true"
             =< "CUSTOM CONNECTION HISTORY"
@@ -60,27 +69,31 @@
         .pull-right
           = new_connection_request_btn(classes: "btn btn-success btn-xs", btn_title: "DIRECT REQUEST", tag_classes:"")
         - else
-          table.table.table-striped
-            tr
-              th Subject
-              th Last update
-              th Description
-              th
+          .account-connection-table
+            .account-connection-row-headers
+                .account-connection-row-date
+                  div Last update
+                .account-connection-row-descr
+                  div Description
+                .account-connection-row-action
+                    
             - @connection_requests.each do |cr|
-              tr.connection-request
-                td= cr.subject
-                td= l cr.updated_at, format: :long
-                td= simple_format cr.description
-                td
-                  .pull-right
-                    = link_to "EDIT",
+              .account-connection-row
+                .account-connection-row-date.visible-xs
+                  = timef cr.updated_at, :short
+                .account-connection-row-date.hidden-xs
+                  = timef cr.updated_at, :long
+                .account-connection-row-descr
+                  = cr.description
+                .account-connection-row-action
+                  = link_to "EDIT",
                       edit_connection_request_path(cr),
                       class: "btn btn-bleu-fonce btn-xs",
                       data: {toggle: "modal", target: "#ajaxModal"}
 
       .overtitle-date
         .lign-center
-        .title-wrapper
+        .title-wrapper.title-wrapper-account
           h3 SHOP HISTORY
 
       
@@ -90,31 +103,52 @@
           .pull-right
             = link_to "SHOP", direct_request_path, class: "btn btn-success btn-xs"
         - else
-          table.table.table-striped
-            tr
-              th Product
-              th Amount
-              th Date
+          .account-product-table
+            .account-product-row-headers
+              .account-product-row-product
+                div Product
+              .account-product-row-amount
+                div Amount
+              .account-product-row-date
+                div Date
             - @orders.each do |order|
-              tr
-                td= order.product_title
-                td= number_to_currency order.money.amount,
+              .account-product-row
+                .account-product-row-product
+                  = order.product_title
+                .account-product-row-amount
+                  = number_to_currency order.money.amount,
                       unit: order.money.currency.code
-                td= ldate order.created_at
-
+                .account-product-row-date.visible-xs
+                  = timef order.created_at, :short
+                .account-product-row-date.hidden-xs
+                  = timef order.created_at, :long
+         
         
-          table.table.table-striped
-            tr
-              th Expires on
-              th Connection created with this credit
-              th Credit created on
-              th Usable?
+          br
+          .account-credits-table  
+            .account-credits-row-headers
+              .account-credits-row-item.hidden-xs
+                div Expires on
+              .account-credits-row-details
+                div Connection created with this credit
+              .account-credits-row-item
+                div Credit created on
+              .account-credits-row-item
+                div Usable?
+
             - @connection_credits.each do |cc|
-              tr.connection-request
-                td= connection_credit_expires_on cc
-                td= connection_credit_details cc
-                td= ldate cc.created_at, format: :default
-                td= cc.usable? ? "Yes" : "No"
+              .account-credits-row
+                .account-credits-row-item.hidden-xs
+                  = connection_credit_expires_on cc
+                .account-credits-row-details
+                  = connection_credit_details cc
+                .account-credits-row-item.visible-xs
+                  = timef cc.created_at, :short
+                .account-credits-row-item.hidden-xs
+                  = timef cc.created_at, :long
+                .account-credits-row-item
+                  = cc.usable? ? "Yes" : "No"
+
 
 
       - if @user.active?
