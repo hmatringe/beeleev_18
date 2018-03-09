@@ -69,27 +69,26 @@
         .pull-right
           = new_connection_request_btn(classes: "btn btn-success btn-xs", btn_title: "DIRECT REQUEST", tag_classes:"")
         - else
-          .account-connection-table
-            .account-connection-row-headers
-                .account-connection-row-date
-                  div Last update
-                .account-connection-row-descr
-                  div Description
-                .account-connection-row-action
-                    
-            - @connection_requests.each do |cr|
-              .account-connection-row
-                .account-connection-row-date.visible-xs
-                  = timef cr.updated_at, :short
-                .account-connection-row-date.hidden-xs
-                  = timef cr.updated_at, :long
-                .account-connection-row-descr
-                  = cr.description
-                .account-connection-row-action
-                  = link_to "EDIT",
-                      edit_connection_request_path(cr),
-                      class: "btn btn-bleu-fonce btn-xs",
-                      data: {toggle: "modal", target: "#ajaxModal"}
+          .t-row.t-headers
+              .t-item-date
+                div Last update
+              .t-item-descr.t-item
+                div Description
+              .t-item-actions
+                  
+          - @connection_requests.each do |cr|
+            .t-row
+              .t-item-date.visible-xs
+                = timef cr.updated_at, :short
+              .t-item-date.hidden-xs
+                = timef cr.updated_at, :long
+              .t-item-descr.t-item-descr
+                = cr.description
+              .t-item-actions
+                = link_to "EDIT",
+                    edit_connection_request_path(cr),
+                    class: "btn btn-bleu-fonce btn-xs",
+                    data: {toggle: "modal", target: "#ajaxModal"}
 
       .overtitle-date
         .lign-center
@@ -103,51 +102,49 @@
           .pull-right
             = link_to "SHOP", direct_request_path, class: "btn btn-success btn-xs"
         - else
-          .account-product-table
-            .account-product-row-headers
-              .account-product-row-product
-                div Product
-              .account-product-row-amount
-                div Amount
-              .account-product-row-date
-                div Date
-            - @orders.each do |order|
-              .account-product-row
-                .account-product-row-product
-                  = order.product_title
-                .account-product-row-amount
-                  = number_to_currency order.money.amount,
-                      unit: order.money.currency.code
-                .account-product-row-date.visible-xs
-                  = timef order.created_at, :short
-                .account-product-row-date.hidden-xs
-                  = timef order.created_at, :long
-         
+          .t-headers.t-row
+            .t-item-date
+              div Date
+            .t-item-date
+              div Amount
+            .t-item-descr
+              div Product
+          - @orders.each do |order|
+            .t-row
+              .t-item-date.visible-xs
+                = timef order.created_at, :short
+              .t-item-date.hidden-xs
+                = timef order.created_at, :long
+              .t-item-date
+                = number_to_currency order.money.amount,
+                    unit: order.money.currency.code
+              .t-item-descr
+                = order.product_title
+       
         
           br
-          .account-credits-table  
-            .account-credits-row-headers
-              .account-credits-row-item.hidden-xs
-                div Expires on
-              .account-credits-row-details
-                div Connection created with this credit
-              .account-credits-row-item
-                div Credit created on
-              .account-credits-row-item
-                div Usable?
+          .t-headers.t-row
+            .t-item-date
+              div Credit created on
+            .t-item-date.hidden-xs
+              div Expires on
+            .t-item-descr-no-wrap
+              div Connection created with this credit
+            .t-item-actions
+              div Usable?
 
-            - @connection_credits.each do |cc|
-              .account-credits-row
-                .account-credits-row-item.hidden-xs
-                  = connection_credit_expires_on cc
-                .account-credits-row-details
-                  = connection_credit_details cc
-                .account-credits-row-item.visible-xs
-                  = timef cc.created_at, :short
-                .account-credits-row-item.hidden-xs
-                  = timef cc.created_at, :long
-                .account-credits-row-item
-                  = cc.usable? ? "Yes" : "No"
+          - @connection_credits.each do |cc|
+            .t-row
+              .t-item-date.visible-xs
+                = timef cc.created_at, :short
+              .t-item-date.hidden-xs
+                = timef cc.created_at, :long
+              .t-item-date.hidden-xs
+                = connection_credit_expires_on cc
+              .t-item-descr-no-wrap
+                = connection_credit_details cc
+              .t-item-actions
+                = cc.usable? ? "Yes" : "No"
 
 
 
