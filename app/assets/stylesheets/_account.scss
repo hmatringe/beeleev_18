@@ -34,80 +34,61 @@
 		  }
 	  }
 	}
-	.account-connection-table,.account-product-table,.account-credits-table{
-	
-	}	
-	.account-connection-row-headers, .account-product-row-headers{
-		font-size: 1.3em;
-		color: $gray;
-		background-color: #fdfdfd;
-	}
-	.account-credits-row-headers{
+	.t-headers{
 		font-size: 1.2em;
 		color: $gray;
 		background-color: #fdfdfd;
 	}
-	
-	// .account-connection-row-headers, .account-product-row-headers, .account-credits-row-headers{
-	// 	display: flex;
-	// 	width: 100%;
-	// 	justify-content: space-between;
-	// 	align-items: center;
-	// 	border-top: 1px solid #dddddd;
-	// 	min-height: 25px;
-	// 	padding: 5px 0
-	// }
-	.account-connection-row-headers, .account-product-row-headers, .account-credits-row-headers, .account-connection-row,.account-product-row,.account-credits-row{
-		display: flex;
-		width: 100%;
-		justify-content: space-between;
-		align-items: center;
+	.t-row{
+		display: flex;           display: -webkit-flex;
+	  flex-direction: row;     -webkit-flex-direction: row;
+	  flex-grow: 0;            -webkit-flex-grow: 0;
+	  flex-wrap: wrap;         -webkit-flex-wrap: wrap;
+	  width: 100%;
+	  padding: 5px 15px;
 		border-top: 1px solid #dddddd;
-		min-height: 25px;
-		padding: 5px;
 	}
-	.account-connection-row-date{
-		flex: 0 0 15%;
+	.t-item{
+		flex-grow: 1;            -webkit-flex-grow: 1;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;
 	}
-	.account-connection-row-descr{
-		flex: 1 1 auto;
-		padding: 0 10px;
-		word-break: break-all;
+	.t-item-descr{
+		flex-grow: 4;            -webkit-flex-grow: 4;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;
+		width: 50px;
 	}
-	// .account-connection-row-action{
-	// }
-	// .account-product-row-product{
-	// }
-	// .account-product-row-amount{
-	// }
-	// .account-product-row-date{
-	// }
-	.account-product-row-product{
+	.t-item-descr-no-wrap{
+		flex-grow: 4;            -webkit-flex-grow: 4;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;
 	}
-	.account-product-row-amount{
+	.t-item-actions{
+		flex-grow: 0;            -webkit-flex-grow: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
-	.account-product-row-date{
+	.t-item-date{
+		flex-grow: 0;            -webkit-flex-grow: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;	
+		min-width: 140px;
 	}
-	.account-credits-row-item{
-	}
-	.account-credits-row-details{
-		// word-break: break-all;
-    flex: 0 0 50%;
-	}
-	
 }	
 @media(max-width:767px){
 	#account{
-		.account-connection-row-date{
-			flex: 0 0 30%;
-		}
-		.credit-box-credit-wrapper{
-			min-height: 12vh;
-			margin: 0 0 2vh;
-		}
-		.title-wrapper-account{
-			// correction / title-wrapper... classes in components.scss
-			// font-size: 0.65em;
+		.t-item-date{
+			min-width: 100px;
 		}
 	}
 }

@@ -208,10 +208,9 @@ h3{
 }
 @media(max-width:767px) {
   .overtitle-date {
-    .title-wrapper {
-      width: 110px;
+    .title-wrapper-0, .title-wrapper, .title-wrapper-250, .title-wrapper-300, .title-wrapper-350, .title-wrapper-500, .title-wrapper-550 {
       h3 {
-        font-size: 1.1em;
+        font-size: 1.2em;
         
       }
     }
