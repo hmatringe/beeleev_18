@@ -1,9 +1,10 @@
 #mc_embed_signup{
+	//---additional classes for orange triangle > sloped top See below
 	background: $orange;
 	clear:left;
 	font:14px Helvetica,Arial,sans-serif;
-	border-bottom: 2px dashed #f37e4f;
-	padding: 10px;
+	border-bottom: 2px dashed #dc6e42;
+	// padding: 10px;
 	.bullets-wrapper{
     color: white;
 	  font-family: 'Lato', sans-serif;
@@ -17,7 +18,8 @@
 	  font-style: italic;
 	  color: #333333;
 	  padding: 2em 0 1em !important;
-	  text-align: center;
+	  // text-align: center;
+	  margin: 15px 0 15px 30vh !important;
 	}
 	.outer-wrapper{
 		display: flex;
@@ -47,6 +49,7 @@
 	#mc_embed_signup{
 		h2{
 			font-size: 1.3em !important;
+			margin:60px 0 15px !important;
 		}
 		.btn-orange18-white{
 			padding: 0.71em 0.8em;
@@ -63,4 +66,22 @@
 		margin: 0 1em 2em 0 !important;
 		width: 220px !important;
 	}
+}
+
+//--- orange triangle > sloped top
+#mc_embed_signup{
+		position: relative;
+		padding: 50px 10px 10px;
+}
+
+#mc_embed_signup::before {
+  position:absolute;
+  content: " ";
+  display:block;
+  left:0;
+  top:0;
+  width:100%;
+  border-style: solid;
+  border-width: 0 100vw 150px 0;
+  border-color: transparent white transparent transparent;
 }
