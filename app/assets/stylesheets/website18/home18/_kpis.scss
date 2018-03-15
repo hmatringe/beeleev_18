@@ -1,5 +1,6 @@
 #kpis{
 	background-color: $bg-grey;
+	min-height: 50vh;
 	.kpis-wrapper{
 		margin: 2em 0;
 	}
@@ -13,9 +14,27 @@
 	  padding-bottom: 0.5em;
 		font-family: 'Lato', sans-serif;
 		font-weight: 400;
-		color: $bleu-fonce;
+		color: white;
+		text-shadow: $gray 1px 1px 10px;
 	  font-size: 2em;
 	}
+}
+//--- white triangle > sloped bottom
+#kpis{
+		position: relative;
+}
+
+#kpis::after {
+  position:absolute;
+  content: " ";
+  display:block;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  border-style: solid;
+  border-width: 13vw 0 0 100vw;
+  border-color: transparent transparent transparent rgba(255,255,255,1);
 }
 
 //--------------- media queries ------------------
@@ -27,5 +46,13 @@
 		.kpis-text{
 	  	font-size: 2em;
 		}
+	}
+	#kpis::after {
+	  // border-width: 7vh 0 0 100vw;
+	}
+}
+@media(max-width:958px) {
+	#kpis::after {
+	  border-width: 10vh 0 0 100vw;
 	}
 }

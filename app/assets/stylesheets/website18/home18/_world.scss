@@ -1,4 +1,9 @@
 #home_world{
+	// overriding bootstrap to avoid overflow
+	// .container{
+	// 	margin-left: 0;
+	// 	margin-right: 0;
+	// }
 	.height-setter{
 		height: 45vh;
 		display: flex;
@@ -37,6 +42,9 @@
 		color: $orange;
 	  font-size: 4em;
 	  text-align: center;
+	}
+	.carousel-indicators {
+		bottom: 0px !important;
 	}
 	.carousel-indicators > li {
     border: orange 2px solid;
