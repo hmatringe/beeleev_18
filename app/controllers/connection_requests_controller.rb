@@ -7,7 +7,7 @@ class ConnectionRequestsController < ApplicationController
                           'a connection request'
 
   TARGETS = { "An Entrepreneur" => 1,
-              "A Company or Agency" => 2,
+              "A Company or an Expert" => 2,
               "An International Group" => 4}
 
   # Filters

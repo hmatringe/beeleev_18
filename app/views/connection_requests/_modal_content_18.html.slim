@@ -12,7 +12,8 @@
         div
           - @targets.each do |k, v|
             .flex-horiz
-              = f.radio_button :targets, k, { checked: true }
+              - tar_checked = @cr && @cr.targets[0] == k ? { checked: true } : { checked: false }
+              = f.radio_button :targets, k, tar_checked
               = f.label k, k.titleize
 
         div 
