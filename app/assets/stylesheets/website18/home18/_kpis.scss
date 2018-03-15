@@ -24,7 +24,7 @@
 		position: relative;
 }
 
-#kpis::before {
+#kpis::after {
   position:absolute;
   content: " ";
   display:block;
@@ -33,7 +33,7 @@
   bottom:0;
   width:100%;
   border-style: solid;
-  border-width: 25vh 0 0 100vw;
+  border-width: 13vw 0 0 100vw;
   border-color: transparent transparent transparent rgba(255,255,255,1);
 }
 
@@ -47,12 +47,12 @@
 	  	font-size: 2em;
 		}
 	}
-	#kpis::before {
-	  border-width: 7vh 0 0 100vw;
+	#kpis::after {
+	  // border-width: 7vh 0 0 100vw;
 	}
 }
 @media(max-width:958px) {
-	#kpis::before {
+	#kpis::after {
 	  border-width: 10vh 0 0 100vw;
 	}
 }
