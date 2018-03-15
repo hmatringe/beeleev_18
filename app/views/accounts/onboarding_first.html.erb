@@ -1,3 +1,11 @@
+<!-- <div class="image-upload">
+    <label for="file-input">
+        <img src="https://picsum.photos/200/300/?random"/>
+    </label>
+
+    <input id="file-input" type="file"/>
+</div> -->
+
 <%= form_for @user, url: onboarding_first_update_path, method: :post do |f|%>
 <div id="onboarding1">
 	<div class="flex-wrapper">
@@ -8,7 +16,12 @@
 				<div class="text-center">
 				</div>
 				<div class="avatar-wrapper text-center">
-					<span>PROFILE <br> PICTURE</span>
+					 <label for="user_avatar">
+				      <!-- <img src="https://picsum.photos/200/200/?random"/> -->
+							<i class="fa fa-user fa-4x" aria-hidden="true"></i>
+							<br>
+							<span>PROFILE <br> PICTURE</span>
+				  </label>
 					<%= f.file_field :avatar,
 														required: true %>
 				</div>
