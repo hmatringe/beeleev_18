@@ -1,5 +1,5 @@
 #onboarding1, #onboarding2, #onboarding3{
-	min-height: 82vh;
+	min-height: 83vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -31,6 +31,7 @@
 		padding: 20px;
 		border-radius: 6px;
 		display: flex;
+		border-radius: 50%;
 		justify-content: space-around;
 		align-items:center;
 		flex-direction: column;
