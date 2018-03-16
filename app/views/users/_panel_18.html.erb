@@ -2,9 +2,15 @@
 <div class="profile-card">
   <div class="profile-card-top">
       <div class="img-wrapper">
+        <% if user.avatar.present? %>
         <%= cl_image_tag user.avatar, transformation: [
                   {width: 200, height: 200, gravity: :face, crop: :fill},
                   {width: 100, crop: :scale}] %>
+        <% else %>
+          <div class="img-placeholder">
+            <div><i class="fa fa-user fa-4x" aria-hidden="true"></i></div>
+          </div>
+        <% end %>
       </div>
     <div class="txt-wrapper">
       <div class="inner-wrapper">

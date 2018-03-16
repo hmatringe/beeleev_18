@@ -215,6 +215,15 @@
 			flex-grow: 0;
 			flex-shrink: 0;
 		}
+		.img-placeholder{
+			height: 100px;
+			width: 100px;
+			background-color: #fdfdfd;
+			color: #e6e6e6;
+			display: flex;
+	    justify-content: center;
+	    align-items: center;
+		}
 		.txt-wrapper{
 			flex: 1 1 auto;
 		}

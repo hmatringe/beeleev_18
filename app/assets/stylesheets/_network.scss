@@ -3,11 +3,15 @@
 }
 #my_network, #network-search{
 	min-height: 80vh;
+	h1{
+		padding: 1em 0 0;
+		margin: 0 0 10px;
+	}
 	.filter-box{
 		border: 2px solid $orange;
 		border-radius: 3vh;
-		padding: 1vh;
-		margin: 1vh 0 2vh;
+		padding: 2px;
+		margin: 0 0 2vh;
 	}
 	.bordered {
 		border-right: 1px #C8C8C8 solid;
@@ -48,7 +52,11 @@
 	  font-size: 1.5em;
 	  font-style: normal;
 		color: $gray;
-	  margin: 30px 0 0;
+	  margin: 0;
+	  padding: 0;
+	}
+	.pagination{
+		margin: 5px 0;
 	}
 }
 #network-search-any form, #network-search-one form{
