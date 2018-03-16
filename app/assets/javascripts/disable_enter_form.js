@@ -21,11 +21,7 @@ $(document).ready(function() {
     if($('#connection_request_description').length && event.keyCode == 13) {
 			var field = document.getElementById('connection_request_description');
 			insertAtCursor(field, "");
-			console.log(field);
-      event.preventDefault();
-      
-      // document.write("\n")
-      // alert("hello");
+      event.preventDefault();      
       return false;
     }
   });
