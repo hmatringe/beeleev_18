@@ -61,7 +61,7 @@ class NetworksController < BeeleeverSpaceController
   end
 
   def setup_profiles
-    @profiles = %w( Entrepreneur Company Expert )
+    @profiles = ['Entrepreneur', 'Local Partner', 'Expert']
   end
   
   def set_pagination

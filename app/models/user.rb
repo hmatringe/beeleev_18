@@ -422,8 +422,8 @@ class User < ActiveRecord::Base
     profil == 'Expert'
   end
 
-  def company?
-    profil == 'Company'
+  def local_partner?
+    profil == 'Local Partner'
   end
 
   def connected_user_ids
