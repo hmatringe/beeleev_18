@@ -21,7 +21,7 @@ class ConnectionDemandsController < ApplicationController
     )
 
     if @connection_demand.save
-      redirect_to network_path, notice: 'Beeleev will review your connection demand soon'
+      redirect_to network_path
     else
       redirect_to network_path, alert: 'Problem when trying to create connection demand'
     end
