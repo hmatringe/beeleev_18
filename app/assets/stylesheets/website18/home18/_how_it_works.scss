@@ -126,8 +126,11 @@
   bottom:-150px;
   width:100%;
   border-style: solid;
-  // border-width: 0 100vw 150px 0;
-  border-width: 0 0 150px  100vw;
-  // border-color: transparent $orange transparent transparent;
+  border-width: 0 0 150px  98.9vw;
   border-color: transparent transparent transparent $orange;
+}
+@media(max-width:767px) {
+	#how_it_works::after{
+		border-width: 0 0 150px 96vw;
+	}
 }
