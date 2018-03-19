@@ -1,13 +1,5 @@
 class ConnectionDemandsController < ApplicationController
 
-  # Callbacks
-  ###########
-
-  after_action(
-    EmailTemplateSender.new('after-new-connection-demand', :@recipient),
-    only: [:create]
-  )
-
   # Actions
   #########
 
@@ -29,8 +21,7 @@ class ConnectionDemandsController < ApplicationController
     )
 
     if @connection_demand.save
-      @recipient = @connection_demand.user1
-      redirect_to network_path, notice: 'Beeleev will review your connection demand soon'
+      redirect_to network_path
     else
       redirect_to network_path, alert: 'Problem when trying to create connection demand'
     end
