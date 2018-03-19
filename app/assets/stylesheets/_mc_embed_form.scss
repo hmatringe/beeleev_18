@@ -80,6 +80,11 @@
   top:0;
   width:100%;
   border-style: solid;
-  border-width: 0 100vw 150px 0;
+  border-width: 0 98.9vw 150px 0;
   border-color: transparent white transparent transparent;
+}
+@media(max-width:958px) {
+	#mc_embed_signup::before {
+		border-width: 0 96vw 150px 0;
+	}
 }

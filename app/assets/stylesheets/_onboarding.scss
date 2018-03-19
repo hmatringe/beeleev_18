@@ -3,6 +3,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	#user_avatar{
+	  display: none;
+	}
 	h1{
 		margin:0;
 		padding:0;
@@ -76,7 +79,4 @@
 			width: 200px;
 		}
 	}
-}
-#user_avatar{
-  display: none;
 }

@@ -34,7 +34,7 @@
   bottom:0;
   width:100%;
   border-style: solid;
-  border-width: 13vw 0 0 100vw;
+  border-width: 13vw 0 0 98.9vw;
   border-color: transparent transparent transparent rgba(255,255,255,1);
 }
 
@@ -54,6 +54,6 @@
 }
 @media(max-width:958px) {
 	#kpis::after {
-	  border-width: 10vh 0 0 100vw;
+	  border-width: 10vh 0 0 96vw;
 	}
 }

@@ -18,13 +18,6 @@
         = f.select :civility, %w(Mr. Mrs. Ms. Dr.),
             {prompt: "Select title"}, class: "form-control"
     .form-group
-      = f.label :profil, "Profile"
-      .input-group
-        span.input-group-addon
-          span.glyphicon.glyphicon-user
-        = f.select :profil, %w(Entrepreneur Expert Company),
-            {prompt: "Select profile"}, class: "form-control"            
-    .form-group
       = f.label :first_name, "First Name"
       .input-group
         span.input-group-addon
@@ -36,8 +29,15 @@
         span.input-group-addon
           span.glyphicon.glyphicon-user
         = f.text_field :last_name, class: "form-control"
-
+  
   .col-md-4
+    .form-group
+      = f.label :profil, "Profile"
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-user
+        = f.select :profil, %w(Entrepreneur Expert Company),
+            {prompt: "Select profile"}, class: "form-control"            
     .form-group
       = f.label :country
       .input-group
@@ -57,6 +57,7 @@
         span.input-group-addon
           span.glyphicon.glyphicon-globe
         = f.text_field :nationalite, class: "form-control"
+  .col-md-4
     .form-group
       = f.label :twitter_account, "Twitter Account"
       .input-group
@@ -73,10 +74,26 @@
       = f.label :provider_public_profile_url, "LinkedIn URL"
       .input-group
         span.input-group-addon
-          i.fa.fa-facebook
+          i.fa.fa-linkedin
         = f.text_field :provider_public_profile_url, class: "form-control"
 
+.form-group
+  = f.label :description, "About You"
+  = f.text_area :description, class: "form-control", rows: 3
+
+br
+.row
   .col-md-4
+    .form-group
+        = f.label :company_logo
+        .row
+          .col-md-3
+            = image_tag f.object.company_logo.url(:panel)
+          .col-md-9
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-picture
+              = f.file_field :company_logo, class: "form-control"
     .form-group
       = f.label :position
       .input-group
@@ -84,11 +101,23 @@
           span.glyphicon.glyphicon-home
         = f.text_field :position, class: "form-control"
     .form-group
+      = f.label :year_of_creation, "Year of Creation"
+      = f.select :year_of_creation, (1920..Date.today.year).to_a.reverse,
+        {prompt: "Select Year of creation"}, class: "form-control"
+  
+  .col-md-4
+    .form-group
       = f.label :company
       .input-group
         span.input-group-addon
           span.glyphicon.glyphicon-home
         = f.text_field :company, class: "form-control"
+    .form-group
+      = f.label :website
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-home
+        = f.text_field :website, class: "form-control"
     .form-group
       = f.label :business_sectors, "Business Sectors"
       .input-group
@@ -99,17 +128,27 @@
             {prompt: "Select your business sectors"},
             multiple: true,
             class: "form-control"
-
+  
+  .col-md-4
     .form-group
-      = f.label :website
+      = f.label :company_twitter_account, "Company Twitter Account"
       .input-group
         span.input-group-addon
-          span.glyphicon.glyphicon-home
-        = f.text_field :website, class: "form-control"
+          i.fa.fa-twitter
+        = f.text_field :company_twitter_account, class: "form-control"
+    .form-group
+      = f.label :company_facebook_account, "Company Facebook Account"
+      .input-group
+        span.input-group-addon
+          i.fa.fa-facebook
+        = f.text_field :company_facebook_account, class: "form-control"
+    .form-group
+      = f.label :company_linkedin_account, "Company LinkedIn Account"
+      .input-group
+        span.input-group-addon
+          i.fa.fa-linkedin
+        = f.text_field :company_linkedin_account, class: "form-control"            
 
-.form-group
-  = f.label :description, "About You"
-  = f.text_area :description, class: "form-control", rows: 3
 .form-group
   = f.label :company_description, "About your Company"
   = f.text_area :company_description, class: "form-control", rows: 3    

@@ -7,40 +7,60 @@
 	    <div class="col-xs-12 col-sm-3">
 				<div class="left-wrapper">
 					<div class="profile-avatar">
-						<%#= cl_image_tag @user.avatar, transformation:
-						{width: 200, height: 200, gravity: :face, radius: :max, crop: :crop} %>
-						<%= cl_image_tag @user.avatar, transformation: [
-							  {width: 400, height: 400, gravity: :face, radius: :max, crop: :fill},
-							  {width: 200, crop: :scale}] %>
+						<% if @user.company_logo? %>
+							<%= cl_image_tag @user.company_logo, transformation: [
+								  {width: 400, height: 400, crop: :fit},
+								  {width: 200, crop: :scale}] %>
+						<% else %>
+							<%= image_tag @user.company_logo_url, class: "img-responsive" %>
+						<% end %>
 					</div>
-					<ul class="some-icons list-inline">
-						<li>
-							<i class="fa fa-2x fa-facebook-square facebook-color" aria-hidden="true"></i>
-						</li>
-						<li>
-							<i class="fa fa-2x fa-twitter-square twitter-color" aria-hidden="true"></i>
-						</li>
-						<li>
-							<i class="fa fa-2x fa-linkedin-square linkedin-color" aria-hidden="true"></i>
-						</li>
-					</ul>
+					
+					<div class="some-icons">
+						<% if @user.company_facebook_account.present? %>
+							<%= link_to "https://www.facebook.com/#{@user.company_facebook_account}", target: "_blank" do %>
+								<i class="fa fa-2x fa-facebook-square facebook-color" aria-hidden="true"></i>
+							<% end %>
+						<% end %>
+
+						<% if @user.company_twitter_account.present? %>
+							<%= link_to "https://www.twitter.com/#{@user.company_twitter_account}", target: "_blank" do %>
+								<i class="fa fa-2x fa-twitter-square twitter-color" aria-hidden="true"></i>
+							<% end %>
+						<% end %>
+						
+						<% if @user.company_linkedin_account.present? %>
+							<%= link_to @user.company_linkedin_account, target: "_blank" do %>
+								<i class="fa fa-2x fa-linkedin-square linkedin-color" aria-hidden="true"></i>
+							<% end %>
+						<% end %>
+
+					</div>
 				</div>
 	    </div>
 
 	    <div class="col-xs-12 col-sm-6">
 	    	<div class="center-wrapper">
 	    		<h1><%= @user.company.upcase %></h1>
-	    		<div class="bold-item">
-	    			<%= @user.position_at_company %>
-	    		</div>
-	    		
-	    		<% unless @user.staff_volume.empty? %>
-		    		<div class="item">
-		    			<%= "#{@user.staff_volume} Employee" %>
+	    		<% unless @user.business_sectors.blank? %>
+		    		<div class="bold-item">
+		    			<%= @user.business_sectors.join(", ") %>
 		    		</div>
 	    		<% end %>
 	    		
-	    		<% unless @user.turnover.empty? %>
+	    		<% unless @user.year_of_creation.nil? %>
+		    		<div class="item">
+		    			<%= "Since #{@user.year_of_creation}" %>
+		    		</div>
+	    		<% end %>
+	    		
+	    		<% unless @user.staff_volume.nil? %>
+		    		<div class="item">
+		    			<%= "#{@user.staff_volume} Employees" %>
+		    		</div>
+	    		<% end %>
+
+	    		<% unless @user.turnover.nil? %>
 		    		<div class="item">
 		    			<%= "#{@user.turnover} Turnover" %>
 		    		</div>

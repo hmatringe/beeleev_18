@@ -239,6 +239,7 @@ class User < ActiveRecord::Base
   validate :presence_of_business_sectors,  on: :update
 
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :company_logo, CompanyLogoUploader
 
   # Associations
   ##############

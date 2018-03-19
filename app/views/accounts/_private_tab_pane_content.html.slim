@@ -63,10 +63,6 @@
       .radio-inline
         = f.radio_button :investment_activity, false
         | No
-    .form-group
-      = f.label :year_of_creation, "Year of Creation"
-      = f.select :year_of_creation, (1920..Date.today.year).to_a.reverse,
-        {prompt: "Select Year of creation"}, class: "form-control"
 
     .form-group
       = f.label :business_model, "Buisness Model"
