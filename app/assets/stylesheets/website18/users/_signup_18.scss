@@ -17,6 +17,7 @@
 	  text-align:center;
 	  letter-spacing: unset;
 	  margin: 0;
+	  padding: 1em 0 0;
 	}
 	h2{
 		font-family: 'Lato', sans-serif;
@@ -27,6 +28,7 @@
 	  margin: 0 0 0.4em ;
 	  text-align:center;
 	  letter-spacing: unset;	
+    padding-top: 0;
 	}
 	.bullets{
 	 	text-align: center;
@@ -36,7 +38,7 @@
 			font-weight: 400;
 			color: $gray;
 			margin-top: 0;
-			margin-bottom: 0;
+			margin-bottom: 1em;
 			font-size: 1.4em;
 			text-transform: none;
 			font-style: italic;

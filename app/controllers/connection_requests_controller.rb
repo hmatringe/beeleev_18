@@ -42,9 +42,9 @@ class ConnectionRequestsController < ApplicationController
           .permit(:subject, :countries, :description, :city, business_sectors: [], targets: [])
 
     if @cr.save
-      redirect_to direct_request_path(anchor: 'activate-package'), notice: 'Your connection request has been sent'
-    else
-      redirect_to direct_request_path, alert: 'Unable to send connection request'
+      redirect_to direct_request_path(anchor: 'activate-package'), notice: 'Your Direct Request has been sent to our teams. We will contact you within 24 working hours to detail your requirement further. Keep an eye on your mailbox!'
+
+      redirect_to direct_request_path, alert: 'Unable to send Direct Request'
     end
   end
 
@@ -56,9 +56,9 @@ class ConnectionRequestsController < ApplicationController
       .permit(:subject, :countries, :description, :city, business_sectors: [], targets: [])
 
     if @cr.save
-      redirect_to account_path, notice: 'Your connection request has been updated'
+      redirect_to account_path, notice: 'Your Direct Request has been updated'
     else
-      redirect_to account_path, alert: 'Unable to update connection request'
+      redirect_to account_path, alert: 'Unable to update Direct Request'
     end
 
   end

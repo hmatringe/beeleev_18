@@ -4,15 +4,14 @@
 
   - if @user.activation_pending?
     .alert.alert-warning role="alert"
-        | Hi #{@user.first_name}. Your application is being reviewed by our team.
+        | Hello #{@user.first_name}. Your application has been sent to our teams and is under review.
         br
-        | You will soon receive an email to inform you of your account activation.
+        | You will receive a mail under 24 working hours notifying you of the decision. Keep an eye on your mailbox!
         br
         br
         '
 
-          In the mean time, please fill in as much information as possible <u>in
-          english</u> to prepare your
+          In the meantime, you can continue filling your profile to facilitate your introduction to other members.
 
         a href=user_path(@user) public profile
 
