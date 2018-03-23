@@ -106,7 +106,7 @@
 	    <% elsif current_user.decorate.network.exclude? @user %>
 	    	<div class="col-xs-12 col-sm-3">
 		    	<div class="right-wrapper">
-		    		<%= link_to "ASK SUPPORT", new_connection_demand_path(user2_id: @user.id),
+		    		<%= link_to "CONNECT", new_connection_demand_path(user2_id: @user.id),
 		    															data: { toggle: 'modal', target: '#ajaxModal' },
 		    															class: "support-button-orange" %>
 		    	</div>
