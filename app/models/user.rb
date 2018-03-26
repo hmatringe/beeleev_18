@@ -496,7 +496,7 @@ class User < ActiveRecord::Base
     user.email =  "#{rand(1.0...100000.0)}@unavailable.com"
     user.provider =  ""
     user.uid =  ""
-    user.remove_avatar = true
+    user.remove_avatar!
     user.week =  ""
     user.sponsor =  ""
     user.source =  ""
@@ -543,6 +543,10 @@ class User < ActiveRecord::Base
     user.investment_levels =  []
     user.company_description =  ""
     user.facebook_username =  nil
+    user.remove_company_logo!
+    user.company_twitter_account = ""
+    user.company_facebook_account = ""
+    user.company_linkedin_account = ""
     return user
   end
 

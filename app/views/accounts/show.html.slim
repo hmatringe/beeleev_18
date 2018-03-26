@@ -10,7 +10,8 @@
           .number
             = @usable_credits.count
           | credits
-        = link_to "Credit my Account", direct_request_path, class: "recharge"
+        - unless @user.status == "rejected"
+          = link_to "Credit my Account", direct_request_path, class: "recharge"
 
     .col-xs-12.col-sm-10
 
@@ -100,7 +101,8 @@
         - if @orders.empty?
           | You haven't purchased anything yet in the Beeleev shop
           .pull-right
-            = link_to "SHOP", direct_request_path, class: "btn btn-success btn-xs"
+            - unless @user.status == "rejected"
+              = link_to "SHOP", direct_request_path, class: "btn btn-success btn-xs"
         - else
           .t-headers.t-row
             .t-item-date
@@ -148,6 +150,6 @@
 
 
 
-      - if @user.active?
-        = link_to destroy_account_path, class: "delete-profile", data: {confirm: "Irreversible action! \nIn accordance with EU regulations, your account will be deleted forever!"} do
-          h4 delete my profile
+      / - if @user.active?
+      = link_to destroy_account_path, class: "delete-profile", data: {confirm: "Irreversible action! \nIn accordance with EU regulations, your account will be deleted forever!"} do
+        h4 delete my profile

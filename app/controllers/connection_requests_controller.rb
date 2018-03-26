@@ -43,7 +43,7 @@ class ConnectionRequestsController < ApplicationController
 
     if @cr.save
       redirect_to direct_request_path(anchor: 'activate-package'), notice: 'Your Direct Request has been sent to our teams. We will contact you within 24 working hours to detail your requirement further. Keep an eye on your mailbox!'
-
+    else
       redirect_to direct_request_path, alert: 'Unable to send Direct Request'
     end
   end
@@ -60,7 +60,6 @@ class ConnectionRequestsController < ApplicationController
     else
       redirect_to account_path, alert: 'Unable to update Direct Request'
     end
-
   end
 
   private

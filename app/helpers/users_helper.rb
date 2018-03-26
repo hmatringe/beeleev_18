@@ -38,4 +38,12 @@ module UsersHelper
     end
   end
 
+  def url_builder(url)
+    if url.start_with? 'http'
+      return url
+    else
+      return "http://#{url}"
+    end
+  end
+
 end

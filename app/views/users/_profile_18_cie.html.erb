@@ -66,9 +66,9 @@
 		    		</div>
 	    		<% end %>
 	    		
-	    		<div class="item-orange">
-	    			<%= @user.website %>
-	    		</div>
+	    		<% if @user.website %>
+							<%= link_to @user.website, url_builder(@user.website), class: "item-orange", target: "_blank" %>
+	    		<% end %>
 	    		
 	    	</div>
 	    </div>
