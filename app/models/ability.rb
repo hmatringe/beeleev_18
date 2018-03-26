@@ -46,8 +46,8 @@ class Ability
       # ], User, status: 'active'
       # TODO refactor: destroy always true policies after exhaustive tests with client
       can [
-        :access_activity,
-        :see_new_connection_request_button
+        :access_activity
+        #,:see_new_connection_request_button
       ], User, status: 'activation_pending'
       
       can [

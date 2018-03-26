@@ -23,11 +23,12 @@
             <span class='highlight uppercase'>join a global community of successful entrepreneurs!</span>
           </div>
         </h3>
-
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.status != 'activation_pending' %>
+          <%= link_to "TO COMMUNITY", network_path, class: "btn btn-orange18-orange" %>
           <div class="btn btn-orange18-orange">
             COUNTRY SEARCH
           </div>
+        <% elsif user_signed_in? %>
         <% else %>
           <%= link_to "APPLY NOW", new_user_registration_path, class: "btn btn-orange18-orange" %>
         <% end %>

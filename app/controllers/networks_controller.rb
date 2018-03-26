@@ -41,6 +41,7 @@ class NetworksController < BeeleeverSpaceController
     User
       .active
       .ordered_by_name
+      .where("id != :id", id: current_user.id)
   end
 
   # Do the actual ransack search
