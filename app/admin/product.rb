@@ -26,6 +26,20 @@ ActiveAdmin.register Product do
     actions
   end
 
+  controller do
+    def update
+      super do |format|
+        redirect_to(admin_products_path, notice: "Product updated") and return if resource.valid?
+      end
+    end
+
+    def destroy
+      super do |format|
+        redirect_to(admin_products_path, notice: "Product deleted") and return
+      end
+    end
+  end
+
   form do |f|
     f.inputs do
       f.input :title if current_admin_user.super_admin?
