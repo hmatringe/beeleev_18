@@ -16,6 +16,13 @@ ActiveAdmin.register Coupon do
 
     actions
   end
+  controller do
+    def update
+      super do |format|
+        redirect_to(admin_coupons_path, notice: "Coupon updated") and return if resource.valid?
+      end
+    end
+  end
 
   form do |f|
     f.inputs do
