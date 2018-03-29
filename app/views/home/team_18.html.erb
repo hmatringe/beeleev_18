@@ -25,9 +25,6 @@
         </h3>
         <% if user_signed_in? && current_user.status != 'activation_pending' %>
           <%= link_to "TO COMMUNITY", network_path, class: "btn btn-orange18-orange" %>
-          <div class="btn btn-orange18-orange">
-            COUNTRY SEARCH
-          </div>
         <% elsif user_signed_in? %>
         <% else %>
           <%= link_to "APPLY NOW", new_user_registration_path, class: "btn btn-orange18-orange" %>
@@ -50,17 +47,7 @@
         </div>
         
         <div class="col-xs-12 col-sm-4 text-center">
-          <%=  render "home/team/rasmus_18" %>
-        </div>
-        <div class="col-xs-12 col-sm-4 text-center">
-          <%=  render "home/team/arnaud_18" %>
-        </div>
-        <div class="col-xs-12 col-sm-4 text-center">
-          <%=  render "home/team/tom_18" %>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 text-center">
-          <%=  render "home/team/jean_michel" %>
+          <%=  render "home/team/cyril" %>
         </div>
         <div class="col-xs-12 col-sm-4 text-center">
           <%=  render "home/team/juliette" %>

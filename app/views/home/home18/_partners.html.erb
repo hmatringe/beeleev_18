@@ -4,12 +4,24 @@
 		<h2 class="text-center">
 			OUR GLOBAL PARTNERS
 		</h2>
-		<%= render partial: "home/partnershome/airfrance" %>
-		<%= render partial: "home/partnershome/bnp" %>
-		<%= render partial: "home/partnershome/cmsfrancislefebvre" %>
-		<%= render partial: "home/partnershome/paris_aeroports" %>
-		<%= render partial: "home/partnershome/sncf" %>
-		<%= render partial: "home/partnershome/yulex" %>
+		<%= link_to	"https://www.airfrance.com", target: "_blank" do %>
+			<%= render partial: "home/partnershome/airfrance" %>
+		<% end %>
+		<%= link_to	"https://www.bnpparibas.com", target: "_blank" do %>
+			<%= render partial: "home/partnershome/bnp" %>
+		<% end %>
+		<%= link_to	"https://cms.law", target: "_blank" do %>
+			<%= render partial: "home/partnershome/cmsfrancislefebvre" %>
+		<% end %>
+		<%= link_to	"http://www.parisaeroport.fr/", target: "_blank" do %>
+			<%= render partial: "home/partnershome/paris_aeroports" %>
+		<% end %>
+		<%= link_to	"https://www.sncf.com", target: "_blank" do %>
+			<%= render partial: "home/partnershome/sncf" %>
+		<% end %>
+		<%= link_to	"http://www.yulex.ca/", target: "_blank" do %>
+			<%= render partial: "home/partnershome/yulex" %>
+		<% end %>
 			
 		</div>
 	</div>
