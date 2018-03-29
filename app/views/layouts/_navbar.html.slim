@@ -21,7 +21,7 @@ nav#lemenu.lemenu.lemenu18_white.nav.navbar.navbar-default.navbar-fixed-top role
 
           - if can? :access_network, current_user
             li= menu_link "MEMBERS", members_path
-            li= link_to 'To Slack', 'https://entrepreneurs-beeleev.slack.com', target: '_blank'
+            li= link_to 'To Slack', 'https://entrepreneurs-beeleev.slack.com', target: '_blank' unless current_user.profil == "Expert"
             li= menu_link 'DIRECT REQUEST', direct_request_path
 
           li.dropdown

@@ -10,7 +10,7 @@
           .number
             = @usable_credits.count
           | credits
-        - unless @user.status == "rejected"
+        - unless @user.status == "rejected" || "activation_pending"
           = link_to "Credit my Account", direct_request_path, class: "recharge"
 
     .col-xs-12.col-sm-10
@@ -101,7 +101,7 @@
         - if @orders.empty?
           | You haven't purchased anything yet in the Beeleev shop
           .pull-right
-            - unless @user.status == "rejected"
+            - unless @user.status == "rejected" || "activation_pending"
               = link_to "SHOP", direct_request_path, class: "btn btn-success btn-xs"
         - else
           .t-headers.t-row

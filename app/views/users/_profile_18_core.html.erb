@@ -103,6 +103,7 @@
 		    		<%= link_to "EDIT PROFILE", edit_account_path(@user), class: "edit-button" %>
 		    	</div>
 		    </div>
+	    <% elsif current_user.profil == "Expert" %>
 	    <% elsif current_user.decorate.network.exclude? @user %>
 	    	<div class="col-xs-12 col-sm-3">
 		    	<div class="right-wrapper">
