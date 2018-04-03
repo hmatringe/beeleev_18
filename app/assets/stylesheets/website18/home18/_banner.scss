@@ -30,7 +30,9 @@
 		font-size: 3.3em;
 		padding: 20% 0 2%;
     letter-spacing: 0.02em;
+    text-shadow: 1px 1px gray;
 		span {
+			text-shadow: none;
 			font-family: 'Lato-Bold', sans-serif;
 			font-weight: 900;
 			color: $orange;

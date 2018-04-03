@@ -125,6 +125,17 @@
     }
 	} 
 }
+
+@media(max-width:767px) {
+	#profile_18_core, #profile_18_company{
+		.right-wrapper{	
+			min-height: 12vh;
+		}
+		.profile-avatar{
+			min-height: 100px;
+		}
+	}
+}
 #profile_18_description, #profile_18_company_description{
 	.arrow_box {
 		position: relative;

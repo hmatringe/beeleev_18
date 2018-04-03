@@ -15,6 +15,14 @@ ActiveAdmin.register EmailTemplate do
     actions
   end
 
+  controller do
+    def update
+      super do |format|
+        redirect_to(admin_email_template_path(resource), notice: "Email updated goffio") and return if resource.valid?
+      end
+    end
+  end
+
   show do
     attributes_table do
       row :name
