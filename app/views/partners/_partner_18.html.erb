@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-sm-3"> 
   <div class="partner-wrapper">
-    <a href=<%= partner.url %> target="_blank"></a>
+    <a href=<%= partner.url %> target="_blank">
       <%= cl_image_tag partner.image.full_public_id,
                      width: 150,
                      height: 150,
@@ -8,5 +8,6 @@
                      gravity: :center,
                      fetch_format: :auto,
                      class: 'img-responsive, center-block' %>
+    </a>
   </div>
 </div>
