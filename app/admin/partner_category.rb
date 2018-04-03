@@ -1,5 +1,6 @@
 ActiveAdmin.register PartnerCategory do
 
+
   menu parent: 'CMS'
 
   config.filters    = false
@@ -14,17 +15,19 @@ ActiveAdmin.register PartnerCategory do
 
   index do
 
-    column :name
     column :position
+
+    column :name
 
     actions
   end
 
   controller do
+    
     def create
       @partner_category = PartnerCategory.new(params[:partner_category])
       super do |format|
-        redirect_to(admin_partner_category_path(@partner_category), notice: "Partner Category created") and return if resource.valid?
+        redirect_to(admin_partner_categories_path, notice: "Partner Category created") and return if resource.valid?
       end
     end
 
@@ -35,6 +38,9 @@ ActiveAdmin.register PartnerCategory do
     end
 
     def destroy
+      if resource.partners.present?
+        redirect_to(admin_partner_categories_path, notice: "Remove all partners from a category before deleting it") and return
+      end
       super do |format|
         redirect_to(admin_partner_categories_path, notice: "Partner Category deleted") and return
       end

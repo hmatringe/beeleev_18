@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="col-xs-12 partners-wrapper">
-        <% partner_category.partners.each do |partner|  %>
+        <% partner_category.partners.order(position: :asc).each do |partner|  %>
           <%= render partial: 'partners/partner_18', locals: { partner: partner } if partner %>
         <% end %>
       </div>
