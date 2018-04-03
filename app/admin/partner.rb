@@ -16,13 +16,15 @@ ActiveAdmin.register Partner do
 
   index do
 
-    if params[:order] == 'position_asc' && params[:q].nil?
-      column do
-        content_tag :span, class: 'handle' do
-          '↕'
-        end
-      end
-    end
+    # if params[:order] == 'position_asc' && params[:q].nil?
+    #   column do
+    #     content_tag :span, class: 'handle' do
+    #       '↕'
+    #     end
+    #   end
+    # end
+    
+    column :position
 
     column :image do |resource|
       cl_image_tag resource.image.full_public_id,
